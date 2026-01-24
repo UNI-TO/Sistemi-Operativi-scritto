@@ -1,0 +1,64 @@
+[
+  {
+    "id": "generalita",
+    "topic": "generalita",
+    "title": "I - Generalità",
+    "description": "Introduzione e strutture dei sistemi operativi",
+    "chapters": [
+      "Cap. 1 - Introduzione",
+      "Cap. 2 - Strutture dei sistemi operativi"
+    ],
+    "pdfFiles": [],
+    "pdfCount": 0
+  },
+  {
+    "id": "processi-sincronizzazione",
+    "topic": "processi-scheduling",
+    "title": "II-III - Processi e Sincronizzazione",
+    "description": "Gestione dei processi, thread, scheduling e sincronizzazione",
+    "chapters": [
+      "Cap. 3 - Processi",
+      "Cap. 4 - Thread",
+      "Cap. 5 - Scheduling della CPU",
+      "Cap. 6 - Strumenti di sincronizzazione",
+      "Cap. 7 - Esempi di sincronizzazione"
+    ],
+    "pdfFiles": [],
+    "pdfCount": 0
+  },
+  {
+    "id": "memoria-primaria",
+    "topic": "memoria-primaria",
+    "title": "IV - Gestione della Memoria",
+    "description": "Memoria centrale e memoria virtuale",
+    "chapters": [
+      "Cap. 9 - Memoria centrale",
+      "Cap. 10 - Memoria virtuale"
+    ],
+    "pdfFiles": [],
+    "pdfCount": 0
+  },
+  {
+    "id": "memoria-massa",
+    "topic": "memoria-massa",
+    "title": "V - Memoria di Massa",
+    "description": "Dischi rigidi, RAID e memorie a stato solido",
+    "chapters": [
+      "Cap. 11 - Memoria di massa"
+    ],
+    "pdfFiles": [],
+    "pdfCount": 0
+  },
+  {
+    "id": "file-system",
+    "topic": "file-system",
+    "title": "VI - File System",
+    "description": "Interfaccia e realizzazione del file system",
+    "chapters": [
+      "Cap. 13 - Interfaccia del file system",
+      "Cap. 14 - Realizzazione del file system"
+    ],
+    "pdfFiles": [],
+    "pdfCount": 0
+  }
+]

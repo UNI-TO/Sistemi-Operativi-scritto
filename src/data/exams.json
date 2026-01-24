@@ -19,6 +19,10 @@
         "maxPoints": 5,
         "type": "essay"
       }
+    ],
+    "topics": [
+      "memoria-primaria",
+      "file-system"
     ]
   },
   {
@@ -41,6 +45,9 @@
         "maxPoints": 5,
         "type": "essay"
       }
+    ],
+    "topics": [
+      "file-system"
     ]
   },
   {
@@ -63,6 +70,9 @@
         "maxPoints": 5,
         "type": "essay"
       }
+    ],
+    "topics": [
+      "file-system"
     ]
   },
   {
@@ -85,6 +95,10 @@
         "maxPoints": 5,
         "type": "essay"
       }
+    ],
+    "topics": [
+      "memoria-primaria",
+      "file-system"
     ]
   },
   {
@@ -107,6 +121,10 @@
         "maxPoints": 5,
         "type": "essay"
       }
+    ],
+    "topics": [
+      "file-system",
+      "memoria-primaria"
     ]
   },
   {
@@ -129,6 +147,10 @@
         "maxPoints": 5,
         "type": "essay"
       }
+    ],
+    "topics": [
+      "file-system",
+      "memoria-primaria"
     ]
   },
   {
@@ -151,6 +173,9 @@
         "maxPoints": 5,
         "type": "essay"
       }
+    ],
+    "topics": [
+      "file-system"
     ]
   },
   {
@@ -173,6 +198,10 @@
         "maxPoints": 5,
         "type": "essay"
       }
+    ],
+    "topics": [
+      "file-system",
+      "memoria-primaria"
     ]
   },
   {
@@ -195,6 +224,10 @@
         "maxPoints": 5,
         "type": "essay"
       }
+    ],
+    "topics": [
+      "file-system",
+      "memoria-primaria"
     ]
   },
   {
@@ -217,6 +250,10 @@
         "maxPoints": 5,
         "type": "essay"
       }
+    ],
+    "topics": [
+      "file-system",
+      "memoria-primaria"
     ]
   },
   {
@@ -246,6 +283,9 @@
         "maxPoints": 2,
         "type": "multianswer"
       }
+    ],
+    "topics": [
+      "file-system"
     ]
   },
   {
@@ -289,6 +329,9 @@
         "maxPoints": 2,
         "type": "multianswer"
       }
+    ],
+    "topics": [
+      "file-system"
     ]
   },
   {
@@ -318,6 +361,9 @@
         "maxPoints": 2,
         "type": "essay"
       }
+    ],
+    "topics": [
+      "file-system"
     ]
   },
   {
@@ -340,6 +386,10 @@
         "maxPoints": 3,
         "type": "multianswer"
       }
+    ],
+    "topics": [
+      "file-system",
+      "memoria-primaria"
     ]
   }
 ]
