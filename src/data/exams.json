@@ -1,5 +1,461 @@
 [
   {
+    "id": "teoria-so-b-18-06-2025",
+    "date": "2025.06.18",
+    "course": "B",
+    "title": "Teoria SO Corso B 18/06/2025",
+    "topics": [
+      "generalita",
+      "processi-scheduling",
+      "sincronizzazione",
+      "memoria-primaria",
+      "file-system"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "Quando si usa lo scheduling della CPU \"shortest remaining time first\", è possibile che un processo passato dallo stato WAITING allo stato READY ottenga subito la CPU tramite prelazione",
+        "answer": "La risposta corretta è: Vero",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": true
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "vero",
+        "imageRef": "Immagine 2025-06-18 113947.png"
+      },
+      {
+        "number": 2,
+        "text": "in generale i semafori non soffrono di starvation",
+        "answer": "La risposta corretta è: Falso",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": false
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswer": "falso",
+        "imageRef": "Immagine 2025-06-18 113947.png"
+      },
+      {
+        "number": 3,
+        "text": "L'allocazione contigua della RAM ai processi è soggetta a frammentazione esterna",
+        "answer": "La risposta corretta è: Vero",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": true
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "vero",
+        "imageRef": "Immagine 2025-06-18 114035.png"
+      },
+      {
+        "number": 4,
+        "text": "Attesa circolare è una condizione sufficiente al deadlock",
+        "answer": "La risposta corretta è: Falso",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": false
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswer": "falso",
+        "imageRef": "Immagine 2025-06-18 114035.png"
+      },
+      {
+        "number": 5,
+        "text": "Possesso e attesa è una condizione necessaria al deadlock",
+        "answer": "La risposta corretta è: Vero",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": true
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "vero",
+        "imageRef": "Immagine 2025-06-18 114052.png"
+      },
+      {
+        "number": 6,
+        "text": "I sistemi RAID rendono l'elaboratore più robusto rispetto a guasti inerenti la memoria",
+        "answer": "La risposta corretta è: Vero",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": true
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "vero",
+        "imageRef": "Immagine 2025-06-18 114052.png"
+      },
+      {
+        "number": 7,
+        "text": "Per CPU burst si intende un periodo di utilizzo ininterrotto della CPU da parte di un processo",
+        "answer": "La risposta corretta è: Vero",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": true
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "vero",
+        "imageRef": "Immagine 2025-06-18 114108.png"
+      },
+      {
+        "number": 8,
+        "text": "Indica se le seguenti affermazioni inerenti la memoria virtuale sono vere o false (vedi immagine)",
+        "answer": "Risposte corrette: V-V-V-F-F (1. La memoria virtuale richiede la presenza di un algoritmo di sostituzione delle pagine, 2. La paginazione è alla base della memoria virtuale, 3. il numero di frame assegnati a ciascun processo dipende anche dall'architettura, 4. la memoria virtuale è impedita dalla rilocabilità, 5. la memoria virtuale richiede una gestione esplicita da parte dei programmatori dei sistemi che ne faranno uso)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "imageRef": "Immagine 2025-06-18 114108.png",
+        "correctAnswers": [
+          "V",
+          "V",
+          "V",
+          "F",
+          "F"
+        ]
+      },
+      {
+        "number": 9,
+        "text": "Si associ a ciascuna affermazione (vedi immagine)",
+        "answer": "Risposte corrette: F-V-F-V-V (1. i file system strutturati ad albero non fanno uso di link, 2. la cancellazione di un link simbolico ha un effetto diverso dalla cancellazione di un link fisico, 3. in un file system gerarchico ogni nodo ha un solo PATH relativo, 4. in un file system gerarchico ogni nodo ha un solo PATH assoluto, 5. i file system a grafo aciclico fanno uso di link)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "imageRef": "Immagine 2025-06-18 114123.png",
+        "correctAnswers": [
+          "F",
+          "V",
+          "F",
+          "V",
+          "V"
+        ]
+      },
+      {
+        "number": 10,
+        "text": "Supponiamo che in un sistema in cui la pagina vittima è scelta con algoritmo di seconda chance, la lista delle pagine caricate (e relativi bit di riferimento) sia la seguente: p1 (1) → p2 (1) → p3 (0) → p4 (0) → p5 (1). Supponendo di partire da p1, quali sono la configurazione della lista e la vittima identificata, dopo la passata dell'algoritmo?",
+        "answer": "Risposta corretta: p1 (0) → p2 (0) → p3 (VITTIMA) → p4 (0) → p5 (1)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "imageRef": "Immagine 2025-06-18 114136.png"
+      },
+      {
+        "number": 11,
+        "text": "(1) riportare la definizione di deadlock, includendo l'elenco e le definizioni delle condizioni necessarie al suo verificarsi, (2) descrivere e spiegare l'uso dei grafi di assegnazione delle risorse",
+        "answer": "Risposta completa richiesta (max 5.00 punti)",
+        "maxPoints": 5,
+        "negativePoints": 0,
+        "type": "essay",
+        "imageRef": "Immagine 2025-06-18 114157.png"
+      },
+      {
+        "number": 12,
+        "text": "(1) spiegare il dual mode e cosa si intende per system call, (2) dire cos'è e come viene usato il vettore delle interruzioni",
+        "answer": "Risposta completa richiesta (max 5.00 punti)",
+        "maxPoints": 5,
+        "negativePoints": 0,
+        "type": "essay",
+        "imageRef": "Immagine 2025-06-18 114213.png"
+      }
+    ]
+  },
+  {
+    "id": "so-b-17-06-2025",
+    "date": "2025.06.17",
+    "course": "B",
+    "title": "SO Corso B Appello 17/06/2025 - Teoria",
+    "topics": [
+      "generalita",
+      "processi-scheduling",
+      "sincronizzazione",
+      "memoria-primaria",
+      "file-system"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "in generale i semafori non soffrono di starvation",
+        "answer": "La risposta corretta è: Falso",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": false
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswer": "falso",
+        "imageRef": "domanda 1-2.png"
+      },
+      {
+        "number": 2,
+        "text": "Il round robin è particolarmente adatto ai sistemi che attribuiscono priorità diverse ai processi",
+        "answer": "La risposta corretta è: Falso",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": false
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswer": "falso",
+        "imageRef": "domanda 1-2.png"
+      },
+      {
+        "number": 3,
+        "text": "La separazione dello spazio degli indirizzi logico dallo spazio degli indirizzi fisico permette di implementare la rilocabilità del codice",
+        "answer": "La risposta corretta è: Vero",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": true
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "vero",
+        "imageRef": "domanda 3-4.png"
+      },
+      {
+        "number": 4,
+        "text": "La copiatura su scrittura è una strategia finalizzata a ridurre la quantità di frame di RAM allocata ai processi figli",
+        "answer": "La risposta corretta è: Vero",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": true
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "vero",
+        "imageRef": "domanda 3-4.png"
+      },
+      {
+        "number": 5,
+        "text": "Per CPU burst si intende un periodo di utilizzo ininterrotto della CPU da parte di un processo",
+        "answer": "La risposta corretta è: Vero",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": true
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "vero",
+        "imageRef": "domanda 5-6.png"
+      },
+      {
+        "number": 6,
+        "text": "Una delle strategie di Havender consiste nell'inibire la mutua esclusione nell'accesso alle risorse",
+        "answer": "La risposta corretta è: Falso",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": false
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswer": "falso",
+        "imageRef": "domanda 5-6.png"
+      },
+      {
+        "number": 7,
+        "text": "I meccanismi adottati dai sistemi operativi per allocare memoria ai processi kernel è identico a quello adottato per i processi utente",
+        "answer": "La risposta corretta è: Falso",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "true-false",
+        "options": [
+          {
+            "id": "vero",
+            "text": "Vero",
+            "isCorrect": false
+          },
+          {
+            "id": "falso",
+            "text": "Falso",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswer": "falso",
+        "imageRef": "domanda 7-8.png"
+      },
+      {
+        "number": 8,
+        "text": "Indica se le seguenti affermazioni inerenti la memoria virtuale sono vere o false (vedi immagine)",
+        "answer": "Risposte corrette: V-F-V-F-V (1. La paginazione è alla base della memoria virtuale, 2. La memoria virtuale è impedita dalla rilocabilità, 3. La memoria virtuale richiede la presenza di un algoritmo di sostituzione delle pagine, 4. la memoria virtuale richiede una gestione esplicita da parte dei programmatori dei sistemi che ne faranno uso, 5. il numero di frame assegnati a ciascun processo dipende anche dall'architettura)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "imageRef": "domanda 7-8.png",
+        "correctAnswers": [
+          "V",
+          "F",
+          "V",
+          "F",
+          "V"
+        ]
+      },
+      {
+        "number": 9,
+        "text": "Si associ a ciascuna affermazione (vedi immagine)",
+        "answer": "Risposte corrette: V-F-V-V-V (1. i file system strutturati ad albero non fanno uso di link, 2. in un file system gerarchico ogni nodo ha un solo PATH relativo, 3. la cancellazione di un link simbolico ha un effetto diverso dalla cancellazione di un link fisico, 4. in un file system gerarchico ogni nodo ha un solo PATH assoluto, 5. i file system a grafo aciclico fanno uso di link)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "imageRef": "domanda 9.png",
+        "correctAnswers": [
+          "V",
+          "F",
+          "V",
+          "V",
+          "V"
+        ]
+      },
+      {
+        "number": 10,
+        "text": "Supponiamo che in un sistema in cui la pagina vittima è scelta con algoritmo di seconda chance, la lista delle pagine caricate (e relativi bit di riferimento) sia la seguente: p1 (1) → p2 (1) → p3 (0) → p4 (0) → p5 (1). Supponendo di partire da p1, quali sono la configurazione della lista e la vittima identificata, dopo la passata dell'algoritmo?",
+        "answer": "Risposta corretta: p1 (0) → p2 (0) → p3 (VITTIMA) → p4 (0) → p5 (1)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "imageRef": "domanda 10.png"
+      },
+      {
+        "number": 11,
+        "text": "(1) riportare la definizione di deadlock, includendo l'elenco e le definizioni delle condizioni necessarie al suo verificarsi, (2) descrivere e spiegare l'uso dei grafi di assegnazione delle risorse",
+        "answer": "Risposta completa richiesta (max 5.00 punti)",
+        "maxPoints": 5,
+        "negativePoints": 0,
+        "type": "essay",
+        "imageRef": "domanda 11.png"
+      },
+      {
+        "number": 12,
+        "text": "(1) spiegare il dual mode e cosa si intende per system call, (2) dire cos'è e come viene usato il vettore delle interruzioni",
+        "answer": "Risposta completa richiesta (max 5.00 punti)",
+        "maxPoints": 5,
+        "negativePoints": 0,
+        "type": "essay",
+        "imageRef": "domanda 12.png"
+      }
+    ]
+  },
+  {
     "id": "teoria-sample-001",
     "date": "2025.01.XX",
     "course": "A",
@@ -672,6 +1128,503 @@
     "topics": [
       "memoria-primaria",
       "file-system"
+    ]
+  },
+  {
+    "id": "domande-aperte-corso-b",
+    "date": "2024.00.00",
+    "course": "B",
+    "title": "Domande Aperte Corso B - Teoria SO (13 Domande Essay)",
+    "topics": [
+      "generalita",
+      "processi-scheduling",
+      "sincronizzazione",
+      "memoria-primaria",
+      "file-system"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "I \"grafi di allocazione delle risorse\" sono strumenti di rilevazione o di prevenzione del deadlock? In quale modo possono essere usati a questo scopo? Vi sono eventuali vincoli?",
+        "answer": "I grafi di allocazione delle risorse sono strumenti di rilevazione del deadlock.\n\nI grafi permettono di rappresentare graficamente le assegnazioni delle risorse ai processi. Se il grafo non contiene cicli, non c'è deadlock. Se il grafo contiene un ciclo con risorse aventi tutte una sola istanza, c'è deadlock. Se il ciclo comprende risorse con più istanze, il ciclo è condizione necessaria ma non sufficiente.\n\nL'uso dei grafi come strumento di rilevazione non prevede vincoli particolari.",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "sincronizzazione",
+          "deadlock"
+        ]
+      },
+      {
+        "number": 2,
+        "text": "(1) Si spieghi per quale motivo i metodi di allocazione della RAM per i processi kernel devono essere diversi da quelli per i processi utente e (2) si illustri il metodo di allocazione noto come sistema buddy.",
+        "answer": "(1) I metodi di allocazione RAM per i processi kernel devono essere diversi per due motivi principali:\n- Strutture dati variabili: I processi kernel gestiscono strutture dati che cambiano dimensione (liste, code)\n- Memoria contigua: Alcuni processi kernel, specialmente quelli che lavorano con l'hardware, necessitano di memoria contigua per operazioni I/O\n\n(2) Il sistema buddy:\n- Suddivide la memoria in blocchi di dimensione pari a potenze di 2\n- Cerca il blocco più piccolo sufficiente per la richiesta\n- Se il blocco è troppo grande, lo divide in due blocchi \"buddy\" di dimensione pari alla metà\n- Quando un blocco viene liberato, verifica se il suo \"buddy\" è libero e li fonde insieme\n- Vantaggi: semplice da implementare, riduce frammentazione esterna\n- Svantaggi: può causare frammentazione interna significativa",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "memoria-primaria",
+          "kernel"
+        ]
+      },
+      {
+        "number": 3,
+        "text": "(1) Spiegare il dual mode e cosa si intende per system call, (2) dire cos'è e come viene usato il vettore delle interruzioni.",
+        "answer": "(1) Dual mode e system call:\nIl dual mode prevede la divisione dell'instruction set in:\n- Istruzioni privilegiate (eseguibili solo dal SO in modalità kernel)\n- Istruzioni non privilegiate (eseguibili in modalità utente)\nSi basa su un bit di modalità (0=kernel, 1=utente).\n\nLe system call sono meccanismi che permettono ai processi utente di richiedere al SO di eseguire operazioni privilegiate. Durante una system call: il processo invia una trap, il SO passa in modalità kernel, esegue l'operazione, ritorna in modalità utente.\n\n(2) Vettore delle interruzioni:\nÈ una tabella contenente gli indirizzi degli handler degli interrupt. Quando si verifica un'interruzione:\n- L'hardware genera un segnale con l'ID dell'interruzione\n- La CPU usa l'ID come indice nel vettore per ottenere l'indirizzo dell'handler\n- Salva lo stato corrente ed esegue l'handler",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "generalita",
+          "system-call",
+          "interruzioni"
+        ]
+      },
+      {
+        "number": 4,
+        "text": "(1) Spiegare cosa si intende per parallelismo virtuale, compresi quali fondamenti rendano possibile tale meccanismo. (2) Cos'è e come viene gestito dal SO un context switch.",
+        "answer": "(1) Parallelismo virtuale:\nÈ un meccanismo che consente di eseguire più processi \"contemporaneamente\" su un singolo processore, dando l'illusione di esecuzione parallela. Il processore esegue solo un processo alla volta, ma la commutazione è così rapida da creare l'impressione di simultaneità.\n\nFondamenti che lo rendono possibile:\n- Multiprogrammazione: gestione di più processi contemporaneamente\n- Scheduling della CPU: algoritmo per decidere quale processo eseguire\n- Interruzioni: segnali per interrompere l'esecuzione e passare ad altro processo\n- Context Switch: meccanismo per salvare/caricare stato processi\n\n(2) Context switch:\nÈ il processo di salvataggio dello stato di un processo in esecuzione e caricamento dello stato di un altro processo. È gestito dal SO ed è un'operazione costosa. Si verifica durante interruzioni hardware o system call.",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "processi-scheduling",
+          "context-switch"
+        ]
+      },
+      {
+        "number": 5,
+        "text": "(1) Si spieghi che cos'è e a che cosa serve una tabella delle pagine. (2) Si spieghi perché il suo mantenimento in RAM rallenta l'esecuzione.",
+        "answer": "(1) Tabella delle pagine:\nÈ una struttura dati per gestire la memoria virtuale, che funge da mappa per tradurre indirizzi logici in indirizzi fisici. Ogni processo ha la propria tabella memorizzata in RAM, contenente una entry per ogni pagina. Ogni entry contiene:\n- Numero di frame corrispondente\n- Bit di validità\n- Dirty bit\n- Bit di protezione\n\nConsente di: mappare indirizzi logici su fisici, implementare demand paging, proteggere la memoria, condividere pagine tra processi.\n\n(2) Rallentamento esecuzione:\nMantenere la tabella in RAM rallenta perché per ogni accesso alla memoria servono DUE accessi alla RAM:\n1. Accesso alla tabella delle pagine per trovare l'entry\n2. Accesso all'indirizzo fisico ottenuto\n\nPer mitigare il problema si usa il TLB (Translation Look-aside Buffer), una cache che memorizza le traduzioni più recenti.",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "memoria-primaria",
+          "paginazione",
+          "TLB"
+        ]
+      },
+      {
+        "number": 6,
+        "text": "(1) Si spieghi cos'è test-and-set e (2) si spieghi come controllare una sezione critica tramite test-and-set.",
+        "answer": "(1) Test-and-set:\nÈ un'istruzione atomica fornita dall'hardware per la sincronizzazione dei processi. Prende come parametro un puntatore ad una variabile booleana e svolge atomicamente:\n1. Salva il valore originale della variabile\n2. Imposta la variabile a true\n3. Restituisce il valore originale\n\n(2) Controllo sezione critica:\nSi usa una variabile booleana globale \"lock\" inizializzata a false.\n\nCodice:\nwhile (TestAndSet(&lock)); // Sezione di ingresso\n<sezione critica>\nlock = false;             // Sezione di uscita\n\nSe lock è true, un altro processo è nella sezione critica, quindi si aspetta nel while. Quando lock diventa false, il processo entra e imposta lock a true. L'atomicità garantisce che solo un processo alla volta ottenga il lock.",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "sincronizzazione",
+          "sezione-critica",
+          "test-and-set"
+        ]
+      },
+      {
+        "number": 7,
+        "text": "(1) Si spieghi che cos'è una system call (2) si spieghi cosa permettono di fare e si faccia un esempio di system call",
+        "answer": "(1) System call:\nÈ un meccanismo che consente ai processi in modalità utente di richiedere servizi al sistema operativo che opera in modalità kernel. È un'interfaccia tra programmi utente e SO per eseguire operazioni che richiedono privilegi speciali.\n\n(2) Cosa permettono di fare:\n- Controllo dei Processi: creare, terminare, sospendere processi\n- Gestione dei File: creare, aprire, leggere, scrivere, cancellare file\n- Gestione dei Dispositivi: richiedere/rilasciare dispositivi, leggere/scrivere\n- Gestione delle Informazioni: ottenere info sul sistema\n- Comunicazione: inviare/ricevere messaggi tra processi\n\nEsempio: open() in Unix apre un file e restituisce un file descriptor che può essere usato da altre system call come read() e write().",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "generalita",
+          "system-call"
+        ]
+      },
+      {
+        "number": 8,
+        "text": "1) Spiegare in cosa consiste il problema della sezione critica. 2) Elencare e definire le tre proprietà di una buona soluzione al problema della sezione critica",
+        "answer": "1) Problema della sezione critica:\nRiguarda la gestione di dati condivisi in un sistema concorrente. Una sezione critica è una porzione di codice in cui un processo modifica variabili condivise. Solo un processo alla volta può essere nella sua sezione critica (mutua esclusione), altrimenti si verificano inconsistenze.\n\n2) Tre proprietà di una buona soluzione:\n- Mutua esclusione: Solo un processo alla volta può eseguire la propria sezione critica\n- Progresso: Nessun processo che non sia interessato alla sezione critica può bloccare altri processi dall'accedervi. Solo i processi interessati concorrono a determinare chi entrerà\n- Attesa limitata: Esiste un limite superiore al tempo di attesa per un processo che desidera entrare in sezione critica",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "sincronizzazione",
+          "sezione-critica"
+        ]
+      },
+      {
+        "number": 9,
+        "text": "(1) Spiegare cos'è il vettore delle interruzione e come viene usato per gestire gli eventi. (2) Spiegare in quali circostanze occorre un page fault",
+        "answer": "(1) Vettore delle interruzioni:\nÈ un array di puntatori a funzioni di gestione eventi. Ogni evento ha un ID univoco corrispondente all'indice del vettore. Funzionamento:\n- Dispositivo/programma genera interruzione\n- CPU salva stato e identifica ID interruzione\n- ID usato come indice nel vettore per trovare routine di gestione\n- CPU esegue routine di gestione\n- Ripristina stato e riprende esecuzione\n\n(2) Page fault:\nSi verifica quando un processo cerca di accedere ad una pagina di memoria virtuale non presente in RAM. Circostanze:\n- Pagina non caricata: mai stata caricata in RAM\n- Pagina in memoria secondaria: caricata in precedenza ma sostituita\n- Accesso non valido: accesso a pagina non assegnata o senza permessi\n\nIl SO interrompe il processo e gestisce il page fault caricando la pagina richiesta. Se non c'è spazio, trova una pagina vittima da spostare in memoria secondaria (algoritmi: Second Chance, LRU).",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "generalita",
+          "interruzioni",
+          "memoria-primaria",
+          "page-fault"
+        ]
+      },
+      {
+        "number": 10,
+        "text": "(1) Spiegare cosa sono e dove sono memorizzati gli INODE e (2) spiegare l'allocazione concatenata dei blocchi ai file.",
+        "answer": "(1) INODE (Index Node o FCB):\nSono strutture dati fondamentali nei file system che memorizzano i metadati di un file (eccetto nome e dati). Contenuto tipico:\n- User ID proprietario\n- Tipo file (regolare, directory, link, device)\n- Diritti di accesso\n- Tempi di accesso/modifica\n- Numero di link\n- Dimensione file\n- Puntatori ai blocchi dati\n\nQuando un file è aperto, il suo FCB viene aggiunto alla lista dei file aperti. Se in uso da un processo, l'INODE viene caricato in RAM come \"in-core inode\". Si usa l'algoritmo namei per risalire all'INODE tramite path.\n\n(2) Allocazione concatenata:\nI file sono allocati in blocchi collegati come catena. Ogni blocco contiene dati e puntatore al blocco successivo. L'INODE contiene puntatore al primo blocco.\n\nVantaggi: blocchi non contigui, aggiunta blocchi rapida, niente frammentazione esterna\nSvantaggi: lettura lenta (scorrere tutta catena), puntatore danneggiato rende file illeggibile",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "file-system",
+          "INODE",
+          "allocazione-file"
+        ]
+      },
+      {
+        "number": 11,
+        "text": "(1) Elencare e definire le tre proprietà di una buona soluzione al problema della sezione critica; (2) Con riferimento al seguente codice (dove S è un semaforo inizializzato a 2) dire e spiegare se soddisfa tali proprietà: P(S) ... Sezione Critica ... V(S)",
+        "answer": "(1) Tre proprietà:\n- Mutua Esclusione: Solo un processo alla volta può accedere alla sezione critica\n- Progresso: Se nessun processo è nella sezione critica, un processo che desidera entrarvi deve poterlo fare senza blocco indefinito\n- Attesa Limitata: Esiste un limite massimo al tempo di attesa prima di accedere alla sezione critica\n\n(2) Analisi codice con S=2:\nAssunzioni: P(S) e V(S) sono atomiche e implementate correttamente.\n\nSoddisfazione proprietà:\n- Mutua Esclusione: NON soddisfatta. S=2 significa che DUE processi possono entrare contemporaneamente nella sezione critica. Per mutua esclusione serve S=1.\n- Progresso: Soddisfatta. Se nessun processo è nella sezione critica (S=2), un processo che esegue P(S) può accedere.\n- Attesa Limitata: Soddisfatta. L'attesa è limitata dal numero di processi che possono accedere (2 in questo caso).",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "sincronizzazione",
+          "sezione-critica",
+          "semafori"
+        ]
+      },
+      {
+        "number": 12,
+        "text": "(1) Spiegare cosa si intende per \"interleaving delle istruzioni\". (2) Spiegare come tale meccanismo supporta la realizzazione del multi-tasking",
+        "answer": "(1) Interleaving delle istruzioni:\nÈ l'interfogliamento delle istruzioni, ovvero la capacità del SO di eseguire in modo interleaved le istruzioni di diversi processi, creando l'illusione di esecuzione contemporanea. Su un singolo processore solo un'istruzione alla volta può essere eseguita, ma il SO sospende/riprende processi molto rapidamente.\n\n(2) Supporto al multi-tasking:\nL'interleaving è un meccanismo chiave per il multi-tasking:\n- Il SO può sospendere un processo e passare a un altro molto rapidamente\n- Usa il context switch per salvare lo stato del processo corrente e caricare quello di un altro\n- Crea l'impressione di esecuzione parallela dei processi\n- Migliora l'efficienza complessiva del sistema\n- Consente gestione concorrente di più processi",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "processi-scheduling",
+          "multi-tasking",
+          "interleaving"
+        ]
+      },
+      {
+        "number": 13,
+        "text": "(1) Si spieghi l'allocazione della RAM a partizioni contigue e (2) se ne spieghino vantaggi e svantaggi",
+        "answer": "(1) Allocazione contigua RAM:\nMetodo dove ogni processo viene caricato in un'unica sezione di memoria contigua. La RAM è divisa in due parti: SO e processi utente. Il meccanismo è \"a partizioni multiple\". Quando un processo deve essere caricato, il SO cerca una porzione libera sufficientemente grande.\n\nCriteri di scelta:\n- Best-fit: la porzione più piccola tra quelle sufficienti\n- First-fit: la prima porzione sufficiente trovata\n- Worst-fit: la porzione più grande tra quelle libere\n\n(2) Vantaggi e svantaggi:\nVantaggi:\n- Semplicità di implementazione e gestione\n- Efficienza: accesso veloce alla memoria (dati contigui)\n\nSvantaggi:\n- Frammentazione esterna: memoria frammentata in piccoli buchi inutilizzabili\n- Limitata flessibilità: dimensione processo limitata dal buco più grande disponibile\n- Compattazione: necessaria per ridurre frammentazione, operazione costosa\n\nDistinzione frammentazione:\n- Esterna: parti libere non contigue, inutilizzabili per processi che richiedono spazio contiguo\n- Interna: parti molto piccole praticamente inutilizzabili",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "essay",
+        "topics": [
+          "memoria-primaria",
+          "allocazione-memoria",
+          "frammentazione"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esame-uuid-misto-domande-varie",
+    "date": "2024.00.00",
+    "course": "Mixed",
+    "title": "Domande Varie - Mix Argomenti (10 domande + template per 40)",
+    "topics": [
+      "generalita",
+      "processi-scheduling",
+      "sincronizzazione",
+      "memoria-primaria",
+      "memoria-massa",
+      "file-system"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "Nello Unix, quale/quali dei seguenti comandi modifica il valore del link counter dell'index-node associato al file cartella X? (si assuma di avere i permessi per eseguire tutti i comandi e di essere posizionati dentro a X)",
+        "answer": "La risposta corretta è: il comando 3) mkdir Z",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "il comando 1) ln X Y",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "i comandi 2) ln -s X W e 4) ls -l . Y",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "il comando 3) mkdir Z",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "i comandi 1) e 3)",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c",
+        "imageRef": "01adf582-af9e-445f-a475-257aeddc19df.jpg"
+      },
+      {
+        "number": 2,
+        "text": "Si consideri un sistema con TLB, in cui ciascun accesso alla RAM richiede 200 unità di tempo, l'hit ratio è 90% e ciascun accesso al TLB richiede 10 unità di tempo. Dire se i seguenti valori sono veri o falsi",
+        "answer": "Parzialmente corretta. Punteggio ottenuto 1.60/2.00",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "statements": [
+          {
+            "text": "in caso di TLB miss l'accesso al dato richiede 210 unità di tempo",
+            "isCorrect": false
+          },
+          {
+            "text": "in caso di TLB hit l'accesso al dato richiede 210 unità di tempo",
+            "isCorrect": true
+          },
+          {
+            "text": "il TLB miss è pari al 5%",
+            "isCorrect": false
+          },
+          {
+            "text": "in caso di TLB miss l'accesso al dato richiede 410 unità di tempo",
+            "isCorrect": false
+          },
+          {
+            "text": "in caso di TLB hit l'accesso al dato richiede 420 unità di tempo",
+            "isCorrect": true
+          }
+        ],
+        "imageRef": "021d8651-e6da-42e0-8443-50af80bc1ba2.jpg"
+      },
+      {
+        "number": 3,
+        "text": "Confrontando le librerie statiche e quelle dinamiche possiamo dire che:",
+        "answer": "Risposta non ancora data",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché al contrario di quelle statiche possono essere usate con la memoria virtuale, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e perché quelle statiche possono essere usate solo col codice dinamicamente rilocabile",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e al contrario di quelle statiche possono essere usate col codice dinamicamente rilocabile",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c",
+        "imageRef": "10ef6b5b-b45f-45ef-85cf-262b6c798d46.jpg"
+      },
+      {
+        "number": 4,
+        "text": "In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante. Quali sono il waiting time e il turnaround time medi ottenuti per lo scheduling dei quattro processi della tabella se si usa l'algoritmo di scheduling non preemptive che fornisce le migliori previsioni possibili? Qual è il corrispondente diagramma di GANTT?",
+        "answer": "Risposta non ancora data",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "Diagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pd ... (7) ... Pb ... (10). Waiting time medio = 7/4. Turnaround time medio = 17/4",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "Diagramma di GANTT: (0) ... Pa ... (4) ... Pb ... (7) ... Pc ... (9) ... Pd ... (10). Waiting time medio = 7/4. Turnaround time medio = 17/4",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "Diagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pd ... (7) ... Pb ... (10). Waiting time medio = 2/4. Turnaround time medio = 18/4",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "Diagramma di GANTT: (0) ... Pa ... (4) ... Pd ... (5) ... Pc ... (7) ... Pb ... (10). Waiting time medio = 7/4. Turnaround time medio = 18/4",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "a",
+        "imageRef": "11662c51-07bd-45f3-a64c-703a89e78f14.jpg"
+      },
+      {
+        "number": 5,
+        "text": "Di un sistema paginato si sa che lo spazio di indirizzamento logico è grande 1 Gigabyte, e un frame è grande 0x800 byte. Si sa inoltre che la PT più grande del sistema occupa 1 Megabyte. Quanto può essere grande al massimo, lo spazio di indirizzamento fisico del sistema?",
+        "answer": "Risposta errata selezionata",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "La PT più grande del sistema contiene 2^19 entry, e viene usato 1 byte per scrivere il numero di un frame. Dunque lo spazio fisico può essere grande al massimo 128 Megabyte",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "La PT più grande del sistema contiene 2^26 entry, e vengono usati 4 byte per scrivere il numero di un frame. Dunque lo spazio fisico può essere grande al massimo 256 Megabyte",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "La PT più grande del sistema contiene 2^19 entry, e vengono usati 2 byte per scrivere il numero di un frame. Dunque lo spazio fisico può essere grande al massimo 128 Megabyte",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "La PT più grande del sistema contiene 2^18 entry, e vengono usati 2 byte per scrivere il numero di un frame. Dunque lo spazio fisico può essere grande al massimo 256 Megabyte",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b",
+        "imageRef": "13732e96-d264-4a78-b451-fa3da2c0a70a.jpg"
+      },
+      {
+        "number": 6,
+        "text": "Un sistema ha un tempo di accesso in RAM di 80 ns, adotta un TLB con un tempo di accesso di 20 ns e un hit rate del 95%, e usa un algoritmo di rimpiazzamento delle pagine. Quando si verifica un hit la pagina indirizzata è sicuramente in RAM. Quando si verifica un miss, nel 20% dei casi la pagina indirizzata non è in RAM e il page fault ha un costo totale di gestione di 1 microsecondo, indipendentemente dal valore del dirty bit. Qual è l'effective access time (eat) del sistema? (per semplicità in caso di miss si ignori il costo di interrogazione del TLB, e in caso di page fault si consideri solo il tempo di gestione del page fault)",
+        "answer": "Risposta non ancora data",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "eat = 116,4 ns",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "eat = 111,4 ns",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "eat = 121,4 ns",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "eat = 126,4 ns",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "d",
+        "imageRef": "1902c104-7d38-4ed6-a2b7-ad2c556852f5.jpg"
+      },
+      {
+        "number": 7,
+        "text": "Completare il seguente codice in cui viene cercato l'elemento minimo di un array. Completare il codice avendo l'accortezza di non inserire spazi bianchi non necessari.",
+        "answer": "Tempo stimato: 4 min (esercizio corretto), 3 min (prossimi esercizi)",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "essay",
+        "imageRef": "1cab96b6-41ae-460a-81be-fbae43957f1e.jpg"
+      },
+      {
+        "number": 8,
+        "text": "Supponiamo che in un sistema in cui la pagina vittima è scelta con algoritmo di seconda chance migliorato, la lista delle pagine caricate (e relativi bit di riferimento) sia la seguente: p1 (1) → p2 (1) → p3 (0) → p4 (0) → p5 (1). Supponendo di partire da p1, quali sono la configurazione della lista e la vittima identificata, dopo la passata dell'algoritmo?",
+        "answer": "Algoritmo seconda chance - pagina replacement",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "p1 (VITTIMA) → p2 (0) → p3 (0) → p4 (0) → p5 (0)",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "p1 (0) → p2 (0) → p3 (0) → p4 (0) → p5 (VITTIMA)",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "p1 (0) → p2 (0) → p3 (VITTIMA) → p4 (0) → p5 (1)",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "p1 (1) → p2 (1) → p3 (VITTIMA) → p4 (0) → p5 (1)",
+            "isCorrect": false
+          },
+          {
+            "id": "e",
+            "text": "p1 (VITTIMA) → p2 (1) → p3 (0) → p4 (0) → p5 (1)",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c",
+        "imageRef": "26fc8f2f-59e7-4b1f-96f3-abcb63bf61d7.jpg"
+      },
+      {
+        "number": 9,
+        "text": "In un sistema operativo un indirizzo fisico è scritto su 28 bit, l'offset più grande in una pagina è 3FFF, lo spazio logico è il doppio di quello fisico, e nel sistema possono essere presenti al massimo 1024 processi. Se il sistema adottasse una Inverted Page Table, quanto sarebbe grande questa tabella? (selezionare l'opzione di risposta che riporta il ragionamento aritmetico e il risultato corretti)",
+        "answer": "Risposta corretta. Inverted Page Table calculation",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ogni entry della IPT è grande 25 bit, arrotondati a 4 byte, e dunque la IPT sarà grande 4 * 2^14 = 64 Kbyte (circa)",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Ogni entry della IPT è grande 24 bit, ossia 3 byte, e dunque la IPT sarà grande 3 * 2^15 = 96 Kbyte (circa)",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "Ogni entry della IPT è grande 25 bit, arrotondati a 4 byte, e dunque la IPT sarà grande 4 * 2^15 = 128 Kbyte (circa)",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "Ogni entry della IPT è grande 24 bit, ossia 3 byte, e dunque la IPT sarà grande 3 * 2^14 = 48 Kbyte (circa)",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "a",
+        "imageRef": "3395c851-c25e-43cf-a9ea-ee6c624da2f6.jpg"
+      },
+      {
+        "number": 10,
+        "text": "In quale caso l'accesso in lettura ad un file memorizzato su un sistema RAID è più veloce che se il file fosse memorizzato su un normale hard disk?",
+        "answer": "Risposta salvata",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "sempre, dato che i sistemi RAID sono stati pensati proprio per fornire maggiore velocità di accesso ai file (oltre che maggiore affidabilità)",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "quando il file è memorizzato su due o più blocchi appartenenti a strip contenuti su dischi diversi del RAID",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "quando il file è memorizzato su uno più blocchi appartenenti a strip contenuti sullo stesso disco del RAID",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "quando il RAID usato è di tipo 01/10, poiché in questo caso si possono sfruttare i dischi di mirroring",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c",
+        "imageRef": "368d187d-dae2-4cdc-8e6b-ec037d3f4332.jpg"
+      }
     ]
   },
   {

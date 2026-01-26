@@ -1,0 +1,1038 @@
+                             
+
+
+
+
+
+
+
+
+
+
+
+Il time-sharing si basa sul concetto di multitasking, ovvero la capacità del sistema operativo di gestire più processi (task) contemporaneamente. La CPU viene assegnata a ciascun processo per un breve periodo di tempo, detto quanto di tempo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+L'attesa circolare è una delle quattro condizioni necessarie per il verificarsi del deadlock, una situazione in cui un gruppo di processi è bloccato in uno stato di attesa permanente, in quanto ogni processo attende una risorsa che è detenuta da un altro processo del gruppo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Vedi domande successive per la spiegazione dei 3 tipi di bit
+
+
+
+
+
+
+
+
+
+La memoria virtuale è una tecnica di gestione della memoria che consente ai processi di utilizzare uno spazio di indirizzamento più grande della memoria fisica (RAM) effettivamente disponibile. In pratica, la memoria virtuale permette di "simulare" una RAM più grande di quella reale, consentendo l'esecuzione di programmi che richiederebbero una quantità di memoria fisica superiore a quella installata sul sistema.
+
+L'affermazione "la memoria virtuale è abilitata dall'assenza di rilocabilita'" è falsa. Al contrario, la rilocabilita' è un requisito fondamentale per l'implementazione della memoria virtuale.
+
+La rilocabilita' in un sistema di memoria virtuale si riferisce alla capacità di un processo di essere eseguito in diverse aree della memoria fisica senza che il suo codice debba essere modificato (e’ virtuale). Ciò è fondamentale per la flessibilità e l'efficienza della memoria virtuale.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Il protocollo basato su timestamp è un meccanismo di controllo della concorrenza che garantisce la serializzabilità delle transazioni, assicurando che l'esecuzione concorrente di più transazioni produca lo stesso risultato dell'esecuzione sequenziale delle stesse transazioni in un ordine qualsiasi.
+
+Il principio fondamentale del protocollo è l'assegnazione di un timestamp univoco a ogni transazione prima che inizi. Se due transazioni hanno timestamp TS(T1) < TS(T2), il sistema deve garantire che l'esecuzione delle loro istruzioni sia equivalente all'esecuzione sequenziale di T1 prima di T2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TLB hit (success):
+
+150 + 50 = 200,
+
+legge in RAM e al TLB
+
+TLB miss (fallimento)
+
+150 + 150 = 300,
+
+legge in RAM 2 volte e non al TLB.
+
+
+
+Tempo medio = 
+
+[ (150+50)*0,95 + (150+150)*0.05 ]
+
+
+
+Il thrashing è un fenomeno degenerativo che si può verificare nella gestione della memoria virtuale. Si manifesta quando un processo, o un insieme di processi, genera un numero eccessivo di page fault in un breve periodo di tempo, causando un continuo scambio di pagine tra la memoria principale (RAM) e la memoria secondaria (disco).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+L'attesa circolare è una delle quattro condizioni necessarie per il verificarsi del deadlock, una situazione in cui un gruppo di processi è bloccato in uno stato di attesa permanente, in quanto ogni processo attende una risorsa che è detenuta da un altro processo del gruppo.
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+Il vettore delle interruzioni non memorizza gli eventi occorsi, 
+
+ma bensì gli indirizzi delle routine di gestione (event handler) 
+
+associate a ciascun tipo di interruzione.
+
+
+
+ 
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      
+
+
+
+
+
+
+
+
+
+Bit di validita’ 🡪 indica se la pagina e’ attualmente caricata in ram (se e’ 0 causa page fault, non e’ in ram)
+
+Bit di riferimento 🡪 indica se la pagina e’ stata acceduta di recente
+
+Dirty bit 🡪 capire se la pagina in questione ha un contenuto diverso da quello della sua copia in memoria secondaria
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sebbene OPT garantisca la frequenza di page fault più bassa e non soffra dell'anomalia di Belady, il suo criterio di selezione, ovvero sostituire la pagina che non verrà usata per il periodo di tempo più lungo, è impossibile da applicare in un sistema reale
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+l'occorrenza di un page fault richiede la presenza di un frame libero in RAM per poter caricare la pagina richiesta dalla memoria secondaria
+
+
+
+
+
+
+
+
+
+Il metodo di copiatura su scrittura (Copy-On-Write, COW) è una tecnica di ottimizzazione utilizzata nei sistemi di memoria virtuale per ridurre il sovraccarico di duplicazione delle pagine durante operazioni come la creazione di processi figli (fork) o il caricamento di nuovi programmi (exec).
+
+La tecnica di copiatura su scrittura (COW) serve proprio a questo: permettere a processi che inizialmente condividono le stesse pagine di memoria, come un processo padre e un processo figlio creato tramite fork, di modificare le proprie copie private senza influenzare l'altro processo.
+
+
+
+
+
+I grafi di assegnazione senza archi di reclamo offrono una rappresentazione dello stato attuale del sistema, evidenziando le risorse già assegnate ai processi e le richieste di risorse ancora pendenti. 
+
+In questi grafi, i nodi rappresentano i processi e le risorse, mentre gli archi indicano le relazioni di assegnazione e richiesta. Un arco orientato da una risorsa a un processo indica che la risorsa è assegnata al processo, mentre un arco orientato da un processo a una risorsa significa che il processo sta richiedendo quella risorsa.
+
+L'analisi di questi grafi permette di rilevare la presenza di deadlock, ovvero situazioni in cui due o più processi si bloccano a vicenda in un'attesa circolare di risorse. Se nel grafo si individua un ciclo, significa che esiste un deadlock. Questo perché un ciclo implica che ciascun processo coinvolto nel ciclo sta attendendo una risorsa che è assegnata a un altro processo all'interno dello stesso ciclo, creando una situazione di stallo irreversibile
+
+I grafi di assegnazione con archi di reclamo, invece, sono uno strumento di prevenzione del deadlock. In aggiunta alle informazioni presenti nei grafi senza archi di reclamo, questi grafi includono gli archi di reclamo, che rappresentano le risorse che un processo potrebbe richiedere in futuro, ma che non ha ancora effettivamente richiesto. Questi archi permettono di anticipare potenziali situazioni di deadlock.
+
+L'algoritmo del banchiere, ad esempio, utilizza i grafi di assegnazione con archi di reclamo per valutare la sicurezza dello stato del sistema. Prima di assegnare una risorsa a un processo, l'algoritmo simula l'assegnazione e verifica se lo stato risultante sarebbe sicuro. Uno stato è considerato sicuro se esiste un ordine in cui tutti i processi possono completare la loro esecuzione senza incorrere in un deadlock. Se l'assegnazione della risorsa porterebbe a uno stato non sicuro, la richiesta viene negata, evitando così il rischio di deadlock.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+L'algoritmo di seconda chance è un algoritmo di sostituzione delle pagine che combina l'approccio FIFO (First-In, First-Out) con il concetto di bit di riferimento.
+
+Per ogni pagina, l'algoritmo controlla il bit di riferimento:
+
+Se il bit è 0: La pagina non è stata usata di recente e viene scelta come vittima.
+
+Se il bit è 1: La pagina è stata usata di recente. Il suo bit di riferimento viene impostato a 0 e la ricerca continua nella coda.
+
+
+
+Possiamo dire che legge tutte le pagina resettando il bit fino a quando non incontra una con bit da 1 a 0, a questo punto questa pagina verra' scelta come vittima, quelle successive restano invariate.
+
+
+
+Se una pagina ha il bit di riferimento a 1, significa che è stata usata di recente. L'algoritmo di seconda chance, quando legge una pagina con bit a 1, setta il bit a 0 senza effettivamente sapere se la pagina è stata usata di recente o meno. Questo è un punto cruciale da comprendere: l'algoritmo di seconda chance non ha la capacità di tracciare esattamente l'ultimo accesso a una pagina.
+
+Il reset del bit a 0 è una scommessa che l'algoritmo fa. Scommette sul fatto che, se una pagina è stata usata di recente, è probabile che venga usata di nuovo presto. Quindi, invece di sostituirla immediatamente, le dà una "seconda chance" resettando il suo bit di riferimento e continuando a scorrere la coda.
+
+
+
+
+
+
+
+
+
+Vedi riferimento sotto.
+
+
+
+
+
+La memoria RAM può essere allocata in modo continuo (allocazione contigua), separando chiaramente la memoria del sistema operativo da quella degli utenti. Un'altra tecnica di allocazione è quella contigua a partizioni multiple, che può essere effettuata secondo tre criteri: best fit, first fit e worst fit. 
+
+Best-fit: Questo criterio sceglie la partizione libera più piccola tra quelle sufficientemente grandi per contenere l'immagine del processo. L'obiettivo è minimizzare lo spreco di memoria lasciando partizioni libere più grandi disponibili per altri processi. Tuttavia, il best-fit può portare a una frammentazione esterna significativa, creando molti piccoli frammenti di memoria libera inutilizzabili.
+
+First-fit: Questo criterio sceglie la prima partizione libera sufficientemente grande che si incontra scandendo la lista delle partizioni libere. È più semplice e veloce da implementare rispetto al best-fit, ma può portare a una maggiore frammentazione esterna nel lungo termine.
+
+Worst-fit: Questo criterio sceglie la partizione libera più grande tra quelle disponibili. L'idea è lasciare frammenti più grandi dopo l'allocazione, che potrebbero essere più utili per altri processi. Tuttavia, il worst-fit tende a produrre la peggiore frammentazione esterna in pratica
+
+Tuttavia, queste tecniche possono portare a due tipi di frammentazione: interna ed esterna. La frammentazione può essere risolta mediante il compattamento, che elimina i "buchi" nella memoria. Altre tecniche di gestione della memoria includono la paginazione e la segmentazione.
+
+La segmentazione è un modello di gestione della memoria che suddivide lo spazio di indirizzamento di un processo in segmenti di dimensione variabile. Ogni segmento rappresenta un'unità logica del programma, come il codice, i dati, lo stack o l'heap. A differenza della paginazione, dove la memoria è suddivisa in unità di dimensione fissa, la segmentazione riflette meglio la struttura logica del programma.
+
+La frammentazione della memoria si verifica quando lo spazio di memoria disponibile è suddiviso in parti più piccole, alcune delle quali potrebbero non essere utilizzabili. Esistono due tipi di frammentazione: interna ed esterna. 
+
+La frammentazione interna si verifica quando un processo riceve più memoria di quella effettivamente necessaria, lasciando spazio inutilizzato all'interno di un'unità allocata, come una pagina o un segmento. 
+
+La frammentazione esterna si verifica quando lo spazio di memoria libera è suddivisa in blocchi non contigui di dimensioni diverse, e nessuno di questi blocchi è abbastanza grande per soddisfare una richiesta di allocazione.
+
+L'allocazione contigua e l'allocazione a partizioni multiple soffrono di frammentazione. La paginazione elimina la frammentazione esterna, ma non quella interna, poiché all'interno di ogni pagina allocata a un processo, può esserci spazio inutilizzato. La segmentazione soffre degli stessi problemi dell'allocazione a partizioni multiple ed è soggetta a frammentazione sia interna che esterna. I modelli ibridi combinano paginazione e segmentazione, ereditando i problemi di frammentazione di entrambe le tecniche. Il sistema buddy, utilizzato per l'allocazione di memoria a blocchi di dimensione variabile, presenta un alto grado di frammentazione interna. L'allocazione a slab, invece, elimina completamente la frammentazione interna, poiché ogni slab è suddiviso in spazi adatti a contenere un certo tipo di oggetti, e gli oggetti sono allocati in toto o per nulla.
+
+I sistemi ibridi offrono un compromesso tra i vantaggi e gli svantaggi della paginazione e della segmentazione. Anche se non eliminano completamente la frammentazione, migliorano l'utilizzo della memoria, la flessibilità e la protezione, rendendoli una soluzione valida per molti sistemi operativi moderni.
+
+La frammentazione può presentarsi in diverse forme a seconda della tecnica di gestione della memoria utilizzata. La scelta del modello più adatto dipende dalle caratteristiche del sistema e dalle esigenze dei processi, considerando i vantaggi e svantaggi di ogni approccio in termini di frammentazione, complessità di gestione e prestazioni.
+
+La segmentazione è un modello di gestione della memoria molto valido, ma soffre di frammentazione esterna. Per ottenere un compromesso ottimale tra i vantaggi della segmentazione e la necessità di ridurre la frammentazione, alcune architetture, come il Pentium Intel, hanno adottato la tecnica della segmentazione paginata. In questo modello ibrido, i segmenti, che rappresentano le unità logiche del programma, vengono ulteriormente suddivisi in pagine di dimensione fissa. Questo permette di mantenere i benefici della segmentazione, come la rappresentazione intuitiva del programma e la flessibilità nell'allocazione della memoria, sfruttando al contempo i vantaggi della paginazione per eliminare la frammentazione esterna e semplificare la gestione della memoria libera.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Il compilatore produce indirizzi logici
+
+
+
+Vero, la memoria virtuale lo permette
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+La tecnica di copiatura su scrittura (Copy-On-Write) è utilizzata in sistemi con memoria virtuale per ottimizzare l'utilizzo della RAM.
+
+Con la copiatura su scrittura, il processo figlio inizialmente condivide le stesse pagine di memoria del padre. Le pagine sono marcate come sola lettura.
+
+Solo quando uno dei due processi tenta di modificare una pagina, quella pagina viene copiata in una nuova area di memoria, e la modifica viene applicata alla copia.
+
+Questo approccio evita la duplicazione non necessaria di pagine, soprattutto se il processo figlio, come spesso accade, utilizza la system call exec() per caricare un nuovo programma, sovrascrivendo completamente il codice ereditato dal padre.
+
+
+
+
+
+
+
+La rilocazione degli indirizzi è un meccanismo fondamentale nella gestione della memoria da parte dei sistemi operativi. Consiste nel trasformare gli indirizzi logici, prodotti dalla CPU durante l'esecuzione di un processo, in indirizzi fisici, che corrispondono alle posizioni effettive delle parole di memoria nella RAM.
+
+Allocazione slab non supporta la rilocazione.
+
+L'allocazione a slab è una tecnica che si basa sul concetto di slab, una sequenza di pagine fisicamente contigue, e di cache.
+
+Il sistema operativo mantiene una cache separata per ogni tipo di struttura dati utilizzata, ad esempio una cache per i semafori, una per i PCB (Process Control Block) e una per i descrittori di file. Ogni cache contiene un certo numero di istanze del tipo di dato associato, che possono essere nello stato libero o occupato
+
+Il sistema di allocazione a slab non supporta la rilocazione perché gli oggetti sono allocati in modo statico all'interno di slab predefinite. Le slab sono sequenze di pagine fisicamente contigue, e una volta che un oggetto viene allocato all'interno di una slab, la sua posizione non può essere modificata.
+
+L'allocazione a partizioni contigue supporta la rilocazione grazie all'uso di due registri speciali: il registro di rilocazione e il registro limite.
+
+Il registro di rilocazione contiene l'indirizzo fisico di inizio della partizione di memoria assegnata al processo. Il registro limite, invece, contiene la dimensione della partizione.
+
+I sistemi di allocazione slab e buddy, sebbene entrambi impiegati per gestire la memoria, si distinguono per la loro complessità e per il loro approccio alla frammentazione interna. Il sistema buddy adotta una strategia semplice, suddividendo la memoria in blocchi di dimensione pari a potenze di 2. Quando un processo richiede memoria, il sistema ricerca il blocco più piccolo in grado di soddisfare la richiesta. Se necessario, un blocco di dimensioni maggiori viene diviso in due "gemelli" di dimensione pari alla metà. Questo processo di divisione continua fino a quando non si trova un blocco della dimensione desiderata. Al rilascio di un blocco, il sistema verifica se il suo "gemello" è libero; in tal caso, i due blocchi vengono fusi in un unico blocco più grande. Questa semplicità, tuttavia, si traduce in un alto grado di frammentazione interna, dato che le richieste di memoria vengono arrotondate per eccesso alla potenza di 2 successiva.
+
+Al contrario, il sistema slab, introdotto da Solaris e successivamente implementato in Linux, si presenta come un meccanismo più sofisticato, mirato a minimizzare la frammentazione interna. Il suo funzionamento si basa sull'allocazione di gruppi di oggetti identici, denominati "cache", costituiti da uno o più "slab", ovvero blocchi di memoria contigui. Gli oggetti all'interno di ogni slab vengono allocati in modo contiguo. Quando un processo necessita di un nuovo oggetto, il sistema slab cerca una cache contenente oggetti del tipo desiderato. Se esiste una cache con oggetti liberi, l'oggetto viene allocato da quella cache; in caso contrario, viene creata una nuova cache. Al rilascio di un oggetto, questo viene semplicemente marcato come libero all'interno della sua cache. Questo approccio riduce la frammentazione interna, poiché gli oggetti vengono allocati e liberati all'interno di blocchi di memoria pre-allocati.
+
+
+
+
+
+Partendo da destra fai 3, 3, 1 quindi hai soo due pagine 1 e 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+L’accesso alla tabella delle pagine invertita e’ sequenziale
+
+L’accesso alla tabella delle pagine e’ diretto
+
+
+
+
+
+
+
+Il mirroring non raddoppia la quantità di dati memorizzabili. Sebbene il mirroring utilizzi due dischi fisici, esso offre la stessa capacità di un singolo disco, poiché i dati sono replicati su entrambi i dischi (Tipo di RAID).
+
+
+
+L'anomalia di Belady è un fenomeno che si verifica in alcuni algoritmi di sostituzione delle pagine nella gestione della memoria virtuale. Si osserva quando, aumentando il numero di frame disponibili in RAM, la frequenza di page fault aumenta invece di diminuire, come ci si aspetterebbe.
+
+Algoritmo che ne soffre: FIFO.
+
+
+
+
+
+
+
+Tempo medio = [ (150+50)*0,95 + (150+150)*0.05 ]
+
+
+
+Modello di Allocazione
+
+   Supporto all'Indirizzamento Discontiguo
+
+Segmentazione
+
+   Sì
+
+Paginazione
+
+   Sì
+
+Allocazione Contigua
+
+   No
+
+Partizioni Multiple
+
+   No
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+La segmentazione è un modello generale di gestione della memoria che può essere utilizzato sia per i processi utente che per i processi kernel, ma presenta alcune caratteristiche che la rendono meno adatta per l'allocazione della RAM al kernel.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Non meta’ ma 1/3 della ram inutilizzabile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Intendeva frammentazione interna ???
+
+
+
+
+
+Accesso a Indice: L'accesso a indice è un metodo che utilizza un file di indice separato per accedere rapidamente ai record all'interno di un file di dati. Il file di indice contiene coppie di chiavi e puntatori, dove:
+
+La chiave identifica univocamente un record nel file di dati.
+
+Il puntatore indica la posizione del record corrispondente nel file di dati.
+
+Mantenendo l'indice ordinato, si possono effettuare ricerche veloci senza dover scorrere l'intero file di dati. Questo metodo è particolarmente efficiente per i file di grandi dimensioni con un formato di record ben definito.
+
+Read Ahead: Il read ahead, o read behind, è una tecnica utilizzata per ottimizzare le prestazioni di lettura dei dischi. Quando il controller del disco riceve una richiesta di lettura per un blocco specifico, legge anche i blocchi successivi e li memorizza nella buffer cache.
+
+Journaling: Il journaling è un meccanismo che garantisce l'integrità del file system in caso di arresti anomali o interruzioni di corrente. Prima di scrivere i dati su disco, il file system registra le modifiche in un logfile separato, chiamato journal.
+
+Accesso Sequenziale: L'accesso sequenziale è il metodo più semplice per accedere ai file. I dati vengono letti o scritti in ordine sequenziale, a partire dall'inizio del file e procedendo fino alla fine. Il sistema operativo mantiene un puntatore alla posizione corrente nel file, che viene aggiornato dopo ogni operazione di lettura o scrittura. Questo metodo è efficiente per la lettura o scrittura di interi file, ma non è adatto per l'accesso casuale a specifici record.
+
+Accesso Diretto: L'accesso diretto, o accesso casuale, consente di leggere o scrivere dati in posizioni specifiche all'interno del file, senza dover scorrere i dati precedenti.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+P1 verso R1 fa una richiesta (arco di richiesta)
+
+(arco tratteggiato e’ l’arco di reclamo)
+
+Arco dall’interno di R1 verso P2 arco di assegnazione
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Non si puo’ calcolare
+
+Tempo medio di attesa = (Somma dei tempi di attesa di tutti i processi) / (Numero di processi)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Buffer gestito dinamicamente, viene raddoppiato quando e’ pieno.
+
+
+
+
+
+Il rendez-vous è un meccanismo di comunicazione tra processi che combina l'invio sincrono con la ricezione sincrona.
+
+In sostanza, entrambi i processi coinvolti, mittente e destinatario, si bloccano durante la comunicazione, finché il messaggio non viene effettivamente scambiato
+
+
+
+
+
+
+
+I lettori possono accedere contemporaneamente ai dati senza generare inconsistenze. Quindi, non è necessaria la mutua esclusione tra lettori
+
+Produttori e consumatori tutti i mutua esclusione in quanto consumano le risorse
+
+
+
+
+
+
+
+Il write ahead, chiamato anche write-through, è un meccanismo che incrementa l'efficienza delle operazioni di scrittura su file, soprattutto quando si utilizza una buffer cache.
+
+Normalmente, un'operazione di scrittura su file si conclude solo quando la modifica è stata effettivamente scritta su disco. Questo implica che il processo che ha richiesto la scrittura deve rimanere in stato di attesa (WAITING) fino al completamento dell'operazione di I/O.
+
+Con il write ahead, invece, l'operazione di scrittura è considerata terminata non appena il dato è stato aggiornato nella buffer cache in RAM.
+
+
+
+
+
+Scheduling del disco:
+
+LOOK
+
+C-LOOK
+
+C-SCAN
+
+SCAN
+
+
+
+SCAN e C-SCAN percorrono il disco in una direzione, servendo le richieste lungo il percorso. SCAN inverte la direzione quando raggiunge l'estremo del disco, mentre C-SCAN torna direttamente all'inizio senza servire richieste durante il ritorno.
+
+LOOK e C-LOOK sono varianti di SCAN e C-SCAN che si fermano quando non ci sono più richieste nella direzione corrente, evitando di raggiungere inutilmente gli estremi del disco.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Le transazioni concorrenti asincrone vengono gestite dal protocollo basato su timestamp.
+
+Gli interrupt servono a risolvere i problemi di sincronizzazione (soluzione hardware)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1) Priority scheduling - non preemptive scheduling: L'abbinamento è corretto in quanto lo scheduling a priorità può essere sia preemptive che non preemptive.
+
+Nello scheduling non preemptive (descritto nelle sorgenti come cooperativo) la CPU non viene mai tolta al processo running a meno che questo non termini o non passi in stato waiting.
+
+4) Multilevel queue scheduling - multilevel feedback queue scheduling: L'abbinamento è corretto. Entrambi gli algoritmi gestiscono la coda ready suddividendola in più code, ognuna delle quali può avere un proprio algoritmo di scheduling.
+
+5) L'algoritmo Round Robin (RR) utilizza una coda ready circolare gestita con algoritmo FIFO.
+
+
+
+
+
+La CPU genera gli indirizzi logici, la MMU li traduce in indirizzi fisici e la memoria virtuale, gestita dal SO, si occupa del mapping tra indirizzi logici e fisici.
+
+CPU (Central Processing Unit): Genera gli indirizzi logici o virtuali durante l'esecuzione dei programmi.
+
+MMU (Memory Management Unit): La MMU è un componente hardware che traduce gli indirizzi logici generati dalla CPU in indirizzi fisici. Questa traduzione avviene grazie a tabelle di pagina (sia tradizionali che invertite) mantenute dal sistema operativo.
+
+Memoria virtuale: Gestita dal sistema operativo, la memoria virtuale permette di utilizzare più memoria di quella fisicamente disponibile. Il sistema operativo utilizza la memoria virtuale per mappare indirizzi logici a indirizzi fisici, facendo uso delle tabelle di pagina per mantenere traccia di queste associazioni.
+
+
+
+
+
+Ha un suo stack ma risorse e spazio di indirizzamento sono condivisi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bitmap: è una struttura dati che rappresenta lo stato di una sequenza di elementi. Nel contesto del file system, il bitmap indica quali blocchi del disco sono liberi e quali sono occupati.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Il file system è responsabile anche della sicurezza dei dati, garantendo che solo gli utenti autorizzati possano accedere ai file e alle directory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Per aumentare l'efficienza complessiva dell'esecuzione, è necessario consentire un po' di interleaving delle istruzioni delle transazioni concorrenti, a patto che lo stato raggiunto sia uno degli stati leciti. L'esecuzione delle transazioni in mutua esclusione tramite un semaforo mutex, serializzandole, è una soluzione troppo rigida.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

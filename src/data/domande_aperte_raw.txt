@@ -1,0 +1,542 @@
+I "grafi di allocazione delle risorse" sono strumenti di rilevazione o di prevenzione del deadlock ? 
+
+In quale modo possono essere usati a questo scopo ? Vi sono eventuali vincoli ?
+
+I grafi di allocazione delle risorse sono strumenti di rilevazione del deadlock.
+
+I grafi di allocazione delle risorse permettono di rappresentare graficamente le assegnazioni delle risorse ai processi in un sistema. I nodi del grafo rappresentano i processi e le risorse, mentre gli archi rappresentano le richieste e le assegnazioni delle risorse.
+
+Se il grafo non contiene cicli, non c'è deadlock. Se invece il grafo contiene un ciclo, è possibile che ci sia un deadlock.
+
+Esistono due casi specifici:
+
+Se il grafo contiene un ciclo che comprende risorse aventi tutte una sola istanza, allora c'è deadlock.
+
+Se il ciclo comprende risorse aventi più di una istanza, non è detto che vi sia deadlock: il ciclo è una condizione necessaria ma non sufficiente. Basta che una delle richieste sia soddisfacibile per rompere il ciclo e scongiurare il deadlock.
+
+L'uso dei grafi di allocazione delle risorse come strumento di rilevazione del deadlock non prevede vincoli particolari.
+
+Esistono anche algoritmi di prevenzione del deadlock, come ad esempio l'algoritmo del banchiere, che si basa su un'analisi dello stato di allocazione delle risorse. L'algoritmo del banchiere, però, funziona solo se ogni classe di risorsa ha una sola istanza.
+
+
+
+
+
+
+
+
+
+
+
+(1) Si spieghi per quale motivo i metodi di allocazione della RAM per i processi kernel devono essere diversi da quelli per i processi utente e (2) si illustri il metodo di allocazione noto come sistema buddy.
+
+I metodi di allocazione della RAM per i processi kernel devono essere diversi da quelli per i processi utente per due motivi principali:
+
+Strutture dati variabili: I processi kernel gestiscono strutture dati che cambiano dimensione, come liste e code. I metodi di allocazione tradizionali, come la paginazione, potrebbero non essere efficienti per questi casi. Ad esempio, il sistema buddy risolve questo problema allocando memoria in blocchi di dimensioni pari a potenze di 2.
+
+Memoria contigua: Alcuni processi kernel, specialmente quelli che lavorano direttamente con l'hardware, hanno bisogno di memoria contigua (senza spazi vuoti). Ad esempio, quando si trasferiscono dati da e verso dispositivi di input/output (I/O), è necessario che i dati siano memorizzati in posizioni di memoria vicine tra loro.
+
+Il sistema buddy, come correttamente descritto nella conversazione precedente, è un meccanismo di allocazione della memoria che:
+
+Suddivide la memoria in blocchi di dimensione pari a potenze di 2.
+
+Quando un processo richiede memoria, il sistema buddy cerca il blocco più piccolo di dimensione sufficiente a soddisfare la richiesta.
+
+Se il blocco trovato è troppo grande, viene diviso in due blocchi "buddy" di dimensione pari alla metà del blocco originale.
+
+Questo processo di divisione continua finché non viene trovato un blocco di dimensione adeguata.
+
+Quando un blocco viene liberato, il sistema buddy verifica se il suo "buddy" è libero. In tal caso, i due blocchi vengono fusi in un unico blocco di dimensione doppia.
+
+Il sistema buddy presenta il vantaggio di essere relativamente semplice da implementare e di ridurre la frammentazione esterna. Tuttavia, può portare a una frammentazione interna significativa, poiché i blocchi vengono allocati in unità di dimensioni pari a potenze di 2.
+
+
+
+
+
+
+
+(1) spiegare il dual mode e cosa si intende per system call, 
+
+(2) dire cos’è e come viene usato il vettore delle interruzioni.
+
+Il dual mode è un approccio alla gestione delle istruzioni del processore che prevede la divisione dell'instruction set in due sottoinsiemi:
+
+istruzioni privilegiate, eseguibili solo dal sistema operativo (SO) quando si trova in modalità kernel (o supervisore);
+
+istruzioni non privilegiate, eseguibili sia dal SO che dai processi utente, utilizzabili in modalità utente.
+
+Questa distinzione è necessaria per proteggere il sistema operativo da accessi non autorizzati o da errori nei programmi utente che potrebbero compromettere la stabilità del sistema.
+
+L'implementazione del dual mode si basa su un bit di modalità, che indica la modalità di esecuzione corrente:
+
+0: modalità kernel
+
+1: modalità utente
+
+Al bootstrap del sistema, il bit di modalità è impostato a 0 (modalità kernel). Quando un processo utente viene avviato, il bit di modalità viene impostato a 1.
+
+Le system call sono meccanismi che consentono ai processi utente, che non possono eseguire istruzioni privilegiate, di richiedere al SO di eseguire operazioni privilegiate per loro conto.
+
+Durante l'esecuzione di una system call:
+
+Il processo utente invia una trap al SO.
+
+Il SO imposta il bit di modalità a 0, passando alla modalità kernel.
+
+Il SO esegue l'operazione richiesta dalla system call.
+
+Il SO imposta il bit di modalità a 1, restituendo il controllo al processo utente.
+
+
+
+Il vettore delle interruzioni, o Interrupt Vector, è una tabella che contiene gli indirizzi di memoria degli handler degli interrupt. Ogni cella del vettore corrisponde a un particolare tipo di interruzione.
+
+Quando si verifica un'interruzione:
+
+L'hardware identifica l'interruzione e genera un segnale che include l'ID dell'interruzione.
+
+La CPU usa l'ID dell'interruzione come indice nel vettore delle interruzioni per ottenere l'indirizzo dell'handler corrispondente.
+
+La CPU salva lo stato corrente, passa all'handler ed esegue il codice dell'handler.
+
+L'accesso alla cella del vettore delle interruzioni è diretto e si ottiene tramite l'ID dell'interruzione. Questo meccanismo garantisce una gestione efficiente degli interrupt.
+
+
+
+
+
+
+
+
+
+(1) spiegare cosa si intende per parallelismo virtuale, compresi quali fondamenti rendano possibile tale meccanismo.
+
+(2) cos’è e come viene gestito dal SO un context switch.
+
+Il parallelismo virtuale è un meccanismo che consente di eseguire più processi "contemporaneamente" su un singolo processore, dando all'utente l'illusione che i processi stiano effettivamente operando in parallelo. In realtà, il processore esegue solo un processo alla volta, ma la commutazione tra i processi è così rapida da creare l'impressione di esecuzione simultanea.
+
+Questo meccanismo è reso possibile da alcuni fondamenti, tra cui:
+
+Multiprogrammazione: la capacità del sistema operativo di gestire più processi contemporaneamente, mantenendo informazioni sullo stato di avanzamento di ciascun processo.
+
+Scheduling della CPU: l'algoritmo utilizzato dal sistema operativo per decidere quale processo eseguire in un dato momento e per quanto tempo.
+
+Interruzioni: segnali hardware o software che consentono al sistema operativo di interrompere l'esecuzione di un processo e passare a un altro.
+
+Context Switch: il meccanismo che consente di salvare lo stato di un processo e caricare lo stato di un altro processo, rendendo possibile la commutazione tra processi.
+
+Un context switch è il processo di salvataggio dello stato di un processo in esecuzione e caricamento dello stato di un altro processo, consentendo la commutazione tra processi sulla CPU. 
+
+Il context switch è gestito dal SO ed è un'operazione costosa in termini di tempo, in quanto richiede l'accesso alla memoria e l'aggiornamento di diverse strutture dati.
+
+Un context switch si verifica in diverse situazioni, tra cui:
+
+Interruzioni hardware: quando un dispositivo hardware richiede l'attenzione del SO.
+
+System call: quando un processo utente richiede un servizio al SO.
+
+In sintesi, il parallelismo virtuale è un meccanismo potente che consente di sfruttare al massimo le risorse del processore, dando all'utente l'illusione di un'esecuzione parallela. La commutazione di contesto, o context switch, è una parte fondamentale di questo meccanismo, consentendo la rapida commutazione tra processi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1) Si spieghi che cos’e’ e a che cosa serve una tabella delle pagine.
+
+(2) Si spieghi perche’ il suo mantenimento in RAM rallenta l’esecuzione.
+
+La tabella delle pagine è una struttura dati utilizzata per gestire la memoria virtuale in un sistema operativo. Essa funge da mappa che traduce gli indirizzi logici generati dalla CPU in indirizzi fisici della memoria RAM.
+
+Ogni processo in esecuzione possiede la propria tabella delle pagine, che viene memorizzata in RAM e contiene una entry per ogni pagina di memoria virtuale assegnata al processo. Ogni entry nella tabella delle pagine contiene informazioni come:
+
+Il numero di frame corrispondente alla pagina in memoria fisica.
+
+Il bit di validità, che indica se la pagina è presente in RAM o in memoria secondaria.
+
+Il dirty bit, che indica se la pagina è stata modificata rispetto alla copia in memoria secondaria.
+
+Bit di protezione, che indicano i permessi di accesso alla pagina (lettura, scrittura, esecuzione).
+
+La tabella delle pagine svolge un ruolo fondamentale nella traduzione degli indirizzi e nella gestione della memoria virtuale, consentendo di:
+
+Mappare lo spazio degli indirizzi logici di un processo sullo spazio degli indirizzi fisici della RAM.
+
+Implementare il meccanismo di demand paging, caricando in RAM solo le pagine necessarie al momento.
+
+Proteggere la memoria, impedendo ai processi di accedere a zone di memoria non autorizzate.
+
+Condividere pagine tra processi, permettendo a più processi di accedere alla stessa area di memoria.
+
+Mantenere la tabella delle pagine in RAM rallenta l'esecuzione perché per ogni accesso alla memoria la CPU deve eseguire due accessi alla RAM invece di uno:
+
+1. Accesso alla tabella delle pagine, utilizzando l'indirizzo logico come indice per trovare l'entry corrispondente.
+
+2. Accesso all'indirizzo fisico della memoria, ottenuto dall'entry nella tabella delle pagine.
+
+Questo doppio accesso alla RAM introduce un overhead significativo, che può rallentare l'esecuzione dei processi. Per mitigare questo problema, molti sistemi operativi utilizzano una cache di traduzione degli indirizzi, chiamata Translation Look-aside Buffer (TLB). Il TLB memorizza le traduzioni degli indirizzi più recenti, riducendo il numero di accessi alla RAM per la tabella delle pagine.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1) Si spieghi cos’e’ test-and-set e (2) si spieghi come controllare una sezione critica tramite test-and-set.
+
+Test-and-set è un'istruzione atomica fornita da molte architetture hardware per la sincronizzazione dei processi. Un'istruzione atomica è un'istruzione che viene eseguita come un'unica unità indivisibile, senza la possibilità di interleaving da parte di altri processi.
+
+L'istruzione test-and-set prende come parametro un puntatore ad una variabile booleana e svolge due operazioni in modo atomico:
+
+1. Salva il valore originale della variabile in una variabile locale.
+
+2. Imposta la variabile a "true".
+
+3. Restituisce il valore originale della variabile.
+
+
+
+L'implementazione di test-and-set in pseudocodice è la seguente:
+
+
+
+boolean TestAndSet (boolean *variabile) {
+
+    boolean valore = *variabile;
+
+    *variabile = true;
+
+    return valore;
+
+}
+
+
+
+Per utilizzare test-and-set per controllare l'accesso ad una sezione critica, è necessario dichiarare una variabile booleana globale, chiamata "lock", inizializzata a "false".
+
+Il codice per l'accesso in mutua esclusione ad una sezione critica utilizzando test-and-set è il seguente:
+
+while (TestAndSet(&lock)); // Sezione di ingresso
+
+<sezione critica>
+
+lock = false;             // Sezione di uscita
+
+
+
+Ecco come funziona il meccanismo:
+
+Sezione di ingresso: Se il lock è "true", significa che un altro processo è già all'interno della sezione critica. Il processo corrente deve quindi aspettare, rimanendo bloccato nel ciclo while. Quando il lock diventa "false" perché il processo che era nella sezione critica lo imposta a "false" prima di uscire, il processo in attesa può finalmente entrare nella sezione critica e impostare il lock a "true" per prevenire l'accesso simultaneo da parte di altri processi.
+
+Sezione critica: Il processo esegue il codice protetto.
+
+Sezione di uscita: Il processo imposta lock a "false", consentendo ad altri processi di entrare nella sezione critica.
+
+
+
+L'atomicità di test-and-set garantisce che un solo processo alla volta possa ottenere il "lock". Anche se più processi tentano di entrare nella sezione critica contemporaneamente, solo uno di essi riuscirà a impostare lock a "true" e gli altri rimarranno in attesa.
+
+Impostando lock a "false" all'uscita dalla sezione critica, il processo consente ad altri processi di accedere alla risorsa.
+
+In sintesi, test-and-set è un'istruzione atomica che consente di implementare un meccanismo di mutua esclusione per l'accesso ad una sezione critica. Il suo utilizzo semplifica la gestione della concorrenza tra processi, garantendo che un solo processo alla volta possa accedere al codice protetto.
+
+
+
+(1) Si spieghi che cos’e’ una system call (2) si spieghi cosa permettono di fare e si faccia un esempio di system call
+
+Una system call è un meccanismo che consente ai processi in modalità utente di richiedere servizi al sistema operativo (SO), che opera in modalità kernel. In altre parole, si tratta di un'interfaccia tra i programmi utente e il SO. Le system call permettono ai processi di eseguire operazioni che richiedono privilegi speciali, come l'accesso all'hardware, la gestione dei file e la comunicazione tra processi.
+
+Le system call permettono ai processi utente di accedere a una vasta gamma di funzionalità del SO. Alcuni esempi di cosa permettono di fare le system call includono:
+
+Controllo dei Processi: Creare, terminare, sospendere o riprendere processi.
+
+Gestione dei File: Creare, aprire, leggere, scrivere e cancellare file.
+
+Gestione dei Dispositivi: Richiedere e rilasciare dispositivi, leggere e scrivere dati da/su dispositivi.
+
+Gestione delle Informazioni: Ottenere informazioni sul sistema, come data, ora, informazioni sui processi e sui file.
+
+Comunicazione: Inviare e ricevere messaggi tra processi.
+
+Un esempio comune di system call è open(), che consente ad un processo di aprire un file. In Unix, questa system call prende come argomenti il nome del file e la modalità di apertura (lettura, scrittura, ecc.). 
+
+La system call restituisce un file descriptor, un numero intero che identifica il file aperto all'interno del processo. Il file descriptor può essere poi utilizzato da altre system call, come read() e write(), per interagire con il file.
+
+
+
+
+
+
+
+
+
+1) Spiegare in cosa consiste il problema della sezione critica
+
+2) elencare e definire le tre proprietà di una buona soluzione al problema della sezione critica
+
+Il problema della sezione critica riguarda la gestione di dati condivisi in un sistema concorrente. Quando più processi accedono e modificano gli stessi dati, è fondamentale garantire che l'accesso avvenga in modo controllato per evitare inconsistenze.
+
+Una sezione critica è una porzione di codice in cui un processo modifica variabili condivise. Se più processi che condividono una variabile, solo uno di essi per volta può essere nella sua sezione critica. Questo principio è chiamato mutua esclusione. Ad esempio, se due processi tentano di aggiornare contemporaneamente lo stesso indice in un buffer condiviso, potrebbero verificarsi errori di sovrascrittura e inconsistenza dei dati.
+
+Per risolvere il problema della sezione critica, è necessario implementare un meccanismo di controllo che garantisca la mutua esclusione. Questo meccanismo deve soddisfare tre criteri fondamentali:
+
+Mutua esclusione: Solo un processo alla volta può eseguire la propria sezione critica.
+
+Progresso: Nessun processo che non sia interessato alla sezione critica può bloccare altri processi dall'accedervi. Solo i processi che desiderano entrare in sezione critica concorrono a determinare chi entrerà.
+
+Attesa limitata: Esiste un limite superiore al tempo di attesa per un processo che desidera entrare in sezione critica.
+
+Esistono diverse soluzioni software e hardware per implementare la mutua esclusione. Alcune soluzioni software includono l'uso di variabili condivise come "turno" o "flag" per coordinare l'accesso alla sezione critica. Tuttavia, queste soluzioni possono portare a problemi come la stretta alternanza o il blocco dei processi.
+
+Soluzioni hardware come l'istruzione TestAndSet offrono un modo più efficiente per implementare la mutua esclusione. TestAndSet è un'istruzione atomica che verifica e modifica il valore di una variabile in un unico passo, evitando così race condition.
+
+Oltre alle soluzioni software e hardware, esistono costrutti di sincronizzazione di più alto livello come i semafori e i monitor. I semafori sono variabili intere che possono essere incrementate o decrementate atomicamente, consentendo ai processi di sincronizzarsi e controllare l'accesso alle risorse condivise. I monitor sono moduli software che incapsulano dati condivisi e le operazioni per manipolarli, garantendo la mutua esclusione all'interno del monitor.
+
+In sintesi, il problema della sezione critica è un aspetto cruciale della programmazione concorrente e richiede un'attenta gestione per evitare inconsistenze nei dati condivisi. La scelta del meccanismo di controllo più adatto dipende dai requisiti specifici del sistema e dalle risorse disponibili.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1) Spiegare cos’e’ il vettore delle interruzione e come viene usato per gestire gli eventi.
+
+(2) Spiegare in quali circostanze occorre un page fault
+
+
+
+Il vettore delle interruzioni (o interrupt vector) è una struttura dati utilizzata dal sistema operativo per gestire in modo efficiente gli eventi. Si tratta di un array di puntatori a funzioni, dove ogni puntatore fa riferimento a una routine di gestione specifica per un evento.
+
+Ogni evento viene associato ad un numero identificativo univoco (ID), che corrisponde all'indice del vettore. Quando si verifica un evento, il sistema operativo utilizza l'ID dell'evento per accedere direttamente alla routine di gestione corrispondente nel vettore.
+
+Ecco come funziona:
+
+Un dispositivo hardware o un programma software genera un'interruzione, inviando un segnale alla CPU.
+
+La CPU salva il suo stato attuale e identifica l'ID dell'interruzione.
+
+L'ID viene usato come indice nel vettore delle interruzioni per individuare la routine di gestione appropriata.
+
+La CPU esegue la routine di gestione dell'evento.
+
+Al termine della gestione, la CPU ripristina il suo stato e riprende l'esecuzione dal punto in cui era stata interrotta.
+
+Un esempio di interruzioni e’ il page fault.
+
+
+
+Un page fault si verifica quando un processo cerca di accedere ad una pagina di memoria virtuale che non è attualmente presente in memoria RAM (fisica). Questo può accadere in diverse circostanze:
+
+Pagina non caricata: La pagina richiesta non è mai stata caricata in RAM. Questo accade spesso all'avvio di un processo, quando solo alcune pagine vengono inizialmente caricate.
+
+Pagina in memoria secondaria: La pagina richiesta è stata precedentemente caricata in RAM ma è stata poi sostituita da un'altra pagina, a causa della limitata disponibilità di memoria fisica. La pagina risiede quindi in memoria secondaria (es. disco rigido).
+
+Accesso non valido: Il processo cerca di accedere ad una pagina che non gli è stata assegnata o a cui non ha i permessi di accesso.
+
+Quando si verifica un page fault, il sistema operativo interrompe l'esecuzione del processo e attiva una routine di gestione del page fault. 
+
+In quanto caso bisogna cariicare in ram la pagina richiesta dal processo che in questo momento e’ in memoria secondaria, se non c’e’ spazio e’ necessario bisogna trovare una pagina vittima da poter spostare in memoria secondaria per far spazio alla pagina che serve. Per farlo ci sono diversi algoritmi come ad esempio quello di seconda chance o Least Recenlty Used (LRU).
+
+
+
+(1) Spiegare cosa sono e dove sono memorizzato gli INODE e (2) spiegare l’allocazione concatenata dei blocchi ai file.
+
+Gli INODE (Index Node), noti anche come FCB (File Control Block), sono strutture dati fondamentali nei file system. Un INODE memorizza i metadati di un file, ossia le informazioni riguardanti il file stesso, ad eccezione del nome del file e dei suoi dati effettivi. Tra le informazioni tipicamente contenute in un INODE troviamo l'identità del proprietario del file (User ID), il tipo del file (che può essere regolare, directory, link, device, ecc.), i diritti di accesso (lettura, scrittura, esecuzione per proprietario, gruppo e altri), i tempi di accesso e modifica (data/ora dell'ultimo accesso e modifica), il numero di link al file, la dimensione del file (in byte) e una tabella per l'accesso ai dati che contiene i puntatori ai blocchi di memoria secondaria dove sono memorizzati i dati effettivi del file. 
+
+
+
+Quando un file viene aperto il suo fcb viene aggiunto alla lista dei file control block che serve al sistema operativo per controllare quanti e quali file sono al momento aperti. 
+
+Se un file e’ in utilizzo da un processo viene caricato in ram anche il suo inode diventando un in-core inode il quale viene arricchito di altre informazioni utili al processo. 
+
+Per risalire ad un inode di un file si utilizza l’algoritmo namei che prende in input il path per arrivare al file. 
+
+
+
+L'allocazione concatenata è una tecnica usata dai file system per organizzare i dati di un file sul disco. 
+
+Immagina che i dati di un file siano suddivisi in blocchi, come se fossero delle tessere di un domino. Queste tessere non sono necessariamente una accanto all'altra, ma sono collegate tra loro tramite puntatori, formando una catena.
+
+I file vengono allocati in blocchi come se fossero parte di una catena unica. Ogni blocco contiene una parte dei dati del file ed è collegato agli altri blocchi tramite un puntatore. L’INODE del file contiene un puntatore al primo blocco della catena e quando è necessario leggere un file in particolare (blocco della catena) è necessario scorrere tutta la catena finché non si raggiunge il blocco cercato. I blocchi non necessitano di essere contigui, aggiungere nuovi blocchi è rapido e semplice, e si evita la frammentazione esterna.
+
+Tuttavia, ci sono degli svantaggi. Per leggere un file è necessario scorrere tutta la catena, il che può risultare lento. Inoltre, se il puntatore a uno dei blocchi viene danneggiato, parte o tutto il file potrebbe non essere leggibile.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1) Elencare e definire le tre proprieta’ di una buona soluzione al problema della sezione critica;
+
+(2) Con riferimento al seguente codice (dove S e’ un semaforo) dire e spiegare se soddisfa tali proprieta’
+
+(3) Nel contesto della risposta (2) riportare eventuali assunzioni da fare
+
+
+
+S = 2
+
+P (S)
+
+   … Sezione Critica …
+
+V (S)
+
+
+
+Proprietà di una Buona Soluzione al Problema della Sezione Critica
+
+Mutua Esclusione: Solo un processo alla volta può accedere alla sezione critica. Questo garantisce che i dati condivisi non vengano modificati in modo inconsistente da processi concorrenti.
+
+Progresso: Se nessun processo è nella sezione critica, allora un processo che desidera entrarvi deve poterlo fare senza essere bloccato indefinitamente. In altre parole, il meccanismo di controllo non deve impedire l'accesso alla sezione critica quando questa è libera.
+
+Attesa Limitata: Esiste un limite massimo al tempo che un processo deve attendere prima di poter accedere alla sezione critica. Questo impedisce che un processo venga continuamente scavalcato da altri processi e rimanga bloccato in attesa per un tempo indefinito.
+
+Analisi del Codice
+
+Il codice fornito utilizza un semaforo S inizializzato a 2 per controllare l'accesso alla sezione critica.
+
+Assunzioni:
+
+Assumiamo che le operazioni P(S) e V(S) siano atomiche, ovvero che vengano eseguite senza interruzioni.
+
+Assumiamo che il semaforo S sia implementato correttamente e che le operazioni P(S) e V(S) si comportino come descritto nella definizione di semaforo.
+
+Soddisfazione delle Proprietà:
+
+Mutua Esclusione: NON soddisfatta. Il semaforo S è inizializzato a 2, il che significa che due processi possono entrare contemporaneamente nella sezione critica. Per garantire la mutua esclusione, il semaforo dovrebbe essere inizializzato a 1.
+
+Progresso: Soddisfatta. Se nessun processo è nella sezione critica (S = 2), un processo che esegue P(S) decrementerà il semaforo a 1 e potrà accedere alla sezione critica.
+
+Attesa Limitata: Soddisfatta. L'attesa è limitata dal numero di processi che possono accedere contemporaneamente alla sezione critica (in questo caso, 2).
+
+
+
+
+
+(1). Spiegare cosa si intende per “interleaving delle istruzioni”. 
+
+(2). Spiegare come tale meccanismo supporta la realizzazione del multi-tasking
+
+L'interleaving delle istruzioni (o interfogliamento) è un meccanismo fondamentale per la realizzazione del multi-tasking nei sistemi operativi. Si riferisce alla capacità del sistema operativo di eseguire in modo interleaved le istruzioni di diversi processi, creando l'illusione che i processi vengano eseguiti contemporaneamente.
+
+In realtà, su un singolo processore, solo un'istruzione può essere eseguita alla volta. Tuttavia, il sistema operativo può sospendere l'esecuzione di un processo e passare a un altro processo in modo molto rapido, creando l'impressione che i processi vengano eseguiti in parallelo. Questo è possibile grazie al meccanismo di context switch, che salva lo stato del processo corrente e carica lo stato di un altro processo.
+
+L'interleaving delle istruzioni è quindi un meccanismo chiave per la realizzazione del multi-tasking, consentendo al sistema operativo di gestire l'esecuzione concorrente di più processi e migliorare l'efficienza complessiva del sistema.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1) Si spieghi l’allocazione della RAM a partizioni contigue e (2) se ne spieghino vantaggi e svantaggi
+
+L'allocazione contigua della RAM è un metodo di gestione della memoria in cui ogni processo viene caricato in un'unica sezione di memoria contigua. La RAM viene suddivisa in due parti: una riservata al SO e l'altra riservata ai processi utente.
+
+Il meccanismo di allocazione della memoria ai processi in questo modello si chiama "a partizioni multiple". All'inizio, tutta la RAM (esclusa la porzione per il SO) è libera. Quando un processo deve essere caricato, il SO cerca una porzione libera di memoria sufficientemente grande per contenerlo.
+
+Esistono 3 criteri per la scelta dei questa porzione:
+
+Best-fit: si sceglie la porzione più piccola tra quelle sufficientemente grandi.
+
+First-fit: si sceglie la prima porzione sufficientemente grande trovata scandendo la lista dei buchi liberi.
+
+Worst-fit: si sceglie la porzione più grande tra quelle libere.
+
+Vantaggi:
+
+Semplicità: l'allocazione contigua è semplice da implementare e gestire.
+
+Efficienza: l'accesso alla memoria è veloce, poiché i dati del processo sono memorizzati in posizioni contigue.
+
+Svantaggi:
+
+Frammentazione esterna: la memoria può diventare frammentata in tanti piccoli buchi non utilizzabili, riducendo l'efficienza dell'allocazione.
+
+Limitata flessibilità: la dimensione di un processo è limitata dalla dimensione del buco di memoria più grande disponibile.
+
+Compattazione: per ridurre la frammentazione esterna, può essere necessario compattare la memoria, spostando i processi per creare buchi più grandi. Questa operazione può essere costosa in termini di tempo.
+
+L'allocazione contigua è stata utilizzata nei primi sistemi operativi, ma oggi è meno comune a causa dei suoi limiti, in particolare per quanto riguarda la frammentazione.
+
+
+
+La frammentazione è lo spezzettamento della memoria in tante parti. Quando si parla di frammentazione, bisogna distinguere tra due tipi: frammentazione esterna e frammentazione interna.
+
+Frammentazione esterna: si verifica quando le parti di memoria libera sono abbastanza grandi da essere utilizzabili, ad esempio, per contenere un processo. Tuttavia, queste parti sono sparse e non contigue, quindi non possono essere utilizzate per allocare processi che richiedono uno spazio di memoria contiguo.
+
+Frammentazione interna: si verifica quando le parti di memoria libera sono molto piccole e praticamente inutilizzabili. Queste parti sono generalmente il risultato dell'allocazione di memoria a blocchi di dimensione fissa. Anche se la somma dei frammenti interni potrebbe essere sufficiente per allocare un processo, questi frammenti sono troppo piccoli per essere utilizzati individualmente.
+
+
+
+
+
+
+
+
+

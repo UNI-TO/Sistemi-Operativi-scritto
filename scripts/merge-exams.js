@@ -10,6 +10,8 @@ const teoriaSamplePath = path.join(__dirname, '../src/data/exam-teoria-sample.js
 const pngExamPath = path.join(__dirname, '../src/data/exam-so-appello-14-01.json');
 const soB1706Path = path.join(__dirname, '../src/data/exam-so-b-17-06-2025.json');
 const teoriaSOB1806Path = path.join(__dirname, '../src/data/exam-teoria-so-b-18-06-2025.json');
+const domandeApertePath = path.join(__dirname, '../src/data/exam-domande-aperte-corso-b.json');
+const uuidMistoPath = path.join(__dirname, '../src/data/exam-uuid-misto.json');
 const outputPath = path.join(__dirname, '../src/data/exams.json');
 
 try {
@@ -48,6 +50,20 @@ try {
     const teoriaSOB1806 = JSON.parse(fs.readFileSync(teoriaSOB1806Path, 'utf-8'));
     additionalExams.push(teoriaSOB1806);
     console.log(`✓ Loaded Teoria SO B 18-06: ${teoriaSOB1806.title} (${teoriaSOB1806.questions.length} Q)`);
+  }
+
+  // Domande Aperte Corso B exam
+  if (fs.existsSync(domandeApertePath)) {
+    const domandeAperte = JSON.parse(fs.readFileSync(domandeApertePath, 'utf-8'));
+    additionalExams.push(domandeAperte);
+    console.log(`✓ Loaded Domande Aperte: ${domandeAperte.title} (${domandeAperte.questions.length} Q)`);
+  }
+
+  // UUID Misto exam
+  if (fs.existsSync(uuidMistoPath)) {
+    const uuidMisto = JSON.parse(fs.readFileSync(uuidMistoPath, 'utf-8'));
+    additionalExams.push(uuidMisto);
+    console.log(`✓ Loaded UUID Misto: ${uuidMisto.title} (${uuidMisto.questions.length} Q)`);
   }
 
   // Merge additional exams

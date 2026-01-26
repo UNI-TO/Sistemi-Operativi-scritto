@@ -5,9 +5,9 @@ Simulatore di esami per esercitarsi con le prove scritte di programmazione in C 
 ## Caratteristiche
 
 ### Esami
-- 📚 **16 esami** parsati automaticamente (14 HTML + 1 TXT + 1 PNG con immagini)
+- 📚 **20 esami** parsati automaticamente (14 HTML + 1 TXT + 3 PNG + 1 DOCX + 1 UUID Mix)
 - ✍️ **Editor di codice** per scrivere le soluzioni in C
-- 🖼️ **Supporto immagini** - visualizza domande con screenshot ed esercizi grafici
+- 🖼️ **Supporto immagini** - visualizza domande con screenshot ed esercizi grafici (83 immagini totali)
 - 💡 **Visualizzazione soluzioni** per ogni domanda
 - 🎯 **Tipi di domande multipli**:
   - Essay (codice completo C)
@@ -70,7 +70,10 @@ Sistemi-Operativi-scritto/
 │   └── main.tsx
 ├── public/
 │   └── exams/
-│       └── so-appello-14-01/         # Immagini esame PNG
+│       ├── so-appello-14-01/         # Immagini esame PNG (17 domande, 18 PNG)
+│       ├── so-b-17-06-2025/          # Immagini esame SO B 17/06 (8 PNG)
+│       ├── teoria-so-b-18-06-2025/   # Immagini Teoria SO B 18/06 (8 PNG)
+│       └── uuid-misto/               # Immagini UUID misto (50 JPG) ⭐ NUOVO
 ├── docs/
 │   ├── struttura-simulatore-esami/  # HTML originali esami
 │   ├── pdf-lezioni/                 # Materiale di studio per argomento
@@ -82,9 +85,16 @@ Sistemi-Operativi-scritto/
 │   ├── pdf-esami/                   # PDF esami (opzionale)
 │   └── pdf-analizzati-corretti/     # Analisi esami (opzionale)
 ├── scripts/
-│   ├── parse-exams.js           # Parser HTML → JSON esami
-│   ├── add-exam-topics.js       # Aggiunge tag argomenti agli esami
-│   └── parse-study-materials.js # Parser materiale di studio
+│   ├── parse-exams.js                      # Parser HTML → JSON esami
+│   ├── parse-txt-exam.js                   # Parser TXT → JSON teoria
+│   ├── parse-png-exam.js                   # Parser PNG + Soluzioni → JSON
+│   ├── parse-docx-exams.js                 # Parser DOCX → raw text ⭐ NUOVO
+│   ├── parse-domande-aperte-structured.js  # Parser DOCX domande aperte ⭐ NUOVO
+│   ├── parse-uuid-images-exam.js           # Parser UUID images ⭐ NUOVO
+│   ├── ocr-pdf-exams.js                    # OCR tool per PDF ⭐ NUOVO
+│   ├── merge-exams.js                      # Merge tutti gli esami
+│   ├── add-exam-topics.js                  # Aggiunge tag argomenti
+│   └── parse-study-materials.js            # Parser materiale studio
 └── package.json
 ```
 
@@ -123,7 +133,7 @@ Sistemi-Operativi-scritto/
 | 2022.02.08 | A, B  | 2       | 💻 Programmazione C |
 | 2020.07.02 | A     | 1       | 💻 Programmazione C |
 
-**Totale**: 16 esami, **61 domande** (21 essay C, 20 vero/falso, 19 quiz, 1 matching)
+**Totale**: 20 esami, **108 domande** (39 essay, 34 vero/falso, 26 multianswer, 8 multiple-choice, 1 matching)
 
 ## Argomenti del Corso
 
@@ -156,6 +166,9 @@ Il simulatore copre tutte le 6 parti del corso di Sistemi Operativi:
 - **React 18** con TypeScript
 - **Vite** come build tool
 - **Cheerio** per parsing HTML
+- **mammoth** per parsing DOCX ⭐ NUOVO
+- **pdf-parse** per estrazione testo PDF ⭐ NUOVO
+- **tesseract.js** per OCR PDF scansionati ⭐ NUOVO
 - CSS custom per lo styling
 
 ## Come Usare
@@ -175,23 +188,35 @@ Il simulatore copre tutte le 6 parti del corso di Sistemi Operativi:
 
 ## 📂 Materiale Disponibile
 
-### Esami Già Integrati (16 totali, 61 domande)
+### Esami Già Integrati (20 totali, 108 domande) 🚀
 - **14 esami HTML** parsati (2020-2024) - programmazione C (21 domande essay)
 - **1 esame teoria TXT** con domande multiple (11 domande):
   - 9 domande Vero/Falso
   - 1 domanda a risposta breve
   - 1 domanda di Associazione
-- **1 esame teoria PNG** - SO Appello 14/01/2025 (17 domande):
-  - 11 domande Vero/Falso (2 punti, -1 se sbagliato)
-  - 6 domande multiple (3 punti, -1.5 se sbagliato)
-  - Punteggio massimo: 33 punti
+- **3 esami teoria PNG** con immagini (41 domande totali):
+  - **SO Appello 14/01/2025** (17 domande): 11 V/F + 6 multianswer
+  - **SO Corso B 17/06/2025** (12 domande): 7 V/F + 3 multianswer + 2 essay
+  - **Teoria SO Corso B 18/06/2025** (12 domande): 7 V/F + 3 multianswer + 2 essay
+- **1 esame DOCX estratto** ⭐ NUOVO (13 domande essay):
+  - **Domande Aperte Corso B** - teoria SO approfondita (39 punti)
+- **1 esame UUID Misto** ⭐ NUOVO (10 domande + template per 40):
+  - **Domande Varie Mix Argomenti**: 8 multiple-choice + 1 multianswer + 1 essay
 
-### Materiale da Processare (~250+ file)
-Vedi `docs/pdf-esami/EXAM_TRACKING_TODO.md` per la lista completa di:
-- 66 PDF teoria anni precedenti (2007-2020)
-- Esami con immagini PNG/JPG organizzate
-- PDF teoria recenti (2024-2025)
-- File TXT con soluzioni
+### Materiale da Processare (~800+ file)
+Vedi `docs/pdf-esami/ADDITIONAL_EXAMS_ANALYSIS.md` e `docs/OCR_PROCESSING_GUIDE.md` per dettagli completi:
+
+**Pronto per integrazione (template disponibili):**
+- ~~55 immagini JPG sparse UUID~~ ✅ 10 integrate, 40 rimanenti (template pronto)
+- 16 screenshot Prova febbraio 2024 (guida disponibile)
+- Stima: +55 domande
+
+**Tool OCR pronti per batch processing:** ⭐ NUOVO
+- 126+ PDF teoria SCRITTI SO (2007-2020) - ✅ OCR tool installato
+- 28 PDF Esami SO vari - ✅ OCR tool installato
+- ~~2 DOCX Corso B~~ ✅ 1 DOCX integrato (domande_aperte), 1 non estraibile (solo appunti)
+- Stima: +600 domande potenziali
+- **Script:** `node scripts/ocr-pdf-exams.js pdf`
 
 ### PDF Lezioni (11 file caricati)
 - Capitolo 1-2: Generalità
@@ -211,20 +236,22 @@ Vedi `docs/pdf-esami/EXAM_TRACKING_TODO.md` per la lista completa di:
 - ✅ **Indicatori progresso**: Badge "📝" per esami con risposte salvate
 
 ### Tipi di Domande Supportati
-1. **Essay** (💻 Codice C completo) - 21 domande
-2. **Multianswer** (📝 Risposta breve) - 19 domande
-3. **True/False** (✓/✗ Vero o Falso) - 20 domande
-4. **Multiple Choice** (🔘 Scelta multipla) - Pronto per l'uso
+1. **Essay** (💻 Codice C completo / Teoria approfondita) - 39 domande ⭐
+2. **Multianswer** (📝 Risposta breve) - 26 domande ⭐
+3. **True/False** (✓/✗ Vero o Falso) - 34 domande
+4. **Multiple Choice** (🔘 Scelta multipla) - 8 domande ⭐
 5. **Matching** (🔗 Associazione) - 1 domanda
 
-**Totale: 61 domande** su 16 esami
+**Totale: 108 domande** su 20 esami 🚀
 
 ### Parser Implementati
 - ✅ **HTML → JSON** (14 esami programmazione C) - `parse-exams.js`
 - ✅ **TXT → JSON** (esami teoria con V/F, scelta multipla, associazione) - `parse-txt-exam.js`
 - ✅ **PNG + Soluzioni.txt → JSON** (esami teoria con immagini) - `parse-png-exam.js`
+- ✅ **DOCX → JSON** (domande aperte teoria) - `parse-docx-exams.js` + `parse-domande-aperte-structured.js` ⭐
+- ✅ **UUID Images → JSON** (domande sparse con immagini) - `parse-uuid-images-exam.js` ⭐
+- ✅ **OCR PDF Tool** (estrazione testo + OCR) - `ocr-pdf-exams.js` ⭐
 - ✅ **Merge esami** - Unisce tutti gli esami da diverse fonti - `merge-exams.js`
-- 📋 TODO: PDF → JSON (66 esami teoria 2007-2020) con OCR
 
 ### Componenti UI Specializzati
 - ✅ **QuestionCard** - Per domande essay/codice C con editor
@@ -245,25 +272,31 @@ npm run dev
 npm run build
 
 # Parse nuovo materiale
-node scripts/parse-exams.js           # Esami HTML
-node scripts/parse-txt-exam.js        # Esami TXT
-node scripts/parse-study-materials.js # PDF lezioni
-node scripts/merge-exams.js           # Unisci tutti gli esami
+node scripts/parse-exams.js                     # Esami HTML
+node scripts/parse-txt-exam.js                  # Esami TXT
+node scripts/parse-docx-exams.js                # Estrai DOCX → raw text ⭐
+node scripts/parse-domande-aperte-structured.js # Parse DOCX domande aperte ⭐
+node scripts/parse-uuid-images-exam.js          # Parse UUID images ⭐
+node scripts/ocr-pdf-exams.js pdf               # OCR batch PDF ⭐
+node scripts/parse-study-materials.js           # PDF lezioni
+node scripts/merge-exams.js                     # Unisci tutti gli esami
 ```
 
 ## 📊 Statistiche Progetto
 
-- **Righe di codice**: ~4000+
+- **Righe di codice**: ~5,000+ 🚀
 - **Componenti React**: 8 (QuestionCard, MultipleChoiceQuestion, ImageQuestion, ExamSimulator, ExamList, StudyMaterials, Home, App)
 - **Custom Hooks**: 1 (useLocalStorage)
-- **Script parser**: 5 (parse-exams, parse-txt-exam, parse-png-exam, add-exam-topics, merge-exams)
+- **Script parser**: 9 ⭐ (parse-exams, parse-txt-exam, parse-png-exam, parse-so-b-17-06, parse-teoria-so-b-18-06, parse-docx, parse-domande-aperte, parse-uuid, ocr-pdf, add-topics, merge-exams)
 - **File CSS**: 1200+ righe
 - **Tipi TypeScript**: 12+ interfacce
-- **Esami integrati**: 16
-- **Domande totali**: 61
-- **Immagini esame**: 18 PNG (SO Appello 14/01)
+- **Esami integrati**: 20 🚀
+- **Domande totali**: 108 🚀
+- **Immagini esame**: 83 totali ⭐ (18 SO Appello 14/01, 8 SO B 17/06, 8 Teoria SO B 18/06, 50 UUID misto)
 - **PDF teoria**: 11
-- **File tracciati da processare**: ~250+
+- **Build size**: 282 kB JS + 15 kB CSS
+- **File tracciati da processare**: ~800+
+- **OCR Tools**: ✅ Installati e pronti (pdf-parse + tesseract.js)
 
 ## 🎯 Roadmap Future
 
@@ -271,15 +304,23 @@ node scripts/merge-exams.js           # Unisci tutti gli esami
 - [x] ~~Parser per esami con immagini PNG (SO Appello 14_01)~~ ✅ Completato
 - [x] ~~Implementare localStorage per salvare progressi~~ ✅ Completato
 - [x] ~~Componente ImageQuestion per visualizzare immagini~~ ✅ Completato
+- [x] ~~Parsare altri esami PNG (SO B 17-06-2025, Teoria SO B 18.06.2025)~~ ✅ Completato
+- [x] ~~Parser DOCX per domande aperte Corso B~~ ✅ Completato (+13 domande essay)
+- [x] ~~Setup OCR tools per PDF~~ ✅ Completato (pdf-parse + tesseract.js)
+- [x] ~~Parser UUID images (parziale)~~ ✅ Completato (+10 domande, template per 40)
+- [ ] **Completare UUID remaining** (40 domande rimanenti, template pronto)
+- [ ] **OCR batch processing PDF** (154 PDF teoria + esami, ~600 domande potenziali)
+- [ ] **Parser per Prova_febbraio2024** (16 screenshot, +15 domande, guida disponibile)
 - [ ] Aggiungere timer per esami a tempo
 - [ ] Export risultati in PDF
-- [ ] Parsare altri esami PNG (esame SO B 17-06-2025, Teoria SO corso B 18.06.2025)
 
 ### Media Priorità
-- [ ] Parser PDF con OCR per esami scansionati
 - [ ] Sistema di flashcard per memorizzazione
 - [ ] Modalità "Esame Completo" con timer e punteggio finale
 - [ ] Grafici andamento nel tempo
+- [x] ~~Integrare materiale di studio organizzato per argomenti~~ ✅ Completato
+- [x] ~~Collegare esami agli argomenti con filtri~~ ✅ Completato
+
 
 ### Bassa Priorità
 - [ ] Modalità dark mode
