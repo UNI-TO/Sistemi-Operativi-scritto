@@ -1,0 +1,17 @@
+1. F
+2. F
+3. V
+4. V
+5. V
+6. F
+7. V
+8. V
+9. F
+10. V
+11. F
+12. V-V-V-F-V
+13. evitare deadlock, ricerca pagina vittima, transazioni concorrenti asincrone, scheduling del disco
+14. V-V-V-V-F
+15. V-F-V-F-F
+16. F-V-V-V-F
+17. NO-NO-NO-SOLUZIONE-NO

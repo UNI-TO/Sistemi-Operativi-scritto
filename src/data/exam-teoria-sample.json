@@ -1,0 +1,226 @@
+{
+  "id": "teoria-sample-001",
+  "date": "2025.01.XX",
+  "course": "A",
+  "title": "Esame Teoria - Domande Multiple",
+  "topics": [
+    "generalita",
+    "memoria-primaria",
+    "file-system",
+    "processi-scheduling",
+    "sincronizzazione"
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "text": "Il sistema operativo gestisce la memoria virtuale utilizzando una tabella delle pagine che mappa gli indirizzi virtuali agli indirizzi fisici.",
+      "answer": "La risposta corretta è: Vero",
+      "maxPoints": 1,
+      "negativePoints": 0.5,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": true
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "vero"
+    },
+    {
+      "number": 2,
+      "text": "La paginazione è una tecnica di gestione della memoria che divide la memoria fisica in blocchi di dimensione fisse chiamate pagine.",
+      "answer": "La risposta corretta è: Vero",
+      "maxPoints": 1,
+      "negativePoints": 0.5,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": true
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "vero"
+    },
+    {
+      "number": 3,
+      "text": "La paginazione è una tecnica di gestione della memoria che divide la memoria fisica in blocchi di dimensioni variabili chiamati segmenti.",
+      "answer": "La risposta corretta è: Falso",
+      "maxPoints": 1,
+      "negativePoints": 0.5,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": false
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "falso"
+    },
+    {
+      "number": 4,
+      "text": "Un file system è responsabile dell'organizzazione, archiviazione, recupero e gestione dei dati su dispositivi di memorizzazione, ma non gestisce la sicurezza dei dati.",
+      "answer": "La risposta corretta è: Falso",
+      "maxPoints": 1,
+      "negativePoints": 0.5,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": false
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "falso"
+    },
+    {
+      "number": 5,
+      "text": "Un file system è responsabile dell'organizzazione, archiviazione, recupero e gestione dei dati su dispositivi di memorizzazione.",
+      "answer": "La risposta corretta è: Vero",
+      "maxPoints": 1,
+      "negativePoints": 0.5,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": true
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "vero"
+    },
+    {
+      "number": 6,
+      "text": "Un thread è un'unità di esecuzione all'interno di un processo che condivide lo stesso spazio di indirizzamento e risorse del processo.",
+      "answer": "La risposta corretta è: Vero",
+      "maxPoints": 1,
+      "negativePoints": 0.5,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": true
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "vero"
+    },
+    {
+      "number": 7,
+      "text": "Un thread è un'unità di esecuzione indipendente che non condivide lo stesso spazio di indirizzamento e risorse del processo.",
+      "answer": "La risposta corretta è: Falso",
+      "maxPoints": 1,
+      "negativePoints": 0.5,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": false
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "falso"
+    },
+    {
+      "number": 8,
+      "text": "Un deadlock si verifica quando due o più processi si bloccano a vicenda, aspettando risorse che sono detenute dagli altri processi coinvolti.",
+      "answer": "La risposta corretta è: Vero",
+      "maxPoints": 1,
+      "negativePoints": 0.5,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": true
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "vero"
+    },
+    {
+      "number": 9,
+      "text": "Un deadlock si verifica quando un processo acquisisce tutte le risorse necessarie senza mai rilasciarle.",
+      "answer": "La risposta corretta è: Falso",
+      "maxPoints": 1,
+      "negativePoints": 0.5,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": false
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "falso"
+    },
+    {
+      "number": 10,
+      "text": "Quali delle seguenti condizioni non è necessaria affinché si verifichi un deadlock?",
+      "answer": "Risposta corretta: Preemption",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "multianswer"
+    },
+    {
+      "number": 11,
+      "text": "Associa ciascun tipo di memoria virtuale alla sua tecnica di gestione",
+      "answer": "APFS: macOS",
+      "maxPoints": 3,
+      "negativePoints": 1.5,
+      "type": "matching",
+      "pairs": [
+        {
+          "left": "APFS",
+          "right": "macOS"
+        }
+      ]
+    }
+  ]
+}

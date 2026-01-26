@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Exam, Topic, TOPICS_INFO } from '../types/Exam';
+import { getAllExamProgress } from '../hooks/useLocalStorage';
 
 interface ExamListProps {
   exams: Exam[];
@@ -9,6 +10,12 @@ interface ExamListProps {
 
 export default function ExamList({ exams, onSelectExam, selectedTopic }: ExamListProps) {
   const [filterTopic, setFilterTopic] = useState<Topic | null>(selectedTopic || null);
+  const [examProgress, setExamProgress] = useState<Record<string, any>>({});
+
+  useEffect(() => {
+    // Carica il progresso di tutti gli esami
+    setExamProgress(getAllExamProgress());
+  }, []);
 
   // Filter exams by topic if selected
   const filteredExams = filterTopic
@@ -72,29 +79,45 @@ export default function ExamList({ exams, onSelectExam, selectedTopic }: ExamLis
             <div key={date} className="exam-group">
               <h3>{date}</h3>
               <div className="exam-courses">
-                {dateExams.map((exam) => (
-                  <button
-                    key={`${exam.id}-${exam.course}`}
-                    onClick={() => onSelectExam(exam)}
-                    className="exam-button"
-                  >
-                    <div className="exam-button-header">
-                      Corso {exam.course}
-                      <span className="question-count">
-                        {exam.questions.length} domande
-                      </span>
-                    </div>
-                    {exam.topics && exam.topics.length > 0 && (
-                      <div className="exam-topics">
-                        {exam.topics.map(topic => (
-                          <span key={topic} className={`topic-tag ${topic}`}>
-                            {TOPICS_INFO[topic]?.label.split(' - ')[0] || topic}
-                          </span>
-                        ))}
+                {dateExams.map((exam) => {
+                  const hasProgress = examProgress[exam.id];
+                  const answeredQuestions = hasProgress
+                    ? Object.values(hasProgress).filter((a: any) =>
+                        a.answer || (a.selectedOptions && a.selectedOptions.length > 0)
+                      ).length
+                    : 0;
+
+                  return (
+                    <button
+                      key={`${exam.id}-${exam.course}`}
+                      onClick={() => onSelectExam(exam)}
+                      className="exam-button"
+                    >
+                      <div className="exam-button-header">
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          Corso {exam.course}
+                          {hasProgress && (
+                            <span className="progress-badge">
+                              📝
+                            </span>
+                          )}
+                        </div>
+                        <span className="question-count">
+                          {hasProgress && `${answeredQuestions}/`}{exam.questions.length} domande
+                        </span>
                       </div>
-                    )}
-                  </button>
-                ))}
+                      {exam.topics && exam.topics.length > 0 && (
+                        <div className="exam-topics">
+                          {exam.topics.map(topic => (
+                            <span key={topic} className={`topic-tag ${topic}`}>
+                              {TOPICS_INFO[topic]?.label.split(' - ')[0] || topic}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           ))

@@ -1,9 +1,30 @@
+// Opzioni per domande a scelta multipla
+export interface QuestionOption {
+  id: string;
+  text: string;
+  isCorrect?: boolean;
+}
+
 export interface Question {
   number: number;
   text: string;
   answer: string;
   maxPoints: number;
-  type?: 'essay' | 'multianswer';
+  type?: 'essay' | 'multianswer' | 'multiple-choice' | 'true-false' | 'matching';
+
+  // Per domande a scelta multipla/vero-falso
+  options?: QuestionOption[];
+  correctAnswer?: string | string[];  // Risposta corretta (singola o multiple)
+  correctAnswers?: string[];  // Array di risposte corrette per domande multianswer con V/F
+
+  // Punteggio negativo per risposte sbagliate
+  negativePoints?: number;  // Punti da sottrarre se sbagliato (default: 0)
+
+  // Per domande con immagini
+  imageRef?: string;  // Nome del file immagine (es. "1.png")
+
+  // Per domande di matching/associazione
+  pairs?: Array<{ left: string; right: string }>;
 }
 
 export interface Exam {
@@ -17,8 +38,21 @@ export interface Exam {
 
 export interface UserAnswer {
   questionNumber: number;
-  answer: string;
+  answer: string;  // Per essay/multianswer
+  selectedOptions?: string[];  // Per multiple-choice
   showSolution: boolean;
+  isCorrect?: boolean;  // Validazione risposta
+  pointsEarned?: number;  // Punti guadagnati (può essere negativo!)
+}
+
+export interface ExamScore {
+  totalPoints: number;
+  earnedPoints: number;
+  percentage: number;
+  answeredQuestions: number;
+  totalQuestions: number;
+  correctAnswers: number;
+  incorrectAnswers: number;
 }
 
 // Argomenti del corso (6 parti)

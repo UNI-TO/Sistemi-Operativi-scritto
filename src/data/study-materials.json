@@ -8,8 +8,11 @@
       "Cap. 1 - Introduzione",
       "Cap. 2 - Strutture dei sistemi operativi"
     ],
-    "pdfFiles": [],
-    "pdfCount": 0
+    "pdfFiles": [
+      "capitolo01-1.pdf",
+      "capitolo02-1.pdf"
+    ],
+    "pdfCount": 2
   },
   {
     "id": "processi-sincronizzazione",
@@ -23,8 +26,13 @@
       "Cap. 6 - Strumenti di sincronizzazione",
       "Cap. 7 - Esempi di sincronizzazione"
     ],
-    "pdfFiles": [],
-    "pdfCount": 0
+    "pdfFiles": [
+      "capitolo03-1.pdf",
+      "capitolo04-1.pdf",
+      "capitolo05-1.pdf",
+      "capitolo06-07-1.pdf"
+    ],
+    "pdfCount": 4
   },
   {
     "id": "memoria-primaria",
@@ -35,8 +43,11 @@
       "Cap. 9 - Memoria centrale",
       "Cap. 10 - Memoria virtuale"
     ],
-    "pdfFiles": [],
-    "pdfCount": 0
+    "pdfFiles": [
+      "capitolo09-1.pdf",
+      "capitolo10-1.pdf"
+    ],
+    "pdfCount": 2
   },
   {
     "id": "memoria-massa",
@@ -46,8 +57,10 @@
     "chapters": [
       "Cap. 11 - Memoria di massa"
     ],
-    "pdfFiles": [],
-    "pdfCount": 0
+    "pdfFiles": [
+      "capitolo11-1.pdf"
+    ],
+    "pdfCount": 1
   },
   {
     "id": "file-system",
@@ -58,7 +71,10 @@
       "Cap. 13 - Interfaccia del file system",
       "Cap. 14 - Realizzazione del file system"
     ],
-    "pdfFiles": [],
-    "pdfCount": 0
+    "pdfFiles": [
+      "capitolo13-1.pdf",
+      "capitolo14-1.pdf"
+    ],
+    "pdfCount": 2
   }
 ]

@@ -1,0 +1,71 @@
+Vero o Falso:
+
+1) Il sistema operativo gestisce la memoria virtuale utilizzando una tabella delle pagine che mappa gli indirizzi virtuali agli indirizzi fisici.
+Vero
+
+2)La paginazione è una tecnica di gestione della memoria che divide la memoria fisica in blocchi di dimensione fisse chiamate pagine.
+Vero
+
+3)La paginazione è una tecnica di gestione della memoria che divide la memoria fisica in blocchi di dimensioni variabili chiamati segmenti.
+Falso
+
+3)Un file system è responsabile dell'organizzazione, archiviazione, recupero e gestione dei dati su dispositivi di memorizzazione, ma non gestisce la sicurezza dei dati.
+Falso
+
+4)Un file system è responsabile dell'organizzazione, archiviazione, recupero e gestione dei dati su dispositivi di memorizzazione.
+Vero
+
+5)Un thread è un'unità di esecuzione all'interno di un processo che condivide lo stesso spazio di indirizzamento e risorse del processo.
+Vero
+
+6)Un thread è un'unità di esecuzione indipendente che non condivide lo stesso spazio di indirizzamento e risorse del processo.
+Falso
+
+7)Un deadlock si verifica quando due o più processi si bloccano a vicenda, aspettando risorse che sono detenute dagli altri processi coinvolti.
+Vero
+
+8)Un deadlock si verifica quando un processo acquisisce tutte le risorse necessarie senza mai rilasciarle.
+Falso
+
+
+Scelta Multipla:
+
+1)Quali delle seguenti condizioni non è necessaria affinché si verifichi un deadlock?
+Preemption
+
+2)Quale struttura dati viene utilizzata dal gestore della memoria per tenere traccia delle porzioni libere e occupate della memoria primaria?
+Bitmap o lista di blocchi liberi
+
+3)Quale affermazione descrive correttamente il concetto di "thrashing" in un sistema operativo?
+Una situazione in cui il sistema passa la maggior parte del tempo a scambiare pagine in e out dalla memoria, riducendo le prestazioni
+
+
+Associazione:
+
+1)Associa ciascun tipo di memoria virtuale alla sua tecnica di gestione
+Swapping: Sostituzione dei processi tra memoria principale e memoria secondaria
+Paginazione: Divisione della memoria in pagine di dimensioni fisse
+Memoria Virtuale: Utilizzo di spazio su disco per simulare memoria aggiuntiva
+Thrashing: Eccessivo scambio di pagine tra memoria e disco
+Segmentazione: Divisione della memoria in segmenti di dimensioni variabili
+
+2)Associa ciascun algoritmo di scheduling al suo tipo
+Shortest Job Next (SJN): Shortest Job First (SJF)
+Round Robin (RR): Circular Queue Scheduling
+Priority Scheduling: Non-preemptive Scheduling
+First-Come, First-Served (FCFS): First-In, First-Out (FIFO)
+Multilevel Queue Scheduling: Multilevel Feedback Queue Scheduling
+
+3)Associa ciascun tipo di memoria alla sua caratteristica tecnologica
+Memoria ROM: Memoria non volatile
+Memoria cache: Memoria ad accesso veloce
+Memoria flash: Memoria a stato solido
+Memoria Virtuale: Estensione della memoria fisica
+Memoria RAM: Memoria volatile
+
+4)Associa ciascun tipo di file system al suo sistema operativo
+FAT32: Windows
+NTFS: Windows
+ext4: Linux
+HFS+: macOS
+APFS: macOS

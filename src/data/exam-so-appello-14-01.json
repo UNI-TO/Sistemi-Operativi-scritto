@@ -1,0 +1,347 @@
+{
+  "id": "so-appello-14-01-2025",
+  "date": "2025.01.14",
+  "course": "A",
+  "title": "SO Appello 14/01/2025 - Teoria (33 punti)",
+  "topics": [
+    "generalita",
+    "processi-scheduling",
+    "sincronizzazione",
+    "memoria-primaria",
+    "memoria-massa",
+    "file-system"
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "text": "Domanda 1 (vedi immagine 1.png)",
+      "answer": "La risposta corretta è: Falso",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": false
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "falso",
+      "imageRef": "1.png"
+    },
+    {
+      "number": 2,
+      "text": "Domanda 2 (vedi immagine 2.png)",
+      "answer": "La risposta corretta è: Falso",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": false
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "falso",
+      "imageRef": "2.png"
+    },
+    {
+      "number": 3,
+      "text": "Domanda 3 (vedi immagine 3.png)",
+      "answer": "La risposta corretta è: Vero",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": true
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "vero",
+      "imageRef": "3.png"
+    },
+    {
+      "number": 4,
+      "text": "Domanda 4 (vedi immagine 4.png)",
+      "answer": "La risposta corretta è: Vero",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": true
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "vero",
+      "imageRef": "4.png"
+    },
+    {
+      "number": 5,
+      "text": "Domanda 5 (vedi immagine 5.png)",
+      "answer": "La risposta corretta è: Vero",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": true
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "vero",
+      "imageRef": "5.png"
+    },
+    {
+      "number": 6,
+      "text": "Domanda 6 (vedi immagine 6.png)",
+      "answer": "La risposta corretta è: Falso",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": false
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "falso",
+      "imageRef": "6.png"
+    },
+    {
+      "number": 7,
+      "text": "Domanda 7 (vedi immagine 7.png)",
+      "answer": "La risposta corretta è: Vero",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": true
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "vero",
+      "imageRef": "7.png"
+    },
+    {
+      "number": 8,
+      "text": "Domanda 8 (vedi immagine 8.png)",
+      "answer": "La risposta corretta è: Vero",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": true
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "vero",
+      "imageRef": "8.png"
+    },
+    {
+      "number": 9,
+      "text": "Domanda 9 (vedi immagine 9.png)",
+      "answer": "La risposta corretta è: Falso",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": false
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "falso",
+      "imageRef": "9.png"
+    },
+    {
+      "number": 10,
+      "text": "Domanda 10 (vedi immagine 10.png)",
+      "answer": "La risposta corretta è: Vero",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": true
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "vero",
+      "imageRef": "10.png"
+    },
+    {
+      "number": 11,
+      "text": "Domanda 11 (vedi immagine 11.png)",
+      "answer": "La risposta corretta è: Falso",
+      "maxPoints": 2,
+      "negativePoints": 1,
+      "type": "true-false",
+      "options": [
+        {
+          "id": "vero",
+          "text": "Vero",
+          "isCorrect": false
+        },
+        {
+          "id": "falso",
+          "text": "Falso",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "falso",
+      "imageRef": "11.png"
+    },
+    {
+      "number": 12,
+      "text": "Domanda 12 (vedi immagine 12.png) - Seleziona le risposte corrette",
+      "answer": "Risposte corrette: V-V-V-F-V",
+      "maxPoints": 3,
+      "negativePoints": 1.5,
+      "type": "multianswer",
+      "imageRef": "12.png",
+      "correctAnswers": [
+        "V",
+        "V",
+        "V",
+        "F",
+        "V"
+      ]
+    },
+    {
+      "number": 13,
+      "text": "Domanda 13 (vedi immagine 13.png)",
+      "answer": "Risposte corrette: evitare deadlock, ricerca pagina vittima, transazioni concorrenti asincrone, scheduling del disco",
+      "maxPoints": 3,
+      "negativePoints": 0,
+      "type": "multianswer",
+      "imageRef": "13.png"
+    },
+    {
+      "number": 14,
+      "text": "Domanda 14 (vedi immagine 14.png) - Seleziona le risposte corrette",
+      "answer": "Risposte corrette: V-V-V-V-F",
+      "maxPoints": 3,
+      "negativePoints": 1.5,
+      "type": "multianswer",
+      "imageRef": "14.png",
+      "correctAnswers": [
+        "V",
+        "V",
+        "V",
+        "V",
+        "F"
+      ]
+    },
+    {
+      "number": 15,
+      "text": "Domanda 15 (vedi immagine 15.png) - Seleziona le risposte corrette",
+      "answer": "Risposte corrette: V-F-V-F-F",
+      "maxPoints": 3,
+      "negativePoints": 1.5,
+      "type": "multianswer",
+      "imageRef": "15.png",
+      "correctAnswers": [
+        "V",
+        "F",
+        "V",
+        "F",
+        "F"
+      ]
+    },
+    {
+      "number": 16,
+      "text": "Domanda 16 (vedi immagine 16.png) - Seleziona le risposte corrette",
+      "answer": "Risposte corrette: F-V-V-V-F",
+      "maxPoints": 3,
+      "negativePoints": 1.5,
+      "type": "multianswer",
+      "imageRef": "16.png",
+      "correctAnswers": [
+        "F",
+        "V",
+        "V",
+        "V",
+        "F"
+      ]
+    },
+    {
+      "number": 17,
+      "text": "Domanda 17 (vedi immagine 17.png) - Seleziona le risposte corrette",
+      "answer": "Risposte corrette: NO-NO-NO-SOLUZIONE-NO",
+      "maxPoints": 3,
+      "negativePoints": 1.5,
+      "type": "multianswer",
+      "imageRef": "17.png",
+      "correctAnswers": [
+        "NO",
+        "NO",
+        "NO",
+        "SOLUZIONE",
+        "NO"
+      ]
+    }
+  ]
+}
