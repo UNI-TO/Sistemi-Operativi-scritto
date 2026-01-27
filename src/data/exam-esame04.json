@@ -1,0 +1,307 @@
+{
+  "id": "esame04-teoria",
+  "date": "2023.00.00",
+  "course": "Teoria",
+  "title": "Esame Teoria Sistemi Operativi (esame04)",
+  "topics": [
+    "memoria-primaria",
+    "processi-scheduling",
+    "memoria-massa",
+    "file-system",
+    "sincronizzazione"
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "text": "Tra le ragioni per cui un sistema operativo può finire in una condizione di thrashing troviamo:",
+      "answer": "La risposta corretta è: un elevato numero di processi attivi rispetto alla dimensione della memoria principale, e l'adozione di una politica di allocazione globale o locale dei frame",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "un elevato numero di processi attivi rispetto alla dimensione della memoria principale, e l'adozione di una politica di allocazione globale o locale dei frame",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "un elevato numero di processi attivi rispetto alla dimensione della memoria principale, e l'adozione di un algoritmo di sostituzione delle pagine di tipo FIFO",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "un elevato numero di processi CPU bound rispetto alla dimensione della memoria principale, e l'adozione di una politica di allocazione globale o locale dei frame",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "un elevato numero di processi I/O bound rispetto alla dimensione della memoria principale, e l'adozione di una politica di allocazione globale o locale dei frame",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 2,
+      "text": "In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante: Pa (0,5), Pb (2,3), Pc (4,2), Pd (6,1). Se si usa l'algoritmo di scheduling non preemptive che fornisce le migliori prestazioni possibili per schedulare i 4 processi in tabella: il waiting time medio è [ ], il turnaround medio è [ ], il diagramma di GANTT è [ ], l'algoritmo usato per le risposte precedenti può soffrire di starvation? [ ]",
+      "answer": "Le risposte corrette sono: waiting time medio = 2, turnaround medio = 19/4, diagramma di GANTT = (0) ... Pa ... (5) ... Pc ... (7) ... Pd ... (8) ... Pb ... (11), l'algoritmo può soffrire di starvation = sì",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multianswer",
+      "statements": [
+        {
+          "text": "il waiting time medio è: 2",
+          "isCorrect": true
+        },
+        {
+          "text": "il turnaround medio è: 19/4",
+          "isCorrect": true
+        },
+        {
+          "text": "il diagramma di GANTT è: (0) ... Pa ... (5) ... Pc ... (7) ... Pd ... (8) ... Pb ... (11)",
+          "isCorrect": true
+        },
+        {
+          "text": "l'algoritmo usato per le risposte precedenti può soffrire di starvation: sì",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "text": "In quale caso l'accesso in lettura ad un file memorizzato su un sistema RAID è più veloce che se il file fosse memorizzato su un normale hard disk?",
+      "answer": "La risposta corretta è: quando il file è memorizzato su due o più blocchi appartenenti a strip contenuti su dischi diversi del RAID",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "quando il file è memorizzato su due o più blocchi appartenenti a strip contenuti su dischi diversi del RAID",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "quando il file è memorizzato su uno più blocchi appartenenti a strip contenuti sullo stesso disco del RAID",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "quando il RAID usato è di tipo 01/10, poiché in questo caso si possono sfruttare i dischi di mirroring",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "sempre, dato che i sistemi RAID sono stati pensati proprio per fornire maggiore velocità di accesso ai file (oltre che maggiore affidabilità)",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 4,
+      "text": "Secondo quanto visto a lezione, quale/quali dei seguenti comandi Unix modifica il valore del link counter dell'index-node associato al file cartella X? (si assuma di avere i permessi per eseguire tutti i comandi e di essere posizionati dentro a X, a sua volta contenuta in una generica cartella user/tmp): 1) ln ../X Z, 2) mkdir K, 3) ln X Y, 4) ln -s ../X W",
+      "answer": "La risposta corretta è: il comando 2)",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "il comando 2)",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "i comandi 1) e 2)",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "i comandi 2) e 4)",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "i comandi 2) 3) e 4)",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 5,
+      "text": "In quale/i caso/i un processo in coda di ready viene fatto passare allo stato running?",
+      "answer": "La risposta corretta è: quando lo scheduler della CPU lo seleziona per entrare in esecuzione. Ad esempio, nel caso di FCFS, quando il processo si trova in cima alla coda di ready",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "quando lo scheduler della CPU lo seleziona per entrare in esecuzione. Ad esempio, nel caso di FCFS, quando il processo si trova in cima alla coda di ready",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "quando il sistema operativo ha terminato le operazioni necessarie ad amministrare la vita del processo, ad esempio ha allocato il processo in RAM e inizializzato il suo PCB",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "mai, è il sistemi operativo che sposta i processi da uno stato all'altro.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "quando il processo è entrato in RQ arrivando da una coda di waiting, perché significa che è disponibile l'informazione che il processo stava attendendo, e la sua computazione può ripartire",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 6,
+      "text": "Un sistema operativo può adottare una paginazione semplice oppure una paginazione a più livelli. Che implicazioni ha questa scelta?",
+      "answer": "La risposta corretta è: La paginazione a più livelli è una scelta obbligata quando le tabelle delle pagine possono raggiungere grandi dimensioni, per cui sarebbe difficile allocarle in uno spazio contiguo di RAM. D'altra parte la paginazione semplice rende più efficiente la traduzione degli indirizzi da logici a fisici quando non si possa sfruttare il TLB",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "La paginazione a più livelli è una scelta obbligata quando le tabelle delle pagine possono raggiungere grandi dimensioni, per cui sarebbe difficile allocarle in uno spazio contiguo di RAM. D'altra parte la paginazione a più livelli è molto più vantaggiosa per la traduzione degli indirizzi da logici a fisici soprattutto in assenza di un TLB",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "La paginazione a più livelli è una scelta obbligata in caso di spazi logici molto piccoli, per i quali la paginazione semplice produrrebbe troppo spreco di spazio in RAM. D'altra parte la paginazione semplice rende più efficiente la traduzione degli indirizzi da logici a fisici quando non si possa sfruttare il TLB",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "La paginazione a più livelli è una scelta obbligata quando dobbiamo ricorrere ad una Tabella delle Pagine Invertita, che altrimenti sarebbe troppo difficile da allocare in RAM. D'altra parte la paginazione semplice rende più efficiente la traduzione degli indirizzi da logici a fisici quando non si possa sfruttare il TLB",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "La paginazione a più livelli è una scelta obbligata quando le tabelle delle pagine possono raggiungere grandi dimensioni, per cui sarebbe difficile allocarle in uno spazio contiguo di RAM. D'altra parte la paginazione semplice rende più efficiente la traduzione degli indirizzi da logici a fisici quando non si possa sfruttare il TLB",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "d"
+    },
+    {
+      "number": 7,
+      "text": "Il problema della sezione critica può essere risolto in molti modi diversi, ma qualsiasi soluzione deve rispettare alcune condizioni fondamentali, che possono essere così descritte:",
+      "answer": "La risposta corretta è: quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo deve rimanere in sezione critica per un tempo finito.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "quando un processo è in sezione critica deve rimanerci per un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; nella sezione critica ci deve essere sempre almeno un processo, e mai più di uno; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c"
+    },
+    {
+      "number": 8,
+      "text": "Di un sistema è noto che la tabella delle pagine più grande del sistema occupa esattamente 2 frame, il numero di un frame è scritto su 2 byte usando usando tutti i bit a disposizione, e nel sistema sono presenti in media 4 processi che insieme producono una frammentazione interna complessiva media di 4 Kilobyte. Determinare: lo spazio logico del sistema è grande [ ], lo spazio fisico del sistema è grande [ ]",
+      "answer": "Le risposte corrette sono: lo spazio logico del sistema è grande 4 Megabyte, lo spazio fisico del sistema è grande 128 Megabyte",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multianswer",
+      "statements": [
+        {
+          "text": "lo spazio logico del sistema è grande: 4 Megabyte",
+          "isCorrect": true
+        },
+        {
+          "text": "lo spazio fisico del sistema è grande: 128 Megabyte",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione): 1: cd /tmp, 2: mkdir newfolder, 3: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao, 4: cd newfolder, 5: ln -s ../pippo paperino, 6: ln -s /tmp/newfolder folder2, 7: cp ../pippo topolino, 8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file, 9: rm pippo, 10: cat paperino // cat stampa il contenuto del file passato come argomento, 11: mkdir folder3. Scegli un'alternativa:",
+      "answer": "La risposta corretta è: 1. il link-counter dell'i-node di topolino è: 1, 2. il link counter di newfolder è: 3, 3. l'output del comando 10 è: \"ciao\", 4. il link counter di tmp è: aumentato di 1",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1. il link-counter dell'i-node di topolino è: 2, 2. il link counter di newfolder è: 3, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il link counter di tmp è: aumentato di 1",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "1. il link-counter dell'i-node di topolino è: 1, 2. il link counter di newfolder è: 3, 3. l'output del comando 10 è: \"ciao\", 4. il link counter di tmp è: aumentato di 2",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "1. il link-counter dell'i-node di topolino è: 3, 2. il link counter di newfolder è: 3, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il link counter di tmp è: aumentato di 2",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "1. il link-counter dell'i-node di topolino è: 1, 2. il link counter di newfolder è: 3, 3. l'output del comando 10 è: \"ciao\", 4. il link counter di tmp è: aumentato di 1",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "d"
+    },
+    {
+      "number": 10,
+      "text": "In un sistema time sharing che usa un algoritmo di sostituzione delle pagine, tra le ragioni per cui si può verificare un context switch tra processi utente troviamo:",
+      "answer": "La risposta corretta è: 1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. viene richiesta una operazione di I/O dal processo in CPU, 3. in una coda di wait entra un processo con priorità maggiore di quello che sta girando, 4. viene generata una trap dal processo in esecuzione",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una signal, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene completata una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b"
+    }
+  ]
+}

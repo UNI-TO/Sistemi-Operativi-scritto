@@ -1,0 +1,320 @@
+{
+  "id": "esame00-teoria",
+  "date": "2023.06.16",
+  "course": "Teoria",
+  "title": "Scritto parte di teoria del corso A di Sistemi Operativi del 16 giugno 2023",
+  "topics": [
+    "processi-scheduling",
+    "sincronizzazione",
+    "file-system",
+    "memoria-primaria",
+    "generalita"
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "text": "In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante: Pa (0,5), Pb (2,3), Pc (4,2), Pd (6,1). Se si usa l'algoritmo di scheduling non preemptive che fornisce le migliori prestazioni possibili per schedulare i 4 processi in tabella: il waiting time medio è [ ], il turnaround medio è [ ], il diagramma di GANTT è [ ], l'algoritmo usato per le risposte precedenti può soffrire di starvation? [ ]",
+      "answer": "Le risposte corrette sono: waiting time medio = 2, turnaround medio = 19/4, diagramma di GANTT = (0) ... Pa ... (5) ... Pc ... (7) ... Pd ... (8) ... Pb ... (11), può soffrire di starvation = sì",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multianswer",
+      "statements": [
+        {
+          "text": "il waiting time medio è: 2",
+          "isCorrect": true
+        },
+        {
+          "text": "il turnaround medio è: 19/4",
+          "isCorrect": true
+        },
+        {
+          "text": "il diagramma di GANTT è: (0) ... Pa ... (5) ... Pc ... (7) ... Pd ... (8) ... Pb ... (11)",
+          "isCorrect": true
+        },
+        {
+          "text": "l'algoritmo usato per le risposte precedenti può soffrire di starvation: sì",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "text": "I semafori sono sezioni critiche che possono essere implementate sfruttando la disabilitazione degli interrupt. E' ragionevole usare questa soluzione anche per implementare le sezioni critiche dei processi utente?",
+      "answer": "La risposta corretta è: non è una soluzione ragionevole perché disabilitare gli interrupt toglierebbe al sistema operativo il controllo della macchina",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "non è una soluzione ragionevole perché disabilitare gli interrupt toglierebbe al sistema operativo il controllo della macchina",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "è una soluzione ragionevole, perché in questo modo il processo in sezione critica può portare a termine la sua computazione senza venire interrotto a metà, e le primitive wait e signal possono essere primitive comunque costose da implementare",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "non è una soluzione ragionevole perché in questo modo un solo processo alla volta potrebbe usare la wait e la signal per accedere ad una certa sezione critica",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "è una soluzione ragionevole, perché in questo modo il processo in sezione critica può portare a termine la sua computazione senza venire interrotto a metà",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 3,
+      "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione): 1: cd /tmp, 2: mkdir newfolder, 3: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao, 4: cd newfolder, 5: ln ../pippo paperino, 6: ln ../newfolder folder2, 7: cp paperino topolino, 8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file, 9: rm pippo, 10: cat paperino // cat stampa il contenuto del file passato come argomento, 11: mkdir ./folder3. Scegli un'alternativa:",
+      "answer": "La risposta corretta è: 1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1. il link-counter dell'i-node di paperino è: 1, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: no such file or directory, 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 1, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "1. il link-counter dell'i-node di paperino è: 1, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 dà come risultato: un nuovo collegamento alla cartella newfolder",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b"
+    },
+    {
+      "number": 4,
+      "text": "Tutti i sistemi operativi moderni adottano una qualche forma di paginazione della memoria primaria, in quanto:",
+      "answer": "La risposta corretta è: permette di eliminare la frammentazione esterna della RAM e di limitare moltissima la frammentazione interna; permette di implementare una forma automatica di protezione dello spazio di indirizzamento dei processi, e la base a partire dalla quale si può implementare la memoria virtuale",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "permette di eliminare la frammentazione interna della RAM ma non quella esterna; permette di implementare una forma automatica di allocazione dello spazio di indirizzamento dei processi, e la base a partire dalla quale si può implementare il binding dinamico degli indirizzi",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "permette di eliminare la frammentazione esterna della RAM e di limitare moltissima la frammentazione interna; permette di implementare una forma automatica di protezione dello spazio di indirizzamento dei processi, e la base a partire dalla quale si può implementare la memoria virtuale",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "permette di eliminare la frammentazione esterna e la frammentazione interna della RAM; permette di usare codice dinamicamente rilocabile per i processi, e la base a partire dalla quale si può implementare la memoria virtuale",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "permette di eliminare la frammentazione esterna e di limitare moltissima la frammentazione interna; permette di implementare una forma automatica di protezione dello spazio di indirizzamento dei processi, e la base a partire dalla quale si può implementare la memoria virtuale",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b"
+    },
+    {
+      "number": 5,
+      "text": "Cosa vuol dire che un algoritmo di scheduling soffre di starvation?",
+      "answer": "La risposta corretta è: che non garantisce di assegnare la CPU ad un processo in coda di ready in un tempo finito.",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "che non garantisce ad un processo in wait di poter tornare in coda di ready in un tempo finito.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "che non garantisce ad un processo di poter uscire da una sezione critica in un tempo finito.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "che non garantisce di assegnare la CPU ad un processo in coda di ready in un tempo finito.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "che non garantisce ad un processo di poter entrare in sezione critica in un tempo finito.",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c"
+    },
+    {
+      "number": 6,
+      "text": "Dell'algoritmo di sostituzione delle pagine \"Least Recently Used\" possiamo dire che:",
+      "answer": "La risposta corretta è: fornisce buone prestazioni, vicine a quelle ottimali; sceglie come pagina vittima la pagina in RAM che è stata riferita da più tempo, non soffre dell'anomalia di Belady, è difficilmente implementabile e nei processori moderni può essere approssimato usando il reference bit",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "fornisce buone prestazioni, vicine a quelle ottimali; sceglie come pagina vittima la pagina in RAM che è stata riferita da più tempo, soffre dell'anomalia di Belady, non è implementabile ma nei processori moderni può essere approssimato usando il reference bit",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "fornisce buone prestazioni, vicine a quelle ottimali; sceglie come pagina vittima la pagina entrata in RAM da più tempo, non soffre dell'anomalia di Belady, è difficilmente implementabile e nei processori moderni può essere approssimato usando il reference bit",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "fornisce buone prestazioni, vicine a quelle ottimali; sceglie come pagina vittima la pagina in RAM che è stata riferita da più tempo, non soffre dell'anomalia di Belady, non è implementabile ma nei processori moderni può essere approssimato usando il reference bit",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "fornisce buone prestazioni, vicine a quelle ottimali; sceglie come pagina vittima la pagina in RAM che è stata riferita da più tempo, non soffre dell'anomalia di Belady, è difficilmente implementabile e nei processori moderni può essere approssimato usando il reference bit",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "d"
+    },
+    {
+      "number": 7,
+      "text": "Dell'allocazione indicizzata possiamo dire che:",
+      "answer": "La risposta corretta è: è la più adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, fornisce un accesso diretto ai file efficiente",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "è la più adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, fornisce un accesso diretto ai file efficiente.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "non è adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, non fornisce un accesso diretto ai file efficiente.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "non è la più adottata nei sistemi operativi moderni, per allocare file grandi spreca molti byte, fornisce un accesso diretto ai file efficiente.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "è la più adottata nei sistemi operativi moderni, per allocare file grandi spreca molti byte, non fornisce un accesso diretto ai file efficiente.",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 8,
+      "text": "Confrontando le librerie statiche e quelle dinamiche possiamo dire che:",
+      "answer": "La risposta corretta è: le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché al contrario di quelle statiche possono essere usate con la memoria virtuale, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e perché quelle statiche possono essere usate solo col codice staticamente rilocabile",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e al contrario di quelle statiche possono essere usate col codice dinamicamente rilocabile",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b"
+    },
+    {
+      "number": 9,
+      "text": "In un sistema time sharing che usa un algoritmo di sostituzione delle pagine, tra le ragioni per cui si può verificare un context switch tra processi utente troviamo:",
+      "answer": "La risposta corretta è: 1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. viene richiesta una operazione di I/O dal processo in CPU, 3. in una coda di wait entra un processo con priorità maggiore di quello che sta girando, 4. viene generata una trap dal processo in esecuzione",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una signal, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene completata una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b"
+    },
+    {
+      "number": 10,
+      "text": "Secondo quanto visto a lezione, quale/quali dei seguenti comandi Unix modifica il valore del link counter dell'index-node associato al file di testo X? (si assuma di avere i permessi per eseguire tutti i comandi e di essere posizionati in una generica cartella user/tmp che contiene X): 1) ln -s X Y, 2) ls X Y, 3) ln X X, 4) rm X Y",
+      "answer": "La risposta corretta è: il comando 4)",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "i comandi 1) e 3)",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "i comandi 3) e 4)",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "il comando 4)",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "i comandi 1), 3) e 4)",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c"
+    }
+  ]
+}

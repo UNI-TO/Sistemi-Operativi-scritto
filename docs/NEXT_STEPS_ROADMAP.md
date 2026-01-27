@@ -1,127 +1,63 @@
 # 🗺️ Next Steps Roadmap - Simulatore Esami SO
 
-**Ultimo aggiornamento:** 26 Gennaio 2026
-**Status attuale:** 108 domande operative, 20 esami integrati
-**Potenziale:** ~773 domande totali
+**Ultimo aggiornamento:** 27 Gennaio 2026
+**Status attuale:** 163 domande operative, 21 esami integrati ✅
+**Potenziale:** ~763 domande totali
 
 ---
 
 ## 📊 Status Corrente
 
 ### ✅ Completato
-- **20 esami** operativi nel simulatore
-- **108 domande** totali (39 essay, 34 V/F, 26 multianswer, 8 multiple-choice, 1 matching)
-- **84 immagini** integrate
-- **9 parser scripts** funzionanti
+- **21 esami** operativi nel simulatore ✅
+- **163 domande** totali (67 essay, 41 V/F, 35 multianswer, 19 multiple-choice, 1 matching) ✅
+- **83 immagini** integrate (18 SO Appello + 8 SO B + 8 Teoria SO B + 50 UUID) ✅
+- **10 parser scripts** funzionanti (+ parse-prova-febbraio-2024) ✅
 - **OCR tools** installati e testati
 - **5 guide complete** per expansion
 
 ### 🎯 Obiettivo Finale
-**~773 domande totali** distribuite su ~50-60 esami
+**~763 domande totali** distribuite su ~45-50 esami (163 già integrate, ~600 da OCR batch)
 
 ---
 
-## 🚀 Step 1: Completare UUID Remaining [PRIORITÀ ALTA]
+## ~~🚀 Step 1: Completare UUID Remaining~~ ✅ COMPLETATO
 
-**Obiettivo:** Portare esame UUID da 10 a 50 domande (+40 domande)
+**Obiettivo:** ~~Portare esame UUID da 10 a 50 domande (+40 domande)~~ ✅
 
-### Prerequisiti
-- ✅ Template parser pronto (`scripts/parse-uuid-images-exam.js`)
-- ✅ 50 immagini JPG già copiate in `public/exams/uuid-misto/`
-- ✅ Guida completa disponibile (`docs/UUID_COMPLETION_QUICKSTART.md`)
+### Status
+- ✅ **50 domande complete** integrate (Q1-Q50)
+- ✅ Parser eseguito con successo
+- ✅ Merge completato
+- ✅ Build e test OK
+- ✅ **Esame UUID Misto operativo** nel simulatore
 
-### Processo
-1. **Analisi immagini rimanenti** (40 immagini)
-   - Aprire ogni immagine JPG
-   - Identificare tipo domanda (multiple-choice, multianswer, essay)
-   - Estrarre testo, opzioni, risposta corretta
-   - Documentare punteggi
+### Breakdown domande UUID
+- 28 multiple-choice
+- 3 multianswer
+- 19 essay
 
-2. **Aggiornare parser**
-   - Aggiungere dati all'array `questionsData` in `parse-uuid-images-exam.js`
-   - Numerazione Q11-Q50
-
-3. **Test e integrazione**
-   ```bash
-   node scripts/parse-uuid-images-exam.js
-   node scripts/merge-exams.js
-   npm run build
-   npm run dev
-   ```
-
-### Stima
-- **Tempo:** 2-3 ore (batch approach raccomandato)
-- **Output:** +40 domande
-- **Difficoltà:** ⭐⭐☆☆☆ (Media - lavoro manuale ma routine)
-
-### Checklist
-- [ ] Batch 1: Q11-Q20 (10 domande)
-- [ ] Batch 2: Q21-Q30 (10 domande)
-- [ ] Batch 3: Q31-Q40 (10 domande)
-- [ ] Batch 4: Q41-Q50 (10 domande)
-- [ ] Parser eseguito e testato (50 Q totali)
-- [ ] Merge completato
-- [ ] Build successful
-- [ ] Test in simulatore OK
-
-**Al completamento:** 148 domande totali (+37%)
+**Completato:** 163 domande totali (+51% rispetto a 108)
 
 ---
 
-## 📸 Step 2: Integrare Prova Febbraio 2024 [PRIORITÀ MEDIA]
+## ~~📸 Step 2: Integrare Prova Febbraio 2024~~ ✅ COMPLETATO
 
-**Obiettivo:** Estrarre ~15 domande da 16 screenshot
+**Obiettivo:** ~~Estrarre ~15 domande da 16 screenshot~~ ✅
 
-### Prerequisiti
-- ✅ 16 screenshot disponibili in `docs/pdf-esami/foto-esami/Prova_febbraio2024/`
-- ✅ Template parser in `docs/pdf-esami/UUID_IMAGES_INTEGRATION_GUIDE.md` (Parte 2)
-- ⚠️ Screenshot con domande sovrapposte (scroll page)
+### Status
+- ✅ **15 domande complete** integrate
+- ✅ Parser `parse-prova-febbraio-2024.js` creato
+- ✅ Integrato in merge-exams.js
+- ✅ Build e test OK
+- ✅ **Prova Febbraio 2024 operativa** nel simulatore
 
-### Processo
-1. **Analisi screenshot**
-   - Aprire 16 screenshot in ordine cronologico
-   - Identificare domande uniche (alcune appaiono in multipli screenshot)
-   - Estrarre testo completo ogni domanda
+### Breakdown domande Prova Febbraio
+- 11 multiple-choice
+- 2 essay
+- 2 multianswer
 
-2. **Creare parser**
-   ```bash
-   # Creare nuovo file
-   cp scripts/parse-uuid-images-exam.js scripts/parse-prova-febbraio-2024.js
-   # Modificare con dati estratti
-   ```
-
-3. **Gestire sovrapposizioni**
-   - Usare numero domanda come chiave unica
-   - Scegliere versione più completa se duplicata
-
-4. **Copiare immagini**
-   ```bash
-   mkdir -p public/exams/prova-febbraio-2024
-   cp docs/pdf-esami/foto-esami/Prova_febbraio2024/*.JPG public/exams/prova-febbraio-2024/
-   ```
-
-5. **Test e integrazione**
-   ```bash
-   node scripts/parse-prova-febbraio-2024.js
-   # Aggiungere path al merge-exams.js
-   node scripts/merge-exams.js
-   npm run build
-   ```
-
-### Stima
-- **Tempo:** 1.5-2 ore
-- **Output:** +15 domande circa
-- **Difficoltà:** ⭐⭐⭐☆☆ (Media-Alta - gestire sovrapposizioni)
-
-### Checklist
-- [ ] Analisi 16 screenshot completata
-- [ ] Identificate domande uniche (~15)
-- [ ] Parser creato
-- [ ] Immagini copiate
-- [ ] Integrato in merge-exams.js
-- [ ] Build e test OK
-
-**Al completamento:** 163 domande totali
+**Completato:** 163 domande totali
 
 ---
 

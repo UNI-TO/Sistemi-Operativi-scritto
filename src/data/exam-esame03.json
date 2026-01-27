@@ -1,0 +1,317 @@
+{
+  "id": "esame03-teoria",
+  "date": "2023.00.00",
+  "course": "Teoria",
+  "title": "Esame Teoria Sistemi Operativi (esame03)",
+  "topics": [
+    "sincronizzazione",
+    "generalita",
+    "file-system",
+    "memoria-primaria",
+    "processi-scheduling",
+    "memoria-massa"
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "text": "I semafori sono sezioni critiche che possono essere implementate sfruttando la disabilitazione degli interrupt. E' ragionevole usare questa soluzione anche per implementare le sezioni critiche dei processi utente?",
+      "answer": "La risposta corretta è: non è una soluzione ragionevole perché disabilitare gli interrupt toglierebbe al sistema operativo il controllo della macchina",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "non è una soluzione ragionevole perché in questo modo un solo processo alla volta potrebbe usare la wait e la signal per accedere ad una certa sezione critica",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "è una soluzione ragionevole, perché in questo modo il processo in sezione critica può portare a termine la sua computazione senza venire interrotto a metà",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "non è una soluzione ragionevole perché disabilitare gli interrupt toglierebbe al sistema operativo il controllo della macchina",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "è una soluzione ragionevole perché permette di evitare l'uso di wait e signal, che sono primitive comunque costose da implementare",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c"
+    },
+    {
+      "number": 2,
+      "text": "Confrontando le librerie statiche e quelle dinamiche possiamo dire che:",
+      "answer": "La risposta corretta è: le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché al contrario di quelle statiche possono essere usate con la memoria virtuale, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e al contrario di quelle statiche possono essere usate solo col codice dinamicamente rilocabile",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e perché quelle statiche possono essere usate solo col codice statico",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c"
+    },
+    {
+      "number": 3,
+      "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione): 1: cd /tmp, 2: mkdir newfolder, 3: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao, 4: cd newfolder, 5: ln ../pippo paperino, 6: ln ../newfolder folder2, 7: ln -s paperino topolino, 8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file, 9: rm pippo, 10: cat paperino // cat stampa il contenuto del file passato come argomento, 11: mkdir ../folder3. Scegli un'alternativa:",
+      "answer": "La risposta corretta è: 1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 1, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "1. il link-counter dell'i-node di paperino è: 1, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 dà come risultato: un nuovo collegamento alla cartella newfolder",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: 2, 3. l'output del comando 10 è: no such file or directory, 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b"
+    },
+    {
+      "number": 4,
+      "text": "In un sistema operativo moderno che implementa la memoria virtuale, quando si verifica un page fault e non c'è spazio in RAM occorre scegliere una pagina vittima. Dei criteri di scelta visti a lezione possiamo dire che:",
+      "answer": "La risposta corretta è: scegliere la pagina che è stata riferita da più tempo è un ottimo criterio, ma all'atto pratico non si può implementare in modo efficiente",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "scegliere la pagina che è entrata in RAM da più tempo è un buon criterio, e infatti viene adottato da molti sistemi operativi",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "scegliere la pagina che verrà riferita più in là nel tempo è sicuramente il criterio migliore, ma richiede hardware dedicato offerto solo dalle CPU di fascia alta",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "scegliere la pagina che è stata riferita da più tempo è un ottimo criterio, ma all'atto pratico non si può implementare in modo efficiente",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "scegliere una pagina che è stata modificata di recente è un buon criterio, nel caso in cui ci sia bisogno di salvare periodicamente lo stato della computazione del processo",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c"
+    },
+    {
+      "number": 5,
+      "text": "Il concetto di \"diritto di prelazione\" può essere applicato sia ad un algoritmo di scheduling che ad un kernel nel suo complesso. Qual è la differenza?",
+      "answer": "La risposta corretta è: negli algoritmi di scheduling preemptive un processo utente può essere obbligato dal SO ad abbandonare la CPU. Nei kernel preemptive un processo in kernel mode può essere obbligato ad abbandonare la CPU.",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "negli algoritmi di scheduling preemptive un processo utente può essere obbligato dal SO ad abbandonare la CPU. Nei kernel preemptive un processo in kernel mode può essere obbligato ad abbandonare la CPU.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "in un kernel con diritto di prelazione vengono disabilitati gli interrupt quando un processo è in kernel mode, in un algoritmo di scheduling con diritto di prelazione vengono abilitati gli interrupt per permettere il funzionamento del timer hardware",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "in un kernel con diritto di prelazione vengono disabilitati gli interrupt quando un processo è in kernel mode, in un algoritmo di scheduling con diritto di prelazione i processi utente possono essere interrotti da altri processi utente",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "non c'è nessuna differenza: un algoritmo di scheduling preemptive implica che il sistema operativo su cui è implementato possieda un kernel con diritto di prelazione.",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 6,
+      "text": "Di un sistema è noto che la tabella delle pagine più grande del sistema occupa esattamente 2 frame, il numero di un frame è scritto su 2 byte usando usando tutti i bit a disposizione, e nel sistema sono presenti in media 4 processi che insieme producono una frammentazione interna complessiva media di 4 Kilobyte. Determinare: lo spazio logico del sistema è grande [ ], lo spazio fisico del sistema è grande [ ]",
+      "answer": "La risposta corretta è: lo spazio logico del sistema è grande [4 Megabyte], lo spazio fisico del sistema è grande [128 Megabyte]",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multianswer",
+      "statements": [
+        {
+          "text": "lo spazio logico del sistema è grande: 4 Megabyte",
+          "isCorrect": true
+        },
+        {
+          "text": "lo spazio fisico del sistema è grande: nessuno dei valori proposti",
+          "isCorrect": false
+        },
+        {
+          "text": "lo spazio fisico del sistema è grande: 64 Megabyte",
+          "isCorrect": false
+        },
+        {
+          "text": "lo spazio logico del sistema è grande: 8 Megabyte",
+          "isCorrect": false
+        },
+        {
+          "text": "lo spazio logico del sistema è grande: 2 Megabyte",
+          "isCorrect": false
+        },
+        {
+          "text": "lo spazio fisico del sistema è grande: 256 Megabyte",
+          "isCorrect": false
+        },
+        {
+          "text": "lo spazio fisico del sistema è grande: nessuno dei valori proposti",
+          "isCorrect": false
+        },
+        {
+          "text": "lo spazio fisico del sistema è grande: 128 Megabyte",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "text": "Cosa vuol dire che un algoritmo di scheduling soffre di starvation?",
+      "answer": "La risposta corretta è: che non garantisce di assegnare la CPU ad un processo in coda di ready in un tempo finito.",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "che non garantisce di assegnare la CPU ad un processo in coda di ready in un tempo finito.",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "che non garantisce ad un processo di poter entrare in sezione critica in un tempo finito.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "che non garantisce ad un processo di poter uscire da una sezione critica in un tempo finito.",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "che non garantisce ad un processo in wait di poter tornare in coda di ready in un tempo finito.",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 8,
+      "text": "Dei diversi livelli RAID visti a lezione, dal livello 0 al livello 5, possiamo dire che:",
+      "answer": "La risposta corretta è: non tutti i livelli garantiscono una maggiore affidabilità, e tutti forniscono -- anche se non sempre -- una maggiore velocità di accesso ai dati memorizzati",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "tutti i livelli garantiscono una maggiore affidabilità, e tutti forniscono -- anche se non sempre -- una maggiore velocità di accesso ai dati memorizzati",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "tutti i livelli garantiscono una maggiore affidabilità, e tutti forniscono -- sempre -- una maggiore velocità di accesso ai dati memorizzati",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "non tutti i livelli garantiscono una maggiore affidabilità, e tutti forniscono -- anche se non sempre -- una maggiore velocità di accesso ai dati memorizzati",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "non tutti i livelli garantiscono una maggiore affidabilità, e tutti forniscono -- sempre -- una maggiore velocità di accesso ai dati memorizzati",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c"
+    },
+    {
+      "number": 9,
+      "text": "In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante: Pa (0,4), Pb (2,3), Pc (3,2), Pd (5,1). Se si usa l'algoritmo di scheduling non preemptive che fornisce le migliori prestazioni possibili per schedulare i 4 processi in tabella: il waiting time medio è [ ], il turnaround medio è [ ], il diagramma di GANTT è [ ], l'algoritmo usato per le risposte precedenti potrebbe non portare mai a termine un processo? [ ]",
+      "answer": "La risposta parzialmente corretta. Waiting time medio corretto: 8/4, Turnaround medio errato (corretto: 18/4), Diagramma GANTT errato (corretto: (0) ... Pa ... (4) ... Pb ... (7) ... Pc ... (9) ... Pd ... (10)), Algoritmo non porta mai a termine: no",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multianswer",
+      "statements": [
+        {
+          "text": "il waiting time medio è: 17/4",
+          "isCorrect": false
+        },
+        {
+          "text": "il turnaround medio è: 7/4",
+          "isCorrect": false
+        },
+        {
+          "text": "il diagramma di GANTT è: (0) ... Pa ... (4) ... Pc ... (6) ... Pd ... (7) ... Pb ... (10)",
+          "isCorrect": false
+        },
+        {
+          "text": "l'algoritmo usato per le risposte precedenti potrebbe non portare mai a termine un processo: no",
+          "isCorrect": true
+        },
+        {
+          "text": "il waiting time medio è: 8/4",
+          "isCorrect": true
+        },
+        {
+          "text": "il turnaround medio è: sì",
+          "isCorrect": false
+        },
+        {
+          "text": "il diagramma di GANTT è: (0) ... Pa ... (4) ... Pb ... (7) ... Pc ... (9) ... Pd ... (10)",
+          "isCorrect": true
+        },
+        {
+          "text": "il waiting time medio è: 18/4",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

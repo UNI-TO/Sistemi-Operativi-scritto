@@ -5,7 +5,7 @@ Simulatore di esami per esercitarsi con le prove scritte di programmazione in C 
 ## Caratteristiche
 
 ### Esami
-- 📚 **20 esami** parsati automaticamente (14 HTML + 1 TXT + 3 PNG + 1 DOCX + 1 UUID Mix)
+- 📚 **22 esami** parsati automaticamente (14 HTML + 1 TXT + 3 PNG + 1 DOCX + 1 UUID Mix + 1 Prova Feb + 1 OCR PDF)
 - ✍️ **Editor di codice** per scrivere le soluzioni in C
 - 🖼️ **Supporto immagini** - visualizza domande con screenshot ed esercizi grafici (83 immagini totali)
 - 💡 **Visualizzazione soluzioni** per ogni domanda
@@ -133,7 +133,7 @@ Sistemi-Operativi-scritto/
 | 2022.02.08 | A, B  | 2       | 💻 Programmazione C |
 | 2020.07.02 | A     | 1       | 💻 Programmazione C |
 
-**Totale**: 20 esami, **108 domande** (39 essay, 34 vero/falso, 26 multianswer, 8 multiple-choice, 1 matching)
+**Totale**: 22 esami, **178 domande** (57 essay, 34 vero/falso, 31 multianswer, 55 multiple-choice, 1 matching)
 
 ## Argomenti del Corso
 
@@ -188,7 +188,7 @@ Il simulatore copre tutte le 6 parti del corso di Sistemi Operativi:
 
 ## 📂 Materiale Disponibile
 
-### Esami Già Integrati (20 totali, 108 domande) 🚀
+### Esami Già Integrati (22 totali, 178 domande) 🚀
 - **14 esami HTML** parsati (2020-2024) - programmazione C (21 domande essay)
 - **1 esame teoria TXT** con domande multiple (11 domande):
   - 9 domande Vero/Falso
@@ -198,10 +198,14 @@ Il simulatore copre tutte le 6 parti del corso di Sistemi Operativi:
   - **SO Appello 14/01/2025** (17 domande): 11 V/F + 6 multianswer
   - **SO Corso B 17/06/2025** (12 domande): 7 V/F + 3 multianswer + 2 essay
   - **Teoria SO Corso B 18/06/2025** (12 domande): 7 V/F + 3 multianswer + 2 essay
-- **1 esame DOCX estratto** ⭐ NUOVO (13 domande essay):
+- **1 esame DOCX estratto** (13 domande essay):
   - **Domande Aperte Corso B** - teoria SO approfondita (39 punti)
-- **1 esame UUID Misto** ⭐ NUOVO (10 domande + template per 40):
-  - **Domande Varie Mix Argomenti**: 8 multiple-choice + 1 multianswer + 1 essay
+- **1 esame UUID Misto** ✅ COMPLETATO (50 domande):
+  - **Domande Varie Mix Argomenti**: 28 multiple-choice + 3 multianswer + 19 essay
+- **1 esame Prova Febbraio 2024** ✅ COMPLETATO (15 domande):
+  - **Prova Febbraio 2024**: 11 multiple-choice + 2 essay
+- **1 esame OCR PDF** ✅ COMPLETATO (15 domande):
+  - **Teoria 27 Gennaio 2026**: 10 multiple-choice + 3 multianswer + 2 essay
 
 ### Materiale da Processare (~800+ file)
 Vedi `docs/pdf-esami/ADDITIONAL_EXAMS_ANALYSIS.md` e `docs/OCR_PROCESSING_GUIDE.md` per dettagli completi:
@@ -236,13 +240,13 @@ Vedi `docs/pdf-esami/ADDITIONAL_EXAMS_ANALYSIS.md` e `docs/OCR_PROCESSING_GUIDE.
 - ✅ **Indicatori progresso**: Badge "📝" per esami con risposte salvate
 
 ### Tipi di Domande Supportati
-1. **Essay** (💻 Codice C completo / Teoria approfondita) - 39 domande ⭐
-2. **Multianswer** (📝 Risposta breve) - 26 domande ⭐
+1. **Essay** (💻 Codice C completo / Teoria approfondita) - 57 domande ⭐
+2. **Multianswer** (📝 Risposta breve) - 31 domande ⭐
 3. **True/False** (✓/✗ Vero o Falso) - 34 domande
-4. **Multiple Choice** (🔘 Scelta multipla) - 8 domande ⭐
+4. **Multiple Choice** (🔘 Scelta multipla) - 55 domande ⭐
 5. **Matching** (🔗 Associazione) - 1 domanda
 
-**Totale: 108 domande** su 20 esami 🚀
+**Totale: 178 domande** su 22 esami 🚀
 
 ### Parser Implementati
 - ✅ **HTML → JSON** (14 esami programmazione C) - `parse-exams.js`
@@ -287,15 +291,15 @@ node scripts/merge-exams.js                     # Unisci tutti gli esami
 - **Righe di codice**: ~5,000+ 🚀
 - **Componenti React**: 8 (QuestionCard, MultipleChoiceQuestion, ImageQuestion, ExamSimulator, ExamList, StudyMaterials, Home, App)
 - **Custom Hooks**: 1 (useLocalStorage)
-- **Script parser**: 9 ⭐ (parse-exams, parse-txt-exam, parse-png-exam, parse-so-b-17-06, parse-teoria-so-b-18-06, parse-docx, parse-domande-aperte, parse-uuid, ocr-pdf, add-topics, merge-exams)
+- **Script parser**: 10 ⭐ (parse-exams, parse-txt-exam, parse-png-exam, parse-so-b-17-06, parse-teoria-so-b-18-06, parse-docx, parse-domande-aperte, parse-uuid, parse-prova-febbraio, ocr-pdf, add-topics, merge-exams)
 - **File CSS**: 1200+ righe
 - **Tipi TypeScript**: 12+ interfacce
-- **Esami integrati**: 20 🚀
-- **Domande totali**: 108 🚀
+- **Esami integrati**: 22 🚀
+- **Domande totali**: 178 🚀
 - **Immagini esame**: 83 totali ⭐ (18 SO Appello 14/01, 8 SO B 17/06, 8 Teoria SO B 18/06, 50 UUID misto)
 - **PDF teoria**: 11
 - **Build size**: 282 kB JS + 15 kB CSS
-- **File tracciati da processare**: ~800+
+- **File tracciati da processare**: ~600+ (OCR batch)
 - **OCR Tools**: ✅ Installati e pronti (pdf-parse + tesseract.js)
 
 ## 🎯 Roadmap Future
@@ -307,12 +311,12 @@ node scripts/merge-exams.js                     # Unisci tutti gli esami
 - [x] ~~Parsare altri esami PNG (SO B 17-06-2025, Teoria SO B 18.06.2025)~~ ✅ Completato
 - [x] ~~Parser DOCX per domande aperte Corso B~~ ✅ Completato (+13 domande essay)
 - [x] ~~Setup OCR tools per PDF~~ ✅ Completato (pdf-parse + tesseract.js)
-- [x] ~~Parser UUID images (parziale)~~ ✅ Completato (+10 domande, template per 40)
-- [ ] **Completare UUID remaining** (40 domande rimanenti, template pronto)
-- [ ] **OCR batch processing PDF** (154 PDF teoria + esami, ~600 domande potenziali)
-- [ ] **Parser per Prova_febbraio2024** (16 screenshot, +15 domande, guida disponibile)
+- [x] ~~Parser UUID images~~ ✅ Completato (+50 domande complete)
+- [x] ~~Parser Prova Febbraio 2024~~ ✅ Completato (+15 domande)
+- [ ] **OCR batch processing PDF** (154 PDF teoria + esami, ~600 domande potenziali) ⬅️ **PROSSIMO STEP**
 - [ ] Aggiungere timer per esami a tempo
 - [ ] Export risultati in PDF
+- [ ] /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/docs/pdf-esami/foto-esami/Scritto_parte_di_teoria_del_corso_A_di_Sistemi_Operativi_del_27.pdf
 
 ### Media Priorità
 - [ ] Sistema di flashcard per memorizzazione

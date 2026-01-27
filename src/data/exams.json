@@ -1,5 +1,460 @@
 [
   {
+    "id": "esame-teoria-27-gennaio-2026",
+    "date": "2026.01.27",
+    "course": "Teoria",
+    "title": "Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026",
+    "topics": [
+      "file-system",
+      "memoria-primaria",
+      "processi-scheduling",
+      "sincronizzazione",
+      "memoria-massa"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "Un hard disk ha la dimensione di 512 Gigabyte, è formattato in blocchi da 0x1000 byte e adotta una allocazione concatenata (senza FAT) dello spazio su disco. Sull'hard disk è memorizzato un file A della dimensione di 0x4000 byte. Quanti byte del file sono memorizzati nell'ultimo blocco di dati del file? (selezionate l'opzione di risposta che riporta il calcolo corretto del valore cercato)",
+        "answer": "La risposta corretta è: 2^39/2^12 = 2^27 ==> 4 byte per scrivere un puntatore a blocco. Dunque, l'ultimo blocco di A conterrà 4 * 2^14/2^12 = 16 byte di A",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "2^39/2^15 = 2^24 ==> 3 byte per scrivere un puntatore a blocco. Dunque, l'ultimo blocco di A conterrà 3 * 2^15/2^13 = 12 byte di A",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "2^39/2^12 = 2^27 ==> 4 byte per scrivere un puntatore a blocco. Dunque, l'ultimo blocco di A conterrà 4 * 2^14/2^12 = 16 byte di A",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "2^39/2^12 = 2^27 ==> 4 byte per scrivere un puntatore a blocco. Dunque, l'ultimo blocco di A conterrà 2^14/4 = 4096 byte di A",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "2^39/2^13 = 2^26 ==> 4 byte per scrivere un puntatore a blocco. Dunque, l'ultimo blocco di A conterrà 2^15/4 = 8192 byte di A",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 2,
+        "text": "In un sistema che adotta la paginazione della memoria, un indirizzo logico è scritto su \"M\" bit, e il numero di pagina è scritto su \"l\" bit. Lo spazio fisico è invece suddiviso in 2^32 frame. Possiamo quindi dire che: un frame del sistema è grande [ ], lo spazio fisico del sistema è grande [ ], la tabella delle pagine più grande del sistema ha una dimensione di [ ], il sistema dovrà implementare la memoria virtuale solo se [ ]",
+        "answer": "La risposta corretta è: un frame del sistema è grande [2^(M-l)] byte, lo spazio fisico del sistema è grande [2^(32+M-l)] byte, la tabella delle pagine più grande del sistema ha una dimensione di [(2^l) * 4] byte, il sistema dovrà implementare la memoria virtuale solo se [M > (32+M-l)]",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "statements": [
+          {
+            "text": "un frame del sistema è grande: 2^(M-l) byte",
+            "isCorrect": true
+          },
+          {
+            "text": "lo spazio fisico del sistema è grande: 2^(32+M-l) byte",
+            "isCorrect": true
+          },
+          {
+            "text": "la tabella delle pagine più grande del sistema ha una dimensione di: 2^(32-M+l) byte",
+            "isCorrect": false
+          },
+          {
+            "text": "il sistema dovrà implementare la memoria virtuale solo se: M > (32+M-l)",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione): 1: cd /tmp, 2: mkdir newfolder, 3: cd newfolder, 4: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao, 5: ln pippo paperino, 6: ln ../newfolder folder2, 7: cp paperino topolino, 8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file, 9: cat paperino // cat stampa il contenuto del file passato come argomento, 10: cat topolino, 11: rmdir ../folder3. Scegli un'alternativa:",
+        "answer": "La risposta corretta è: 1. il link-counter dell'i-node di paperino è: 1, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il comando 6 dà come risultato: un nuovo collegamento alla cartella newfolder",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "1. il link-counter dell'i-node di paperino è: 1, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: 1, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 4,
+        "text": "Degli algoritmi di sostituzione delle pagine possiamo dire che (scegliete l'unica opzione completamente corretta):",
+        "answer": "La risposta corretta è: LRU è uno dei migliori algoritmi di rimpiazzamento, ma non viene implementato perché richiederebbe un supporto hardware normalmente non disponibile",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "LRU è uno dei migliori algoritmi di rimpiazzamento, ma non viene implementato perché richiederebbe un supporto hardware normalmente non disponibile",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "l'algoritmo della seconda chance migliorata è chiamato così perché, al contrario dell'algoritmo della seconda chance, non soffre dell'anomalia di Belady",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "l'algoritmo di sostituzione ottimale (detto OPT o MIN) è detto così perché sceglie come pagina vittima di un processo quella che non verrà mai più indirizzata dal processo stesso",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "l'algoritmo della seconda chance è una approssimazione di LRU implementata usando il dirty bit per distinguere le pagine modificate da quelle non modificate",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 5,
+        "text": "Un hard disk ha la dimensione di 512 Gigabyte, è formattato in blocchi da 0x400 byte e adotta una qualche forma di allocazione indicizzata dello spazio su disco. Sull'hard disk è memorizzato un file A della dimensione di 600 Kbyte. Quante operazioni di I/O sono necessarie per leggere l'ultimo blocco di dati del file, assumendo già in RAM tutti gli attributi del file, incluso il numero del primo blocco indice, e assumendo uno schema di allocazione indicizzata concatenato (a livello zero)?",
+        "answer": "La risposta corretta è: 2^39/2^10 = 2^29, dunque un blocco indice di questo hard disk può tenere traccia di un massimo di 256 Kbyte di dati. Assumendo una allocazione indicizzata a schema concatenato, ci vogliamo 3 blocchi indice per rappresentare l'ultimo blocco di dati del file, e dunque, se è già in RAM il numero del primo blocco indice, saranno necessarie in tutto 4 operazioni di lettura su disco",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "2^39/2^10 = 2^29, dunque un blocco indice di questo hard disk può tenere traccia di un massimo di 256 Kbyte di dati. Assumendo una allocazione indicizzata a schema concatenato, ci vogliamo 2 blocchi indice per rappresentare l'ultimo blocco di dati del file, e dunque, se è già in RAM il numero del primo blocco indice, saremo necessarie in tutto 3 operazioni di lettura su disco",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "2^39/2^11 = 2^28, dunque un blocco indice di questo hard disk può tenere traccia di un massimo di 512 Kbyte di dati. Assumendo una allocazione indicizzata a più livelli, ci vogliamo 2 blocchi indice e 1 blocco dati per rappresentare l'ultimo blocco di dati del file, e dunque, se è già in RAM il numero del primo blocco indice, saremo necessarie in tutto 4 operazioni di lettura su disco",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "2^39/2^10 = 2^29, dunque un blocco indice di questo hard disk può tenere traccia di un massimo di 256 Kbyte di dati. Assumendo una allocazione indicizzata a schema concatenato, ci vogliamo 3 blocchi indice per rappresentare l'ultimo blocco di dati del file, e dunque, se è già in RAM il numero del primo blocco indice, saremo necessarie in tutto 4 operazioni di lettura su disco",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "2^39/2^11 = 2^28, dunque un blocco indice di questo hard disk può tenere traccia di un massimo di 512 Kbyte di dati. Assumendo una allocazione indicizzata a schema concatenato, ci vogliamo 2 blocchi indice per rappresentare l'ultimo blocco di dati del file, e dunque, se è già in RAM il numero del primo blocco indice, saremo necessarie in tutto 3 operazioni di lettura su disco",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 6,
+        "text": "Si consideri l'esecuzione della seguente porzione di codice che utilizza la system call fork: int a, b, c, d, n, pid1, pid2, pid3; a=30, b= 4, c=50, d= 60; n= fork(); if ( n== 0) {a = 35; b = 45; pid1 = getppid(); printf(\"%d\", pid1); exit(0);} else {c = 55; d = 65; pid2 = getpid(); printf(\"%d\",pid2); pid3 = wait(...); exit(0);}. Determinare i valori delle variabili e l'ordine di esecuzione delle stampe.",
+        "answer": "La risposta corretta è: il valore della variabile a visto dal processo figlio subito prima della sua exit è [35], il valore della variabile c visto dal processo figlio subito prima della sua exit è [50], il valore della variabile a visto dal processo padre subito prima della sua exit è [30], il valore della variabile b visto dal processo padre subito prima della sua exit è [4], all'esecuzione delle due printf vale la seguente relazione: pid1 [=] pid2, del risultato della wait possiamo dire che: pid3 [=] pid2",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "statements": [
+          {
+            "text": "il valore della variabile a visto dal processo figlio subito prima della sua exit è 35",
+            "isCorrect": true
+          },
+          {
+            "text": "il valore della variabile c visto dal processo figlio subito prima della sua exit è 50",
+            "isCorrect": true
+          },
+          {
+            "text": "il valore della variabile a visto dal processo padre subito prima della sua exit è 30",
+            "isCorrect": true
+          },
+          {
+            "text": "il valore della variabile b visto dal processo padre subito prima della sua exit è 4",
+            "isCorrect": true
+          },
+          {
+            "text": "all'esecuzione delle due printf vale la seguente relazione: pid1 = pid2",
+            "isCorrect": true
+          },
+          {
+            "text": "del risultato della wait possiamo dire che: pid3 = padre",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "text": "Sia A un file di testo all'interno di un file system Unix. Viene eseguito con successo il comando: ln A B dove B non esisteva prima dell'esecuzione del comando. Che cosa succede nelle strutture interne al sistema?",
+        "answer": "La risposta corretta è: Una nuova entry di nome B viene inserita nella cartella in cui è stato eseguito il comando. Il numero dell'i-node associato ad A viene ora associato anche a B. Il link counter di quell'i-node viene incrementato di 1",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "nella cartella in cui viene eseguito il comando viene creato un nuovo file di nome B, e il link counter dell'i-node associato ad A viene inizializzato a 1. Il link counter dell'i-node associato ad A viene incrementato di 1",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "Una nuova entry di nome B viene inserita nella cartella in cui è stato eseguito il comando, e un nuovo i-node viene associato a B. Il path name di A viene scritto dentro l'i-node associato a B. Il link counter dell'i-node associato a B viene inizializzato a 1",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "il contenuto di A viene copiato dentro a B. L'i-node di A viene duplicato e associato a B. Il link counter dell'i-node associato a B viene inizializzato a 1, mentre il link counter dell'i-node associato ad A viene incrementato di 1",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "Una nuova entry di nome B viene inserita nella cartella in cui è stato eseguito il comando. Il numero dell'i-node associato ad A viene ora associato anche a B. Il link counter di quell'i-node viene incrementato di 1",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 8,
+        "text": "In un sistema operativo che adotta uno scheduling con diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante: ProcessoT. di arrivoT.di burst| Pa | 0 | 8, Pb | 2 | 8, Pc | 4 | 2, Pd | 6 | 1. Qual è il waiting time medio ottenuto per lo scheduling dei quattro processi della tabella se si usa l'algoritmo di scheduling preemptive che fornisce il miglior turnaround time possibile? Qual è il corrispondente diagramma di GANTT?",
+        "answer": "La risposta corretta è: Diagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pd ... (7) ... Pa ... (11) ... Pb ... (19). Waiting time medio = 3",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "Diagramma di GANTT: (0) ... Pa ... (4) ... Pb ... (7) ... Pd ... (9) ... Pa ... (11) ... Pc ... (19). Waiting time medio = 3",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "Diagramma di GANTT: (0) ... Pa ... (4) ... Pb ... (7) ... Pc ... (10) ... Pa ... (11) ... Pd ... (19). Waiting time medio = 4",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "Diagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pa ... (10) ... Pd ... (11) ... Pc ... (19). Waiting time medio = 4",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "Diagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pd ... (7) ... Pa ... (11) ... Pb ... (19). Waiting time medio = 3",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 9,
+        "text": "In quale/i caso/i un processo in coda di ready può decidere di passare allo stato running?",
+        "answer": "La risposta corretta è: mai, è il Sistema Operativo che sposta i processi da uno stato all'altro.",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "quando un processo si trova in testa alla coda di ready",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "in tutti gli algoritmi di scheduling non preemptive, dove un processo può decidere autonomamente quanto tempo passare in coda di ready",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "mai, è il Sistema Operativo che sposta i processi da uno stato all'altro.",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "quando un processo esce da un qualsiasi stato di waiting",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 10,
+        "text": "Si deve configurare un sistema RAID sapendo che è importante avere a disposizione un ampio spazio di memorizzazione, mentre l'affidabilità del sistema non è importante. Quale livello RAID conviene scegliere?",
+        "answer": "La risposta corretta è: il RAID di livello 0, in cui non si ha nessuna ridondanza dei dati e non si usano strip di parità, per cui in caso di guasto è impossibile recuperare i dati persi",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "il RAID di livello 1, in cui tutti i dischi del RAID sono usati per memorizzare strip di dati",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "il RAID di livello 0, in cui non si ha nessuna ridondanza dei dati e non si usano strip di parità, per cui in caso di guasto è impossibile recuperare i dati persi",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "il RAID di livello 4, in cui tutti i dischi del RAID potrebbero essere usati per memorizzare i dati, ad eccezione di un disco usato per gli strip di parità",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "il RAID di livello 01, in cui sono disponibili anche i dischi di mirroring per memorizzare gli strip di dati",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 11,
+        "text": "In un sistema paginato è noto che lo spreco di memoria primaria dovuto alla frammentazione interna è in media di circa 4 Kbyte per processo, e un indirizzo logico è scritto su 32 bit. Se la tabella delle pagine più grande di questo sistema è grande 1024 Kilobyte, quanto può essere grande al massimo lo spazio di indirizzamento fisico del sistema?",
+        "answer": "La risposta corretta è: 512 Megabyte",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "4 Gigabyte",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "512 Megabyte",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "2 Gigabyte",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "1 Gigabyte",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 12,
+        "text": "Ricostruite il codice del generico lettore nel problema dei lettori-scrittori: semaphore mutex = 1, scrivi = 1; int numlettori= 0; Processo lettore { wait(mutex); [ ]; [ ]; signal(mutex); ... leggi il file ...; wait(mutex); [ ]; [ ]; signal(mutex) }",
+        "answer": "La risposta corretta è: [numlettori++;] [if numlettori == 1 wait(scrivi);] [numlettori--;] [if numlettori == 0 signal(scrivi);]",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "essay"
+      },
+      {
+        "number": 13,
+        "text": "Un sistema ha un tempo di accesso in RAM di 120 ns, adotta un TLB con un tempo di accesso di 10 ns e un hit rate del 95%, usa una paginazione a due livelli e non ha bisogno di usare un algoritmo di rimpiazzamento delle pagine. Qual è il tempo medio di accesso alla RAM (medium access time - mat) del sistema? (per semplicità in caso di miss si ignori il costo di interrogazione del TLB)",
+        "answer": "La risposta corretta è: mat = 141,5 ns",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "mat = 147,5 ns",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "mat = 141,5 ns",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "mat = 130,5 ns",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "mat = 135,5 ns",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 14,
+        "text": "Una Inverted Page Table può essere così descritta:",
+        "answer": "La risposta corretta è: ha un numero di entry pari al numero di frame in cui è suddiviso lo spazio fisico del sistema, e ogni entry contiene la coppia \"PID-numero di pagina\". Ogni indirizzo logico è formato dalla tripla \"PID-numero di pagina-offset\". Per tradurre un indirizzo di logico a fisico si cerca la coppia \"PID-numero di pagina\" nelle entry della IPT. Se si trova la coppia alla entry F-esima, allora l'indirizzo fisico è costituito dalla coppia \"F-offset\"",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "ha un numero di entry pari al numero di pagine in cui è suddiviso lo spazio logico di un processo, e ogni entry contiene il numero di un frame. Ogni indirizzo logico è formato dalla tripla \"PID-numero di pagina-offset\". Per tradurre un indirizzo di logico a fisico si cerca la entry P alla posizione \"numero di pagina\", e l'indirizzo fisico è costituito dalla coppia \"P-offset\"",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "ha un numero di entry pari al numero di frame in cui è suddiviso lo spazio fisico del sistema, e ogni entry contiene la coppia \"PID-numero di pagina\". Ogni indirizzo logico è formato dalla tripla \"PID-numero di pagina-offset\". Per tradurre un indirizzo di logico a fisico si cerca la coppia \"PID-numero di pagina\" nelle entry della IPT. Se si trova la coppia alla entry F-esima, allora l'indirizzo fisico è costituito dalla coppia \"F-offset\"",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "ha un numero di entry pari al numero di frame in cui è suddiviso lo spazio fisico del processo in esecuzione, e ogni entry contiene il numero di una pagina. Per tradurre un indirizzo di logico a fisico si cerca alla entry F \"numero di frame\" della IPT, e se si trova la pagina P-esima, allora l'indirizzo fisico è costituito dalla coppia \"P-offset\"",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "ha un numero di entry pari al numero di pagine in cui è suddiviso lo spazio logico di un processo, e ogni entry contiene il numero di un frame. Ogni indirizzo logico è formato dalla coppia \"numero di pagina-offset\". Per tradurre un indirizzo di logico a fisico si cerca la entry F alla posizione \"numero di pagina\", e l'indirizzo fisico è costituito dalla coppia \"F-offset\"",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 15,
+        "text": "Il diagramma di transizione degli stati di un processo visto a lezione descrive un sistema time-sharing. Come può essere modificato per descrivere invece un sistema multi-tasking ma non time-sharing?",
+        "answer": "La risposta corretta è: basta rimuovere l'arco che porta dallo stato \"running\" allo stato \"ready to run\"",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "basta rinominare l'arco che porta dallo stato \"ready to run\" allo stato \"running\"",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "basta rimuovere l'arco che porta dallo stato \"running\" allo stato \"ready to run\"",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "basta rimuovere l'arco che porta dallo stato \"waiting\" allo stato \"ready to run\"",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "basta rimuovere l'arco che porta dallo stato \"running\" allo stato \"waiting\"",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      }
+    ]
+  },
+  {
     "id": "teoria-so-b-18-06-2025",
     "date": "2025.06.18",
     "course": "B",
@@ -3066,6 +3521,326 @@
     ]
   },
   {
+    "id": "esame00-teoria",
+    "date": "2023.06.16",
+    "course": "Teoria",
+    "title": "Scritto parte di teoria del corso A di Sistemi Operativi del 16 giugno 2023",
+    "topics": [
+      "processi-scheduling",
+      "sincronizzazione",
+      "file-system",
+      "memoria-primaria",
+      "generalita"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante: Pa (0,5), Pb (2,3), Pc (4,2), Pd (6,1). Se si usa l'algoritmo di scheduling non preemptive che fornisce le migliori prestazioni possibili per schedulare i 4 processi in tabella: il waiting time medio è [ ], il turnaround medio è [ ], il diagramma di GANTT è [ ], l'algoritmo usato per le risposte precedenti può soffrire di starvation? [ ]",
+        "answer": "Le risposte corrette sono: waiting time medio = 2, turnaround medio = 19/4, diagramma di GANTT = (0) ... Pa ... (5) ... Pc ... (7) ... Pd ... (8) ... Pb ... (11), può soffrire di starvation = sì",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "statements": [
+          {
+            "text": "il waiting time medio è: 2",
+            "isCorrect": true
+          },
+          {
+            "text": "il turnaround medio è: 19/4",
+            "isCorrect": true
+          },
+          {
+            "text": "il diagramma di GANTT è: (0) ... Pa ... (5) ... Pc ... (7) ... Pd ... (8) ... Pb ... (11)",
+            "isCorrect": true
+          },
+          {
+            "text": "l'algoritmo usato per le risposte precedenti può soffrire di starvation: sì",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "text": "I semafori sono sezioni critiche che possono essere implementate sfruttando la disabilitazione degli interrupt. E' ragionevole usare questa soluzione anche per implementare le sezioni critiche dei processi utente?",
+        "answer": "La risposta corretta è: non è una soluzione ragionevole perché disabilitare gli interrupt toglierebbe al sistema operativo il controllo della macchina",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "non è una soluzione ragionevole perché disabilitare gli interrupt toglierebbe al sistema operativo il controllo della macchina",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "è una soluzione ragionevole, perché in questo modo il processo in sezione critica può portare a termine la sua computazione senza venire interrotto a metà, e le primitive wait e signal possono essere primitive comunque costose da implementare",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "non è una soluzione ragionevole perché in questo modo un solo processo alla volta potrebbe usare la wait e la signal per accedere ad una certa sezione critica",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "è una soluzione ragionevole, perché in questo modo il processo in sezione critica può portare a termine la sua computazione senza venire interrotto a metà",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 3,
+        "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione): 1: cd /tmp, 2: mkdir newfolder, 3: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao, 4: cd newfolder, 5: ln ../pippo paperino, 6: ln ../newfolder folder2, 7: cp paperino topolino, 8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file, 9: rm pippo, 10: cat paperino // cat stampa il contenuto del file passato come argomento, 11: mkdir ./folder3. Scegli un'alternativa:",
+        "answer": "La risposta corretta è: 1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "1. il link-counter dell'i-node di paperino è: 1, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: no such file or directory, 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 1, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "1. il link-counter dell'i-node di paperino è: 1, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 dà come risultato: un nuovo collegamento alla cartella newfolder",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 4,
+        "text": "Tutti i sistemi operativi moderni adottano una qualche forma di paginazione della memoria primaria, in quanto:",
+        "answer": "La risposta corretta è: permette di eliminare la frammentazione esterna della RAM e di limitare moltissima la frammentazione interna; permette di implementare una forma automatica di protezione dello spazio di indirizzamento dei processi, e la base a partire dalla quale si può implementare la memoria virtuale",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "permette di eliminare la frammentazione interna della RAM ma non quella esterna; permette di implementare una forma automatica di allocazione dello spazio di indirizzamento dei processi, e la base a partire dalla quale si può implementare il binding dinamico degli indirizzi",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "permette di eliminare la frammentazione esterna della RAM e di limitare moltissima la frammentazione interna; permette di implementare una forma automatica di protezione dello spazio di indirizzamento dei processi, e la base a partire dalla quale si può implementare la memoria virtuale",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "permette di eliminare la frammentazione esterna e la frammentazione interna della RAM; permette di usare codice dinamicamente rilocabile per i processi, e la base a partire dalla quale si può implementare la memoria virtuale",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "permette di eliminare la frammentazione esterna e di limitare moltissima la frammentazione interna; permette di implementare una forma automatica di protezione dello spazio di indirizzamento dei processi, e la base a partire dalla quale si può implementare la memoria virtuale",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 5,
+        "text": "Cosa vuol dire che un algoritmo di scheduling soffre di starvation?",
+        "answer": "La risposta corretta è: che non garantisce di assegnare la CPU ad un processo in coda di ready in un tempo finito.",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "che non garantisce ad un processo in wait di poter tornare in coda di ready in un tempo finito.",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "che non garantisce ad un processo di poter uscire da una sezione critica in un tempo finito.",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "che non garantisce di assegnare la CPU ad un processo in coda di ready in un tempo finito.",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "che non garantisce ad un processo di poter entrare in sezione critica in un tempo finito.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 6,
+        "text": "Dell'algoritmo di sostituzione delle pagine \"Least Recently Used\" possiamo dire che:",
+        "answer": "La risposta corretta è: fornisce buone prestazioni, vicine a quelle ottimali; sceglie come pagina vittima la pagina in RAM che è stata riferita da più tempo, non soffre dell'anomalia di Belady, è difficilmente implementabile e nei processori moderni può essere approssimato usando il reference bit",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "fornisce buone prestazioni, vicine a quelle ottimali; sceglie come pagina vittima la pagina in RAM che è stata riferita da più tempo, soffre dell'anomalia di Belady, non è implementabile ma nei processori moderni può essere approssimato usando il reference bit",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "fornisce buone prestazioni, vicine a quelle ottimali; sceglie come pagina vittima la pagina entrata in RAM da più tempo, non soffre dell'anomalia di Belady, è difficilmente implementabile e nei processori moderni può essere approssimato usando il reference bit",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "fornisce buone prestazioni, vicine a quelle ottimali; sceglie come pagina vittima la pagina in RAM che è stata riferita da più tempo, non soffre dell'anomalia di Belady, non è implementabile ma nei processori moderni può essere approssimato usando il reference bit",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "fornisce buone prestazioni, vicine a quelle ottimali; sceglie come pagina vittima la pagina in RAM che è stata riferita da più tempo, non soffre dell'anomalia di Belady, è difficilmente implementabile e nei processori moderni può essere approssimato usando il reference bit",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 7,
+        "text": "Dell'allocazione indicizzata possiamo dire che:",
+        "answer": "La risposta corretta è: è la più adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, fornisce un accesso diretto ai file efficiente",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "è la più adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, fornisce un accesso diretto ai file efficiente.",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "non è adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, non fornisce un accesso diretto ai file efficiente.",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "non è la più adottata nei sistemi operativi moderni, per allocare file grandi spreca molti byte, fornisce un accesso diretto ai file efficiente.",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "è la più adottata nei sistemi operativi moderni, per allocare file grandi spreca molti byte, non fornisce un accesso diretto ai file efficiente.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 8,
+        "text": "Confrontando le librerie statiche e quelle dinamiche possiamo dire che:",
+        "answer": "La risposta corretta è: le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché al contrario di quelle statiche possono essere usate con la memoria virtuale, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e perché quelle statiche possono essere usate solo col codice staticamente rilocabile",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e al contrario di quelle statiche possono essere usate col codice dinamicamente rilocabile",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 9,
+        "text": "In un sistema time sharing che usa un algoritmo di sostituzione delle pagine, tra le ragioni per cui si può verificare un context switch tra processi utente troviamo:",
+        "answer": "La risposta corretta è: 1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. viene richiesta una operazione di I/O dal processo in CPU, 3. in una coda di wait entra un processo con priorità maggiore di quello che sta girando, 4. viene generata una trap dal processo in esecuzione",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una signal, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene completata una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 10,
+        "text": "Secondo quanto visto a lezione, quale/quali dei seguenti comandi Unix modifica il valore del link counter dell'index-node associato al file di testo X? (si assuma di avere i permessi per eseguire tutti i comandi e di essere posizionati in una generica cartella user/tmp che contiene X): 1) ln -s X Y, 2) ls X Y, 3) ln X X, 4) rm X Y",
+        "answer": "La risposta corretta è: il comando 4)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "i comandi 1) e 3)",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "i comandi 3) e 4)",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "il comando 4)",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "i comandi 1), 3) e 4)",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c"
+      }
+    ]
+  },
+  {
     "id": "2023-01-24",
     "date": "2023.01.24",
     "course": "A",
@@ -3114,6 +3889,630 @@
     "topics": [
       "file-system",
       "memoria-primaria"
+    ]
+  },
+  {
+    "id": "esame03-teoria",
+    "date": "2023.00.00",
+    "course": "Teoria",
+    "title": "Esame Teoria Sistemi Operativi (esame03)",
+    "topics": [
+      "sincronizzazione",
+      "generalita",
+      "file-system",
+      "memoria-primaria",
+      "processi-scheduling",
+      "memoria-massa"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "I semafori sono sezioni critiche che possono essere implementate sfruttando la disabilitazione degli interrupt. E' ragionevole usare questa soluzione anche per implementare le sezioni critiche dei processi utente?",
+        "answer": "La risposta corretta è: non è una soluzione ragionevole perché disabilitare gli interrupt toglierebbe al sistema operativo il controllo della macchina",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "non è una soluzione ragionevole perché in questo modo un solo processo alla volta potrebbe usare la wait e la signal per accedere ad una certa sezione critica",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "è una soluzione ragionevole, perché in questo modo il processo in sezione critica può portare a termine la sua computazione senza venire interrotto a metà",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "non è una soluzione ragionevole perché disabilitare gli interrupt toglierebbe al sistema operativo il controllo della macchina",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "è una soluzione ragionevole perché permette di evitare l'uso di wait e signal, che sono primitive comunque costose da implementare",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 2,
+        "text": "Confrontando le librerie statiche e quelle dinamiche possiamo dire che:",
+        "answer": "La risposta corretta è: le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché al contrario di quelle statiche possono essere usate con la memoria virtuale, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e al contrario di quelle statiche possono essere usate solo col codice dinamicamente rilocabile",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e in caso di aggiornamento non costringono alla ricompilazione dei processi che le usano",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "le librerie dinamiche sono sicuramente preferibili a quelle statiche, ad esempio perché vengono caricate in RAM solo se effettivamente usate dai processi, e perché quelle statiche possono essere usate solo col codice statico",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 3,
+        "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione): 1: cd /tmp, 2: mkdir newfolder, 3: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao, 4: cd newfolder, 5: ln ../pippo paperino, 6: ln ../newfolder folder2, 7: ln -s paperino topolino, 8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file, 9: rm pippo, 10: cat paperino // cat stampa il contenuto del file passato come argomento, 11: mkdir ../folder3. Scegli un'alternativa:",
+        "answer": "La risposta corretta è: 1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 1, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "1. il link-counter dell'i-node di paperino è: 1, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 dà come risultato: un nuovo collegamento alla cartella newfolder",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "1. il link-counter dell'i-node di paperino è: 2, 2. il link counter di tmp è: 2, 3. l'output del comando 10 è: no such file or directory, 4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 4,
+        "text": "In un sistema operativo moderno che implementa la memoria virtuale, quando si verifica un page fault e non c'è spazio in RAM occorre scegliere una pagina vittima. Dei criteri di scelta visti a lezione possiamo dire che:",
+        "answer": "La risposta corretta è: scegliere la pagina che è stata riferita da più tempo è un ottimo criterio, ma all'atto pratico non si può implementare in modo efficiente",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "scegliere la pagina che è entrata in RAM da più tempo è un buon criterio, e infatti viene adottato da molti sistemi operativi",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "scegliere la pagina che verrà riferita più in là nel tempo è sicuramente il criterio migliore, ma richiede hardware dedicato offerto solo dalle CPU di fascia alta",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "scegliere la pagina che è stata riferita da più tempo è un ottimo criterio, ma all'atto pratico non si può implementare in modo efficiente",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "scegliere una pagina che è stata modificata di recente è un buon criterio, nel caso in cui ci sia bisogno di salvare periodicamente lo stato della computazione del processo",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 5,
+        "text": "Il concetto di \"diritto di prelazione\" può essere applicato sia ad un algoritmo di scheduling che ad un kernel nel suo complesso. Qual è la differenza?",
+        "answer": "La risposta corretta è: negli algoritmi di scheduling preemptive un processo utente può essere obbligato dal SO ad abbandonare la CPU. Nei kernel preemptive un processo in kernel mode può essere obbligato ad abbandonare la CPU.",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "negli algoritmi di scheduling preemptive un processo utente può essere obbligato dal SO ad abbandonare la CPU. Nei kernel preemptive un processo in kernel mode può essere obbligato ad abbandonare la CPU.",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "in un kernel con diritto di prelazione vengono disabilitati gli interrupt quando un processo è in kernel mode, in un algoritmo di scheduling con diritto di prelazione vengono abilitati gli interrupt per permettere il funzionamento del timer hardware",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "in un kernel con diritto di prelazione vengono disabilitati gli interrupt quando un processo è in kernel mode, in un algoritmo di scheduling con diritto di prelazione i processi utente possono essere interrotti da altri processi utente",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "non c'è nessuna differenza: un algoritmo di scheduling preemptive implica che il sistema operativo su cui è implementato possieda un kernel con diritto di prelazione.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 6,
+        "text": "Di un sistema è noto che la tabella delle pagine più grande del sistema occupa esattamente 2 frame, il numero di un frame è scritto su 2 byte usando usando tutti i bit a disposizione, e nel sistema sono presenti in media 4 processi che insieme producono una frammentazione interna complessiva media di 4 Kilobyte. Determinare: lo spazio logico del sistema è grande [ ], lo spazio fisico del sistema è grande [ ]",
+        "answer": "La risposta corretta è: lo spazio logico del sistema è grande [4 Megabyte], lo spazio fisico del sistema è grande [128 Megabyte]",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "statements": [
+          {
+            "text": "lo spazio logico del sistema è grande: 4 Megabyte",
+            "isCorrect": true
+          },
+          {
+            "text": "lo spazio fisico del sistema è grande: nessuno dei valori proposti",
+            "isCorrect": false
+          },
+          {
+            "text": "lo spazio fisico del sistema è grande: 64 Megabyte",
+            "isCorrect": false
+          },
+          {
+            "text": "lo spazio logico del sistema è grande: 8 Megabyte",
+            "isCorrect": false
+          },
+          {
+            "text": "lo spazio logico del sistema è grande: 2 Megabyte",
+            "isCorrect": false
+          },
+          {
+            "text": "lo spazio fisico del sistema è grande: 256 Megabyte",
+            "isCorrect": false
+          },
+          {
+            "text": "lo spazio fisico del sistema è grande: nessuno dei valori proposti",
+            "isCorrect": false
+          },
+          {
+            "text": "lo spazio fisico del sistema è grande: 128 Megabyte",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "number": 7,
+        "text": "Cosa vuol dire che un algoritmo di scheduling soffre di starvation?",
+        "answer": "La risposta corretta è: che non garantisce di assegnare la CPU ad un processo in coda di ready in un tempo finito.",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "che non garantisce di assegnare la CPU ad un processo in coda di ready in un tempo finito.",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "che non garantisce ad un processo di poter entrare in sezione critica in un tempo finito.",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "che non garantisce ad un processo di poter uscire da una sezione critica in un tempo finito.",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "che non garantisce ad un processo in wait di poter tornare in coda di ready in un tempo finito.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 8,
+        "text": "Dei diversi livelli RAID visti a lezione, dal livello 0 al livello 5, possiamo dire che:",
+        "answer": "La risposta corretta è: non tutti i livelli garantiscono una maggiore affidabilità, e tutti forniscono -- anche se non sempre -- una maggiore velocità di accesso ai dati memorizzati",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "tutti i livelli garantiscono una maggiore affidabilità, e tutti forniscono -- anche se non sempre -- una maggiore velocità di accesso ai dati memorizzati",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "tutti i livelli garantiscono una maggiore affidabilità, e tutti forniscono -- sempre -- una maggiore velocità di accesso ai dati memorizzati",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "non tutti i livelli garantiscono una maggiore affidabilità, e tutti forniscono -- anche se non sempre -- una maggiore velocità di accesso ai dati memorizzati",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "non tutti i livelli garantiscono una maggiore affidabilità, e tutti forniscono -- sempre -- una maggiore velocità di accesso ai dati memorizzati",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 9,
+        "text": "In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante: Pa (0,4), Pb (2,3), Pc (3,2), Pd (5,1). Se si usa l'algoritmo di scheduling non preemptive che fornisce le migliori prestazioni possibili per schedulare i 4 processi in tabella: il waiting time medio è [ ], il turnaround medio è [ ], il diagramma di GANTT è [ ], l'algoritmo usato per le risposte precedenti potrebbe non portare mai a termine un processo? [ ]",
+        "answer": "La risposta parzialmente corretta. Waiting time medio corretto: 8/4, Turnaround medio errato (corretto: 18/4), Diagramma GANTT errato (corretto: (0) ... Pa ... (4) ... Pb ... (7) ... Pc ... (9) ... Pd ... (10)), Algoritmo non porta mai a termine: no",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "statements": [
+          {
+            "text": "il waiting time medio è: 17/4",
+            "isCorrect": false
+          },
+          {
+            "text": "il turnaround medio è: 7/4",
+            "isCorrect": false
+          },
+          {
+            "text": "il diagramma di GANTT è: (0) ... Pa ... (4) ... Pc ... (6) ... Pd ... (7) ... Pb ... (10)",
+            "isCorrect": false
+          },
+          {
+            "text": "l'algoritmo usato per le risposte precedenti potrebbe non portare mai a termine un processo: no",
+            "isCorrect": true
+          },
+          {
+            "text": "il waiting time medio è: 8/4",
+            "isCorrect": true
+          },
+          {
+            "text": "il turnaround medio è: sì",
+            "isCorrect": false
+          },
+          {
+            "text": "il diagramma di GANTT è: (0) ... Pa ... (4) ... Pb ... (7) ... Pc ... (9) ... Pd ... (10)",
+            "isCorrect": true
+          },
+          {
+            "text": "il waiting time medio è: 18/4",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esame04-teoria",
+    "date": "2023.00.00",
+    "course": "Teoria",
+    "title": "Esame Teoria Sistemi Operativi (esame04)",
+    "topics": [
+      "memoria-primaria",
+      "processi-scheduling",
+      "memoria-massa",
+      "file-system",
+      "sincronizzazione"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "Tra le ragioni per cui un sistema operativo può finire in una condizione di thrashing troviamo:",
+        "answer": "La risposta corretta è: un elevato numero di processi attivi rispetto alla dimensione della memoria principale, e l'adozione di una politica di allocazione globale o locale dei frame",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "un elevato numero di processi attivi rispetto alla dimensione della memoria principale, e l'adozione di una politica di allocazione globale o locale dei frame",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "un elevato numero di processi attivi rispetto alla dimensione della memoria principale, e l'adozione di un algoritmo di sostituzione delle pagine di tipo FIFO",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "un elevato numero di processi CPU bound rispetto alla dimensione della memoria principale, e l'adozione di una politica di allocazione globale o locale dei frame",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "un elevato numero di processi I/O bound rispetto alla dimensione della memoria principale, e l'adozione di una politica di allocazione globale o locale dei frame",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 2,
+        "text": "In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante: Pa (0,5), Pb (2,3), Pc (4,2), Pd (6,1). Se si usa l'algoritmo di scheduling non preemptive che fornisce le migliori prestazioni possibili per schedulare i 4 processi in tabella: il waiting time medio è [ ], il turnaround medio è [ ], il diagramma di GANTT è [ ], l'algoritmo usato per le risposte precedenti può soffrire di starvation? [ ]",
+        "answer": "Le risposte corrette sono: waiting time medio = 2, turnaround medio = 19/4, diagramma di GANTT = (0) ... Pa ... (5) ... Pc ... (7) ... Pd ... (8) ... Pb ... (11), l'algoritmo può soffrire di starvation = sì",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "statements": [
+          {
+            "text": "il waiting time medio è: 2",
+            "isCorrect": true
+          },
+          {
+            "text": "il turnaround medio è: 19/4",
+            "isCorrect": true
+          },
+          {
+            "text": "il diagramma di GANTT è: (0) ... Pa ... (5) ... Pc ... (7) ... Pd ... (8) ... Pb ... (11)",
+            "isCorrect": true
+          },
+          {
+            "text": "l'algoritmo usato per le risposte precedenti può soffrire di starvation: sì",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "text": "In quale caso l'accesso in lettura ad un file memorizzato su un sistema RAID è più veloce che se il file fosse memorizzato su un normale hard disk?",
+        "answer": "La risposta corretta è: quando il file è memorizzato su due o più blocchi appartenenti a strip contenuti su dischi diversi del RAID",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "quando il file è memorizzato su due o più blocchi appartenenti a strip contenuti su dischi diversi del RAID",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "quando il file è memorizzato su uno più blocchi appartenenti a strip contenuti sullo stesso disco del RAID",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "quando il RAID usato è di tipo 01/10, poiché in questo caso si possono sfruttare i dischi di mirroring",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "sempre, dato che i sistemi RAID sono stati pensati proprio per fornire maggiore velocità di accesso ai file (oltre che maggiore affidabilità)",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 4,
+        "text": "Secondo quanto visto a lezione, quale/quali dei seguenti comandi Unix modifica il valore del link counter dell'index-node associato al file cartella X? (si assuma di avere i permessi per eseguire tutti i comandi e di essere posizionati dentro a X, a sua volta contenuta in una generica cartella user/tmp): 1) ln ../X Z, 2) mkdir K, 3) ln X Y, 4) ln -s ../X W",
+        "answer": "La risposta corretta è: il comando 2)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "il comando 2)",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "i comandi 1) e 2)",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "i comandi 2) e 4)",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "i comandi 2) 3) e 4)",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 5,
+        "text": "In quale/i caso/i un processo in coda di ready viene fatto passare allo stato running?",
+        "answer": "La risposta corretta è: quando lo scheduler della CPU lo seleziona per entrare in esecuzione. Ad esempio, nel caso di FCFS, quando il processo si trova in cima alla coda di ready",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "quando lo scheduler della CPU lo seleziona per entrare in esecuzione. Ad esempio, nel caso di FCFS, quando il processo si trova in cima alla coda di ready",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "quando il sistema operativo ha terminato le operazioni necessarie ad amministrare la vita del processo, ad esempio ha allocato il processo in RAM e inizializzato il suo PCB",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "mai, è il sistemi operativo che sposta i processi da uno stato all'altro.",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "quando il processo è entrato in RQ arrivando da una coda di waiting, perché significa che è disponibile l'informazione che il processo stava attendendo, e la sua computazione può ripartire",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 6,
+        "text": "Un sistema operativo può adottare una paginazione semplice oppure una paginazione a più livelli. Che implicazioni ha questa scelta?",
+        "answer": "La risposta corretta è: La paginazione a più livelli è una scelta obbligata quando le tabelle delle pagine possono raggiungere grandi dimensioni, per cui sarebbe difficile allocarle in uno spazio contiguo di RAM. D'altra parte la paginazione semplice rende più efficiente la traduzione degli indirizzi da logici a fisici quando non si possa sfruttare il TLB",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "La paginazione a più livelli è una scelta obbligata quando le tabelle delle pagine possono raggiungere grandi dimensioni, per cui sarebbe difficile allocarle in uno spazio contiguo di RAM. D'altra parte la paginazione a più livelli è molto più vantaggiosa per la traduzione degli indirizzi da logici a fisici soprattutto in assenza di un TLB",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "La paginazione a più livelli è una scelta obbligata in caso di spazi logici molto piccoli, per i quali la paginazione semplice produrrebbe troppo spreco di spazio in RAM. D'altra parte la paginazione semplice rende più efficiente la traduzione degli indirizzi da logici a fisici quando non si possa sfruttare il TLB",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "La paginazione a più livelli è una scelta obbligata quando dobbiamo ricorrere ad una Tabella delle Pagine Invertita, che altrimenti sarebbe troppo difficile da allocare in RAM. D'altra parte la paginazione semplice rende più efficiente la traduzione degli indirizzi da logici a fisici quando non si possa sfruttare il TLB",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "La paginazione a più livelli è una scelta obbligata quando le tabelle delle pagine possono raggiungere grandi dimensioni, per cui sarebbe difficile allocarle in uno spazio contiguo di RAM. D'altra parte la paginazione semplice rende più efficiente la traduzione degli indirizzi da logici a fisici quando non si possa sfruttare il TLB",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 7,
+        "text": "Il problema della sezione critica può essere risolto in molti modi diversi, ma qualsiasi soluzione deve rispettare alcune condizioni fondamentali, che possono essere così descritte:",
+        "answer": "La risposta corretta è: quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo deve rimanere in sezione critica per un tempo finito.",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "quando un processo è in sezione critica deve rimanerci per un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+            "isCorrect": true
+          },
+          {
+            "id": "d",
+            "text": "quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; nella sezione critica ci deve essere sempre almeno un processo, e mai più di uno; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 8,
+        "text": "Di un sistema è noto che la tabella delle pagine più grande del sistema occupa esattamente 2 frame, il numero di un frame è scritto su 2 byte usando usando tutti i bit a disposizione, e nel sistema sono presenti in media 4 processi che insieme producono una frammentazione interna complessiva media di 4 Kilobyte. Determinare: lo spazio logico del sistema è grande [ ], lo spazio fisico del sistema è grande [ ]",
+        "answer": "Le risposte corrette sono: lo spazio logico del sistema è grande 4 Megabyte, lo spazio fisico del sistema è grande 128 Megabyte",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer",
+        "statements": [
+          {
+            "text": "lo spazio logico del sistema è grande: 4 Megabyte",
+            "isCorrect": true
+          },
+          {
+            "text": "lo spazio fisico del sistema è grande: 128 Megabyte",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "number": 9,
+        "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione): 1: cd /tmp, 2: mkdir newfolder, 3: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao, 4: cd newfolder, 5: ln -s ../pippo paperino, 6: ln -s /tmp/newfolder folder2, 7: cp ../pippo topolino, 8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file, 9: rm pippo, 10: cat paperino // cat stampa il contenuto del file passato come argomento, 11: mkdir folder3. Scegli un'alternativa:",
+        "answer": "La risposta corretta è: 1. il link-counter dell'i-node di topolino è: 1, 2. il link counter di newfolder è: 3, 3. l'output del comando 10 è: \"ciao\", 4. il link counter di tmp è: aumentato di 1",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "1. il link-counter dell'i-node di topolino è: 2, 2. il link counter di newfolder è: 3, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il link counter di tmp è: aumentato di 1",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "1. il link-counter dell'i-node di topolino è: 1, 2. il link counter di newfolder è: 3, 3. l'output del comando 10 è: \"ciao\", 4. il link counter di tmp è: aumentato di 2",
+            "isCorrect": false
+          },
+          {
+            "id": "c",
+            "text": "1. il link-counter dell'i-node di topolino è: 3, 2. il link counter di newfolder è: 3, 3. l'output del comando 10 è: \"ciao\" seguito da \"salve\", 4. il link counter di tmp è: aumentato di 2",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "1. il link-counter dell'i-node di topolino è: 1, 2. il link counter di newfolder è: 3, 3. l'output del comando 10 è: \"ciao\", 4. il link counter di tmp è: aumentato di 1",
+            "isCorrect": true
+          }
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 10,
+        "text": "In un sistema time sharing che usa un algoritmo di sostituzione delle pagine, tra le ragioni per cui si può verificare un context switch tra processi utente troviamo:",
+        "answer": "La risposta corretta è: 1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          {
+            "id": "a",
+            "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. viene richiesta una operazione di I/O dal processo in CPU, 3. in una coda di wait entra un processo con priorità maggiore di quello che sta girando, 4. viene generata una trap dal processo in esecuzione",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+            "isCorrect": true
+          },
+          {
+            "id": "c",
+            "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una signal, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene richiesta una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+            "isCorrect": false
+          },
+          {
+            "id": "d",
+            "text": "1. il processo in CPU si addormenta in seguito all'esecuzione di una wait, 2. in RQ entra un processo con priorità maggiore di quello che sta girando, 3. viene completata una operazione di I/O dal processo in CPU, 4. viene generata una trap dal processo in esecuzione",
+            "isCorrect": false
+          }
+        ],
+        "correctAnswer": "b"
+      }
     ]
   },
   {

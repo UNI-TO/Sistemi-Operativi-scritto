@@ -13,6 +13,10 @@ const teoriaSOB1806Path = path.join(__dirname, '../src/data/exam-teoria-so-b-18-
 const domandeApertePath = path.join(__dirname, '../src/data/exam-domande-aperte-corso-b.json');
 const uuidMistoPath = path.join(__dirname, '../src/data/exam-uuid-misto.json');
 const provaFebbraioPath = path.join(__dirname, '../src/data/exam-prova-febbraio-2024.json');
+const esame27TeoriaPath = path.join(__dirname, '../src/data/exam-esame27-teoria.json');
+const esame03Path = path.join(__dirname, '../src/data/exam-esame03.json');
+const esame04Path = path.join(__dirname, '../src/data/exam-esame04.json');
+const esame00Path = path.join(__dirname, '../src/data/exam-esame00.json');
 const outputPath = path.join(__dirname, '../src/data/exams.json');
 
 try {
@@ -72,6 +76,34 @@ try {
     const provaFebbraio = JSON.parse(fs.readFileSync(provaFebbraioPath, 'utf-8'));
     additionalExams.push(provaFebbraio);
     console.log(`✓ Loaded Prova Febbraio: ${provaFebbraio.title} (${provaFebbraio.questions.length} Q)`);
+  }
+
+  // Esame 27 Gennaio 2026 Teoria exam
+  if (fs.existsSync(esame27TeoriaPath)) {
+    const esame27Teoria = JSON.parse(fs.readFileSync(esame27TeoriaPath, 'utf-8'));
+    additionalExams.push(esame27Teoria);
+    console.log(`✓ Loaded Esame 27 Gen 2026: ${esame27Teoria.title} (${esame27Teoria.questions.length} Q)`);
+  }
+
+  // Esame03 Teoria exam
+  if (fs.existsSync(esame03Path)) {
+    const esame03 = JSON.parse(fs.readFileSync(esame03Path, 'utf-8'));
+    additionalExams.push(esame03);
+    console.log(`✓ Loaded Esame03: ${esame03.title} (${esame03.questions.length} Q)`);
+  }
+
+  // Esame04 Teoria exam
+  if (fs.existsSync(esame04Path)) {
+    const esame04 = JSON.parse(fs.readFileSync(esame04Path, 'utf-8'));
+    additionalExams.push(esame04);
+    console.log(`✓ Loaded Esame04: ${esame04.title} (${esame04.questions.length} Q)`);
+  }
+
+  // Esame00 Teoria exam
+  if (fs.existsSync(esame00Path)) {
+    const esame00 = JSON.parse(fs.readFileSync(esame00Path, 'utf-8'));
+    additionalExams.push(esame00);
+    console.log(`✓ Loaded Esame00: ${esame00.title} (${esame00.questions.length} Q)`);
   }
 
   // Merge additional exams

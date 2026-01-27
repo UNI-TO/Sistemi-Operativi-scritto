@@ -1,0 +1,299 @@
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-01.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 4%  Progress: 7%  Progress: 10%  Progress: 11%  Progress: 14%  Progress: 17%  Progress: 20%  Progress: 23%  Progress: 24%  Progress: 27%  Progress: 30%  Progress: 33%  Progress: 36%  Progress: 37%  Progress: 40%  Progress: 43%  Progress: 46%  Progress: 47%  Progress: 50%  Progress: 53%  Progress: 56%  Progress: 59%  Progress: 60%  Progress: 63%  Progress: 66%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1552 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Iniziato martedì, 27 gennaio 2026, 09:05
+Stato Completato
+Terminato martedì, 27 gennaio 2026, 09:53
+Tempo impiegato 47 min. 50 secondi
+Valutazione 23,50 su un massimo di 30,00 (78,33%)
+Domanda 1
+Risposta corretta
+Punteggio ottenuto 2,00 su 2,00
+Un hard disk ha la dimensione di 512 Gigabyte, è formattato in blocchi da 0x1000 byte e adotta una allocazione concatenata
+(senza F
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-02.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 4%  Progress: 6%  Progress: 9%  Progress: 11%  Progress: 13%  Progress: 16%  Progress: 17%  Progress: 20%  Progress: 23%  Progress: 24%  Progress: 27%  Progress: 29%  Progress: 31%  Progress: 34%  Progress: 36%  Progress: 39%  Progress: 41%  Progress: 43%  Progress: 46%  Progress: 47%  Progress: 50%  Progress: 53%  Progress: 54%  Progress: 57%  Progress: 59%  Progress: 61%  Progress: 64%  Progress: 66%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1379 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Domanda 2
+Parzialmente corretta
+Punteggio ottenuto 1,50 su 2,00
+In un sistema che adotta la paginazione della memoria, un indirizzo logico è scritto su "M" bit, e il numero di pagina è
+scritto su "l" bit. Lo spazio fisico è invece suddiviso in 2432 frame.
+Possiamo quindi dire che:
+un frame del sistema è grande: 2MM-l) vv byte
+lo spazio fisico del sistema è grande: | 2M(32+M
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-03.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 4%  Progress: 6%  Progress: 7%  Progress: 9%  Progress: 10%  Progress: 11%  Progress: 13%  Progress: 14%  Progress: 16%  Progress: 17%  Progress: 19%  Progress: 20%  Progress: 21%  Progress: 24%  Progress: 26%  Progress: 27%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 33%  Progress: 34%  Progress: 36%  Progress: 37%  Progress: 39%  Progress: 40%  Progress: 41%  Progress: 43%  Progress: 44%  Progress: 46%  Progress: 49%  Progress: 50%  Progress: 51%  Progress: 53%  Progress: 54%  Progress: 56%  Progress: 57%  Progress: 59%  Progress: 60%  Progress: 61%  Progress: 63%  Progress: 64%  Progress: 66%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1921 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Domanda 3
+Risposta corretta
+Punteggio ottenuto 2,00 su 2,00
+Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione):
+1: cd /tmp
+2: mkdir newfolder
+3: cd newfolder
+4: echo “ciao” > pippo // crea un nuovo file di nome pippo contenente la stringa ciao
+5: ln pippo paperino
+6: In ../newfolder folder2
+7: cp paperino topolino
+8: echo "salve" >> topolino /
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-04.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 7%  Progress: 10%  Progress: 14%  Progress: 17%  Progress: 21%  Progress: 24%  Progress: 29%  Progress: 31%  Progress: 36%  Progress: 39%  Progress: 43%  Progress: 46%  Progress: 50%  Progress: 53%  Progress: 57%  Progress: 60%  Progress: 64%  Progress: 67%  Progress: 100%
+
+✓ Extracted 1246 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Domanda 4
+Risposta corretta
+Punteggio ottenuto 2,00 su 2,00
+Degli algoritmi di sostituzione delle pagine possiamo dire che (scegliete l'unica opzione completamente corretta):
+Scegli un'alternativa:
+a. LRU è uno dei migliori algoritmi di rimpiazzamento, ma non viene implementato perché richiederebbe un supporto v
+hardware normalmente non disponibile
+b. l'algoritmo della seco
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-05.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 4%  Progress: 6%  Progress: 9%  Progress: 10%  Progress: 13%  Progress: 14%  Progress: 17%  Progress: 19%  Progress: 21%  Progress: 23%  Progress: 26%  Progress: 27%  Progress: 30%  Progress: 31%  Progress: 34%  Progress: 36%  Progress: 39%  Progress: 40%  Progress: 43%  Progress: 44%  Progress: 47%  Progress: 49%  Progress: 51%  Progress: 53%  Progress: 56%  Progress: 57%  Progress: 60%  Progress: 61%  Progress: 64%  Progress: 66%  Progress: 69%  Progress: 100%
+
+✓ Extracted 2691 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+
+Domanda 5
+
+Risposta errata
+
+Punteggio ottenuto 0,00 su 2,00
+Un hard disk ha la dimensione di 512 Gigabyte, è formattato in blocchi da 0x400 byte e adotta una qualche forma di
+allocazione indicizzata dello spazio su disco. Sull'hard disk è memorizzato un file A della dimensione di 600 Kbyte. Quante
+operazioni di I/O sono necessarie per leggere l'ultimo blocco di dati del fi
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-06.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 4%  Progress: 6%  Progress: 7%  Progress: 7%  Progress: 9%  Progress: 10%  Progress: 11%  Progress: 13%  Progress: 14%  Progress: 16%  Progress: 16%  Progress: 17%  Progress: 19%  Progress: 20%  Progress: 21%  Progress: 23%  Progress: 23%  Progress: 24%  Progress: 26%  Progress: 27%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 31%  Progress: 33%  Progress: 34%  Progress: 36%  Progress: 37%  Progress: 39%  Progress: 39%  Progress: 40%  Progress: 41%  Progress: 43%  Progress: 44%  Progress: 46%  Progress: 47%  Progress: 47%  Progress: 49%  Progress: 50%  Progress: 51%  Progress: 53%  Progress: 54%  Progress: 54%  Progress: 56%  Progress: 57%  Progress: 59%  Progress: 60%  Progress: 61%  Progress: 63%  Progress: 63%  Progress: 64%  Progress: 66%  Progress: 67%  Progress: 69%  Progress: 70%  Progress: 100%
+
+✓ Extracted 1948 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Domanda 6
+Risposta corretta
+Punteggio ottenuto 2,00 su 2,00
+si consideri l'esecuzione della seguente porzione di codice che utilizza la system call fork:
+int a, b, c, d, n, pid1, pid2; pid3;
+a=30, b= 4, c=50, d= 60;
+n= fork();
+if ( n== 09)
+{a = 35; b = 45;
+pid1 = getppid();
+printf("%d", pid1);
+exit(0);}
+else
+{c = 55; d = 65;
+pid2 = getpid();
+printf("%d",pid2);
+pid3 = wait (
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-07.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 6%  Progress: 9%  Progress: 11%  Progress: 14%  Progress: 19%  Progress: 21%  Progress: 24%  Progress: 27%  Progress: 30%  Progress: 33%  Progress: 37%  Progress: 40%  Progress: 43%  Progress: 46%  Progress: 49%  Progress: 51%  Progress: 56%  Progress: 59%  Progress: 61%  Progress: 64%  Progress: 67%  Progress: 100%
+
+✓ Extracted 1703 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Domanda 7
+Risposta corretta
+Punteggio ottenuto 2,00 su 2,00
+Sia A un file di testo all'interno di un file system Unix. Viene eseguito con successo il comando:
+In AB
+dove B non esisteva prima dell'esecuzione del comando. Che cosa succede nelle strutture interne al sistema?
+Scegli un'alternativa:
+a. nella cartella in cui viene eseguito il comando viene creato un nuovo file di
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-08.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 4%  Progress: 7%  Progress: 10%  Progress: 13%  Progress: 16%  Progress: 19%  Progress: 21%  Progress: 24%  Progress: 27%  Progress: 30%  Progress: 33%  Progress: 36%  Progress: 37%  Progress: 40%  Progress: 43%  Progress: 46%  Progress: 49%  Progress: 51%  Progress: 54%  Progress: 57%  Progress: 60%  Progress: 63%  Progress: 66%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1388 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Domanda 8
+Risposta corretta
+Punteggio ottenuto 2,00 su 2,00
+In un sistema operativo che adotta uno scheduling con diritto di prelazione, quattro processi arrivano al tempo indicato e
+consumano la quantità di CPU indicata nella tabella sottostante
+| 2 je
+| 6 [1
+Qual è il waiting time medio ottenuto per lo scheduling dei quattro processi della tabella se si usa l'algoritmo di
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-09.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 4%  Progress: 6%  Progress: 9%  Progress: 11%  Progress: 13%  Progress: 16%  Progress: 17%  Progress: 20%  Progress: 23%  Progress: 24%  Progress: 27%  Progress: 29%  Progress: 31%  Progress: 34%  Progress: 36%  Progress: 39%  Progress: 41%  Progress: 43%  Progress: 46%  Progress: 47%  Progress: 50%  Progress: 53%  Progress: 54%  Progress: 57%  Progress: 59%  Progress: 61%  Progress: 64%  Progress: 66%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1865 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Domanda 9
+Risposta corretta
+Punteggio ottenuto 2,00 su 2,00
+In quale/i caso/i un processo in coda di ready può decidere di passare allo stato running?
+Scegli un'alternativa:
+a. quando un processo si trova in testa alla coda di ready
+b. in tutti gli algoritmi di scheduling non preemptive, dove un processo può decidere autonomamente quanto tempo
+passare in coda di ready
+c. ma
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-10.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 7%  Progress: 11%  Progress: 16%  Progress: 20%  Progress: 24%  Progress: 29%  Progress: 33%  Progress: 37%  Progress: 41%  Progress: 46%  Progress: 50%  Progress: 54%  Progress: 59%  Progress: 63%  Progress: 67%  Progress: 100%
+
+✓ Extracted 751 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Domanda 11
+Risposta errata
+Punteggio ottenuto 0,00 su 2,00
+In un sistema paginato è noto che lo spreco di memoria primaria dovuto alla frammentazione interna è in media di circa 4
+Kbyte per processo, e un indirizzo logico è scritto su 32 bit. Se la tabella delle pagine più grande di questo sistema è grande
+1024 Kilobyte, quanto può essere grande al massimo lo spazio di indi
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-11.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 6%  Progress: 7%  Progress: 9%  Progress: 11%  Progress: 13%  Progress: 14%  Progress: 17%  Progress: 19%  Progress: 20%  Progress: 23%  Progress: 24%  Progress: 26%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 34%  Progress: 36%  Progress: 39%  Progress: 40%  Progress: 41%  Progress: 44%  Progress: 46%  Progress: 47%  Progress: 50%  Progress: 51%  Progress: 53%  Progress: 56%  Progress: 57%  Progress: 59%  Progress: 61%  Progress: 63%  Progress: 64%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 884 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Domanda 12
+Risposta corretta
+Punteggio ottenuto 2,00 su 2,00
+Ricostruite il codice del generico lettore nel problema dei lettori-scrittori:
+semaphore mutex = 1, scrivi = 1;
+int numlettori= 0;
+Processo lettore {
+wait(mutex);
+v
+:
+signal(mutex);
+... leggi il file ...
+wait(mutex);
+v
+;
+signal(mutex)
+}
+Risposta corretta.
+La risposta corretta è:
+Ricostruite il codice del generico 
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-12.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 7%  Progress: 11%  Progress: 16%  Progress: 19%  Progress: 23%  Progress: 27%  Progress: 31%  Progress: 36%  Progress: 39%  Progress: 43%  Progress: 47%  Progress: 51%  Progress: 54%  Progress: 59%  Progress: 63%  Progress: 67%  Progress: 100%
+
+✓ Extracted 795 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Domanda 13
+Risposta non data
+Punteggio max.: 2,00
+Un sistema ha un tempo di accesso in RAM di 120 ns, adotta un TLB con un tempo di accesso di 10 ns e un hit rate del 95%,
+usa una paginazione a due livelli e non ha bisogno di usare un algoritmo di rimpiazzamento delle pagine. Qual è il tempo
+medio di accesso alla RAM (medium access time - mat) del sistema? (per semplicità i
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame27-13.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 4%  Progress: 6%  Progress: 7%  Progress: 10%  Progress: 11%  Progress: 13%  Progress: 14%  Progress: 16%  Progress: 19%  Progress: 20%  Progress: 21%  Progress: 23%  Progress: 24%  Progress: 27%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 33%  Progress: 36%  Progress: 37%  Progress: 39%  Progress: 40%  Progress: 41%  Progress: 43%  Progress: 46%  Progress: 47%  Progress: 49%  Progress: 50%  Progress: 51%  Progress: 54%  Progress: 56%  Progress: 57%  Progress: 59%  Progress: 60%  Progress: 63%  Progress: 64%  Progress: 66%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 3237 characters
+
+First 500 characters:
+1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
+Domanda 14
+Risposta corretta
+Punteggio ottenuto 2,00 su 2,00
+Una Inverted Page Table può essere così descritta:
+Scegli un'alternativa:
+
+a. ha un numero di entry pari al numero di pagine in cui è suddiviso lo spazio logico di un processo, e ogni entry
+contiene il numero di un frame. Ogni indirizzo logico è formato dalla tripla "PID-numero di pagina-offset". Per
+tradurre un i
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+---PAGE BREAK---

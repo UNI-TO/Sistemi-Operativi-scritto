@@ -1,0 +1,15 @@
+📚 PDF OCR Processing Tool - Usage
+============================================================
+
+Commands:
+  pdf [limit]       - Process PDF files (optional: limit number)
+                      Example: node scripts/ocr-pdf-exams.js pdf 5
+  image <path>      - Process single image with OCR
+                      Example: node scripts/ocr-pdf-exams.js image test.jpg
+  help              - Show this help
+
+Notes:
+  - Text extraction works for digital PDFs
+  - Scanned PDFs require image conversion first
+  - OCR uses Italian language by default
+  - Output saved to: src/data/ocr-output/
