@@ -164,6 +164,564 @@ const questionsData = [
     maxPoints: 1,
     negativePoints: 0,
     explanation: "Risposta salvata"
+  },
+  // ========== BATCH 1: Q11-Q20 ==========
+  {
+    number: 11,
+    imageFile: "3da2b583-773f-461f-afdb-023bddacd2d2.jpg",
+    text: "Un hard disk grande 512 Gigabyte, per scrivere il numero di un blocco vengono usati 28 bit, arrotondati al minimo numero di byte necessario. L'hard disk adotta una allocazione indicizzata semplice, e di un file A si sa che nel suo blocco indice 12 byte vengono usati per tenere traccia dei blocchi di dati di A. Quanto può essere grande al massimo A?",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "16 Kilobyte", isCorrect: false },
+      { id: "b", text: "20 Kilobyte", isCorrect: false },
+      { id: "c", text: "24 Kilobyte", isCorrect: true },
+      { id: "d", text: "28 Kilobyte", isCorrect: false }
+    ],
+    correctAnswer: "c",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Risposta non ancora data. Punteggio max: 1.0"
+  },
+  {
+    number: 12,
+    imageFile: "472f4c7c-360e-47e3-9ecd-e610e2c83afb.jpg",
+    text: "Un sistema ha un tempo di accesso in RAM di 120 ns, adotta un TLB con un tempo di accesso di 10 ns e un hit rate del 95%, usa una paginazione a due livelli e non ha bisogno di usare un algoritmo di rimpiazzamento delle pagine. Qual è il tempo medio di accesso alla RAM (medium access time - mat) del sistema? (per semplicità in caso di miss si ignori il costo di interrogazione del TLB)",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "mat = 141,5 ns", isCorrect: true },
+      { id: "b", text: "mat = 135,5 ns", isCorrect: false },
+      { id: "c", text: "mat = 130,5 ns", isCorrect: false },
+      { id: "d", text: "mat = 147,5 ns", isCorrect: false }
+    ],
+    correctAnswer: "a",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Risposta errata. La risposta corretta è: mat = 141,5 ns"
+  },
+  {
+    number: 13,
+    imageFile: "5072467d-2dbe-40a6-b174-103603dcde75.jpg",
+    text: "Completare il seguente codice C per allocare una linked list. Inserire i valori corretti negli spazi vuoti evidenziati.",
+    type: "essay",
+    answer: "Le risposte corrette sono: node* come tipo di ritorno della funzione list_alloc, sizeof(node) per la calloc, e item->next=item+1 per impostare il campo next.",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Codice per allocazione linked list"
+  },
+  {
+    number: 14,
+    imageFile: "5fdc652f-af64-4c7d-822f-b19dda329676.jpg",
+    text: "Spiegare cosa sono, come sono composti e a che cosa servono i grafi di assegnazione delle risorse con archi di reclamo",
+    type: "essay",
+    answer: "I grafi di assegnazione di risorse sono uno strumento che ci permette di individuare possibili situazioni che possono portare al deadlock. Sono composti da simboli che rappresentano processi, risorse e archi. Ogni processo che richiede una risorsa avrà un arco che andrà dal processo richiedente alla risorsa richiesta (Arco di richiesta). Ogni risorsa assegnata a un processo avrà un arco che va dalla risorsa al processo (Arco di assegnazione). Gli archi di reclamo invece sono dei tipi particolari di arco che indicheranno che il processo richiederà la risorsa in futuro. Viene indicato con tratteggio.",
+    maxPoints: 3,
+    negativePoints: 0,
+    explanation: "Domanda 13 Completo. Punteggio ottenuto: non visibile"
+  },
+  {
+    number: 15,
+    imageFile: "61ba6f4a-3af9-465a-a401-5c5b506a790c.jpg",
+    text: "Su un hard disk che adotta una allocazione concatenata (senza FAT) è memorizzato un file A della dimensione di 0x8000 byte, e si sa che nell'ultimo blocco di A sono presenti 64 byte del file. Si sa inoltre che per scrivere il numero di un blocco vengono usati 27 bit, arrotondati al minimo numero di byte necessario. Quanto è grosso l'hard disk?",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "256 Gigabyte", isCorrect: true },
+      { id: "b", text: "512 Gigabyte", isCorrect: false },
+      { id: "c", text: "1 Terabyte", isCorrect: false },
+      { id: "d", text: "128 Gigabyte", isCorrect: false }
+    ],
+    correctAnswer: "a",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Domanda 9. Risposta salvata. Punteggio max: 1.0"
+  },
+  {
+    number: 16,
+    imageFile: "62578b9e-ed65-467c-90d7-ef79cd114ea6.jpg",
+    text: "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione): 1: cd /tmp, 2: mkdir newfolder, 3: echo 'ciao' > pippo // crea un nuovo file di nome pippo contenente la stringa ciao, 4: cd newfolder, 5: ln ../pippo paperino, 6: ln -s /tmp/newfolder folder2, 7: ln -s paperino topolino, 8: echo 'salve' >> topolino // aggiunge 'salve' a fondo file, 9: rm pippo, 10: cat paperino // cat stampa il contenuto del file passato come argomento, 11: mkdir ../folder3. Scegli un'alternativa:",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "il link-counter dell'i-node di paperino è: 2, il link counter di tmp è: 2, l'output del comando 10 è: 'ciao', il comando 8 dà come risultato: un errore perché non sono ammessi hard link tra cartelle", isCorrect: false },
+      { id: "b", text: "il link-counter dell'i-node di paperino è: 2, il link counter di tmp è: 2, l'output del comando 10 è: no such file or directory, il comando 8 dà come risultato: un errore perché non sono ammessi hard link tra cartelle", isCorrect: false },
+      { id: "c", text: "il link-counter dell'i-node di paperino è: 1, il link counter di tmp è: 1, l'output del comando 10 è: 'ciao' seguito da 'salve', il comando 8 dà come risultato: un errore perché non sono ammessi hard link tra cartelle", isCorrect: false },
+      { id: "d", text: "il link-counter dell'i-node di paperino è: 1, il link counter di tmp è: aumentato di 2, l'output del comando 10 è: 'ciao', il comando 8 dà come risultato: un nuovo collegamento alla cartella newfolder", isCorrect: false }
+    ],
+    correctAnswer: "a",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Domanda 1. Risposta non ancora data. Punteggio max: 2.0"
+  },
+  {
+    number: 17,
+    imageFile: "685d043f-3705-449d-beb3-641a9b165bfd.jpg",
+    text: "A un processo P vengono assegnati x frame inizialmente vuoti, e il processo ha una stringa di riferimento lunga y contenente riferimenti a k pagine diverse. Assumendo una paginazione su richiesta pura, e una allocazione locale, qual è il numero massimo di page fault generati da P, e perché?",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "x page fault. Infatti, gli x frame sono inizialmente vuoti, e dunque vanno man mano riempiti fino ad arrivare a regime con tutti i frame occupati da pagine del processo", isCorrect: false },
+      { id: "b", text: "y page fault. Questo valore si ottiene quando ogni riferimento ad una qualsiasi pagina di P produce page fault, ossia quando al processo vengono assegnati x=1 frame", isCorrect: true },
+      { id: "c", text: "k page fault. Questo valore si ottiene osservando che ogni riferimento ad una nuova pagina deve per forza produrre un page fault, e se vengono riferite k pagine diverse, si produrranno al massimo k page fault", isCorrect: false },
+      { id: "d", text: "(y + k) page fault. Questo valore si spiega osservando che una stessa pagina può essere riferita più volte non consecutivamente e ogni volta potrebbe generare un page fault, quando al processo vengono assegnati x=1 frame", isCorrect: false }
+    ],
+    correctAnswer: "b",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Domanda 5. Risposta errata. La risposta corretta è: y page fault"
+  },
+  {
+    number: 18,
+    imageFile: "6bc9f5a4-f54c-4f57-b9d1-aa43e477425e.jpg",
+    text: "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix: 1: cd /tmp, 2: mkdir newfolder, 3: echo 'ciao' > pippo // crea un nuovo file di nome pippo contenente la stringa ciao, 4: cd newfolder, 5: ln ../pippo paperino, 6: ln -s /tmp/newfolder folder2, 7: cp paperino topolino, 8: echo 'salve' >> topolino // aggiunge 'salve' a fondo file, 9: rm pippo, 10: cat paperino // cat stampa il contenuto del file passato come argomento, 11: mkdir folder3. Scegli un'alternativa (visibile solo opzione b con checkmark):",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "il link-counter dell'i-node di paperino è: 2, il link counter di newfolder è: 2, l'output del comando 10 è: 'ciao', il link counter di tmp è: aumentato di 1", isCorrect: false },
+      { id: "b", text: "il link-counter dell'i-node di paperino è: 2, il link counter di newfolder è: 3, l'output del comando 10 è: 'ciao', il link counter di tmp è: aumentato di 1", isCorrect: true },
+      { id: "c", text: "Opzione c (non completamente visibile nell'immagine)", isCorrect: false },
+      { id: "d", text: "Opzione d (non completamente visibile nell'immagine)", isCorrect: false }
+    ],
+    correctAnswer: "b",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Punteggio max: 2.0 su 2.0"
+  },
+  {
+    number: 19,
+    imageFile: "72ee6025-4276-4803-8664-51a7649e92ec.jpg",
+    text: "Completare il seguente codice C per trovare il massimo in un array. Nel codice manca il ciclo for corretto. Quale deve essere il ciclo for?",
+    type: "essay",
+    answer: "Risposta: 8 (se i puntatori sono rappresentati su 8 byte). Difatti il for della funzione find_max cerca il massimo fino a sizeof(v) che NON è la dimensione dell'array, ma è la dimensione del puntatore. Di questo ce ne dobbiamo accorgere subito perché in C una funzione a cui viene passato un puntatore NON PUO' sapere la dimensione dell'array puntato.",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Codice C - trovare massimo array con puntatori"
+  },
+  {
+    number: 20,
+    imageFile: "73b2f78b-390f-4cb5-8aae-4adab45b9cb8.jpg",
+    text: "In un sistema time sharing che usa un algoritmo di sostituzione delle pagine, tra le ragioni per cui si può verificare un context switch tra processi orienti troviamo:",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "1. il processo in esecuzione ha eseguito una wait su un semaforo con valore < 0, 2. è stata indirizzata una pagina non in memoria primaria da parte del processo running, 3. è appena stato terminato un processo che ha generato una trap, 4. è stata richiesta una operazione di I/O da parte di un processo in coda di ready", isCorrect: false },
+      { id: "b", text: "1. il processo in esecuzione ha eseguito una wait su un semaforo con valore > 0, 2. è stata indirizzata una pagina non in memoria primaria da parte del processo running, 3. è appena stato terminato un processo che ha generato una trap, 4. è stata richiesta una operazione di I/O da parte del processo in CPU", isCorrect: false },
+      { id: "c", text: "1. è stata indirizzata una pagina non in memoria primaria da parte del processo running, 2. il processo in esecuzione ha eseguito una wait su un semaforo con valore < 0, 3. è stata richiesta una operazione di I/O da parte del processo in CPU, 4. è appena stato terminato un processo che ha generato una trap", isCorrect: true },
+      { id: "d", text: "1. il processo in esecuzione ha eseguito una wait su un semaforo con valore < 0, 2. è stata indirizzata una pagina vittima da parte del processo running, 3. è appena stato terminato un processo che ha generato una trap, 4. è stata richiesta una operazione di I/O da parte di un processo in coda di ready", isCorrect: false }
+    ],
+    correctAnswer: "c",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Domanda 9. Risposta non ancora data. Punteggio max: 1.0"
+  },
+  // ========== BATCH 2: Q21-Q30 ==========
+  {
+    number: 21,
+    imageFile: "7479603b-02d8-47e7-9966-faf5acfba5ad.jpg",
+    text: "Completare il seguente codice C che contiene errori nella gestione della memoria dinamica con malloc. Identificare gli errori nel codice.",
+    type: "essay",
+    answer: "Commento: questo è andato male. Mi dispiace. Anche la include è sbagliata. Gli errori sono: clone= malloc(len*sizeof(char)) dovrebbe essere con * non =, e il return deve essere clone non *clone.",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Domanda 5 Completo - Codice malloc con errori"
+  },
+  {
+    number: 22,
+    imageFile: "7bd34d3e-0881-4bb6-bfc2-2b46f66638fc.jpg",
+    text: "In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante (Pa: 0,4 - Pb: 2,3 - Pc: 3,5 - Pd: 5,1). Quali sono il waiting time e il turnaround time medi ottenuti per lo scheduling dei quattro processi della tabella se si usa l'algoritmo di scheduling non preemptive che fornisce le migliori previsioni possibili? Qual è il corrispondente diagramma di GANTT?",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "Diagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pd ... (7) ... Pb ... (10). Waiting time medio = 7/4. Turnaround time medio = 17/4", isCorrect: false },
+      { id: "b", text: "Diagramma di GANTT: (0) ... Pa ... (4) ... Pb ... (7) ... Pc ... (9) ... Pd ... (10). Waiting time medio = 7/4. Turnaround time medio = 17/4", isCorrect: false },
+      { id: "c", text: "Diagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pd ... (7) ... Pb ... (10). Waiting time medio = 2/4. Turnaround time medio = 18/4", isCorrect: true },
+      { id: "d", text: "Diagramma di GANTT: (0) ... Pa ... (4) ... Pd ... (5) ... Pc ... (7) ... Pb ... (10). Waiting time medio = 7/4. Turnaround time medio = 18/4", isCorrect: false }
+    ],
+    correctAnswer: "c",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Domanda 12. Risposta non ancora data. Punteggio max: 2.0"
+  },
+  {
+    number: 23,
+    imageFile: "7d3c4a85-fb17-4816-a2dd-a897204703a3.jpg",
+    text: "Date le seguenti dichiarazioni: char * s = '123456789'; char * p; cosa viene stampato da seguente codice? p = s+3; printf('%c', *(p+4));",
+    type: "essay",
+    answer: "Risposta vuota richiesta. Il codice accede a s[7] che è '8'.",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Tempo stimato: 2 min - Puntatori in C"
+  },
+  {
+    number: 24,
+    imageFile: "82f4c8c5-5014-4d1d-bcb2-11de94b8eb8c.jpg",
+    text: "Scrivere nello spazio sottostante il risultato della esecuzione delle due chiamate alla funzione printf(). char *names[] = { 'Huey', 'Dewey', 'Louie', 'Donald Duck'}; void *ptr; ptr = *(names+2); printf('%s ', (char *)ptr ); printf('%s', (char *)ptr+2 );",
+    type: "essay",
+    answer: "Risposta vuota richiesta. Prima printf stampa 'Louie', seconda printf stampa 'uie' (a partire dal terzo carattere).",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Tempo stimato: 2 min - Array di stringhe e puntatori"
+  },
+  {
+    number: 25,
+    imageFile: "8cbb2a62-434c-48f3-a019-f71217896afd.jpg",
+    text: "Di un sistema è noto che la tabella delle pagine più grande del sistema occupa esattamente un frame, il numero di un frame è scritto su 8 byte usando però solo i primi 20 bit, la frammentazione interna media prodotta da un processo del sistema è di circa 32 Kilobyte. Quanto sono grandi lo spazio di indirizzamento fisico e logico del sistema? (selezionare l'opzione di risposta che riporta il ragionamento aritmetico e il risultato corretti)",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "La tabella delle pagine più grande del sistema ha 2^15/8 entry, e dunque lo spazio logico del sistema è grande 128 Megabyte. Lo spazio fisico è suddiviso in 2^20 frame, e dunque ha una dimensione di 32 Gigabyte", isCorrect: false },
+      { id: "b", text: "La tabella delle pagine più grande del sistema ha 2^16/8 entry, e dunque lo spazio logico del sistema è grande 512 Megabyte. Lo spazio fisico è suddiviso in 2^20 frame, e dunque ha una dimensione di 64 Gigabyte", isCorrect: true },
+      { id: "c", text: "La tabella delle pagine più grande del sistema ha 2^16/2 entry, e dunque lo spazio logico del sistema è grande 4 Gigabyte. Lo spazio fisico è suddiviso in 2^20 frame, e dunque ha una dimensione di 64 Gigabyte", isCorrect: false },
+      { id: "d", text: "La tabella delle pagine più grande del sistema ha 2^16/2 entry, e dunque lo spazio logico del sistema è grande 4 Gigabyte. Lo spazio fisico è suddiviso in 2^20 frame, e dunque ha una dimensione di 1 Megabyte", isCorrect: false }
+    ],
+    correctAnswer: "b",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Domanda 15. Risposta errata. La risposta corretta è: opzione b (512 MB logico, 64 GB fisico)"
+  },
+  {
+    number: 26,
+    imageFile: "91819a28-1d4c-41c4-a4c5-4065796a8f78.jpg",
+    text: "Quale valore viene stampato dall'esecuzione del seguente codice? (aggiungere eventuali altre considerazioni nella risposta). Codice find_max con array di double.",
+    type: "essay",
+    answer: "Risposta: 8 (se i puntatori sono rappresentati su 8 byte). Difatti il for della funzione find_max cerca il massimo fino a sizeof(v) che NON è la dimensione dell'array, ma è la dimensione del puntatore. Di questo ce ne dobbiamo accorgere subito perché in C una funzione a cui viene passato un puntatore NON PUO' sapere la dimensione dell'array puntato.",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Domanda 5 Completo - Punteggio max: 2. Risposta: 12.0"
+  },
+  {
+    number: 27,
+    imageFile: "94b33657-e158-4bba-9620-b6b7e51c9ae9.jpg",
+    text: "Data la seguente macro parametrica: #define PLUS2(x) x+2, si dica quale numero viene stampato dal seguente codice: printf('%d\\n', PLUS2(6)*PLUS2(7));",
+    type: "essay",
+    answer: "Risposta: 72 (errata). Le macro del pre-processore non sono funzioni. La risposta corretta è: 22. L'espansione è 6+2*7+2 = 6+14+2 = 22.",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Domanda 3. Risposta errata. Punteggio ottenuto: 0 su 2"
+  },
+  {
+    number: 28,
+    imageFile: "9a281d21-9e85-470d-8f74-a540c03cffa4.jpg",
+    text: "Un sistema ha un tempo di accesso in RAM di 120 ns, adotta un TLB con un tempo di accesso di 10 ns e un hit rate del 95%, usa una paginazione a due livelli e non ha bisogno di usare un algoritmo di rimpiazzamento delle pagine. Qual è il tempo medio di accesso alla RAM (medium access time - mat) del sistema? (per semplicità in caso di miss si ignori il costo di interrogazione del TLB)",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "mat = 141,5 ns", isCorrect: true },
+      { id: "b", text: "mat = 135,5 ns", isCorrect: false },
+      { id: "c", text: "mat = 130,5 ns", isCorrect: false },
+      { id: "d", text: "mat = 147,5 ns", isCorrect: false }
+    ],
+    correctAnswer: "a",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Domanda 10. Risposta errata. La risposta corretta è: mat = 141,5 ns"
+  },
+  {
+    number: 29,
+    imageFile: "9df0a867-aa10-4b7d-abc5-4c9c7344b879.jpg",
+    text: "L'hard disk di un sistema operativo Unix ha la dimensione di 512 Gigabyte ed è suddiviso in blocchi della dimensione di 0x1000 byte. Di un file A si sa che, una volta in RAM i suoi attributi, incluso il numero del suo index-node, sono necessarie 4 operazioni di I/O per leggere l'ultimo byte del file. Qual è la dimensione minima di A?",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "Il file è grande almeno 10*2^12+1 byte. Infatti, le quattro operazioni di I/O richieste implicano che per memorizzare A si sia fatto ricorso al puntatore single indirect, e che nel caso minimo l'ultimo blocco del file contenga un solo byte.", isCorrect: true },
+      { id: "b", text: "Il file è grande almeno 10*2^12+2^22+1 byte. Infatti, le quattro operazioni di I/O richieste implicano che per memorizzare A si sia fatto ricorso al puntatore double indirect, e che nel caso minimo l'ultimo blocco del file contenga un solo byte.", isCorrect: false },
+      { id: "c", text: "Il file è grande almeno 10*2^13+1 byte. Infatti, le quattro operazioni di I/O richieste implicano che per memorizzare A si sia fatto ricorso al puntatore single indirect, e che nel caso minimo l'ultimo blocco del file contenga un solo byte.", isCorrect: false },
+      { id: "d", text: "Il file è grande almeno 10*2^13+2^24+1 byte. Infatti, le quattro operazioni di I/O richieste implicano che per memorizzare A si sia fatto ricorso al puntatore double indirect, e che nel caso minimo l'ultimo blocco del file contenga un solo byte.", isCorrect: false }
+    ],
+    correctAnswer: "a",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Unix file system - single/double indirect pointers"
+  },
+  {
+    number: 30,
+    imageFile: "9e0ebc58-b543-46a8-a73d-7cdfc739b4b9.jpg",
+    text: "Completare il seguente codice C per trovare il minimo di un array. Fornire i valori mancanti: tipo di ritorno della funzione, parametro corretto per sizeof, e parametro corretto per find_min.",
+    type: "essay",
+    answer: "Risposta 1: v[0]. Risposta 2: &min. Le risposte corrette sono: inizializzazione con v[0] e passaggio per riferimento con &min nella chiamata find_min(v, sizeof(v)/sizeof(v[0]), &min);",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Tempo stimato: 3 min - Codice C trovare minimo"
+  },
+  // ========== BATCH 3: Q31-Q40 ==========
+  {
+    number: 31,
+    imageFile: "b0aca99c-eee6-4fc5-a3c8-32d99e63183e.jpg",
+    text: "In un sistema operativo un indirizzo fisico è scritto su 32 bit, l'offset più grande in una pagina è 3FFF, e lo spazio logico è il doppio di quello fisico. Se il sistema adottasse una Inverted Page Table della dimensione di 1024 Kilobyte, quanti potrebbero essere al massimo i processi presenti contemporaneamente nel sistema?",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "2^19 processi", isCorrect: false },
+      { id: "b", text: "2^16 processi", isCorrect: false },
+      { id: "c", text: "2^22 processi", isCorrect: false },
+      { id: "d", text: "2^13 processi", isCorrect: true }
+    ],
+    correctAnswer: "d",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Domanda 5. Risposta non ancora data. Punteggio max: 2.0"
+  },
+  {
+    number: 32,
+    imageFile: "b5d20b6a-a430-4adc-9a9b-f5e13b29d96d.jpg",
+    text: "Data la seguente struttura dati: char *family[] = { 'Huey', 'Dewey', 'Louie', 'Donald Duck'}; completare la definizione della variabile 'aux' determinando il tipo della espressione di assegnamento: aux = family+1;",
+    type: "essay",
+    answer: "Risposta giusta è: char **. Il tipo di aux deve essere char** (puntatore a puntatore a char) perché family è un array di stringhe (char*[]), e family+1 punta al secondo elemento che è di tipo char*.",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Domanda 2. Risposta errata. Tempo: 1 min"
+  },
+  {
+    number: 33,
+    imageFile: "bced584d-a8de-43cb-aee8-f6a358337db1.jpg",
+    text: "Un sistema ha un tempo di accesso in RAM di 70 ns, adotta un TLB con un tempo di accesso di 10 ns e un hit rate del 95%, usa una paginazione a due livelli e non ha bisogno di usare un algoritmo di rimpiazzamento delle pagine. Qual è il tempo medio di accesso alla RAM (medium access time - mat) del sistema? (per semplicità in caso di miss si ignori il costo di interrogazione del TLB)",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "mat = 83 ns", isCorrect: false },
+      { id: "b", text: "mat = 90 ns", isCorrect: false },
+      { id: "c", text: "mat = 86,5 ns", isCorrect: true },
+      { id: "d", text: "mat = 80 ns", isCorrect: false }
+    ],
+    correctAnswer: "c",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Domanda 2. Risposta errata. Punteggio ottenuto: -0,5 su 1,0. La risposta corretta è: mat = 86,5 ns"
+  },
+  {
+    number: 34,
+    imageFile: "be5b0578-83db-4032-b667-4c03acc471fc.jpg",
+    text: "Secondo quanto visto a lezione, quale/quali dei seguenti comandi Unix modifica il valore del link counter dell'index-node associato al file di testo X? (si assuma di avere i permessi per eseguire tutti i comandi e di essere posizionati in una generica cartella user/tmp che contiene X). 1) ln X .../X, 2) cp X Y, 3) ln X X, 4) rm X Y",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "i comandi 3) e 4)", isCorrect: false },
+      { id: "b", text: "i comandi 1) e 4)", isCorrect: true },
+      { id: "c", text: "i comandi 2) e 3)", isCorrect: false },
+      { id: "d", text: "i comandi 1) e 3)", isCorrect: false }
+    ],
+    correctAnswer: "b",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Domanda 7. Risposta non ancora data. Punteggio max: 1.0"
+  },
+  {
+    number: 35,
+    imageFile: "c33e846b-0eb6-4d46-b1a1-b90535495cc0.jpg",
+    text: "Supponiamo che in un sistema in cui la pagina vittima è scelta con algoritmo di seconda chance migliorato, la lista delle pagine caricate (e relativi bit di riferimento e di modifica) sia la seguente: p1 (1,1); p2 (1,0); p3 (0,0); p4 (0,1); p5 (0,-1). Quali pagine NON vengono scelte come vittime?",
+    type: "multianswer",
+    statements: [
+      { text: "p5 non è scelta", isCorrect: true },
+      { text: "p4 non è scelta", isCorrect: true },
+      { text: "p3 è scelta", isCorrect: true },
+      { text: "p2 non è scelta", isCorrect: true },
+      { text: "p1 non è scelta", isCorrect: true }
+    ],
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Domanda 6. Risposta corretta. Punteggio ottenuto: 2,00 su 2,00"
+  },
+  {
+    number: 36,
+    imageFile: "c404653a-679c-41a6-bdba-f25c8750242c.jpg",
+    text: "Si consideri questa variante del problema dei produttori e consumatori: Semaphore full =0; empty =N; con codice consumatore e produttore che usano wait e signal. Questa soluzione funziona? Se sì, a quali condizioni? Se no, perché?",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "La soluzione proposta funziona, e corrisponde al caso in cui sono presenti un solo produttore e un solo consumatore, visto che manca il semaforo di mutua esclusione", isCorrect: false },
+      { id: "b", text: "La soluzione proposta funziona a condizione che produttori e consumatori accedano al buffer condiviso i momenti diversi, visto che manca il semaforo di mutua esclusione", isCorrect: false },
+      { id: "c", text: "La soluzione proposta non funziona, visto che manca il semaforo di mutua esclusione e quindi due processi potrebbero accedere al buffer contemporaneamente", isCorrect: true },
+      { id: "d", text: "La soluzione proposta non funziona in nessun caso, perché i semafori coinvolti nelle operazioni di sincronizzazione non sono usati in modo corretto", isCorrect: false }
+    ],
+    correctAnswer: "c",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Domanda 3. Risposta non ancora data. Punteggio max: 2.0"
+  },
+  {
+    number: 37,
+    imageFile: "cc2808eb-7ae6-4e0e-88f1-bd80da70955f.jpg",
+    text: "Un sistema operativo moderno adotta un algoritmo di sostituzione delle pagine per: Scegli un'alternativa:",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "stabilire quale, tra le pagine dei processi utente correntemente in RAM possa essere rimossa per fare spazio ad una pagina mancante che è stata indirizzata da un processo in esecuzione. E' obbligatorio che la pagina scelta sia una pagina che non serve più al processo a cui appartiene, e che non sia stata riferita di recente.", isCorrect: false },
+      { id: "b", text: "stabilire quale, tra le pagine dei processi utente correntemente in RAM possa essere rimossa per fare spazio ad una pagina mancante che è stata indirizzata da un processo in esecuzione. E' auspicabile che la pagina scelta sia una pagina che non serve più al processo a cui appartiene, o almeno che non sia stata riferita di recente.", isCorrect: true },
+      { id: "c", text: "stabilire quale, tra le pagine dei processi utente correntemente in RAM possa essere rimossa per fare spazio ad una pagina più importante che è stata indirizzata da un processo in esecuzione. E' auspicabile che la pagina scelta sia una pagina che non serve più al processo a cui appartiene, o almeno che non sia stata ancora utilizzata.", isCorrect: false },
+      { id: "d", text: "stabilire quale, tra le pagine dei processi utente correntemente in RAM possa essere rimossa per fare spazio ad una pagina più importante che è stata indirizzata da un processo in esecuzione. E' auspicabile che la pagina scelta sia una pagina che non serve più al processo a cui appartiene, o almeno che sia stata riferita di recente.", isCorrect: false }
+    ],
+    correctAnswer: "b",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Domanda 10. Risposta salvata. Punteggio max: 1.0"
+  },
+  {
+    number: 38,
+    imageFile: "cf2ec0e8-2f7f-4e05-b725-a14555bbea69.jpg",
+    text: "Data la seguente struttura dati: char *family[] = { 'Huey', 'Dewey', 'Louie', 'Donald Duck'}; completare la definizione della variabile 'aux' determinando il tipo della espressione di assegnamento: aux = family+1;",
+    type: "essay",
+    answer: "Risposta giusta è: char **. Commento: (vuoto). Il tipo di aux deve essere char** (puntatore a puntatore a char).",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Domanda 2. La risposta corretta è: 22. Risposta giusta è: e' char **"
+  },
+  {
+    number: 39,
+    imageFile: "corretto.jpg",
+    text: "Dato il seguente codice: int main() { int v; char * p; v = 0xFFFF; p = (char *)&v; p[0] = 1; }. Si dica se il codice è:",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "corretto", isCorrect: true },
+      { id: "b", text: "produce un errore in compilazione", isCorrect: false },
+      { id: "c", text: "potrebbe produrre un errore in esecuzione (Segmentation fault)", isCorrect: false }
+    ],
+    correctAnswer: "a",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Tempo stimato: 2 min. Il codice è corretto, accede al primo byte di v"
+  },
+  {
+    number: 40,
+    imageFile: "dd939024-fa25-4472-8e58-d1c4d11c213f.jpg",
+    text: "Analizzare il seguente codice della funzione sclone che contiene errori. Identificare gli errori presenti nel codice: char *sclone(char *s) { ... clone=malloc(len*sizeof(char)); ... s++; c=*s; ... return clone; }",
+    type: "essay",
+    answer: "Gli errori nel codice sono: 1) clone=malloc dovrebbe usare * per dereferenziare, 2) s++; c=*s; è sbagliato, dovrebbe essere *clone++=c o simile, 3) il return deve restituire clone non *clone (anche se in questa versione è corretto).",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Codice sclone con malloc - analisi errori"
+  },
+  // ========== BATCH 4: Q41-Q50 ==========
+  {
+    number: 41,
+    imageFile: "e0d091db-822a-41b0-b6ce-3883f150fa75.jpg",
+    text: "Si consideri la seguente definizione di struttura C: struct openfile_instance { int inode_index; int reference_count; long offset; }. Definita la seguente tabella di elementi di tipo struct openfile_instance: #define MAX_OPEN_FILES 100; struct openfile_instance openfile_table[MAX_OPEN_FILES];. Specificare correttamente il tipo delle seguenti variabili affinché coincida con il tipo del valore sulla destra dell'assegnamento: a = openfile_table+1; b = openfile_table[4];. Se l'array è composto dai seguenti dati: openfile_table = [ {8,2,0}, {10,1,44}, {3,18,24} ], cosa stampa la seguente printf: printf('%d\\n', *((int *)(openfile_table+2) + 1));",
+    type: "essay",
+    answer: "Risposta: 0. Il tipo di 'a' è struct openfile_instance *, il tipo di 'b' è struct openfile_instance. La printf accede all'elemento openfile_table[2] (che è {3,18,24}), lo tratta come puntatore a int, e prende il secondo campo (reference_count=18), ma in realtà stampa 0 per come è indicizzato.",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Tempo stimato: 4 min. Struct, array e puntatori"
+  },
+  {
+    number: 42,
+    imageFile: "e3c47f2c-36a4-46d4-afab-6e7eb8c0235f.jpg",
+    text: "In un sistema operativo un indirizzo fisico è scritto su 28 bit, l'offset più grande in una pagina è 3FFF, lo spazio logico è il doppio di quello fisico, e nel sistema possono essere presenti contemporaneamente al massimo 1024 processi. Se il sistema adottasse una Inverted Page Table, quanto sarebbe grande questa tabella? (selezionare l'opzione di risposta che riporta il ragionamento aritmetico e il risultato corretti)",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "Ogni entry della IPT è grande 24 bit, ossia 3 byte, e dunque la IPT sarà grande 3 * 2^14 = 48 Kbyte (circa)", isCorrect: false },
+      { id: "b", text: "Ogni entry della IPT è grande 24 bit, ossia 3 byte, e dunque la IPT sarà grande 3 * 2^15 = 96 Kbyte (circa)", isCorrect: false },
+      { id: "c", text: "Ogni entry della IPT è grande 25 bit, arrotondati a 4 byte, e dunque la IPT sarà grande 4 * 2^14 = 64 Kbyte (circa)", isCorrect: true },
+      { id: "d", text: "Ogni entry della IPT è grande 25 bit, arrotondati a 4 byte, e dunque la IPT sarà grande 4 * 2^15 = 128 Kbyte (circa)", isCorrect: false }
+    ],
+    correctAnswer: "c",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Domanda 9. Risposta errata. Punteggio ottenuto: 0,0 su 2,0. La risposta corretta è: opzione c"
+  },
+  {
+    number: 43,
+    imageFile: "e4034446-7099-4f3c-a12d-e4cfb99fb7b0.jpg",
+    text: "Indica quali affermazioni inerenti la comunicazione fra processi sono corrette (le risposte sbagliate segnate per vere danno punteggio negativo):",
+    type: "multianswer",
+    statements: [
+      { text: "due processi che comunicano tramite memoria condivisa debbono conoscere l'uno l'identità dell'altro", isCorrect: false },
+      { text: "le code di messaggi possono avere buffer di capacità 0", isCorrect: false },
+      { text: "la receive sincrona sospende il mittente del messaggio", isCorrect: false },
+      { text: "L'accesso incontrollato a una memoria condivisa può rendere i dati inconsistenti", isCorrect: true },
+      { text: "La capacità del buffer di una coda di messaggi deve crescere secondo le necessità dei processi interagenti", isCorrect: false }
+    ],
+    maxPoints: 2,
+    negativePoints: -0.5,
+    explanation: "IPC - comunicazione tra processi. Solo l'opzione d è corretta"
+  },
+  {
+    number: 44,
+    imageFile: "e42f3166-6b08-42f5-8236-f03cdd01879e.jpg",
+    text: "Su un hard disk che adotta una allocazione concatenata (senza FAT) è memorizzato un file A della dimensione di 0x8000 byte, e si sa che nell'ultimo blocco di A sono presenti 64 byte del file. Si sa inoltre che per scrivere il numero di un blocco vengono usati 27 bit, arrotondati al minimo numero di byte necessario. Quanto è grosso l'hard disk?",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "1 Terabyte", isCorrect: false },
+      { id: "b", text: "512 Gigabyte", isCorrect: true },
+      { id: "c", text: "256 Gigabyte", isCorrect: false },
+      { id: "d", text: "128 Gigabyte", isCorrect: false }
+    ],
+    correctAnswer: "b",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Domanda 8. Risposta salvata. Punteggio max: 1.0"
+  },
+  {
+    number: 45,
+    imageFile: "e6df3902-2ca0-49f3-b8bf-b1052e06d3fc.jpg",
+    text: "Di un sistema è noto che la tabella delle pagine più grande del sistema occupa esattamente 2 frame, il numero di un frame è scritto su 8 byte usando però solo i primi 20 bit, e nel sistema sono presenti in media 4 processi che insieme producono una frammentazione interna complessiva di 64 Kilobyte. Quanto sono grandi lo spazio di indirizzamento fisico e logico del sistema?",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "lo spazio logico del sistema è grande 4 Gigabyte, lo spazio fisico del sistema è grande 64 Gigabyte", isCorrect: true },
+      { id: "b", text: "lo spazio logico del sistema è grande 128 Megabyte, lo spazio fisico del sistema è grande 32 Gigabyte", isCorrect: false },
+      { id: "c", text: "lo spazio logico del sistema è grande 256 Megabyte, lo spazio fisico del sistema è grande 32 Gigabyte", isCorrect: false },
+      { id: "d", text: "lo spazio logico del sistema è grande 2 Gigabyte, lo spazio fisico del sistema è grande 1 Megabyte", isCorrect: false }
+    ],
+    correctAnswer: "a",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Paginazione - calcolo spazi fisico e logico"
+  },
+  {
+    number: 46,
+    imageFile: "f746d3e1-2439-4547-b078-c3089c497cbe.jpg",
+    text: "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione): 1: cd /tmp, 2: mkdir newfolder, 3: echo 'ciao' > pippo // crea un nuovo file di nome pippo contenente la stringa ciao, 4: cd newfolder, 5: ln ../pippo paperino, 6: ln -s /tmp/newfolder folder2, 7: cp paperino topolino, 8: echo 'salve' >> topolino // aggiunge 'salve' a fondo file, 9: rm pippo, 10: cat paperino // cat stampa il contenuto del file passato come argomento, 11: mkdir folder3. Scegli un'alternativa:",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "il link-counter dell'i-node di paperino è: 2, il link counter di newfolder è: 1, l'output del comando 10 è: 'ciao', il link counter di tmp è: aumentato di 2", isCorrect: false },
+      { id: "b", text: "il link-counter dell'i-node di paperino è: 2, il link counter di newfolder è: 3, l'output del comando 10 è: 'ciao', il link counter di tmp è: aumentato di 1", isCorrect: false },
+      { id: "c", text: "il link-counter dell'i-node di paperino è: 1, il link counter di newfolder è: 3, l'output del comando 10 è: 'ciao', il link counter di tmp è: aumentato di 2", isCorrect: false },
+      { id: "d", text: "il link-counter dell'i-node di paperino è: 2, il link counter di newfolder è: 2, l'output del comando 10 è: 'ciao', il link counter di tmp è: aumentato di 1", isCorrect: true }
+    ],
+    correctAnswer: "d",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Domanda 4. Risposta errata. La risposta corretta è: opzione d"
+  },
+  {
+    number: 47,
+    imageFile: "fc1994f8-1655-41ea-8f73-8de2b9aa2459.jpg",
+    text: "Un sistema ha un tempo di accesso in RAM di 100 ns, adotta un TLB con un tempo di accesso di 20 ns e un hit rate del 90%, e usa un algoritmo di rimpiazzamento delle pagine. Quando si verifica un hit la pagina indirizzata è sicuramente in RAM. Quando si verifica un miss, nel 20% dei casi la pagina indirizzata non è in RAM e il page fault ha un costo totale di gestione di 1 microsecondo, indipendentemente dal valore del dirty bit. Qual è l'effective access time (eat) del sistema? (per semplicità in caso di miss si ignori il costo di interrogazione del TLB, e in caso di page fault si consideri solo il tempo di gestione del page fault)",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "mat = 144 ns", isCorrect: true },
+      { id: "b", text: "mat = 128 ns", isCorrect: false },
+      { id: "c", text: "mat = 118 ns", isCorrect: false },
+      { id: "d", text: "mat = 148 ns", isCorrect: false }
+    ],
+    correctAnswer: "a",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "TLB con page fault - effective access time calculation"
+  },
+  {
+    number: 48,
+    imageFile: "fc33830a-2d1b-4687-a59a-5b9ca4ad96bf.jpg",
+    text: "Si consideri un sistema con TLB, in cui ciascun accesso alla RAM richiede 200 unità di tempo, l'hit ratio è 90% e ciascun accesso al TLB richiede 20 unità di tempo. Dire se i seguenti valori sono veri o falsi:",
+    type: "multianswer",
+    statements: [
+      { text: "in caso di TLB miss l'accesso al dato richiede 300 unità di tempo", isCorrect: false },
+      { text: "in caso di TLB hit l'accesso al dato richiede 320 unità di tempo", isCorrect: false },
+      { text: "in caso di TLB miss l'accesso al dato richiede 400 unità di tempo", isCorrect: false },
+      { text: "in caso di TLB hit l'accesso al dato richiede 220 unità di tempo", isCorrect: true },
+      { text: "il TLB miss è pari al 5%", isCorrect: false }
+    ],
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "TLB - calcolo tempi di accesso. Solo statement 4 è corretto"
+  },
+  {
+    number: 49,
+    imageFile: "fd77914e-d462-48a6-9626-dafc990dafc8.jpg",
+    text: "Sia data la seguente funzione: char * fun(char * s) { int i; if (s == NULL) return NULL; i = *s-'0'; return s+i; }. Cosa viene stampato dal seguente codice? printf('%s\\n', fun('236494'));",
+    type: "essay",
+    answer: "Risposta vuota richiesta. La funzione prende il primo carattere '2', sottrae '0' per ottenere 2, e restituisce s+2 che punta a '6494'. Quindi stampa '6494'.",
+    maxPoints: 2,
+    negativePoints: 0,
+    explanation: "Tempo stimato: 3 min; punteggio: 2. Programmazione C - puntatori"
+  },
+  {
+    number: 50,
+    imageFile: "seg fault.jpg",
+    text: "Dato il seguente codice: #include <stdlib.h>; int main() { int * p; p = malloc(20); p[19] = 6; }. Si dica se il codice è:",
+    type: "multiple-choice",
+    options: [
+      { id: "a", text: "corretto", isCorrect: false },
+      { id: "b", text: "produce un errore in compilazione", isCorrect: false },
+      { id: "c", text: "potrebbe produrre un errore in esecuzione (Segmentation fault)", isCorrect: true }
+    ],
+    correctAnswer: "c",
+    maxPoints: 1,
+    negativePoints: 0,
+    explanation: "Tempo stimato: 2 min. Malloc alloca 20 byte (5 int), p[19] accede fuori bounds"
   }
 ];
 

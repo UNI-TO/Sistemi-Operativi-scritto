@@ -12,6 +12,7 @@ const soB1706Path = path.join(__dirname, '../src/data/exam-so-b-17-06-2025.json'
 const teoriaSOB1806Path = path.join(__dirname, '../src/data/exam-teoria-so-b-18-06-2025.json');
 const domandeApertePath = path.join(__dirname, '../src/data/exam-domande-aperte-corso-b.json');
 const uuidMistoPath = path.join(__dirname, '../src/data/exam-uuid-misto.json');
+const provaFebbraioPath = path.join(__dirname, '../src/data/exam-prova-febbraio-2024.json');
 const outputPath = path.join(__dirname, '../src/data/exams.json');
 
 try {
@@ -64,6 +65,13 @@ try {
     const uuidMisto = JSON.parse(fs.readFileSync(uuidMistoPath, 'utf-8'));
     additionalExams.push(uuidMisto);
     console.log(`✓ Loaded UUID Misto: ${uuidMisto.title} (${uuidMisto.questions.length} Q)`);
+  }
+
+  // Prova Febbraio 2024 exam
+  if (fs.existsSync(provaFebbraioPath)) {
+    const provaFebbraio = JSON.parse(fs.readFileSync(provaFebbraioPath, 'utf-8'));
+    additionalExams.push(provaFebbraio);
+    console.log(`✓ Loaded Prova Febbraio: ${provaFebbraio.title} (${provaFebbraio.questions.length} Q)`);
   }
 
   // Merge additional exams
