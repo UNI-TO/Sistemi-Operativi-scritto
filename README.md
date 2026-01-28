@@ -32,6 +32,7 @@ Simulatore di esami per esercitarsi con le prove scritte di programmazione in C 
 
 ### Generale
 - 🏠 **Home page** con panoramica e statistiche
+- 📊 **Pagina statistiche** - performance dettagliate per argomento
 - 📱 **Responsive** - funziona su desktop e mobile
 - 🎨 **UI moderna** con design pulito e intuitivo
 
@@ -56,6 +57,8 @@ Sistemi-Operativi-scritto/
 │   ├── components/                   # Componenti React
 │   │   ├── ExamList.tsx              # Lista esami con filtri
 │   │   ├── ExamSimulator.tsx         # Simulatore esame
+│   │   ├── ExamTimer.tsx             # Timer countdown esami ⭐ NUOVO
+│   │   ├── Statistics.tsx            # Statistiche per argomento ⭐ NUOVO
 │   │   ├── QuestionCard.tsx          # Card domanda essay
 │   │   ├── MultipleChoiceQuestion.tsx # Card domanda V/F e scelta multipla
 │   │   ├── ImageQuestion.tsx         # Card domanda con immagine
@@ -175,10 +178,11 @@ Il simulatore copre tutte le 6 parti del corso di Sistemi Operativi:
 
 ## Come Usare
 
-1. **Home**: Scegli tra "Esami" o "Teoria"
+1. **Home**: Scegli tra "Esami", "Teoria" o "Statistiche"
 2. **Esami**:
    - Filtra per argomento usando i pulsanti in alto
    - Seleziona un esame per iniziare
+   - Se l'esame ha un limite di tempo, il timer partirà automaticamente
    - Scrivi le tue soluzioni nell'editor (per domande di codice)
    - Seleziona le risposte (per domande a scelta multipla/vero-falso)
    - Clicca "Verifica Risposta" per vedere se è corretta (con punteggio!)
@@ -187,6 +191,11 @@ Il simulatore copre tutte le 6 parti del corso di Sistemi Operativi:
    - Consulta il materiale diviso per argomento
    - Consulta i PDF delle lezioni
    - Clicca su "Vedi Esami" per praticare quell'argomento
+4. **Statistiche**:
+   - Visualizza le tue performance globali
+   - Analizza i risultati per argomento
+   - Filtra per topic specifici
+   - Identifica aree di miglioramento
 
 ## 📂 Materiale Disponibile
 
@@ -272,6 +281,8 @@ Vedi `docs/pdf-esami/ADDITIONAL_EXAMS_ANALYSIS.md` e `docs/OCR_PROCESSING_GUIDE.
 - ✅ **MultipleChoiceQuestion** - Per domande V/F e scelta multipla
 - ✅ **ImageQuestion** - Per domande con immagini (screenshot, grafici, tabelle)
 - ✅ **ExamSimulator** - Routing intelligente tra i componenti basato sul tipo di domanda
+- ✅ **ExamTimer** ⭐ - Timer countdown con persistenza localStorage e allarme scadenza
+- ✅ **Statistics** ⭐ - Dashboard statistiche con breakdown per argomento e grafici performance
 
 ## 🚀 Quick Start
 
@@ -298,8 +309,8 @@ node scripts/merge-exams.js                     # Unisci tutti gli esami
 
 ## 📊 Statistiche Progetto
 
-- **Righe di codice**: ~5,000+ 🚀
-- **Componenti React**: 8 (QuestionCard, MultipleChoiceQuestion, ImageQuestion, ExamSimulator, ExamList, StudyMaterials, Home, App)
+- **Righe di codice**: ~6,000+ 🚀
+- **Componenti React**: 10 (QuestionCard, MultipleChoiceQuestion, ImageQuestion, ExamSimulator, ExamTimer, Statistics, ExamList, StudyMaterials, Home, App) ⭐
 - **Custom Hooks**: 1 (useLocalStorage)
 - **Script parser**: 10 ⭐ (parse-exams, parse-txt-exam, parse-png-exam, parse-so-b-17-06, parse-teoria-so-b-18-06, parse-docx, parse-domande-aperte, parse-uuid, parse-prova-febbraio, ocr-pdf, add-topics, merge-exams)
 - **File CSS**: 1200+ righe
@@ -308,7 +319,7 @@ node scripts/merge-exams.js                     # Unisci tutti gli esami
 - **Domande totali**: 253 🚀
 - **Immagini esame**: 83 totali ⭐ (18 SO Appello 14/01, 8 SO B 17/06, 8 Teoria SO B 18/06, 50 UUID misto)
 - **PDF teoria**: 11
-- **Build size**: 282 kB JS + 15 kB CSS
+- **Build size**: 450 kB JS + 15 kB CSS ⭐
 - **File tracciati da processare**: ~600+ (OCR batch)
 - **OCR Tools**: ✅ Installati e pronti (pdf-parse + tesseract.js)
 
