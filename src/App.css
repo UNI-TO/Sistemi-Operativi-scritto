@@ -1,7 +1,12 @@
+body {
+  color: #000000;
+}
+
 .app {
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
+  color: #000000;
 }
 
 /* Home Page Styles */
@@ -326,6 +331,7 @@
   line-height: 1.6;
   white-space: pre-wrap;
   word-wrap: break-word;
+  color: #000000;
 }
 
 .answer-section {
@@ -809,6 +815,7 @@
 .option-text {
   flex: 1;
   line-height: 1.5;
+  color: #000000;
 }
 
 .correct-indicator {
