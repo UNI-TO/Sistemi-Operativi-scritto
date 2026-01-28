@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { StudyMaterial, TOPICS_INFO, Topic } from '../types/Exam';
 
 interface StudyMaterialsProps {
@@ -7,6 +8,15 @@ interface StudyMaterialsProps {
 }
 
 export default function StudyMaterials({ materials, onSelectTopic, onBack }: StudyMaterialsProps) {
+  const [expandedSummaries, setExpandedSummaries] = useState<Record<string, boolean>>({});
+
+  const toggleSummary = (materialId: string) => {
+    setExpandedSummaries(prev => ({
+      ...prev,
+      [materialId]: !prev[materialId]
+    }));
+  };
+
   return (
     <div className="study-materials">
       <div className="study-header">
@@ -39,6 +49,35 @@ export default function StudyMaterials({ materials, onSelectTopic, onBack }: Stu
                   ))}
                 </ul>
               </div>
+
+              {material.summary && (
+                <div className="material-summary-container">
+                  <button
+                    className="summary-toggle-button"
+                    onClick={() => toggleSummary(material.id)}
+                  >
+                    {expandedSummaries[material.id] ? '▼' : '▶'} 📖 Riassunto Dettagliato
+                  </button>
+
+                  {expandedSummaries[material.id] && (
+                    <div className="material-summary">
+                      <h4>📖 Concetti Chiave:</h4>
+                      <ul className="summary-list key-concepts">
+                        {material.summary.keyConcepts.map((concept, idx) => (
+                          <li key={idx} dangerouslySetInnerHTML={{ __html: concept }} />
+                        ))}
+                      </ul>
+
+                      <h4>⭐ Punti Importanti:</h4>
+                      <ul className="summary-list important-points">
+                        {material.summary.importantPoints.map((point, idx) => (
+                          <li key={idx} dangerouslySetInnerHTML={{ __html: point }} />
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {material.pdfFiles && material.pdfFiles.length > 0 ? (
                 <div className="material-files">

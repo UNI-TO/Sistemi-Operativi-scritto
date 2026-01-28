@@ -12,7 +12,29 @@
       "capitolo01-1.pdf",
       "capitolo02-1.pdf"
     ],
-    "pdfCount": 2
+    "pdfCount": 2,
+    "summary": {
+      "keyConcepts": [
+        "<b>Sistema Operativo (OS)</b>: Programma che gestisce l'hardware e fornisce servizi ai programmi applicativi. Funzioni: gestione processi, memoria, I/O, file system",
+        "<b>Kernel</b>: Nucleo del SO sempre residente in memoria. Gestisce risorse critiche e fornisce astrazione hardware",
+        "<b>Modalità Utente vs Kernel</b>: <code>User mode</code> (ring 3) con accesso limitato vs <code>Kernel mode</code> (ring 0) con accesso completo. Cambio tramite <b>mode bit</b>",
+        "<b>System Call</b>: Interfaccia per richiedere servizi OS. Esempi: <code>fork()</code>, <code>exec()</code>, <code>open()</code>, <code>read()</code>, <code>write()</code>. Passaggio parametri: registri, stack, blocco memoria",
+        "<b>Interrupt</b>: Segnale asincrono hardware/software. <b>Interrupt vector</b> punta agli handler. Tipi: I/O device, timer, trap (software)",
+        "<b>Multiprogrammazione</b>: Più programmi in memoria contemporaneamente. <b>Degree of multiprogramming</b>: numero processi in memoria. Obiettivo: massimizzare utilizzo CPU",
+        "<b>Timesharing (Multitasking)</b>: CPU commutata rapidamente tra processi. <b>Time slice/quantum</b>: intervallo tempo per processo (tipicamente 10-100ms)",
+        "<b>DMA (Direct Memory Access)</b>: Controller trasferisce dati tra I/O e memoria senza CPU. CPU riceve interrupt a trasferimento completato"
+      ],
+      "importantPoints": [
+        "<b>Bootstrap</b>: Programma ROM (BIOS/UEFI) carica bootloader → bootloader carica kernel → kernel inizializza sistema",
+        "<b>Context Switch</b>: Salvataggio stato processo corrente (PCB) + ripristino stato processo successivo. <b>Overhead</b>: tempo sprecato (tipicamente 1-10μs)",
+        "<b>Strutture SO</b>: <br>• <b>Monolitica</b>: tutto in kernel (veloce ma complessa)<br>• <b>A livelli</b>: gerarchia moduli<br>• <b>Microkernel</b>: kernel minimale (Mach, QNX)<br>• <b>Modulare</b>: caricamento dinamico moduli",
+        "<b>Protection Rings</b>: Ring 0 (kernel), Ring 1-2 (driver), Ring 3 (applicazioni). Privilege levels controllano accesso risorse",
+        "<b>Cache Hierarchy</b>:<br>• <b>L1</b>: 32-64KB, ~1 ciclo<br>• <b>L2</b>: 256KB-1MB, ~10 cicli<br>• <b>L3</b>: 8-32MB, ~40 cicli<br>• <b>RAM</b>: GB, ~100-300 cicli",
+        "<b>Virtualizzazione</b>: Hypervisor crea VM isolate. <b>Type 1</b> (bare-metal): VMware ESXi, KVM. <b>Type 2</b> (hosted): VirtualBox, VMware Workstation",
+        "<b>Tipi SO</b>:<br>• <b>Batch</b>: esecuzione job sequenziale<br>• <b>Time-sharing</b>: interattivo multi-utente<br>• <b>Real-time</b>: garanzie temporali (hard/soft)<br>• <b>Distributed</b>: risorse condivise rete<br>• <b>Embedded</b>: risorse limitate, dedicato",
+        "<b>API POSIX</b>: Standard Unix. Funzioni: <code>fork()</code>, <code>exec()</code>, <code>wait()</code>, <code>pipe()</code>, <code>signal()</code>"
+      ]
+    }
   },
   {
     "id": "processi-sincronizzazione",
@@ -32,7 +54,36 @@
       "capitolo05-1.pdf",
       "capitolo06-07-1.pdf"
     ],
-    "pdfCount": 4
+    "pdfCount": 4,
+    "summary": {
+      "keyConcepts": [
+        "<b>Processo</b>: Programma in esecuzione. <b>PCB</b> contiene: PID, stato, program counter, registri, limiti memoria, file aperti, priorità",
+        "<b>Stati Processo</b>: <code>new</code> → <code>ready</code> → <code>running</code> → <code>waiting</code> → <code>terminated</code>. Transizioni: admit, scheduler dispatch, I/O, interrupt",
+        "<b>Thread</b>: Unità esecuzione leggera. Condivide: code, data, heap. Privato: stack, registri, PC. <b>User-level</b> vs <b>Kernel-level threads</b>",
+        "<b>IPC Methods</b>:<br>• <b>Pipe</b>: unidirezionale, FIFO<br>• <b>Message Queue</b>: messaggi discreti<br>• <b>Shared Memory</b>: veloce ma richiede sincronizzazione<br>• <b>Socket</b>: comunicazione rete",
+        "<b>Algoritmi Scheduling</b>:<br>• <b>FCFS</b>: First-Come First-Served, non preemptive<br>• <b>SJF</b>: Shortest Job First, ottimale per waiting time<br>• <b>Priority</b>: con aging per evitare starvation<br>• <b>Round Robin</b>: time quantum (q grande → FCFS, q piccolo → overhead)<br>• <b>Multilevel Queue</b>: code separate per priorità",
+        "<b>Formule Scheduling</b>:<br>• <b>Turnaround time</b>: <code>T_turnaround = T_completion - T_arrival</code><br>• <b>Waiting time</b>: <code>T_waiting = T_turnaround - T_burst</code><br>• <b>Response time</b>: <code>T_response = T_first_run - T_arrival</code><br>• <b>CPU utilization</b>: <code>U = (1 - p^n)</code> con p=frazione tempo I/O, n=processi",
+        "<b>Race Condition</b>: Risultato dipende dall'ordine di esecuzione. <b>Sezione critica</b>: codice che accede risorse condivise",
+        "<b>Requisiti Sezione Critica</b>:<br>• <b>Mutua Esclusione</b>: max 1 processo in sezione critica<br>• <b>Progresso</b>: decisione ingresso in tempo finito<br>• <b>Attesa Limitata</b>: limite richieste prima ingresso",
+        "<b>Mutex</b>: Lock binario. <code>lock()</code> e <code>unlock()</code>. Implementazione: <b>Test-and-Set</b>, <b>Compare-and-Swap</b> (istruzioni atomiche)",
+        "<b>Semaforo</b>: Contatore intero. <code>wait(S)</code>: S--; <code>signal(S)</code>: S++. <b>Binary</b> (0/1) vs <b>Counting</b> (≥0)",
+        "<b>Monitor</b>: Costrutto alto livello con mutua esclusione implicita. <b>Condition variables</b>: <code>wait()</code>, <code>signal()</code>",
+        "<b>Deadlock</b>: Blocco permanente. <b>Condizioni Coffman</b>:<br>1. <b>Mutua esclusione</b><br>2. <b>Hold and wait</b><br>3. <b>No preemption</b><br>4. <b>Attesa circolare</b><br>Tutte 4 devono essere vere"
+      ],
+      "importantPoints": [
+        "<b>fork()</b>: Crea processo figlio. Ritorna: 0 al figlio, PID figlio al padre, -1 errore. Figlio eredita: code, data, heap, file aperti",
+        "<b>exec()</b>: Sostituisce processo con nuovo programma. Varianti: <code>execl()</code>, <code>execv()</code>, <code>execlp()</code>, <code>execvp()</code>",
+        "<b>wait()</b>: Padre aspetta terminazione figlio. Previene processi <b>zombie</b> (terminati ma non raccolti)",
+        "<b>Preemptive Scheduling</b>: CPU può essere tolta. Esempi: Round Robin, Priority + preemption. <b>Non-preemptive</b>: processo tiene CPU fino a termine/blocco",
+        "<b>Peterson's Algorithm</b>: Soluzione software 2 processi. Variabili: <code>flag[2]</code>, <code>turn</code>. Garantisce mutua esclusione senza hardware",
+        "<b>Produttore-Consumatore</b>: Buffer limitato. Semafori: <code>empty=N</code>, <code>full=0</code>, <code>mutex=1</code>. Produttore: wait(empty), wait(mutex), produce, signal(mutex), signal(full)",
+        "<b>Lettori-Scrittori</b>: Multipli lettori OK, scrittore esclusivo. Varianti: <b>First readers</b> (lettori priorità), <b>Second readers</b> (scrittori priorità)",
+        "<b>Filosofi a Cena</b>: 5 filosofi, 5 forchette. Deadlock se tutti prendono forchetta sinistra. Soluzioni: max 4 filosofi, asimmetria, mutex sala",
+        "<b>Strategie Deadlock</b>:<br>• <b>Prevenzione</b>: nega condizioni Coffman<br>• <b>Evitamento</b>: Banker's algorithm (safe state)<br>• <b>Detection</b>: resource allocation graph<br>• <b>Recovery</b>: abort processi, preempt risorse",
+        "<b>Banker's Algorithm</b>: <code>Available</code>, <code>Max</code>, <code>Allocation</code>, <code>Need=Max-Allocation</code>. Safe se ∃ sequenza senza deadlock",
+        "<b>Inversione Priorità</b>: Task alta priorità bloccato da bassa. Soluzione: <b>Priority Inheritance</b> o <b>Priority Ceiling</b>"
+      ]
+    }
   },
   {
     "id": "memoria-primaria",
@@ -47,7 +98,39 @@
       "capitolo09-1.pdf",
       "capitolo10-1.pdf"
     ],
-    "pdfCount": 2
+    "pdfCount": 2,
+    "summary": {
+      "keyConcepts": [
+        "<b>Spazio Indirizzi</b>: <b>Logico</b> (generato CPU, 0 a MAX) vs <b>Fisico</b> (RAM reale). <b>MMU</b> traduce logico → fisico",
+        "<b>Binding Indirizzi</b>:<br>• <b>Compile-time</b>: indirizzi assoluti<br>• <b>Load-time</b>: rilocabili al caricamento<br>• <b>Execution-time</b>: traduzione runtime (richiede MMU)",
+        "<b>Allocazione Contigua</b>:<br>• <b>First-fit</b>: primo blocco sufficiente (veloce)<br>• <b>Best-fit</b>: blocco più piccolo sufficiente (spreco minimo)<br>• <b>Worst-fit</b>: blocco più grande (meno frammentazione)",
+        "<b>Frammentazione</b>:<br>• <b>Esterna</b>: spazio libero frammentato, non usabile. Soluzione: <b>compattazione</b><br>• <b>Interna</b>: memoria allocata > richiesta. Spreco in blocco",
+        "<b>Paginazione</b>: Memoria fisica divisa in <b>frame</b> (dimensione fissa, es. 4KB). Memoria logica divisa in <b>pagine</b> (stessa dimensione). <b>Page table</b> mappa pagina → frame",
+        "<b>Traduzione Indirizzi Paginazione</b>:<br>Indirizzo logico = <code>(p, d)</code><br>• p = numero pagina (index page table)<br>• d = offset in pagina<br>Indirizzo fisico = <code>(f, d)</code> dove f = frame number da page table[p]",
+        "<b>TLB</b>: Translation Lookaside Buffer. Cache associativa per coppie (pagina, frame). <b>Hit</b>: traduzione immediata. <b>Miss</b>: accesso page table + aggiorna TLB. <b>Hit ratio</b>: 80-98%",
+        "<b>Page Table Multi-livello</b>: Riduce spazio overhead. Indirizzo = <code>(p1, p2, ..., pn, offset)</code>. <b>Intel x86-64</b>: 4 livelli (PML4)",
+        "<b>Segmentazione</b>: Divisione logica memoria. Segmenti: code, data, stack, heap. <b>Segment table</b>: (base, limit). Supporta protezione e condivisione",
+        "<b>Memoria Virtuale</b>: Illusione memoria > RAM fisica. <b>Demand paging</b>: pagine caricate on-demand. <b>Page fault</b> quando pagina non in memoria",
+        "<b>Page Fault Handling</b>:<br>1. Trap al OS<br>2. Salva stato processo<br>3. Trova frame libero (eventuale page replacement)<br>4. Carica pagina da disco<br>5. Aggiorna page table<br>6. Riprendi processo",
+        "<b>Algoritmi Sostituzione</b>:<br>• <b>FIFO</b>: First-In First-Out, semplice ma Belady's anomaly<br>• <b>Optimal</b>: sostituisce pagina usata più lontano (teorico, irrea lizabile)<br>• <b>LRU</b>: Least Recently Used, ottimo ma costoso<br>• <b>Clock (Second Chance)</b>: FIFO + reference bit<br>• <b>LFU</b>: Least Frequently Used",
+        "<b>Thrashing</b>: Sistema passa più tempo in page fault che esecuzione. Cause: troppi processi, working set > memoria. Soluzione: ridurre degree multiprogramming",
+        "<b>Working Set</b>: <code>WS(t, Δ)</code> = insieme pagine referenziate in finestra Δ al tempo t. Approssima località"
+      ],
+      "importantPoints": [
+        "<b>Effective Access Time</b>:<br><code>EAT = (1-p) × memory_access + p × page_fault_time</code><br>p = page fault rate<br>Esempio: memory = 200ns, page fault = 8ms, p=0.001<br>EAT = 0.999×200ns + 0.001×8ms = 8.2μs",
+        "<b>Page Table Size</b>: Per processo 32-bit, page 4KB:<br>2^32 / 2^12 = 2^20 = 1M entries<br>Se entry = 4 bytes → 4MB per processo!<br>Soluzione: page table multi-livello o inverted page table",
+        "<b>TLB Effective Access Time</b>:<br><code>EAT = α × (TLB_time + memory_time) + (1-α) × (TLB_time + 2×memory_time)</code><br>α = TLB hit ratio<br>Esempio: TLB=20ns, mem=100ns, α=0.98<br>EAT = 0.98×120ns + 0.02×220ns = 122ns",
+        "<b>Principio Località</b>:<br>• <b>Temporale</b>: dato accessorecentemente sarà riacceduto presto (es. loop variables)<br>• <b>Spaziale</b>: accesso dato implica accesso dati vicini (es. array sequenziale)",
+        "<b>Copy-on-Write (COW)</b>: Dopo <code>fork()</code>, padre e figlio condividono pagine read-only. Alla scrittura, copia pagina. Efficiente per <code>fork()+exec()</code>",
+        "<b>Allocazione Frame</b>:<br>• <b>Equa</b>: m frame, n processi → m/n frame/processo<br>• <b>Proporzionale</b>: in base dimensione processo<br>• <b>Priorità</b>: più frame a processi prioritari",
+        "<b>Page Table Entry (PTE)</b>:<br>• Frame number: indirizzo frame fisico<br>• Valid/Invalid bit: pagina in memoria?<br>• Protection bits: read/write/execute<br>• Dirty bit: pagina modificata?<br>• Reference bit: pagina acceduta (per LRU/Clock)",
+        "<b>Prepaging</b>: Carica pagine anticipatamente (es. intero working set). Riduce page fault iniziali ma può sprecare I/O",
+        "<b>Belady's Anomaly</b>: Con FIFO, più frame può causare PIÙ page fault. Non accade con algoritmi stack (LRU, Optimal)",
+        "<b>Algoritmo Clock</b>:<br>Circular list, puntatore. Quando serve frame:<br>1. Se reference_bit=0 → sostituisci<br>2. Se reference_bit=1 → set 0, avanza puntatore<br>Approssimazione LRU efficiente",
+        "<b>Page Size Trade-off</b>:<br>• <b>Grande</b> (es. 4MB): meno overhead page table, più frammentazione interna, meno page fault<br>• <b>Piccola</b> (es. 4KB): più precisione località, più page table entries",
+        "<b>Inverted Page Table</b>: 1 entry per frame fisico (non per pagina logica). Dimensione proporzionale a RAM reale. Usato in PowerPC, IA-64"
+      ]
+    }
   },
   {
     "id": "memoria-massa",
@@ -60,7 +143,41 @@
     "pdfFiles": [
       "capitolo11-1.pdf"
     ],
-    "pdfCount": 1
+    "pdfCount": 1,
+    "summary": {
+      "keyConcepts": [
+        "<b>HDD Structure</b>: Piatti magnetici rotanti (5400-15000 RPM). <b>Cilindro</b>: stesse tracce su piatti diversi. <b>Settore</b>: unità minima (512B o 4KB)",
+        "<b>Access Time Formula</b>:<br><code>T_access = T_seek + T_rotational + T_transfer</code><br>• <b>Seek time</b>: posizionamento testina su cilindro (3-12ms)<br>• <b>Rotational latency</b>: attesa rotazione settore (avg = 1/(2×RPM))<br>• <b>Transfer time</b>: trasferimento dati",
+        "<b>Esempio Calcolo</b>: Disco 7200 RPM, seek avg 9ms, trasferire 4KB a 100MB/s<br>• Rotational latency avg = 60s / (2×7200) = 4.17ms<br>• Transfer time = 4KB / 100MB/s = 0.04ms<br>• Total = 9 + 4.17 + 0.04 = 13.21ms",
+        "<b>Scheduling Disco - FCFS</b>: First-Come First-Served. Ordine arrivo. Semplice ma può causare molto movimento testina",
+        "<b>SSTF</b>: Shortest Seek Time First. Minima distanza da posizione corrente. <b>Problema</b>: starvation richieste lontane. Simile a SJF scheduling",
+        "<b>SCAN (Elevator)</b>: Testina va in una direzione fino a fine, poi inverte. Serve tutte richieste in mezzo. Uniforme ma possibile attesa lunga estremità",
+        "<b>C-SCAN</b>: Circular SCAN. Testina va in una direzione, poi salta all'inizio e ricomincia. Più uniforme di SCAN. Attesa max = 2 × traversata disco",
+        "<b>LOOK</b>: Come SCAN ma inverte quando non ci sono più richieste nella direzione (non va fino al fine)",
+        "<b>C-LOOK</b>: Come C-SCAN ma inverte quando non ci sono più richieste (non va fino al fine)",
+        "<b>SSD</b>: Memoria flash NAND. <b>Vantaggi</b>: accesso casuale veloce (0.1ms), resistente urti, silenzioso, basso consumo. <b>Svantaggi</b>: costo/GB alto, cicli scrittura limitati (P/E cycles: 3000-100000)",
+        "<b>Wear Leveling</b>: Distribuisce scritture uniformemente su SSD. <b>Dynamic</b>: blocchi attivi. <b>Static</b>: include blocchi inattivi. Estende vita SSD",
+        "<b>RAID 0</b>: <b>Striping</b> senza ridondanza. Dati distribuiti su N dischi. <b>Performance</b>: N×velocità. <b>Capacità</b>: N×disco. <b>Affidabilità</b>: MTTF/N (peggio)",
+        "<b>RAID 1</b>: <b>Mirroring</b>. Copia identica su 2+ dischi. <b>Lettura</b>: 2×velocità. <b>Scrittura</b>: velocità singolo disco. <b>Capacità</b>: N/2. <b>Tolleranza</b>: 1 guasto",
+        "<b>RAID 5</b>: <b>Striping + Parità distribuita</b>. Parità XOR su tutti dischi. <b>Capacità</b>: (N-1)×disco. <b>Tolleranza</b>: 1 guasto. <b>Rebuild</b>: XOR sopravvissuti",
+        "<b>RAID 6</b>: <b>Doppia parità</b>. 2 schemi parità indipendenti (P+Q). <b>Capacità</b>: (N-2)×disco. <b>Tolleranza</b>: 2 guasti. Più sicuro RAID 5"
+      ],
+      "importantPoints": [
+        "<b>Esempio SSTF</b>: Coda: 98,183,37,122,14,124,65,67. Testina a 53<br>Ordine SSTF: 65 → 67 → 37 → 14 → 98 → 122 → 124 → 183<br>Movimento totale: |53-65| + |65-67| + ... = 236 cilindri",
+        "<b>Esempio SCAN</b>: Stessa coda, testina 53, direzione 0<br>Ordine: 37 → 14 → 0 → 65 → 67 → 98 → 122 → 124 → 183<br>Movimento: |53-37| + |37-14| + |14-0| + |0-65| + ... = 236 cilindri",
+        "<b>RAID 0 Performance</b>: N dischi, striping<br>• Throughput: N × singolo disco<br>• Latency: invariata<br>• MTTF: MTTF_single / N (peggiora!)",
+        "<b>RAID 1 Read/Write</b>:<br>• Read: parallelo da entrambi dischi → 2× velocità<br>• Write: scrittura su entrambi → velocità disco singolo<br>• Useful capacity: 50%",
+        "<b>RAID 5 Calcolo Parità</b>:<br>Dati: D1, D2, D3. Parità: P = D1 ⊕ D2 ⊕ D3<br>Recovery: Se D2 manca → D2 = D1 ⊕ D3 ⊕ P<br>Proprietà XOR: A ⊕ A = 0, A ⊕ 0 = A",
+        "<b>RAID 5 Performance</b>: N dischi<br>• Read: (N-1) × disco (parallelo)<br>• Write: 4 I/O (read old data, read old parity, write new data, write new parity)<br>• Small write penalty significativo",
+        "<b>RAID 6 Parità</b>: 2 schemi indipendenti<br>• <b>P</b>: XOR semplice<br>• <b>Q</b>: Reed-Solomon erasure code<br>Recovery: sistema 2 equazioni, 2 incognite",
+        "<b>RAID 10 (1+0)</b>: Mirror of stripes<br>• Top level: RAID 0 (stripe)<br>• Bottom: RAID 1 (mirror)<br>• Capacità: N/2<br>• Tolleranza: 1 disco per mirror pair",
+        "<b>RAID 01 (0+1)</b>: Stripe of mirrors<br>• Top: RAID 1 (mirror)<br>• Bottom: RAID 0 (stripe)<br>• Meno tolleranza guasti di RAID 10",
+        "<b>Hot Spare</b>: Disco standby non usato. Alla failure, automaticamente inizia rebuild. Riduce finestra vulnerabilità",
+        "<b>SSD Garbage Collection</b>: Blocchi cancellati consolidati per liberare spazio. Causa <b>write amplification</b>: scrittura 4KB può causare scritture interne multiple",
+        "<b>TRIM Command</b>: OS notifica SSD blocchi liberi. SSD può garbage collect in anticipo. Migliora performance e durata",
+        "<b>Over-provisioning SSD</b>: Capacità extra nascosta (7-28%). Usata per wear leveling e cache scritture. Migliora performance e durata"
+      ]
+    }
   },
   {
     "id": "file-system",
@@ -75,6 +192,40 @@
       "capitolo13-1.pdf",
       "capitolo14-1.pdf"
     ],
-    "pdfCount": 2
+    "pdfCount": 2,
+    "summary": {
+      "keyConcepts": [
+        "<b>File</b>: Unità logica memorizzazione. <b>Attributi</b>: nome, tipo, dimensione, permessi, owner, date (created, modified, accessed)",
+        "<b>Operazioni File</b>: <code>open()</code>: apre e ritorna file descriptor, <code>read()</code>, <code>write()</code>, <code>seek()</code>: sposta file pointer, <code>close()</code>, <code>delete()</code>",
+        "<b>Open File Table</b>:<br>• <b>Per-process table</b>: file aperti dal processo, puntatore posizione corrente<br>• <b>System-wide table</b>: info condivise (inode, contatore aperture)",
+        "<b>File Descriptor</b>: Intero che identifica file aperto. Unix: stdin=0, stdout=1, stderr=2. Indice in per-process table",
+        "<b>Directory</b>: File speciale contenente lista file. <b>Single-level</b>: flat. <b>Two-level</b>: user directories. <b>Tree</b>: gerarchico. <b>Acyclic graph</b>: con link",
+        "<b>Path</b>: <b>Assoluto</b>: da root (<code>/home/user/file.txt</code>). <b>Relativo</b>: da directory corrente (<code>../file.txt</code>). <code>.</code>=corrente, <code>..</code>=parent",
+        "<b>Allocazione Contigua</b>: Blocchi consecutivi. <b>Vantaggi</b>: veloce (sequential, random). <b>Svantaggi</b>: frammentazione esterna, crescita file difficile. Usato in CD-ROM",
+        "<b>Allocazione Concatenata (Linked)</b>: Ogni blocco punta al successivo. <b>Vantaggi</b>: no frammentazione, crescita facile. <b>Svantaggi</b>: accesso casuale lento, pointer overhead. FAT mitiga problemi",
+        "<b>Allocazione Indicizzata</b>: Blocco indice contiene puntatori a blocchi dati. <b>Vantaggi</b>: accesso diretto, no frammentazione. <b>Svantaggi</b>: overhead blocco indice. Usato in Unix (inode)",
+        "<b>FAT (File Allocation Table)</b>: Tabella in memoria con entry per ogni blocco disco. Entry contiene: numero blocco successivo o EOF. Cluster come unità allocazione (es. 4KB)",
+        "<b>Inode (Index Node)</b>: Struttura Unix con metadati file. Contiene: tipo, permessi, owner, size, timestamps, 12-15 puntatori blocchi (direct, indirect, double indirect, triple indirect)",
+        "<b>Free Space Management</b>:<br>• <b>Bitmap</b>: 1 bit per blocco (0=free, 1=allocated). Esempio: 1TB disco, 4KB blocchi → 256M blocchi → 32MB bitmap<br>• <b>Linked list</b>: blocchi liberi puntano al successivo<br>• <b>Grouping</b>: blocco contiene indirizzi blocchi liberi",
+        "<b>Journaling</b>: Log transazioni prima esecuzione. Alla crash, replay journal per recovery. <b>Write-ahead logging</b>. Filesystem: ext3/4, NTFS, XFS",
+        "<b>Links</b>:<br>• <b>Hard link</b>: entry directory punta a stesso inode. Link count in inode. Cancellazione quando count=0. Non attraversa filesystem<br>• <b>Symbolic link</b>: file con path. Può puntare a filesystem diverso, file inesistente"
+      ],
+      "importantPoints": [
+        "<b>Inode Structure (Unix)</b>:<br>• 12 <b>direct blocks</b>: puntatori diretti (12×4KB = 48KB)<br>• 1 <b>single indirect</b>: blocco con puntatori (1024×4KB = 4MB)<br>• 1 <b>double indirect</b>: 1024×1024×4KB = 4GB<br>• 1 <b>triple indirect</b>: 1024³×4KB = 4TB<br>Max file: 48KB + 4MB + 4GB + 4TB ≈ 4TB",
+        "<b>Esempio Calcolo Inode</b>: File 100KB, blocchi 4KB, puntatori 4 bytes<br>Blocchi dati: 100KB/4KB = 25 blocchi<br>Usa 12 direct + 13 da single indirect<br>Single indirect: 1 blocco (4KB/4B = 1024 puntatori)<br>Totale: 25 data blocks + 1 indirect block = 26 blocchi",
+        "<b>FAT Entry</b>:<br>FAT12: 12 bit/entry (max 4096 clusters)<br>FAT16: 16 bit (max 65536 clusters)<br>FAT32: 28 bit (max 268M clusters)<br>Esempio: 32GB disco, FAT32, cluster 4KB → 8M clusters → 32MB FAT",
+        "<b>Directory Entry</b>:<br>Unix: <code>(filename, inode number)</code><br>Windows: <code>(filename, attributes, size, start_cluster, dates)</code><br>Long filename: multipli entry consecutivi",
+        "<b>VFS (Virtual File System)</b>: Layer astrazione sopra filesystem specifici. Operazioni generiche: <code>open()</code>, <code>read()</code>, <code>write()</code>, <code>close()</code>. Sotto: ext4, NTFS, NFS, etc.",
+        "<b>Buffer Cache</b>: Cache blocchi disco in RAM. <b>Write-through</b>: scrittura immediata disco. <b>Write-back</b>: scrittura ritardata (buffer dirty). LRU/Clock per replacement",
+        "<b>Block Size Trade-off</b>:<br>• <b>Grande</b> (es. 64KB): meno frammentazione esterna, meno metadati, throughput alto, MA frammentazione interna alta<br>• <b>Piccolo</b> (es. 1KB): meno frammentazione interna, MA più metadati, overhead",
+        "<b>Unix Permissions</b>:<br><code>rwxrwxrwx</code> = owner group others<br>Esempi: <code>644</code> = rw-r--r--, <code>755</code> = rwxr-xr-x<br>Special: setuid (4), setgid (2), sticky (1)",
+        "<b>Superblock</b>: Metadati filesystem<br>• Magic number (tipo filesystem)<br>• Block size<br>• Numero totale blocchi<br>• Numero blocchi liberi<br>• Inode table pointers<br>• Root directory location",
+        "<b>fsck (File System Check)</b>: Verifica consistenza<br>1. Superblock sanity<br>2. Free block consistency<br>3. Inode state (valid type, link count)<br>4. Inode links (directory entries)<br>5. Duplicati blocks<br>6. Bad blocks",
+        "<b>Copy-on-Write FS</b>: Scrittura crea nuova copia, non sovrascrive. <b>Snapshot</b> istantaneo. Filesystem: BTRFS, ZFS. <b>Vantaggi</b>: snapshots veloci, corruption protection",
+        "<b>ACL (Access Control List)</b>: Permessi estesi oltre Unix rwx<br>Esempio: user:john:rw-, user:jane:r--, group:devs:rwx<br>Più flessibile, supporta multipli utenti/gruppi per file",
+        "<b>Disk Quotas</b>: Limiti per utente/gruppo<br>• <b>Soft limit</b>: avviso, superabile temporaneamente<br>• <b>Hard limit</b>: blocco rigido<br>• <b>Grace period</b>: tempo superamento soft limit",
+        "<b>Log-Structured FS</b>: Scritture sempre append a log. Garbage collection compatta. Vantaggi: scritture veloci, crash recovery. Esempio: NILFS, F2FS (Flash-Friendly FS)"
+      ]
+    }
   }
 ]

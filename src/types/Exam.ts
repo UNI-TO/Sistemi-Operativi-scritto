@@ -72,6 +72,10 @@ export interface StudyMaterial {
   description: string;
   chapters: string[];  // Capitoli del libro di riferimento
   pdfFiles: string[];  // File PDF nella cartella
+  summary?: {
+    keyConcepts: string[];  // Concetti chiave
+    importantPoints: string[];  // Punti importanti
+  };
 }
 
 export const TOPICS_INFO: Record<Topic, {
