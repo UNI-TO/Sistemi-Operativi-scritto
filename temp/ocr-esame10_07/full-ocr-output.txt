@@ -1,0 +1,199 @@
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame10_07-1.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 7%  Progress: 10%  Progress: 14%  Progress: 19%  Progress: 21%  Progress: 26%  Progress: 30%  Progress: 33%  Progress: 37%  Progress: 40%  Progress: 44%  Progress: 49%  Progress: 51%  Progress: 56%  Progress: 60%  Progress: 63%  Progress: 67%  Progress: 100%
+
+✓ Extracted 1515 characters
+
+First 500 characters:
+Domanda 1 Risposta corretta Punteggio ottenuto 2,0 su 2,0 ip Contrassegna domanda
+Sia A un file di testo all'interno di un file system Unix. Viene eseguito con successo il comando:
+In -s AB
+dove B non esisteva prima dell'esecuzione del comando. Che cosa succede nelle strutture interne al sistema?
+Scegli un'alternativa:
+“a. Una nuova entry di nome B viene inserita nella cartella in cui è stato eseguito il comando, e un nuovo i-node viene Vi
+associato a B. il pathname usato come primo argomento de
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame10_07-2.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 7%  Progress: 11%  Progress: 16%  Progress: 19%  Progress: 23%  Progress: 27%  Progress: 31%  Progress: 36%  Progress: 39%  Progress: 43%  Progress: 47%  Progress: 51%  Progress: 54%  Progress: 59%  Progress: 63%  Progress: 67%  Progress: 100%
+
+✓ Extracted 852 characters
+
+First 500 characters:
+| Domanda 2 Risposta corretta Punteggio ottenuto 3,0 su 3,0 Contrassegna domanda
+In un sistema operativo che adotta uno scheduling con diritto di prelazione, quattro processi arrivano al tempo indicato e
+consumano la quantità di CPU indicata nella tabella sottostante
+EM
+ILLE
+Qual è il waiting time medio ottenuto per lo scheduling dei quattro processi della tabella se si usa l'algoritmo di
+scheduling preemptive che fornisce il miglior turnaround time possibile? Qual è il corrispondente diagramma 
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame10_07-3.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 4%  Progress: 10%  Progress: 14%  Progress: 20%  Progress: 24%  Progress: 30%  Progress: 36%  Progress: 40%  Progress: 46%  Progress: 50%  Progress: 56%  Progress: 60%  Progress: 66%  Progress: 100%
+
+✓ Extracted 412 characters
+
+First 500 characters:
+‘Domanda 3 Risposta corretta Punteggio ottenuto 2,0 su 2,0  \r Contrassegna domanda
+Nello Unix, quale /quali dei seguenti comandi modifica il valore del link counter dell’index-node associato al file di testo
+X? (si assuma che tutti i comandi vengono eseguiti correttamente)
+
+1) ln XY
+
+2) In -s XY
+
+3) rm XY
+
+4) Is XY
+
+Scegli un'alternativa:
+
+I a. i comandi 2) e 3)
+— b. i comandi 2) e 4)
+- c. i comandi 1) e 4)
+
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame10_07-4.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 4%  Progress: 10%  Progress: 16%  Progress: 21%  Progress: 27%  Progress: 33%  Progress: 37%  Progress: 43%  Progress: 49%  Progress: 54%  Progress: 60%  Progress: 66%  Progress: 100%
+
+✓ Extracted 297 characters
+
+First 500 characters:
+Domanda 4 Risposta corretta Punteggio ottenuto 2,0 su 2,0 i Contrassegna domanda
+Ricostruite il codice del generico consumatore nel problema dei produttori-consumatori:
+full = O ; empty = SIZE; mutex = 1;
+consumatore:
+
+while (true) {
+
+/
+
+/
+
+preleva un elemento dal buffer;
+
+-
+
+?
+
+consuma item;
+
+}
+
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame10_07-5.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 6%  Progress: 9%  Progress: 13%  Progress: 16%  Progress: 19%  Progress: 21%  Progress: 26%  Progress: 29%  Progress: 31%  Progress: 36%  Progress: 39%  Progress: 41%  Progress: 44%  Progress: 49%  Progress: 51%  Progress: 54%  Progress: 57%  Progress: 61%  Progress: 64%  Progress: 67%  Progress: 100%
+
+✓ Extracted 1097 characters
+
+First 500 characters:
+Domanda 5 Risposta corretta Punteggio ottenuto 2,0 su 2,0 Contrassegna domanda
+In un sistema che adotta la paginazione della memoria, un indirizzo logico è scritto su "M" bit, e il numero di pagina è
+scritto su "L" bit. Lo spazio fisico è invece suddiviso in 2132 frame.
+Possiamo quindi dire che:
+un frame del sistema è grande: 2MM-L) v/ byte
+lo spazio fisico del sistema è grande: | 2A(32+M-L) | v byte
+la tabella delle pagine più grande del sistema ha una dimensione di: | (2M) *4 | wv byte
+il sist
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame10_07-6.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 4%  Progress: 7%  Progress: 10%  Progress: 11%  Progress: 14%  Progress: 17%  Progress: 20%  Progress: 23%  Progress: 24%  Progress: 27%  Progress: 30%  Progress: 33%  Progress: 36%  Progress: 37%  Progress: 40%  Progress: 43%  Progress: 46%  Progress: 47%  Progress: 50%  Progress: 53%  Progress: 56%  Progress: 59%  Progress: 60%  Progress: 63%  Progress: 66%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1254 characters
+
+First 500 characters:
+Domanda 6 Risposta errata Punteggio ottenuto 0,0 su 2,0 Contrassegna domanda
+Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione):
+1: cd /tmp
+2: mkdir newfolder
+3: cd newfolder
+4: echo “ciao” > pippo // crea un nuovo file di nome pippo contenente la stringa ciao
+5: ln pippo paperino
+6: In ../newfolder folder2
+7: In -s paperino topolino
+8: echo "salve" >> topolino // aggiunge "salve" a fondo file
+9: rm pippo
+10: cat paperino // cat stampa il contenuto del file passato
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame10_07-7.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 6%  Progress: 13%  Progress: 19%  Progress: 26%  Progress: 31%  Progress: 39%  Progress: 44%  Progress: 51%  Progress: 57%  Progress: 64%  Progress: 100%
+
+✓ Extracted 390 characters
+
+First 500 characters:
+Due modi efficaci per limitare o eliminare il fenomeno del thrashing sono:
+Scegli un'alternativa:
+a. 1. aumentare la quantità di memoria primaria
+2. aumentare il grado di multiprogrammazione
+‘bb. 1. diminuire la quantità di memoria primaria
+2. aumentare il grado di multiprogrammazione
+© ad. 1. diminuire la quantità di memoria primaria
+2. diminuire il grado di multiprogrammazione
+| ì L è
+
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame10_07-8.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 7%  Progress: 10%  Progress: 14%  Progress: 17%  Progress: 21%  Progress: 24%  Progress: 29%  Progress: 31%  Progress: 36%  Progress: 39%  Progress: 43%  Progress: 46%  Progress: 50%  Progress: 53%  Progress: 57%  Progress: 60%  Progress: 64%  Progress: 67%  Progress: 100%
+
+✓ Extracted 1229 characters
+
+First 500 characters:
+Domanda 8 Risposta non data Punteggio max.: 3,0 7 Contrassegna domanda
+In un sistema paginato è noto che lo spreco di memoria primaria dovuto alla frammentazione interna è in media di circa 2 Kbyte per
+processo. Un indirizzo fisico è scritto su 28 bit e lo spazio di indirizzamento logico è 4 volte quello fisico.
+Qual è la dimensione della tabella delle pagine più grande di questo sistema? (selezionate l'opzione di risposta che riporta il
+ragionamento aritmetico e il risultato corretti)
+Scegli un
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame10_07-9.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 6%  Progress: 7%  Progress: 10%  Progress: 11%  Progress: 14%  Progress: 16%  Progress: 17%  Progress: 20%  Progress: 21%  Progress: 24%  Progress: 26%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 34%  Progress: 36%  Progress: 39%  Progress: 40%  Progress: 43%  Progress: 44%  Progress: 46%  Progress: 49%  Progress: 50%  Progress: 53%  Progress: 54%  Progress: 57%  Progress: 59%  Progress: 60%  Progress: 63%  Progress: 64%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 818 characters
+
+First 500 characters:
+Domanda 9 Risposta corretta Punteggio ottenuto 2,0 su 2,0 \ Contrassegna domanda
+In quali modi un sistema operativo mantiene sempre un certo controllo della macchina anche mentre non sta girando codice del sistema
+operativo stesso?
+
+Scegli un'alternativa:
+‘a. 1. Uso di istruzioni privilegiate per eseguire operazioni delicate
+2. Uso di un timer hardware
+3. Uso della memoria virtuale
+Db. 1. Uso del vettore delle trap
+2. Uso di un timer hardware
+3. Uso di registri appositi per il controllo degli in
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt

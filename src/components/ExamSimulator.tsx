@@ -3,6 +3,7 @@ import { Exam, UserAnswer, ExamScore } from '../types/Exam';
 import QuestionCard from './QuestionCard';
 import MultipleChoiceQuestion from './MultipleChoiceQuestion';
 import ImageQuestion from './ImageQuestion';
+import ExamTimer from './ExamTimer';
 import { useLocalStorage, clearExamProgress } from '../hooks/useLocalStorage';
 
 interface ExamSimulatorProps {
@@ -34,11 +35,20 @@ export default function ExamSimulator({ exam, onBack }: ExamSimulatorProps) {
   );
 
   const [lastSaved, setLastSaved] = useState<Date | null>(null);
+  const [timerActive, setTimerActive] = useState(true);
+  const [timeExpired, setTimeExpired] = useState(false);
 
   // Auto-save ogni volta che cambiano le risposte
   useEffect(() => {
     setLastSaved(new Date());
   }, [userAnswers]);
+
+  const handleTimeUp = () => {
+    setTimeExpired(true);
+    setTimerActive(false);
+    alert('⏰ Tempo scaduto! L\'esame è terminato.');
+    handleShowScore();
+  };
 
   const handleAnswerChange = (questionNumber: number, answer: string) => {
     setUserAnswers((prev) => ({
@@ -174,6 +184,12 @@ export default function ExamSimulator({ exam, onBack }: ExamSimulatorProps) {
       setExamScore(null);
       clearExamProgress(exam.id);
       setLastSaved(null);
+      setTimeExpired(false);
+      setTimerActive(true);
+      // Reset timer localStorage
+      if (exam.timeLimit) {
+        localStorage.removeItem(`timer_${exam.id}`);
+      }
     }
   };
 
@@ -188,6 +204,7 @@ export default function ExamSimulator({ exam, onBack }: ExamSimulatorProps) {
           <p className="exam-meta">
             Data: {exam.date} | Corso: {exam.course} | {exam.questions.length}{' '}
             domande
+            {exam.timeLimit && ` | ⏱️ ${exam.timeLimit} minuti`}
           </p>
           {lastSaved && (
             <p className="auto-save-indicator">
@@ -196,6 +213,14 @@ export default function ExamSimulator({ exam, onBack }: ExamSimulatorProps) {
           )}
         </div>
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          {exam.timeLimit && (
+            <ExamTimer
+              timeLimit={exam.timeLimit}
+              examId={exam.id}
+              onTimeUp={handleTimeUp}
+              isActive={timerActive && !timeExpired}
+            />
+          )}
           <button onClick={handleShowScore} className="back-button">
             📊 Mostra Punteggio
           </button>

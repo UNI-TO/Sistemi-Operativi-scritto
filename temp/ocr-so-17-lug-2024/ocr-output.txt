@@ -1,0 +1,13 @@
+📷 Image OCR Example
+============================================================
+  Performing OCR on so-17-lug-1.jpg...
+Error: failed to load ./ita.special-words
+Image too large: (1725, 50009)
+
+
+✓ Extracted 0 characters
+
+First 500 characters:
+
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt

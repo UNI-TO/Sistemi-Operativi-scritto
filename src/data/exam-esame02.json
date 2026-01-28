@@ -1,0 +1,144 @@
+{
+  "id": "esame02-teoria",
+  "date": "2023.06.16",
+  "course": "Teoria",
+  "title": "Scritto parte di teoria del corso A di Sistemi Operativi del 16 giugno 2023 (Versione 2)",
+  "topics": [
+    "memoria-massa",
+    "file-system",
+    "processi-scheduling",
+    "memoria-primaria",
+    "sincronizzazione"
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "text": "Dell'allocazione indicizzata possiamo dire che:",
+      "answer": "La risposta corretta è: è la più adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, fornisce un accesso diretto ai file efficiente.",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. è particolarmente adatta per hard disk di dimensioni limitate, per allocare file piccoli spreca molti byte, fornisce un accesso sequenziale inefficiente ai file molto grandi.",
+        "b. è la più adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, fornisce un accesso sequenziale inefficiente ai file molto grandi.",
+        "c. è particolarmente adatta per hard disk di dimensioni limitate, per allocare file piccoli spreca molti byte, fornisce un accesso diretto ai file efficiente.",
+        "d. è la più adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, fornisce un accesso diretto ai file efficiente."
+      ],
+      "correctAnswer": "d"
+    },
+    {
+      "number": 2,
+      "text": "Riguardo ai link fisici nell'ambiente Unix, secondo quanto visto a lezione possiamo dire che:",
+      "answer": "La risposta corretta è: sono ammessi tra file regolari; a meno di alcune restrizioni ci possono essere due link fisici allo stesso file anche nella stessa cartella, occupano poco spazio, per funzionare correttamente usano il campo link-counter degli index node",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. sono ammessi tra file regolari; non sono ammessi tra cartelle, occupano meno spazio dei link simbolici, permettono un accesso ai file più veloce dei link simbolici; quando il link simbolico di un index node vale zero l'index node viene cancellato",
+        "b. funzionano grazie al campo link counter degli index node, che viene incrementato ogni volta che si crea un nuovo link fisico o uno simbolico al file, e viene decrementato ogni volta che si rimuove un link fisico o un link simbolico al file",
+        "c. sono sostanzialmente dei puntatori ad un file che permettono un accesso veloce al file. Se però il file viene rimosso non puntano più a niente, e il loro uso dà un errore di tipo \"no such file or directory\"",
+        "d. sono ammessi tra file regolari; a meno di alcune restrizioni ci possono essere due link fisici allo stesso file anche nella stessa cartella, occupano poco spazio, per funzionare correttamente usano il campo link-counter degli index node"
+      ],
+      "correctAnswer": "d"
+    },
+    {
+      "number": 3,
+      "text": "In quale/i caso/i un processo in coda di ready viene fatto passare allo stato running?",
+      "answer": "La risposta corretta è: quando lo scheduler della CPU lo seleziona per entrare in esecuzione. Ad esempio, nel caso di FCFS, quando il processo si trova in cima alla coda di ready",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. mai, è il sistemi operativo che sposta i processi da uno stato all'altro.",
+        "b. quando lo scheduler della CPU lo seleziona per entrare in esecuzione. Ad esempio, nel caso di FCFS, quando il processo si trova in cima alla coda di ready",
+        "c. quando il processo è entrato in RQ arrivando da una coda di waiting, perché significa che è disponibile l'informazione che il processo stava attendendo, e la sua computazione può ripartire",
+        "d. quando il sistema operativo ha terminato le operazioni necessarie ad amministrare la vita del processo, ad esempio ha allocato il processo in RAM e inizializzato il suo PCB"
+      ],
+      "correctAnswer": "b"
+    },
+    {
+      "number": 4,
+      "text": "Di un sistema è noto che la tabella delle pagine più grande del sistema occupa esattamente 1 frame, il numero di un frame è scritto su 2 byte usando tutti i bit a disposizione, e nel sistema sono presenti in media 2 processi che insieme producono una frammentazione interna complessiva media di 8 Kilobyte.\n\nRispondere:\n- lo spazio logico del sistema è grande: ___\n- lo spazio fisico del sistema è grande: ___",
+      "answer": "La risposta corretta è:\n- lo spazio logico del sistema è grande: 32 Megabyte\n- lo spazio fisico del sistema è grande: 512 Megabyte",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multianswer"
+    },
+    {
+      "number": 5,
+      "text": "Il problema della sezione critica può essere risolto in molti modi diversi, ma qualsiasi soluzione deve rispettare alcune condizioni fondamentali, che possono essere così descritte:",
+      "answer": "La risposta corretta è: quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo deve rimanere in sezione critica per un tempo finito.",
+        "b. quando un processo è in sezione critica deve rimanerci per un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+        "c. quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; nella sezione critica ci deve essere sempre almeno un processo, e mai più di uno; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+        "d. quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito."
+      ],
+      "correctAnswer": "d"
+    },
+    {
+      "number": 6,
+      "text": "Il concetto di \"diritto di prelazione\" può essere applicato sia ad un algoritmo di scheduling che ad un kernel nel suo complesso. Qual è la differenza?",
+      "answer": "La risposta corretta è: negli algoritmi di scheduling preemptive un processo utente può essere obbligato dal SO ad abbandonare la CPU. Nei kernel preemptive un processo in kernel mode può essere obbligato ad abbandonare la CPU.",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. In un kernel con diritto di prelazione vengono disabilitati gli interrupt quando un processo è in kernel mode, in un algoritmo di scheduling con diritto di prelazione vengono abilitati gli interrupt per permettere il funzionamento del timer hardware",
+        "b. non c'è nessuna differenza: un algoritmo di scheduling preemptive implica che il sistema operativo abbia un kernel implementato con diritto di prelazione.",
+        "c. In un kernel con diritto di prelazione vengono disabilitati gli interrupt quando un processo è in kernel mode, in un algoritmo di scheduling con diritto di prelazione i processi utente possono essere interrotti da altri processi utente",
+        "d. negli algoritmi di scheduling preemptive un processo utente può essere obbligato dal SO ad abbandonare la CPU. Nei kernel preemptive un processo in kernel mode può essere obbligato ad abbandonare la CPU."
+      ],
+      "correctAnswer": "d"
+    },
+    {
+      "number": 7,
+      "text": "In un sistema operativo moderno che implementa la memoria virtuale, quando si verifica un page fault e non c'è spazio in RAM occorre scegliere una pagina vittima. Dei criteri di scelta visti a lezione possiamo dire che:",
+      "answer": "La risposta corretta è: scegliere la pagina che è stata riferita da più tempo è un ottimo criterio, ma all'atto pratico non si può implementare in modo efficiente",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. scegliere la pagina che è entrata in RAM da più tempo è un buon criterio, e infatti viene adottato da molti sistemi operativi",
+        "b. scegliere la pagina che è stata riferita da più tempo è un ottimo criterio, ma all'atto pratico non si può implementare in modo efficiente",
+        "c. scegliere la pagina che verrà riferita più in là nel tempo è sicuramente il criterio migliore, ma richiede hardware dedicato offerto solo dalle CPU di fascia alta",
+        "d. scegliere una pagina che è stata modificata di recente è un buon criterio, nel caso in cui ci sia bisogno di salvare periodicamente lo stato della computazione del processo"
+      ],
+      "correctAnswer": "b"
+    },
+    {
+      "number": 8,
+      "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione):\n\n1: cd /tmp\n2: mkdir newfolder\n3: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao\n4: cd newfolder\n5: ln ../pippo paperino\n6: ln ../newfolder folder2\n7: cp paperino topolino\n8: echo \"salve\" -> topolino // aggiunge \"salve\" a fondo file\n9: rm pippo\n10: cat paperino // cat stampa il contenuto del file passato come argomento\n11: mkdir ../folder3\n\nQuale/quali delle seguenti affermazioni è/sono vera/e?",
+      "answer": "La risposta corretta è:\n1. il link-counter dell'i-node di paperino è: 2\n2. il link counter di tmp è: aumentato di 2\n3. l'output del comando 10 è: \"ciao\"\n4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multianswer"
+    },
+    {
+      "number": 9,
+      "text": "In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante:\n\n| Processo | T. di arrivo | Burst |\n|----------|--------------|-------|\n| Pa       | 0            | 7     |\n| Pb       | 2            | 4     |\n| Pc       | 4            | 1     |\n| Pd       | 6            | 3     |\n\nSe si usa l'algoritmo di scheduling non preemptive che fornisce le migliori prestazioni possibili per schedulare i 4 processi in tabella:\n- il waiting time medio è: ___\n- il turnaround medio è: ___\n- il diagramma di GANTT è: ___\n- L'algoritmo usato per le risposte precedenti è esente da starvation? ___",
+      "answer": "La risposta corretta è:\n- il waiting time medio è: 14/4\n- il turnaround medio è: 29/4\n- il diagramma di GANTT è: (0) ... Pa ... (7) ... Pc ... (8) ... Pd ... (11) ... Pb ... (15)\n- L'algoritmo usato per le risposte precedenti è esente da starvation? no",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multianswer"
+    },
+    {
+      "number": 10,
+      "text": "Tra i vantaggi e gli svantaggi del codice dinamicamente rilocabile troviamo:",
+      "answer": "La risposta corretta è: che per essere fatto funzionare in modo efficiente richiede che il processore su cui gira sia dotato di hardware specifico per eseguire la traduzione degli indirizzi da logici a fisici durante l'esecuzione dei programmi, e che permette al sistema operativo di spostare liberamente i processi attivi da un'area ad un'altra della memoria primaria senza doverli ricaricare o ricompilare",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. che per essere fatto funzionare in modo efficiente richiede che il processore su cui gira sia dotato di hardware specifico per eseguire la traduzione degli indirizzi da logici a fisici durante l'esecuzione dei programmi, e che permette al sistema operativo di spostare liberamente le variabili allocate dinamicamente da un'area ad un'altra della memoria primaria senza doverli ricaricare o ricompilare il programma",
+        "b. che per essere fatto funzionare in modo efficiente richiede al sistema operativo del lavoro supplementare per eseguire la traduzione degli indirizzi da logici a fisici prima dell'esecuzione dei programmi, e che permette al sistema operativo di spostare liberamente i processi attivi da un'area ad un'altra della memoria primaria senza doverli ricaricare o ricompilare",
+        "c. che per essere fatto funzionare in modo efficiente richiede che il processore su cui gira sia dotato di hardware specifico per eseguire la traduzione degli indirizzi da logici a fisici durante l'esecuzione dei programmi, e che permette al sistema operativo di spostare liberamente i processi attivi da un'area ad un'altra della memoria primaria senza doverli ricaricare o ricompilare",
+        "d. che per essere fatto funzionare richiede al sistema operativo del lavoro supplementare per eseguire la traduzione degli indirizzi da logici a fisici durante l'esecuzione dei programmi, e che permette al sistema operativo di spostare liberamente i processi attivi da un'area ad un'altra dell'area di swap senza doverli ricaricare o ricompilare"
+      ],
+      "correctAnswer": "c"
+    }
+  ]
+}

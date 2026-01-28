@@ -1,0 +1,262 @@
+📚 PDF OCR Processing Tool - Usage
+============================================================
+
+Commands:
+  pdf [limit]       - Process PDF files (optional: limit number)
+                      Example: node scripts/ocr-pdf-exams.js pdf 5
+  image <path>      - Process single image with OCR
+                      Example: node scripts/ocr-pdf-exams.js image test.jpg
+  help              - Show this help
+
+Notes:
+  - Text extraction works for digital PDFs
+  - Scanned PDFs require image conversion first
+  - OCR uses Italian language by default
+  - Output saved to: src/data/ocr-output/
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame01-01.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 6%  Progress: 7%  Progress: 9%  Progress: 11%  Progress: 13%  Progress: 14%  Progress: 17%  Progress: 19%  Progress: 20%  Progress: 23%  Progress: 24%  Progress: 26%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 34%  Progress: 36%  Progress: 39%  Progress: 40%  Progress: 41%  Progress: 44%  Progress: 46%  Progress: 47%  Progress: 50%  Progress: 51%  Progress: 53%  Progress: 56%  Progress: 57%  Progress: 59%  Progress: 61%  Progress: 63%  Progress: 64%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1370 characters
+
+First 500 characters:
+4A ' i di
+i Ani a UNIVERSITA Corsi d
+i) DI TORINO (È. Studi in i
+el FRA nformatica
+A SB  Buonafortuna<3 +
+Home > I miei corsi > Anno Accademico 22/23 > Secondo anno Laurea DM270 è SOA-22-23 Ì Esami
+del corso di Sistemi Operativi A (teoria) a.a. 2022-2023 > Scritto parte di teoria del corso A di
+Sistemi Operativi del 16 giugno 2023
+Iniziato venerdì, 16 giugno 2023, 11:00
+Stato Completato
+Terminato venerdì, 16 giugno 2023, 11:41
+Tempo impiegato 41 min. 31 secondi
+Valutazione 18,0 su un massimo di 
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame01-02.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 7%  Progress: 11%  Progress: 16%  Progress: 20%  Progress: 24%  Progress: 29%  Progress: 33%  Progress: 37%  Progress: 41%  Progress: 46%  Progress: 50%  Progress: 54%  Progress: 59%  Progress: 63%  Progress: 67%  Progress: 100%
+
+✓ Extracted 647 characters
+
+First 500 characters:
+Domanda 2 Risposta corretta Punteggio ottenuto 2,0 su 2,0
+In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro
+processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella
+tabella sottostante
+
+i
+
+i
+Se si usa l'algoritmo di scheduling non preemptive che fornisce le migliori prestazioni
+possibili per schedulare i 4 processi in tabella:
+il turnaround medio è: 19/4 Vv
+il diagramma di GANTT è: (0) ... Pa... (5) ... Pc... (7) ... Pd... (8) ... Pb.
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame01-03.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 4%  Progress: 9%  Progress: 14%  Progress: 19%  Progress: 23%  Progress: 29%  Progress: 33%  Progress: 37%  Progress: 43%  Progress: 47%  Progress: 51%  Progress: 57%  Progress: 61%  Progress: 66%  Progress: 100%
+
+✓ Extracted 616 characters
+
+First 500 characters:
+Risposta corretta.
+
+La risposta corretta è:
+
+In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro
+processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella
+sottostante
+
+LA
+
+LA
+
+e
+
+Lf
+
+Se si usa l'algoritmo di scheduling non preemptive che fornisce le migliori prestazioni
+possibili per schedulare i 4 processi in tabella:
+
+il waiting time medio è: [2]
+
+il turnaround medio è: [19/4]
+
+il diagramma di GANTT è: [(0) ... Pa... (5) ... Pc
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame01-04.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 7%  Progress: 11%  Progress: 16%  Progress: 20%  Progress: 24%  Progress: 29%  Progress: 33%  Progress: 37%  Progress: 41%  Progress: 46%  Progress: 50%  Progress: 54%  Progress: 59%  Progress: 63%  Progress: 67%  Progress: 100%
+
+✓ Extracted 555 characters
+
+First 500 characters:
+Domanda 3 Risposta corretta Punteggio ottenuto 2,0 su 2,0
+Secondo quanto visto a lezione, quale/quali dei seguenti comandi Unix modifica il
+valore del link counter dell'’index-node associato al file di testo X? (si assuma di avere
+i permessi per eseguire tutti i comandi e di essere posizionati in una generica cartella
+user/tmp che contiene X)
+1) InX../X
+2) cp XY
+3) In X X
+4) rm X Y
+Scegli un'alternativa:
+a. i comandi 2) e 3)
+b. i comandi 1) e 3)
+c. i comandi 3) e 4)
+d. i comandi 1) e 4) V
+Rispos
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame01-05.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 4%  Progress: 7%  Progress: 10%  Progress: 13%  Progress: 16%  Progress: 19%  Progress: 21%  Progress: 24%  Progress: 27%  Progress: 30%  Progress: 33%  Progress: 36%  Progress: 37%  Progress: 40%  Progress: 43%  Progress: 46%  Progress: 49%  Progress: 51%  Progress: 54%  Progress: 57%  Progress: 60%  Progress: 63%  Progress: 66%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1059 characters
+
+First 500 characters:
+Domanda 4 Risposta corretta Punteggio ottenuto 2,0 su 2,0
+Di un sistema è noto che la tabella delle pagine più grande del sistema occupa
+esattamente 2 frame, il numero di un frame è scritto su 2 byte usando usando tutti i bit
+a disposizione, e nel sistema sono presenti in media 4 processi che insieme producono
+una frammentazione interna complessiva media di 4 Kilobyte.
+lo spazio logico del sistema è grande: 4 Megabyte v
+lo spazio fisico del sistema è grande: 128 Megabyte Vv
+non si può ricavare d
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame01-06.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 4%  Progress: 9%  Progress: 13%  Progress: 17%  Progress: 21%  Progress: 26%  Progress: 30%  Progress: 36%  Progress: 40%  Progress: 44%  Progress: 49%  Progress: 53%  Progress: 57%  Progress: 61%  Progress: 66%  Progress: 100%
+
+✓ Extracted 898 characters
+
+First 500 characters:
+Domanda 5 Risposta corretta Punteggio ottenuto 2,0 su 2,0
+del codice statico e del codice staticamente rilocabile possiamo dire che:
+Scegli un'alternativa:
+a. nei sistemi operativi moderni non vengono usati perché renderebbero impossibile
+l'implementazione della memoria virtuale
+b. nei sistemi operativi moderni non vengono usati perché per girare in modo efficiente
+richiederebbero dell'hardware specifico che ne limiterebbe la portabilità
+c. nei sistemi operativi moderni non vengono usati perché 
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame01-07.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 7%  Progress: 11%  Progress: 16%  Progress: 20%  Progress: 24%  Progress: 29%  Progress: 33%  Progress: 37%  Progress: 41%  Progress: 46%  Progress: 50%  Progress: 54%  Progress: 59%  Progress: 63%  Progress: 67%  Progress: 100%
+
+✓ Extracted 954 characters
+
+First 500 characters:
+Domanda 6 Risposta errata Punteggio ottenuto 0,0 su 2,0
+nel sistema operativo Unix un link simbolico:
+Scegli un'alternativa:
+a. viene implementato allocando un nuovo index node in cui viene scritto il pathname
+(assoluto o relativo che sia) usato come primo argomento del comando "ln -s".
+b. è l'unico tipo di link implementabile fra cartelle, dato che se fossero permessi i link
+fisici si potebbero creare cicli all'interno del file system
+c. è una sorta di puntatore ad un file (regolare o cartella 
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame01-08.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 4%  Progress: 7%  Progress: 9%  Progress: 10%  Progress: 11%  Progress: 14%  Progress: 16%  Progress: 17%  Progress: 20%  Progress: 21%  Progress: 23%  Progress: 24%  Progress: 27%  Progress: 29%  Progress: 30%  Progress: 33%  Progress: 34%  Progress: 36%  Progress: 37%  Progress: 40%  Progress: 41%  Progress: 43%  Progress: 46%  Progress: 47%  Progress: 49%  Progress: 50%  Progress: 53%  Progress: 54%  Progress: 56%  Progress: 59%  Progress: 60%  Progress: 61%  Progress: 63%  Progress: 66%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1659 characters
+
+First 500 characters:
+Domanda 7 Risposta corretta Punteggio ottenuto 2,0 su 2,0
+In un sistema time sharing che usa un algoritmo di sostituzione delle pagine, tra le
+ragioni per cui si può verificare un context switch tra processi utente troviamo:
+Scegli un'alternativa:
+a. 1. il processo in CPU si addormenta in seguito all'esecuzione di una signal
+2. in RQ entra un processo con priorità maggiore di quello che sta girando
+3. viene richiesta una operazione di I/O dal processo in CPU
+4. viene generata una trap dal proces
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame01-09.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 7%  Progress: 11%  Progress: 16%  Progress: 20%  Progress: 24%  Progress: 29%  Progress: 33%  Progress: 37%  Progress: 41%  Progress: 46%  Progress: 50%  Progress: 54%  Progress: 59%  Progress: 63%  Progress: 67%  Progress: 100%
+
+✓ Extracted 1098 characters
+
+First 500 characters:
+Domanda 8 Risposta corretta Punteggio ottenuto 2,0 su 2,0
+In un sistema operativo moderno che implementa la memoria virtuale, quando si
+verifica un page fault e non c'è spazio in RAM occorre scegliere una pagina vittima.
+Dei criteri di scelta visti a lezione possiamo dire che:
+Scegli un'alternativa:
+a. scegliere la pagina che è stata riferita da più tempo è un ottimo criterio, ma all'atto Y
+pratico non si può implementare in modo efficiente
+b. scegliere una pagina che è stata modificata di recen
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame01-10.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 6%  Progress: 7%  Progress: 9%  Progress: 11%  Progress: 13%  Progress: 14%  Progress: 17%  Progress: 19%  Progress: 20%  Progress: 23%  Progress: 24%  Progress: 26%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 34%  Progress: 36%  Progress: 39%  Progress: 40%  Progress: 41%  Progress: 44%  Progress: 46%  Progress: 47%  Progress: 50%  Progress: 51%  Progress: 53%  Progress: 56%  Progress: 57%  Progress: 59%  Progress: 61%  Progress: 63%  Progress: 64%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1518 characters
+
+First 500 characters:
+Domanda 9 Risposta corretta Punteggio ottenuto 2,0 su 2,0
+Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione):
+1: cd /tmp
+2: mkdir newfolder
+3: echo “ciao” > pippo // crea un nuovo file di nome pippo contenente la stringa ciao
+4: cd newfolder
+5: In ../pippo paperino
+6: In ../newfolder folder2
+7: ln -s paperino topolino
+8: echo "salve" >> topolino // aggiunge "salve" a fondo file
+9: rm pippo
+10: cat paperino // cat stampa il contenuto del file passato come argomento
+
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on esame01-11.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 4%  Progress: 7%  Progress: 10%  Progress: 11%  Progress: 14%  Progress: 17%  Progress: 20%  Progress: 23%  Progress: 24%  Progress: 27%  Progress: 30%  Progress: 33%  Progress: 36%  Progress: 37%  Progress: 40%  Progress: 43%  Progress: 46%  Progress: 47%  Progress: 50%  Progress: 53%  Progress: 56%  Progress: 59%  Progress: 60%  Progress: 63%  Progress: 66%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1548 characters
+
+First 500 characters:
+1. il link-counter dell'i-node di paperino è: 2
+2. il link counter di fmp è: aumentato di 2
+3. l'output del comando 10 è: "ciao" seguito da "salve"
+4. il comando 6 da come risultato: un errore perché non sono ammessi hard link tra
+cartelle
+Domanda 10 Risposta corretta Punteggio ottenuto 2,0 su 2,0
+il problema della sezione critica può essere risolto in molti modi diversi, ma alcune
+soluzioni sono migliori di altre. Una qualità auspicabile per una corretta soluzione al
+problema della sezione crit
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt

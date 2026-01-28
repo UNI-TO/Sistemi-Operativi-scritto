@@ -34,6 +34,7 @@ export interface Exam {
   title: string;
   questions: Question[];
   topics?: Topic[];  // Collegamenti agli argomenti trattati
+  timeLimit?: number;  // Limite di tempo in minuti (opzionale)
 }
 
 export interface UserAnswer {

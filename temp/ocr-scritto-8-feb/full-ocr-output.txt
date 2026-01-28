@@ -1,0 +1,267 @@
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-01.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 9%  Progress: 17%  Progress: 26%  Progress: 36%  Progress: 44%  Progress: 53%  Progress: 61%  Progress: 100%
+
+✓ Extracted 397 characters
+
+First 500 characters:
+Home PD Anno Accademico 21/22 PB Secondo anno Laurea DM270 BP SOA-21-22 PD
+Esami del corso di Sistemi Operativi A (teoria) a.a. 2021-2022 PD
+Scritto parte di teoria del corso A di Sistemi Operativi del 8 febbraio 2022
+Iniziato martedì, 8 febbraio 2022, 10:00
+Stato Completato
+Terminato martedì, 8 febbraio 2022, 10:40
+Tempo impiegato 39 min. 55 secondi
+Valutazione 7,5 su un massimo di 20,0 (38%)
+
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-02.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 4%  Progress: 6%  Progress: 7%  Progress: 9%  Progress: 11%  Progress: 13%  Progress: 14%  Progress: 16%  Progress: 17%  Progress: 19%  Progress: 21%  Progress: 23%  Progress: 24%  Progress: 26%  Progress: 27%  Progress: 29%  Progress: 31%  Progress: 33%  Progress: 34%  Progress: 36%  Progress: 37%  Progress: 39%  Progress: 41%  Progress: 43%  Progress: 44%  Progress: 46%  Progress: 47%  Progress: 49%  Progress: 51%  Progress: 53%  Progress: 54%  Progress: 56%  Progress: 57%  Progress: 59%  Progress: 61%  Progress: 63%  Progress: 64%  Progress: 66%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 896 characters
+
+First 500 characters:
+Damanda 7 Selezionate l'opzione che descrive la corretta implementazione della signal e il
+Risposta errata significato della system call usata per implementarla.
+Punteggio
+ottenuto 0,0 su Scegli un'alternativa:
+2,0 a.
+signal(semaforo *S) {
+S->valore+ +;
+if S->valore <= 0 {
+togli un processo Q da S->waiting _ list;
+wakeup(Q);}
+}
+La wakeup(Q) rimette Q nella Ready Queue
+b.
+signal(semaforo *S) {
+S->valore+ +;
+if S->valore <= 0 {
+metti un processo Q in S->waiting _ list;
+wakeup(P);}
+}
+La wakeup(P) r
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-03.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 9%  Progress: 17%  Progress: 26%  Progress: 36%  Progress: 44%  Progress: 53%  Progress: 61%  Progress: 100%
+
+✓ Extracted 177 characters
+
+First 500 characters:
+La risposta corretta è:
+signal(semaforo *S) {
+S->valore+ +;
+if S->valore <= 0 {
+togli un processo Q da S->waiting _ list;
+wakeup(Q);}
+}
+La wakeup(Q) rimette Q nella Ready Queue
+
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-04.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 4%  Progress: 7%  Progress: 9%  Progress: 10%  Progress: 11%  Progress: 14%  Progress: 16%  Progress: 17%  Progress: 20%  Progress: 21%  Progress: 23%  Progress: 24%  Progress: 27%  Progress: 29%  Progress: 30%  Progress: 33%  Progress: 34%  Progress: 36%  Progress: 37%  Progress: 40%  Progress: 41%  Progress: 43%  Progress: 46%  Progress: 47%  Progress: 49%  Progress: 50%  Progress: 53%  Progress: 54%  Progress: 56%  Progress: 59%  Progress: 60%  Progress: 61%  Progress: 63%  Progress: 66%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1710 characters
+
+First 500 characters:
+Damanda 2 Dell'allocazione concatenata (senza FAT) possiamo dire che tra i suoi vantaggi e
+Risposta corretta i suoi svantaggi troviamo:
+Punteggio
+ottenuto 2,0 su
+2,0
+Scegli un'alternativa:
+a.
+
+1. l'uso di cluster di blocchi aumenta la quantità di memoria che si spreca
+per memorizzare i puntatori che implementano la catena di blocchi, ma
+diminuisce la frammentazione interna
+
+2. non ha bisogno di usare blocchi adiacenti
+
+3. se si rompe la catena di blocchi è difficile o impossibile recuperare tutt
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-05.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 4%  Progress: 6%  Progress: 7%  Progress: 9%  Progress: 10%  Progress: 11%  Progress: 14%  Progress: 16%  Progress: 17%  Progress: 19%  Progress: 20%  Progress: 21%  Progress: 23%  Progress: 24%  Progress: 26%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 33%  Progress: 34%  Progress: 36%  Progress: 37%  Progress: 39%  Progress: 40%  Progress: 43%  Progress: 44%  Progress: 46%  Progress: 47%  Progress: 49%  Progress: 50%  Progress: 51%  Progress: 53%  Progress: 54%  Progress: 57%  Progress: 59%  Progress: 60%  Progress: 61%  Progress: 63%  Progress: 64%  Progress: 66%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1472 characters
+
+First 500 characters:
+Damandia 3 Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a
+Risposta errata lezione):
+Punteggio 1: cd /tmp
+ottenuto -1,5 su 2: mkdir newfolder
+3,0 3: cd newfolder
+4: echo “ciao” > pippo // crea un nuovo file di nome pippo contenente la
+stringa ciao
+5: ln pippo paperino
+6: In ../newfolder folder2
+7: In -s paperino topolino
+8: echo "salve" >> topolino // aggiunge "salve" a fondo file
+9: rm pippo
+10: cat paperino // cat stampa il contenuto del file passato come argomento
+11:
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-06.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 10%  Progress: 20%  Progress: 30%  Progress: 40%  Progress: 50%  Progress: 60%  Progress: 100%
+
+✓ Extracted 281 characters
+
+First 500 characters:
+Risposta errata.
+La risposta corretta è:
+1. il link-counter dell'i-node di paperino è: 1
+2. il link counter di tmp è: aumentato di 2
+3. l'output del comando 10 è: "ciao" seguito da "salve"
+4. il comando 6 da come risultato: un errore perché non sono ammessi hard
+link tra cartelle
+
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-07.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 6%  Progress: 7%  Progress: 9%  Progress: 11%  Progress: 13%  Progress: 14%  Progress: 17%  Progress: 19%  Progress: 20%  Progress: 23%  Progress: 24%  Progress: 26%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 34%  Progress: 36%  Progress: 39%  Progress: 40%  Progress: 41%  Progress: 44%  Progress: 46%  Progress: 47%  Progress: 50%  Progress: 51%  Progress: 53%  Progress: 56%  Progress: 57%  Progress: 59%  Progress: 61%  Progress: 63%  Progress: 64%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1188 characters
+
+First 500 characters:
+Domanda 4 In un sistema operativo che adotta uno scheduling con diritto di prelazione,
+Risposta corretta quattro processi arrivano al tempo indicato e consumano la quantità di CPU
+Punteggio indicata nella tabella sottostante
+ottenuto 3,0 su
+3,0 ; E
+| 2 e
+La | 6 |
+Qual è il waiting time medio ottenuto per lo scheduling dei quattro processi della
+tabella se si usa l'algoritmo di scheduling preemptive che fornisce il miglior
+turnaround time possibile? Qual è il corrispondente diagramma di GANTT?
+Sc
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-08.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 3%  Progress: 6%  Progress: 9%  Progress: 11%  Progress: 14%  Progress: 17%  Progress: 20%  Progress: 23%  Progress: 26%  Progress: 29%  Progress: 31%  Progress: 36%  Progress: 39%  Progress: 41%  Progress: 44%  Progress: 47%  Progress: 50%  Progress: 53%  Progress: 56%  Progress: 59%  Progress: 61%  Progress: 64%  Progress: 67%  Progress: 100%
+
+✓ Extracted 1043 characters
+
+First 500 characters:
+Damanda 5 Degli algoritmi di sostituzione delle pagine possiamo dire che (scegliete l'unica
+
+Risposta corretta opzione completamente corretta):
+
+Punteggio
+
+ottenuto 2,0 su Scegli un'alternativa:
+
+2,0 a. l'algoritmo di sostituzione ottimale (detto OPT o MIN) è detto così
+perché sceglie come pagina vittima di un processo quella che non verrà mai
+più indirizzata dal processo stesso
+b. LRU è uno dei migliori algoritmi di rimpiazzamento, ma non viene
+implementato perché richiederebbe un supporto hard
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-09.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 4%  Progress: 7%  Progress: 9%  Progress: 10%  Progress: 11%  Progress: 14%  Progress: 16%  Progress: 17%  Progress: 19%  Progress: 21%  Progress: 23%  Progress: 24%  Progress: 26%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 33%  Progress: 36%  Progress: 37%  Progress: 39%  Progress: 40%  Progress: 43%  Progress: 44%  Progress: 46%  Progress: 47%  Progress: 50%  Progress: 51%  Progress: 53%  Progress: 54%  Progress: 57%  Progress: 59%  Progress: 60%  Progress: 61%  Progress: 64%  Progress: 66%  Progress: 67%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1538 characters
+
+First 500 characters:
+Domanda 6 Assumendo che siano presenti in un sistema almeno due processi utente, quattro
+Risposta corretta possibili ragioni per cui in un moderno sistema operativo time sharing che
+i implementa la memoria virtuale si può verificare un context switch tra due
+Punteggio processi utente sono:
+ottenuto 2,0 su
+2,0 . .
+Scegli un'alternativa:
+a.
+1. il processo running esegue una wait senza addormentarsi sul semaforo
+2. il processo running genera una trap e viene terminato
+3. il processo running genera 
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-10.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 1%  Progress: 4%  Progress: 7%  Progress: 10%  Progress: 11%  Progress: 14%  Progress: 17%  Progress: 20%  Progress: 23%  Progress: 24%  Progress: 27%  Progress: 30%  Progress: 33%  Progress: 36%  Progress: 37%  Progress: 40%  Progress: 43%  Progress: 46%  Progress: 47%  Progress: 50%  Progress: 53%  Progress: 56%  Progress: 59%  Progress: 60%  Progress: 63%  Progress: 66%  Progress: 69%  Progress: 100%
+
+✓ Extracted 1450 characters
+
+First 500 characters:
+Domanda I In quale caso l’accesso in lettura ad un file memorizzato su un sistema RAID non
+
+Risposta errata è più veloce che se il file fosse memorizzato su un normale hard disk?
+
+Punteggio
+
+ottenuto 0,0 su Scegli un'alternativa:
+
+1,0 a. mai: infatti, i sistemi RAID sono stati progettati proprio per fornire più
+elevate velocità di accesso ai dati che contengono (oltre che per garantire
+una maggiore affidabilità)
+
+b. quando il file è memorizzato su uno più blocchi appartenenti a strip
+contenuti s
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-11.jpg...
+Error: failed to load ./ita.special-words
+  Progress: 0%  Progress: 0%  Progress: 1%  Progress: 3%  Progress: 4%  Progress: 6%  Progress: 7%  Progress: 9%  Progress: 10%  Progress: 11%  Progress: 13%  Progress: 14%  Progress: 16%  Progress: 17%  Progress: 19%  Progress: 20%  Progress: 21%  Progress: 23%  Progress: 24%  Progress: 26%  Progress: 27%  Progress: 29%  Progress: 30%  Progress: 31%  Progress: 33%  Progress: 34%  Progress: 36%  Progress: 36%  Progress: 37%  Progress: 39%  Progress: 40%  Progress: 41%  Progress: 43%  Progress: 44%  Progress: 46%  Progress: 47%  Progress: 49%  Progress: 50%  Progress: 51%  Progress: 53%  Progress: 54%  Progress: 56%  Progress: 57%  Progress: 59%  Progress: 60%  Progress: 61%  Progress: 63%  Progress: 64%  Progress: 66%  Progress: 67%  Progress: 69%  Progress: 70%  Progress: 100%
+
+✓ Extracted 2447 characters
+
+First 500 characters:
+Damanda 8 In un sistema paginato è noto che lo spreco di memoria primaria dovuto alla
+Risposta errata frammentazione interna è in media di circa 4 Kbyte per processo. Un indirizzo
+Punteggio fisico è scritto su 29 bit e lo spazio di indirizzamento logico è 8 volte quello
+ottenuto 0,0 su fisico.
+
+3,0 Qual è la dimensione della tabella delle pagine più grande di questo sistema?
+(selezionate l'opzione di risposta che riporta il ragionamento aritmetico e il
+risultato corretti)
+
+Scegli un'alternativa:
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt
+📷 Image OCR Example
+============================================================
+  Performing OCR on scritto-8-feb-12.jpg...
+Error: failed to load ./ita.special-words
+
+
+✓ Extracted 0 characters
+
+First 500 characters:
+
+
+✓ Saved to: /Users/andreiadam/Documents/università/Simulatore esami/Sistemi-Operativi-scritto/src/data/ocr-output/image-ocr-sample.txt

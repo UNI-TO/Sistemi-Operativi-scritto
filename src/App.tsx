@@ -3,11 +3,12 @@ import './App.css'
 import ExamList from './components/ExamList'
 import ExamSimulator from './components/ExamSimulator'
 import StudyMaterials from './components/StudyMaterials'
+import Statistics from './components/Statistics'
 import { Exam, StudyMaterial, Topic } from './types/Exam'
 import examsData from './data/exams.json'
 import studyMaterialsData from './data/study-materials.json'
 
-type View = 'home' | 'exams' | 'study' | 'simulator';
+type View = 'home' | 'exams' | 'study' | 'simulator' | 'statistics';
 
 function App() {
   const [currentView, setCurrentView] = useState<View>('home')
@@ -60,6 +61,15 @@ function App() {
               <span className="action-title">Teoria</span>
               <span className="action-desc">Consulta il materiale di studio</span>
             </button>
+
+            <button
+              className="main-action-button stats"
+              onClick={() => setCurrentView('statistics')}
+            >
+              <span className="action-icon">📊</span>
+              <span className="action-title">Statistiche</span>
+              <span className="action-desc">Analizza le tue performance per argomento</span>
+            </button>
           </div>
 
           <div className="home-stats">
@@ -104,7 +114,14 @@ function App() {
         />
       )}
 
-      {currentView !== 'home' && currentView !== 'simulator' && currentView !== 'study' && (
+      {currentView === 'statistics' && (
+        <Statistics
+          exams={exams}
+          onBack={handleBackToHome}
+        />
+      )}
+
+      {currentView !== 'home' && currentView !== 'simulator' && currentView !== 'study' && currentView !== 'statistics' && (
         <button onClick={handleBackToHome} className="floating-back-button">
           ← Home
         </button>

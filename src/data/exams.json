@@ -1535,6 +1535,264 @@
     ]
   },
   {
+    "id": "esame-10-07-corso-a",
+    "date": "2024.07.10",
+    "course": "Teoria",
+    "title": "Esame Teoria Corso A - 10 Luglio 2024",
+    "topics": [
+      "file-system",
+      "processi-scheduling",
+      "sincronizzazione",
+      "memoria-primaria",
+      "generalita"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "Sia A un file di testo all'interno di un file system Unix. Viene eseguito con successo il comando:\nln -s A B\n\ndove B non esisteva prima dell'esecuzione del comando. Che cosa succede nelle strutture interne al sistema?",
+        "answer": "La risposta corretta è: Una nuova entry di nome B viene inserita nella cartella in cui è stato eseguito il comando, e un nuovo i-node viene associato a B. Il pathname usato come primo argomento del comando viene scritto dentro l'i-node associato a B.",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. Una nuova entry di nome B viene inserita nella cartella in cui è stato eseguito il comando, e un nuovo i-node viene associato a B. Il pathname usato come primo argomento del comando viene scritto dentro l'i-node associato a B.",
+          "b. Una nuova entry di nome B viene inserita nella cartella in cui è stato eseguito il comando. Il numero dell'i-node associato ad A viene ora associato anche a B. Il link counter di quell'i-node viene incrementato di 1",
+          "c. Il contenuto di A viene copiato dentro a B. L'i-node di A viene duplicato e associato a B. Il link counter dell'i-node associato a B viene inizializzato a 1, mentre il link counter dell'i-node associato ad A viene incrementato di 1",
+          "d. nella cartella in cui viene eseguito il comando viene creato un nuovo file di nome B, e il link counter dell'i-node associato a B viene inizializzato a 1. Dentro all'i-node di A viene scritto il pathname usato come secondo argomento del comando"
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 2,
+        "text": "In un sistema operativo che adotta uno scheduling con diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante:\n\n| Processo | T. di arrivo | Burst |\n|----------|--------------|-------|\n| Pa       | 0            | 7     |\n| Pb       | 2            | 4     |\n| Pc       | 4            | 1     |\n| Pd       | 6            | 8     |\n\nQual è il waiting time medio ottenuto per lo scheduling dei quattro processi della tabella se si usa l'algoritmo di scheduling preemptive che fornisce il miglior turnaround time possibile? Qual è il corrispondente diagramma di GANTT?",
+        "answer": "La risposta corretta è:\nDiagramma di GANTT: (0)...Pa...(2)...Pb...(4)...Pc...(5)...Pb...(7)...Pa...(12)...Pd...(20)\nWaiting time medio = 3",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. Diagramma di GANTT: (0)...Pa...(2)...Pb...(4)...Pc...(5)...Pb...(7)...Pa...(12)...Pd...(20)\nWaiting time medio = 3",
+          "b. Diagramma di GANTT: (0)...Pa...(2)...Pc...(3)...Pb...(7)...Pa...(10)...Pb...(12)...Pd...(20)\nWaiting time medio = 4",
+          "c. Diagramma di GANTT: (0)...Pa...(2)...Pb...(6)...Pc...(7)...Pa...(10)...Pb...(12)...Pd...(20)\nWaiting time medio = 4",
+          "d. Diagramma di GANTT: (0)...Pa...(2)...Pb...(4)...Pc...(5)...Pa...(10)...Pb...(12)...Pd...(20)"
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 3,
+        "text": "Nello Unix, quale/quali dei seguenti comandi modifica il valore del link counter dell'index-node associato al file di testo X? (si assuma che tutti i comandi vengono eseguiti correttamente)\n\n1) ln X Y\n2) ln -s X Y\n3) rm X Y\n4) ls X Y",
+        "answer": "La risposta corretta è: i comandi 1) e 3)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. i comandi 2) e 3)",
+          "b. i comandi 2) e 4)",
+          "c. i comandi 1) e 4)",
+          "d. i comandi 1) e 3)"
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 4,
+        "text": "Ricostruire il codice del generico consumatore nel problema dei produttori-consumatori:\nfull = 0 ; empty = SIZE; mutex = 1;\n\nconsumatore:\n  while (true) {\n    ___ (opzione 1)\n    ___ (opzione 2)\n    preleva un elemento dal buffer;\n    ___ (opzione 3)\n    ___ (opzione 4)\n    consuma item;\n  }",
+        "answer": "La risposta corretta è:\nwait(full);\nwait(mutex);\nsignal(mutex);\nsignal(empty);",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 5,
+        "text": "In un sistema che adotta la paginazione della memoria, un indirizzo logico è scritto su \"M\" bit, e il numero di pagina è scritto su \"L\" bit. Lo spazio fisico è invece suddiviso in 2^32 frame.\n\nPossiamo quindi dire che:\n- un frame del sistema è grande: ___\n- lo spazio fisico del sistema è grande: ___\n- la tabella delle pagine più grande del sistema ha una dimensione di: ___\n- il sistema dovrà implementare la memoria virtuale solo se: ___",
+        "answer": "La risposta corretta è:\n- un frame del sistema è grande: 2^(M-L) byte\n- lo spazio fisico del sistema è grande: 2^(32+M-L) byte\n- la tabella delle pagine più grande del sistema ha una dimensione di: (2^L) * 4 byte\n- il sistema dovrà implementare la memoria virtuale solo se: M > (32+M-L)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 6,
+        "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione):\n\n1: cd /tmp\n2: mkdir newfolder\n3: cd newfolder\n4: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao\n5: ln pippo paperino\n6: ln ../newfolder folder2\n7: ln -s paperino topolino\n8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file\n9: rm pippo\n10: cat paperino // cat stampa il contenuto del file passato come argomento\n11: mkdir ../folder3\n\nQuale/quali delle seguenti affermazioni è/sono vera/e?",
+        "answer": "La risposta corretta è:\n1. il link-counter dell'i-node di paperino è: 1\n2. il link counter di tmp è: aumentato di 2\n3. l'output del comando 10 è: \"ciao\" seguito da \"salve\"\n4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 7,
+        "text": "Due modi efficaci per limitare o eliminare il fenomeno del thrashing sono:",
+        "answer": "La risposta corretta è:\n1. aumentare la quantità di memoria primaria\n2. diminuire il grado di multiprogrammazione",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. 1. aumentare la quantità di memoria primaria\n2. aumentare il grado di multiprogrammazione",
+          "b. 1. diminuire la quantità di memoria primaria\n2. aumentare il grado di multiprogrammazione",
+          "c. 1. aumentare la quantità di memoria primaria\n2. diminuire il grado di multiprogrammazione",
+          "d. 1. diminuire la quantità di memoria primaria\n2. diminuire il grado di multiprogrammazione"
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 8,
+        "text": "In un sistema paginato è noto che lo spreco di memoria primaria dovuto alla frammentazione interna è in media di circa 2 Kbyte per processo. Un indirizzo fisico è scritto su 28 bit e lo spazio di indirizzamento logico è 4 volte quello fisico.\n\nQual è la dimensione della tabella delle pagine più grande di questo sistema? (selezionare l'opzione di risposta che riporta il ragionamento aritmetico e il risultato corretto)",
+        "answer": "La risposta corretta è: Ogni entry della PT più grande del sistema deve essere grande almeno 2 byte, e dunque la PT sarà grande 2 * 2^18 = 512 Kbyte (circa)",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. Ogni entry della PT più grande del sistema deve essere grande almeno 2 byte, e dunque la PT sarà grande 2 * 2^16 = 128 Kbyte (circa)",
+          "b. Ogni entry della PT più grande del sistema deve essere grande almeno 3 byte, e dunque la PT sarà grande 3 * 2^18 = 768 Kbyte (circa)",
+          "c. Ogni entry della PT più grande del sistema deve essere grande almeno 3 byte, e dunque la PT sarà grande 3 * 2^16 = 192 Kbyte (circa)",
+          "d. Ogni entry della PT più grande del sistema deve essere grande almeno 2 byte, e dunque la PT sarà grande 2 * 2^18 = 512 Kbyte (circa)"
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 9,
+        "text": "In quali modi un sistema operativo mantiene sempre un certo controllo della macchina anche mentre non sta girando codice del sistema operativo stesso?",
+        "answer": "La risposta corretta è:\n1. Uso di istruzioni privilegiate per eseguire operazioni delicate\n2. Uso di un timer hardware\n3. Uso di registri appositi per il controllo degli indirizzi usati nelle istruzioni dei programmi utente",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. 1. Uso di istruzioni privilegiate per eseguire operazioni delicate\n2. Uso di un timer hardware\n3. Uso della memoria virtuale",
+          "b. 1. Uso del vettore delle trap\n2. Uso di un timer hardware\n3. Uso di registri appositi per il controllo degli indirizzi usati nelle istruzioni dei programmi utente",
+          "c. 1. Uso di istruzioni privilegiate per eseguire operazioni delicate\n2. Uso di un timer hardware\n3. Uso di registri appositi per il controllo degli indirizzi usati nelle istruzioni dei programmi utente",
+          "d. 1. Uso di istruzioni privilegiate per eseguire operazioni delicate\n2. Uso di uno scheduling Round Robin\n3. Uso di registri appositi per il controllo degli indirizzi usati nelle istruzioni dei programmi utente"
+        ],
+        "correctAnswer": "c"
+      }
+    ]
+  },
+  {
+    "id": "esame-10-07-bis",
+    "date": "2024.07.10",
+    "course": "Teoria",
+    "title": "Esame di Sistemi Operativi del 10 luglio 2024 (bis)",
+    "topics": [
+      "processi-scheduling",
+      "sincronizzazione",
+      "file-system",
+      "memoria-primaria",
+      "raid"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "In quale/i caso/i un processo in coda di ready può decidere di passare allo stato running?",
+        "answer": "La risposta corretta è: mai, è il Sistema Operativo che sposta i processi da uno stato all'altro.",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. quando un processo si trova in testa alla coda di ready",
+          "b. in tutti gli algoritmi di scheduling non premeptive, dove un processo può decidere autonomamente quanto tempo passare in coda di ready",
+          "c. mai, è il Sistema Operativo che sposta i processi da uno stato all'altro.",
+          "d. quando un processo esce da un qualsiasi stato di waiting"
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 2,
+        "text": "Ricostruite il codice del generico lettore nel problema dei lettori-scrittori:\nsemaphore mutex = 1, scrivi = 1;\nint numlettori= 0;\nProcesso lettore {\n  wait(mutex);\n  ___(1)___\n  ___(2)___\n  signal(mutex);\n  ... leggi il file ...\n  wait(mutex);\n  ___(3)___\n  ___(4)___\n  signal(mutex)\n}",
+        "answer": "La risposta corretta è:\nRicostruite il codice del generico lettore nel problema dei lettori-scrittori:\nsemaphore mutex = 1, scrivi = 1;\nint numlettori= 0;\nProcesso lettore {\n  wait(mutex);\n  [numlettori++;]\n  [if numlettori == 1 wait(scrivi);]\n  signal(mutex);\n  ... leggi il file ...\n  wait(mutex);\n  [numlettori--;]\n  [if numlettori == 0 signal(scrivi);]\n  signal(mutex)\n}",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 3,
+        "text": "In quale caso, e perché, l'allocazione concatenata (senza FAT) dello spazio in memoria secondaria è particolarmente svantaggiosa rispetto ad altre tecniche di allocazione viste?",
+        "answer": "La risposta corretta è: Nel caso di file molto grandi, perché per leggere i dati contenuti nell'ultima parte del file occorre seguire la catena di blocchi sull'hard disk, ossia effettuare molte operazioni di I/O su un dispositivo lento.",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. Nel caso di file molto grandi, perché se l'hard disk su cui deve essere memorizzato il file è quasi completamente occupato, il SO potrebbe impiegare molto tempo a trovare un insieme di blocchi liberi in cui allocare il file",
+          "b. Nel caso di file molto grandi, perché in ogni blocco di dati una parte del blocco viene sprecata per memorizzare in puntatore al blocco successivo, risultando così in un notevole spreco di memoria",
+          "c. Nel caso di file molto grandi, perché l'accesso sequenziale ai vari dati del file risulta molto più lento che nelle altre forme di allocazione dello spazio su disco",
+          "d. Nel caso di file molto grandi, perché per leggere i dati contenuti nell'ultima parte del file occorre seguire la catena di blocchi sull'hard disk, ossia effettuare molte operazioni di I/O su un dispositivo lento."
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 4,
+        "text": "In quale caso l'accesso in lettura ad un file memorizzato su un sistema RAID non è più veloce che se il file fosse memorizzato su un normale hard disk?",
+        "answer": "La risposta corretta è: quando il file è memorizzato su uno più blocchi appartenenti a strip contenuti sullo stesso disco del RAID (e il RAID usato non è di tipo 01/10, poiché in questo caso, se il file è memorizzato su almeno due strip, si può sfruttare il disco di mirroring)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. quando il file è memorizzato su uno più blocchi appartenenti a strip contenuti sullo stesso disco del RAID (e il RAID usato non è di tipo 01/10, poiché in questo caso, se il file è memorizzato su almeno due strip, si può sfruttare il disco di mirroring)",
+          "b. quando il file è memorizzato su dischi che contengono anche strip di parità, come nel livello 5, perché in questo caso la ricostruzione dei dati di cui è composto il file richiede una certa quantità di lavoro in più da parte del controller del RAID",
+          "c. quando il file occupa molti strip, perché allora neppure la presenza di dischi di mirroring può mitigare la necessità di accedere più volte al contenuto dei vari dischi per leggere tutti gli strip in cui è suddiviso il file",
+          "d. mai: infatti, i sistemi RAID sono stati progettati proprio per fornire più elevate velocità di accesso ai dati che contengono (oltre che per garantire una maggiore affidabilità)"
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 5,
+        "text": "In un sistema paginato è noto che lo spreco di memoria primaria dovuto alla frammentazione interna è in media di circa 1 Kbyte per processo, e un indirizzo logico è scritto su 28 bit. Se la tabella delle pagine più grande di questo sistema è grande 256 Kilobyte, quanto può essere grande al massimo lo spazio di indirizzamento fisico del sistema?",
+        "answer": "La risposta corretta è: 128 Megabyte",
+        "maxPoints": 3,
+        "negativePoints": -1.5,
+        "type": "multiple-choice",
+        "options": [
+          "a. 64 Megabyte",
+          "b. 128 Megabyte",
+          "c. 512 Megabyte",
+          "d. 256 Megabyte"
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 6,
+        "text": "In un sistema che adotta la paginazione della memoria, un indirizzo logico è scritto su \"P\" bit, e il numero di pagina è scritto su \"k\" bit. Lo spazio fisico è invece suddiviso in 2^24 frame.\n\nPossiamo quindi dire che:\n- un frame del sistema è grande: ___\n- lo spazio fisico del sistema è grande: ___\n- la tabella delle pagine più grande del sistema ha una dimensione di: ___\n- il sistema dovrà implementare la memoria virtuale solo se: ___",
+        "answer": "La risposta corretta è:\nIn un sistema che adotta la paginazione della memoria, un indirizzo logico è scritto su \"P\" bit, e il numero di pagina è scritto su \"k\" bit. Lo spazio fisico è invece suddiviso in 2^24 frame.\n\nPossiamo quindi dire che:\n- un frame del sistema è grande: [2^(P-k)] byte\n- lo spazio fisico del sistema è grande: [2^(24+P-k)] byte\n- la tabella delle pagine più grande del sistema ha una dimensione di: [(2^k) * 3] byte\n- il sistema dovrà implementare la memoria virtuale solo se: [P > (24+P-k)]",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 7,
+        "text": "Tra gli svantaggi della paginazione della memoria troviamo:",
+        "answer": "La risposta corretta è:\n1. le page table dei processi occupano spazio in RAM\n2. il SO lavora di più perché deve gestire le PT dei processi e l'elenco dei frame liberi in RAM\n3. il context switch tra processi richiede più tempo perché il SO deve attivare la PT del processo che entra in esecuzione",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. 1. le page table dei processi occupano spazio in RAM\n2. il SO lavora di più perché deve gestire le PT dei processi e l'elenco dei frame liberi in RAM\n3. il context switch tra processi richiede più tempo perché il SO deve ogni volta ricostruire la PT del processo che entra in esecuzione",
+          "b. 1. le page table dei processi occupano spazio nell'area di SWAP\n2. il SO lavora di più perché deve gestire le PT dei processi e l'elenco dei frame liberi in RAM\n3. il context switch tra processi richiede più tempo perché il SO deve attivare la PT del processo che entra in esecuzione",
+          "c. 1. le page table dei processi occupano spazio in RAM\n2. il SO lavora di più perché deve gestire le PT dei processi e l'elenco dei frame liberi in RAM\n3. il context switch tra processi richiede più tempo perché il SO deve attivare la PT del processo che entra in esecuzione",
+          "d. 1. le page table dei processi occupano spazio in RAM\n2. il SO lavora di più per cercare di allocare le pagine dei processi nei frame liberi in modo da produrre la frammentazione interna minima\n3. il context switch tra processi richiede più tempo perché il SO deve attivare la PT del processo che entra in esecuzione"
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 8,
+        "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione):\n\n1: cd /tmp\n2: mkdir newfolder\n3: cd newfolder\n4: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao\n5: ln pippo paperino\n6: ln -s /tmp/newfolder folder2\n7: cp paperino topolino\n8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file\n9: rm pippo\n10: cat paperino // cat stampa il contenuto del file passato come argomento\n11: mkdir ../folder3\n\nQuale/quali delle seguenti affermazioni è/sono vera/e?",
+        "answer": "La risposta corretta è:\n1. il link-counter dell'i-node di paperino è: 1\n2. il link counter di newfolder è: 2\n3. l'output del comando 10 è: \"ciao\"\n4. il link counter di tmp è: aumentato di 2",
+        "maxPoints": 2,
+        "negativePoints": -1,
+        "type": "multianswer"
+      },
+      {
+        "number": 9,
+        "text": "In un sistema operativo che adotta uno scheduling con diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante.\n\nQual è il waiting time medio ottenuto per lo scheduling dei quattro processi della tabella se si usa l'algoritmo di scheduling preemptive che fornisce il miglior turnaround time possibile? Qual è il corrispondente diagramma di GANTT?",
+        "answer": "La risposta corretta è:\nDiagramma di GANTT: (0) ... Pa ... (4) ... Pc... (6) ... Pd... (7) ... Pa ... (11) ... Pb... (19)\nWaiting time medio = 3",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. Diagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pa... (10) ... Pd ... (11) ... Pc... (19)\nWaiting time medio = 4",
+          "b. Diagramma di GANTT: (0) ... Pa ... (4) ... Pc... (6) ... Pd... (7) ... Pa ... (11) ... Pb... (19)\nWaiting time medio = 3",
+          "c. Diagramma di GANTT: (0) ... Pa... (4) ... Pb... (7) ... Pd... (9) ... Pa ... (11) ... Pc... (19)\nWaiting time medio = 3",
+          "d. Diagramma di GANTT: (0) ... Pa ... (4) ... Pb... (7) ... Pc ... (10) ... Pa ... (11) ... Pd... (19)\nWaiting time medio = 4"
+        ],
+        "correctAnswer": "b"
+      }
+    ]
+  },
+  {
     "id": "prova-febbraio-2024",
     "date": "2024.02.00",
     "course": "Teoria SO",
@@ -3841,6 +4099,278 @@
     ]
   },
   {
+    "id": "esame01-teoria",
+    "date": "2023.06.16",
+    "course": "Teoria",
+    "title": "Scritto parte di teoria del corso A di Sistemi Operativi del 16 giugno 2023",
+    "topics": [
+      "processi-scheduling",
+      "file-system",
+      "memoria-primaria",
+      "sincronizzazione"
+    ],
+    "questions": [
+      {
+        "number": 2,
+        "text": "In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante:\n\n| Processo | T. di arrivo | Burst |\n|----------|--------------|-------|\n| Pa       | 0            | 5     |\n| Pb       | 2            | 3     |\n| Pc       | 4            | 2     |\n| Pd       | 6            | 1     |\n\nSe si usa l'algoritmo di scheduling non preemptive che fornisce le migliori prestazioni possibili per schedulare i 4 processi in tabella:\n- il waiting time medio è: ___\n- il turnaround medio è: ___\n- il diagramma di GANTT è: ___\n- L'algoritmo usato per le risposte precedenti può soffrire di starvation? ___",
+        "answer": "La risposta corretta è:\n- il waiting time medio è: 2\n- il turnaround medio è: 19/4\n- il diagramma di GANTT è: (0) ... Pa ... (5) ... Pc ... (7) ... Pd ... (8) ... Pb ... (11)\n- L'algoritmo usato per le risposte precedenti può soffrire di starvation? sì",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 3,
+        "text": "Secondo quanto visto a lezione, quale/quali dei seguenti comandi Unix modifica il valore del link counter dell'index-node associato al file di testo X? (si assuma di avere i permessi per eseguire tutti i comandi e di essere posizionati in una generica cartella user/tmp che contiene X)\n\n1) ln X ../X\n2) cp X Y\n3) ln X X\n4) rm X Y",
+        "answer": "La risposta corretta è: i comandi 1) e 4)",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. i comandi 2) e 3)",
+          "b. i comandi 1) e 3)",
+          "c. i comandi 3) e 4)",
+          "d. i comandi 1) e 4)"
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 4,
+        "text": "Di un sistema è noto che la tabella delle pagine più grande del sistema occupa esattamente 2 frame, il numero di un frame è scritto su 2 byte usando tutti i bit a disposizione, e nel sistema sono presenti in media 4 processi che insieme producono una frammentazione interna complessiva media di 4 Kilobyte.\n\nRispondere:\n- lo spazio logico del sistema è grande: ___\n- lo spazio fisico del sistema è grande: ___",
+        "answer": "La risposta corretta è:\n- lo spazio logico del sistema è grande: 4 Megabyte\n- lo spazio fisico del sistema è grande: 128 Megabyte",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 5,
+        "text": "Del codice statico e del codice staticamente rilocabile possiamo dire che:",
+        "answer": "La risposta corretta è: nei sistemi operativi moderni non vengono usati perché non permetterebbero una implementazione efficiente della paginazione della memoria",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. nei sistemi operativi moderni non vengono usati perché renderebbero impossibile l'implementazione della memoria virtuale",
+          "b. nei sistemi operativi moderni non vengono usati perché per girare in modo efficiente richiederebbero dell'hardware specifico che ne limiterebbe la portabilità",
+          "c. nei sistemi operativi moderni non vengono usati perché non permetterebbero una implementazione efficiente della paginazione della memoria",
+          "d. nei sistemi operativi moderni non vengono usati perché producono codice molto meno efficiente di quello dinamicamente rilocabile"
+        ],
+        "correctAnswer": "c"
+      },
+      {
+        "number": 6,
+        "text": "Nel sistema operativo Unix un link simbolico:",
+        "answer": "La risposta corretta è: viene implementato allocando un nuovo index node in cui viene scritto il pathname (assoluto o relativo che sia) usato come primo argomento del comando \"ln -s\".",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. viene implementato allocando un nuovo index node in cui viene scritto il pathname (assoluto o relativo che sia) usato come primo argomento del comando \"ln -s\".",
+          "b. è l'unico tipo di link implementabile fra cartelle, dato che se fossero permessi i link fisici si potrebbero creare cicli all'interno del file system",
+          "c. è una sorta di puntatore ad un file (regolare o cartella che sia), ma di tipo particolare, infatti la rimozione del puntatore comporta anche la rimozione del file",
+          "d. permette di creare collegamenti veloci e che non occupano spazio aggiuntivo sull'hard disk a file e cartelle di cui si deve fare un uso frequente"
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 7,
+        "text": "In un sistema time sharing che usa un algoritmo di sostituzione delle pagine, tra le ragioni per cui si può verificare un context switch tra processi utente troviamo:",
+        "answer": "La risposta corretta è:\n1. il processo in CPU si addormenta in seguito all'esecuzione di una wait\n2. in RQ entra un processo con priorità maggiore di quello che sta girando\n3. viene richiesta una operazione di I/O dal processo in CPU\n4. viene generata una trap dal processo in esecuzione",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. 1. il processo in CPU si addormenta in seguito all'esecuzione di una signal\n2. in RQ entra un processo con priorità maggiore di quello che sta girando\n3. viene richiesta una operazione di I/O dal processo in CPU\n4. viene generata una trap dal processo in esecuzione",
+          "b. 1. il processo in CPU si addormenta in seguito all'esecuzione di una wait\n2. in RQ entra un processo con priorità maggiore di quello che sta girando\n3. viene richiesta una operazione di I/O dal processo in CPU\n4. viene generata una trap dal processo in esecuzione",
+          "c. 1. il processo in CPU si addormenta in seguito all'esecuzione di una wait\n2. viene richiesta una operazione di I/O dal processo in CPU\n3. in una coda wait entra un processo con priorità maggiore di quello che sta girando\n4. viene generata una trap dal processo in esecuzione",
+          "d. 1. il processo in CPU si addormenta in seguito all'esecuzione di una wait\n2. in RQ entra un processo con priorità maggiore di quello che sta girando\n3. viene completata una operazione di I/O dal processo in CPU\n4. viene generata una trap dal processo in esecuzione"
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 8,
+        "text": "In un sistema operativo moderno che implementa la memoria virtuale, quando si verifica un page fault e non c'è spazio in RAM occorre scegliere una pagina vittima. Dei criteri di scelta visti a lezione possiamo dire che:",
+        "answer": "La risposta corretta è: scegliere la pagina che è stata riferita da più tempo è un ottimo criterio, ma all'atto pratico non si può implementare in modo efficiente",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. scegliere la pagina che è stata riferita da più tempo è un ottimo criterio, ma all'atto pratico non si può implementare in modo efficiente",
+          "b. scegliere una pagina che è stata modificata di recente è un buon criterio, nel caso in cui ci sia bisogno di salvare periodicamente lo stato della computazione del processo",
+          "c. scegliere la pagina che verrà riferita più in là nel tempo è sicuramente il criterio migliore, ma richiede hardware dedicato offerto solo dalla CPU di fascia alta",
+          "d. scegliere la pagina che è entrata in RAM da più tempo è un buon criterio, e infatti viene adottato da molti sistemi operativi"
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 9,
+        "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione):\n\n1: cd /tmp\n2: mkdir newfolder\n3: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao\n4: cd newfolder\n5: ln ../pippo paperino\n6: ln ../newfolder folder2\n7: ln -s paperino topolino\n8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file\n9: rm pippo\n10: cat paperino // cat stampa il contenuto del file passato come argomento\n\nQuale/quali delle seguenti affermazioni è/sono vera/e?",
+        "answer": "La risposta corretta è:\n1. il link-counter dell'i-node di paperino è: 2\n2. il link counter di tmp è: aumentato di 2\n3. l'output del comando 10 è: \"ciao\" seguito da \"salve\"\n4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 10,
+        "text": "Il problema della sezione critica può essere risolto in molti modi diversi, ma alcune soluzioni sono migliori di altre. Una qualità auspicabile per una corretta soluzione al problema della sezione critica è:",
+        "answer": "La risposta corretta è: che non sia basata sul busy waiting, in modo che un processo che cerca di entrare in una sezione critica occupata da un altro processo non sprechi tutto il suo quanto di tempo",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. che due processi possano stare contemporaneamente in sezione critica se devono solo leggere e non modificare le variabili condivise della sezione critica",
+          "b. che il processo che sta uscendo dalla sezione critica possa decidere quale processo può prendere il suo posto, in modo da evitare situazioni di deadlock",
+          "c. che garantisca che il processo in sezione critica esca dalla sezione critica in un tempo finito, in modo che gli altri processi non soffrano di starvation",
+          "d. che non sia basata sul busy waiting, in modo che un processo che cerca di entrare in una sezione critica occupata da un altro processo non sprechi tutto il suo quanto di tempo"
+        ],
+        "correctAnswer": "d"
+      }
+    ]
+  },
+  {
+    "id": "esame02-teoria",
+    "date": "2023.06.16",
+    "course": "Teoria",
+    "title": "Scritto parte di teoria del corso A di Sistemi Operativi del 16 giugno 2023 (Versione 2)",
+    "topics": [
+      "memoria-massa",
+      "file-system",
+      "processi-scheduling",
+      "memoria-primaria",
+      "sincronizzazione"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "Dell'allocazione indicizzata possiamo dire che:",
+        "answer": "La risposta corretta è: è la più adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, fornisce un accesso diretto ai file efficiente.",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. è particolarmente adatta per hard disk di dimensioni limitate, per allocare file piccoli spreca molti byte, fornisce un accesso sequenziale inefficiente ai file molto grandi.",
+          "b. è la più adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, fornisce un accesso sequenziale inefficiente ai file molto grandi.",
+          "c. è particolarmente adatta per hard disk di dimensioni limitate, per allocare file piccoli spreca molti byte, fornisce un accesso diretto ai file efficiente.",
+          "d. è la più adottata nei sistemi operativi moderni, per allocare file piccoli spreca molti byte, fornisce un accesso diretto ai file efficiente."
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 2,
+        "text": "Riguardo ai link fisici nell'ambiente Unix, secondo quanto visto a lezione possiamo dire che:",
+        "answer": "La risposta corretta è: sono ammessi tra file regolari; a meno di alcune restrizioni ci possono essere due link fisici allo stesso file anche nella stessa cartella, occupano poco spazio, per funzionare correttamente usano il campo link-counter degli index node",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. sono ammessi tra file regolari; non sono ammessi tra cartelle, occupano meno spazio dei link simbolici, permettono un accesso ai file più veloce dei link simbolici; quando il link simbolico di un index node vale zero l'index node viene cancellato",
+          "b. funzionano grazie al campo link counter degli index node, che viene incrementato ogni volta che si crea un nuovo link fisico o uno simbolico al file, e viene decrementato ogni volta che si rimuove un link fisico o un link simbolico al file",
+          "c. sono sostanzialmente dei puntatori ad un file che permettono un accesso veloce al file. Se però il file viene rimosso non puntano più a niente, e il loro uso dà un errore di tipo \"no such file or directory\"",
+          "d. sono ammessi tra file regolari; a meno di alcune restrizioni ci possono essere due link fisici allo stesso file anche nella stessa cartella, occupano poco spazio, per funzionare correttamente usano il campo link-counter degli index node"
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 3,
+        "text": "In quale/i caso/i un processo in coda di ready viene fatto passare allo stato running?",
+        "answer": "La risposta corretta è: quando lo scheduler della CPU lo seleziona per entrare in esecuzione. Ad esempio, nel caso di FCFS, quando il processo si trova in cima alla coda di ready",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. mai, è il sistemi operativo che sposta i processi da uno stato all'altro.",
+          "b. quando lo scheduler della CPU lo seleziona per entrare in esecuzione. Ad esempio, nel caso di FCFS, quando il processo si trova in cima alla coda di ready",
+          "c. quando il processo è entrato in RQ arrivando da una coda di waiting, perché significa che è disponibile l'informazione che il processo stava attendendo, e la sua computazione può ripartire",
+          "d. quando il sistema operativo ha terminato le operazioni necessarie ad amministrare la vita del processo, ad esempio ha allocato il processo in RAM e inizializzato il suo PCB"
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 4,
+        "text": "Di un sistema è noto che la tabella delle pagine più grande del sistema occupa esattamente 1 frame, il numero di un frame è scritto su 2 byte usando tutti i bit a disposizione, e nel sistema sono presenti in media 2 processi che insieme producono una frammentazione interna complessiva media di 8 Kilobyte.\n\nRispondere:\n- lo spazio logico del sistema è grande: ___\n- lo spazio fisico del sistema è grande: ___",
+        "answer": "La risposta corretta è:\n- lo spazio logico del sistema è grande: 32 Megabyte\n- lo spazio fisico del sistema è grande: 512 Megabyte",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 5,
+        "text": "Il problema della sezione critica può essere risolto in molti modi diversi, ma qualsiasi soluzione deve rispettare alcune condizioni fondamentali, che possono essere così descritte:",
+        "answer": "La risposta corretta è: quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo deve rimanere in sezione critica per un tempo finito.",
+          "b. quando un processo è in sezione critica deve rimanerci per un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+          "c. quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; nella sezione critica ci deve essere sempre almeno un processo, e mai più di uno; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito.",
+          "d. quando un processo vuole entrare nella sua sezione critica deve riuscire a farlo in un tempo finito; non si possono mai trovare due o più processi contemporaneamente in una sezione critica; qualsiasi processo riuscirà prima o poi ad entrare in sezione critica in un tempo finito."
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 6,
+        "text": "Il concetto di \"diritto di prelazione\" può essere applicato sia ad un algoritmo di scheduling che ad un kernel nel suo complesso. Qual è la differenza?",
+        "answer": "La risposta corretta è: negli algoritmi di scheduling preemptive un processo utente può essere obbligato dal SO ad abbandonare la CPU. Nei kernel preemptive un processo in kernel mode può essere obbligato ad abbandonare la CPU.",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. In un kernel con diritto di prelazione vengono disabilitati gli interrupt quando un processo è in kernel mode, in un algoritmo di scheduling con diritto di prelazione vengono abilitati gli interrupt per permettere il funzionamento del timer hardware",
+          "b. non c'è nessuna differenza: un algoritmo di scheduling preemptive implica che il sistema operativo abbia un kernel implementato con diritto di prelazione.",
+          "c. In un kernel con diritto di prelazione vengono disabilitati gli interrupt quando un processo è in kernel mode, in un algoritmo di scheduling con diritto di prelazione i processi utente possono essere interrotti da altri processi utente",
+          "d. negli algoritmi di scheduling preemptive un processo utente può essere obbligato dal SO ad abbandonare la CPU. Nei kernel preemptive un processo in kernel mode può essere obbligato ad abbandonare la CPU."
+        ],
+        "correctAnswer": "d"
+      },
+      {
+        "number": 7,
+        "text": "In un sistema operativo moderno che implementa la memoria virtuale, quando si verifica un page fault e non c'è spazio in RAM occorre scegliere una pagina vittima. Dei criteri di scelta visti a lezione possiamo dire che:",
+        "answer": "La risposta corretta è: scegliere la pagina che è stata riferita da più tempo è un ottimo criterio, ma all'atto pratico non si può implementare in modo efficiente",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. scegliere la pagina che è entrata in RAM da più tempo è un buon criterio, e infatti viene adottato da molti sistemi operativi",
+          "b. scegliere la pagina che è stata riferita da più tempo è un ottimo criterio, ma all'atto pratico non si può implementare in modo efficiente",
+          "c. scegliere la pagina che verrà riferita più in là nel tempo è sicuramente il criterio migliore, ma richiede hardware dedicato offerto solo dalle CPU di fascia alta",
+          "d. scegliere una pagina che è stata modificata di recente è un buon criterio, nel caso in cui ci sia bisogno di salvare periodicamente lo stato della computazione del processo"
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 8,
+        "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione):\n\n1: cd /tmp\n2: mkdir newfolder\n3: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao\n4: cd newfolder\n5: ln ../pippo paperino\n6: ln ../newfolder folder2\n7: cp paperino topolino\n8: echo \"salve\" -> topolino // aggiunge \"salve\" a fondo file\n9: rm pippo\n10: cat paperino // cat stampa il contenuto del file passato come argomento\n11: mkdir ../folder3\n\nQuale/quali delle seguenti affermazioni è/sono vera/e?",
+        "answer": "La risposta corretta è:\n1. il link-counter dell'i-node di paperino è: 2\n2. il link counter di tmp è: aumentato di 2\n3. l'output del comando 10 è: \"ciao\"\n4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 9,
+        "text": "In un sistema operativo che adotta uno scheduling senza diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante:\n\n| Processo | T. di arrivo | Burst |\n|----------|--------------|-------|\n| Pa       | 0            | 7     |\n| Pb       | 2            | 4     |\n| Pc       | 4            | 1     |\n| Pd       | 6            | 3     |\n\nSe si usa l'algoritmo di scheduling non preemptive che fornisce le migliori prestazioni possibili per schedulare i 4 processi in tabella:\n- il waiting time medio è: ___\n- il turnaround medio è: ___\n- il diagramma di GANTT è: ___\n- L'algoritmo usato per le risposte precedenti è esente da starvation? ___",
+        "answer": "La risposta corretta è:\n- il waiting time medio è: 14/4\n- il turnaround medio è: 29/4\n- il diagramma di GANTT è: (0) ... Pa ... (7) ... Pc ... (8) ... Pd ... (11) ... Pb ... (15)\n- L'algoritmo usato per le risposte precedenti è esente da starvation? no",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 10,
+        "text": "Tra i vantaggi e gli svantaggi del codice dinamicamente rilocabile troviamo:",
+        "answer": "La risposta corretta è: che per essere fatto funzionare in modo efficiente richiede che il processore su cui gira sia dotato di hardware specifico per eseguire la traduzione degli indirizzi da logici a fisici durante l'esecuzione dei programmi, e che permette al sistema operativo di spostare liberamente i processi attivi da un'area ad un'altra della memoria primaria senza doverli ricaricare o ricompilare",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. che per essere fatto funzionare in modo efficiente richiede che il processore su cui gira sia dotato di hardware specifico per eseguire la traduzione degli indirizzi da logici a fisici durante l'esecuzione dei programmi, e che permette al sistema operativo di spostare liberamente le variabili allocate dinamicamente da un'area ad un'altra della memoria primaria senza doverli ricaricare o ricompilare il programma",
+          "b. che per essere fatto funzionare in modo efficiente richiede al sistema operativo del lavoro supplementare per eseguire la traduzione degli indirizzi da logici a fisici prima dell'esecuzione dei programmi, e che permette al sistema operativo di spostare liberamente i processi attivi da un'area ad un'altra della memoria primaria senza doverli ricaricare o ricompilare",
+          "c. che per essere fatto funzionare in modo efficiente richiede che il processore su cui gira sia dotato di hardware specifico per eseguire la traduzione degli indirizzi da logici a fisici durante l'esecuzione dei programmi, e che permette al sistema operativo di spostare liberamente i processi attivi da un'area ad un'altra della memoria primaria senza doverli ricaricare o ricompilare",
+          "d. che per essere fatto funzionare richiede al sistema operativo del lavoro supplementare per eseguire la traduzione degli indirizzi da logici a fisici durante l'esecuzione dei programmi, e che permette al sistema operativo di spostare liberamente i processi attivi da un'area ad un'altra dell'area di swap senza doverli ricaricare o ricompilare"
+        ],
+        "correctAnswer": "c"
+      }
+    ]
+  },
+  {
     "id": "2023-01-24",
     "date": "2023.01.24",
     "course": "A",
@@ -4565,6 +5095,149 @@
     "topics": [
       "file-system",
       "memoria-primaria"
+    ]
+  },
+  {
+    "id": "scritto-8-febbraio-2022",
+    "date": "2022.02.08",
+    "course": "Teoria",
+    "title": "Scritto parte di teoria del corso A di Sistemi Operativi del 8 febbraio 2022",
+    "topics": [
+      "sincronizzazione",
+      "memoria-massa",
+      "file-system",
+      "processi-scheduling",
+      "memoria-primaria"
+    ],
+    "questions": [
+      {
+        "number": 1,
+        "text": "Selezionate l'opzione che descrive la corretta implementazione della signal e il significato della system call usata per implementarla.",
+        "answer": "La risposta corretta è:\n\nsignal(semaforo *S) {\n  S->valore++;\n  if S->valore <= 0 {\n    togli un processo Q da S->waiting_list;\n    wakeup(Q);}\n}\n\nLa wakeup(Q) rimette Q nella Ready Queue",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. signal(semaforo *S) {\n  S->valore++;\n  if S->valore <= 0 {\n    togli un processo Q da S->waiting_list;\n    wakeup(Q);}\n}\n\nLa wakeup(Q) rimette Q nella Ready Queue",
+          "b. signal(semaforo *S) {\n  S->valore++;\n  if S->valore <= 0 {\n    metti un processo Q in S->waiting_list;\n    wakeup(P);}\n}\n\nLa wakeup(P) rimette P nella Ready Queue",
+          "c. signal(semaforo *S) {\n  S->valore++;\n  if S->valore <= 0 {\n    togli un processo Q da S->waiting_list;\n    wakeup(Q);}\n}\n\nLa wakeup(Q) manda Q in esecuzione",
+          "d. signal(semaforo *S) {\n  S->valore++;\n  if S->valore > 0 {\n    togli un processo Q da S->waiting_list;\n    wakeup(Q);}\n}\n\nLa wakeup(Q) rimette Q nella Ready Queue"
+        ],
+        "correctAnswer": "a"
+      },
+      {
+        "number": 2,
+        "text": "Dell'allocazione concatenata (senza FAT) possiamo dire che tra i suoi vantaggi e i suoi svantaggi troviamo:",
+        "answer": "La risposta corretta è:\n1. rispetto all'allocazione indicizzata spreca poco spazio per tenere traccia di tutti i blocchi di dati di un file, ed è particolarmente adatta per file piccoli,\n2. non ha bisogno di usare blocchi adiacenti,\n3. è molto inefficiente per l'accesso diretto ai dati dei file molto grandi",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. 1. l'uso di cluster di blocchi aumenta la quantità di memoria che si spreca per memorizzare i puntatori che implementano la catena di blocchi, ma diminuisce la frammentazione interna\n2. non ha bisogno di usare blocchi adiacenti\n3. se si rompe la catena di blocchi è difficile o impossibile recuperare tutti i dati di un file",
+          "b. 1. rispetto all'allocazione indicizzata spreca poco spazio per tenere traccia di tutti i blocchi di dati di un file, ed è particolarmente adatta per file piccoli,\n2. non ha bisogno di usare blocchi adiacenti,\n3. è molto inefficiente per l'accesso diretto ai dati dei file molto grandi",
+          "c. 1. spreca poco spazio per tenere traccia di tutti i blocchi di dati di un file, ed è particolarmente adatta per l'accesso diretto a file molto grandi,\n2. non ha bisogno di usare blocchi adiacenti,\n3. se si rompe la catena di blocchi è difficile o impossibile recuperare tutti i dati di un file",
+          "d. 1. è particolarmente adatta per memorizzare file di piccole dimensioni\n2. non gestisce bene il caso in cui un file cresce di dimensioni e bisogna trovare nuovi blocchi per allocarlo\n3. è molto inefficiente per l'accesso diretto ai dati dei file molto grandi"
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 3,
+        "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione):\n\n1: cd /tmp\n2: mkdir newfolder\n3: cd newfolder\n4: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao\n5: ln pippo paperino\n6: ln ../newfolder folder2\n7: ln -s paperino topolino\n8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file\n9: rm pippo\n10: cat paperino // cat stampa il contenuto del file passato come argomento\n11: mkdir ../folder3\n\nQuale/quali delle seguenti affermazioni è/sono vera/e?",
+        "answer": "La risposta corretta è:\n1. il link-counter dell'i-node di paperino è: 1\n2. il link counter di tmp è: aumentato di 2\n3. l'output del comando 10 è: \"ciao\" seguito da \"salve\"\n4. il comando 6 dà come risultato: un errore perché non sono ammessi hard link tra cartelle",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "multianswer"
+      },
+      {
+        "number": 4,
+        "text": "In un sistema operativo che adotta uno scheduling con diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante:\n\n| Processo | T. di arrivo | Burst |\n|----------|--------------|-------|\n| Pa       | 0            | 8     |\n| Pb       | 2            | 8     |\n| Pc       | 4            | 2     |\n| Pd       | 6            | 1     |\n\nQual è il waiting time medio ottenuto per lo scheduling dei quattro processi della tabella se si usa l'algoritmo di scheduling preemptive che fornisce il miglior turnaround time possibile? Qual è il corrispondente diagramma di GANTT?",
+        "answer": "La risposta corretta è:\nDiagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pd ... (7) ... Pa ... (11) ... Pb ... (19)\nWaiting time medio = 3",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. Diagramma di GANTT: (0) ... Pa ... (4) ... Pb ... (7) ... Pc ... (10) ... Pa ... (11) ... Pd ... (19)\nWaiting time medio = 4",
+          "b. Diagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pd ... (7) ... Pa ... (11) ... Pb ... (19)\nWaiting time medio = 3",
+          "c. Diagramma di GANTT: (0) ... Pa ... (4) ... Pb ... (7) ... Pd ... (9) ... Pa ... (11) ... Pc ... (19)\nWaiting time medio = 3",
+          "d. Diagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pa ... (10) ... Pd ... (11) ... Pc ... (19)\nWaiting time medio = 4"
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 5,
+        "text": "Degli algoritmi di sostituzione delle pagine possiamo dire che (scegliete l'unica opzione completamente corretta):",
+        "answer": "La risposta corretta è: LRU è uno dei migliori algoritmi di rimpiazzamento, ma non viene implementato perché richiederebbe un supporto hardware normalmente non disponibile",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. l'algoritmo di sostituzione ottimale (detto OPT o MIN) è detto così perché sceglie come pagina vittima di un processo quella che non verrà mai più indirizzata dal processo stesso",
+          "b. LRU è uno dei migliori algoritmi di rimpiazzamento, ma non viene implementato perché richiederebbe un supporto hardware normalmente non disponibile",
+          "c. l'algoritmo della seconda chance è una approssimazione di LRU implementata usando il dirty bit per distinguere le pagine modificate da quelle non modificate",
+          "d. l'algoritmo della seconda chance migliorata è chiamato così perché, al contrario dell'algoritmo della seconda chance, non soffre dell'anomalia di Belady"
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 6,
+        "text": "Assumendo che siano presenti in un sistema almeno due processi utente, quattro possibili ragioni per cui in un moderno sistema operativo time sharing che implementa la memoria virtuale si può verificare un context switch tra due processi utente sono:",
+        "answer": "La risposta corretta è:\n1. il processo running esegue una wait e si addormenta sul semaforo\n2. il processo running genera una trap e viene terminato\n3. il processo running genera page fault\n4. il processo running termina di eseguire il suo codice",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. 1. il processo running esegue una wait senza addormentarsi sul semaforo\n2. il processo running genera una trap e viene terminato\n3. il processo running genera page fault\n4. il processo running termina di eseguire il suo codice",
+          "b. 1. il processo running esegue una wait e si addormenta sul semaforo\n2. il processo running genera una trap e viene terminato\n3. il processo running genera page fault\n4. il processo running termina di eseguire il suo codice",
+          "c. 1. il processo running esegue una wait e si addormenta sul semaforo\n2. il processo running genera una trap e viene rimesso in coda di ready\n3. il processo running genera page fault\n4. il processo running termina di eseguire il suo codice",
+          "d. 1. il processo running esegue una wait e si addormenta sul semaforo\n2. il processo running genera una trap e viene terminato\n3. il processo running genera page fault\n4. il processo in coda di ready termina di eseguire il suo codice"
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 7,
+        "text": "In quale caso l'accesso in lettura ad un file memorizzato su un sistema RAID non è più veloce che se il file fosse memorizzato su un normale hard disk?",
+        "answer": "La risposta corretta è: quando il file è memorizzato su uno più blocchi appartenenti a strip contenuti sullo stesso disco del RAID (e il RAID usato non è di tipo 01/10, poiché in questo caso, se il file è memorizzato su almeno due strip, si può sfruttare il disco di mirroring)",
+        "maxPoints": 1,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. mai: infatti, i sistemi RAID sono stati progettati proprio per fornire più elevate velocità di accesso ai dati che contengono (oltre che per garantire una maggiore affidabilità)",
+          "b. quando il file è memorizzato su uno più blocchi appartenenti a strip contenuti sullo stesso disco del RAID (e il RAID usato non è di tipo 01/10, poiché in questo caso, se il file è memorizzato su almeno due strip, si può sfruttare il disco di mirroring)",
+          "c. quando il file occupa molti strip, perché allora neppure la presenza di dischi di mirroring può mitigare la necessità di accedere più volte al contenuto dei vari dischi per leggere tutti gli strip in cui è suddiviso il file",
+          "d. quando il file è memorizzato su dischi che contengono anche strip di parità, come nel livello 5, perché in questo caso la ricostruzione dei dati di cui è composto il file richiede una certa quantità di lavoro in più da parte del controller del RAID"
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 8,
+        "text": "In un sistema paginato è noto che lo spreco di memoria primaria dovuto alla frammentazione interna è in media di circa 4 Kbyte per processo. Un indirizzo fisico è scritto su 29 bit e lo spazio di indirizzamento logico è 4 volte quello fisico.\n\nQual è la dimensione della tabella delle pagine più grande di questo sistema? (selezionate l'opzione di risposta che riporta il ragionamento aritmetico e il risultato corretto)",
+        "answer": "La risposta corretta è: Ogni entry della PT più grande del sistema deve essere grande almeno 2 byte, e dunque la PT sarà grande 2 * 2^19 = 1024 Kbyte (circa)",
+        "maxPoints": 3,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. Ogni entry della PT più grande del sistema deve essere grande almeno 2 byte, e dunque la PT sarà grande 2 * 2^16 = 128 Kbyte (circa)",
+          "b. Ogni entry della PT più grande del sistema deve essere grande almeno 2 byte, e dunque la PT sarà grande 2 * 2^19 = 1024 Kbyte (circa)",
+          "c. Ogni entry della PT più grande del sistema deve essere grande almeno 3 byte, e dunque la PT sarà grande 3 * 2^19 = 1536 Kbyte (circa)",
+          "d. Ogni entry della PT più grande del sistema deve essere grande almeno 3 byte, e dunque la PT sarà grande 3 * 2^16 = 192 Kbyte (circa)"
+        ],
+        "correctAnswer": "b"
+      },
+      {
+        "number": 9,
+        "text": "In quali casi e perché si usa una Inverted Page Table?",
+        "answer": "La risposta corretta è: Le IPT si usano nei sistemi con spazi di indirizzamento logici molto grandi per evitare la paginazione a più livelli, che rende la traduzione degli indirizzi da logici a fisici molto onerosa quando non è possibile ricorrere al TLB",
+        "maxPoints": 2,
+        "negativePoints": 0,
+        "type": "multiple-choice",
+        "options": [
+          "a. Le IPT si usano quando non è disponibile il TLB, e dunque la traduzione degli indirizzi da logici a fisici risulterebbe troppo onerosa usando delle normali page table",
+          "b. Le IPT si usano nei sistemi con spazi di indirizzamento logici molto grandi per evitare la paginazione a più livelli, che rende la traduzione degli indirizzi da logici a fisici molto onerosa quando non è possibile ricorrere al TLB",
+          "c. Le IPT si usano quando abbiamo degli spazi di indirizzamento logico molto piccoli, perché in questo modo possiamo usare un'unica IPT per tutti i processi, anziché averne una per ciascun processo",
+          "d. Le IPT si usano nei sistemi con spazi di indirizzamento fisico piccoli, in questo modo viene sprecato meno spazio da parte delle page table dei processi, attraverso la paginazione a più livelli"
+        ],
+        "correctAnswer": "b"
+      }
     ]
   },
   {

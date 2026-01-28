@@ -12,5 +12,26 @@
     "characters": 0,
     "pages": 0,
     "note": "Scanned PDF - requires image conversion and OCR"
+  },
+  {
+    "file": "Scritto_parte_di_teoria_del_corso_A_di_Sistemi_Operativi_del_8_febbraio",
+    "method": "requires-ocr",
+    "characters": 0,
+    "pages": 0,
+    "note": "Scanned PDF - requires image conversion and OCR"
+  },
+  {
+    "file": "esame 10_07 corso A",
+    "method": "requires-ocr",
+    "characters": 0,
+    "pages": 0,
+    "note": "Scanned PDF - requires image conversion and OCR"
+  },
+  {
+    "file": "esame00",
+    "method": "requires-ocr",
+    "characters": 0,
+    "pages": 0,
+    "note": "Scanned PDF - requires image conversion and OCR"
   }
 ]

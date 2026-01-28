@@ -1,0 +1,129 @@
+{
+  "id": "esame-10-07-bis",
+  "date": "2024.07.10",
+  "course": "Teoria",
+  "title": "Esame di Sistemi Operativi del 10 luglio 2024 (bis)",
+  "topics": [
+    "processi-scheduling",
+    "sincronizzazione",
+    "file-system",
+    "memoria-primaria",
+    "raid"
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "text": "In quale/i caso/i un processo in coda di ready può decidere di passare allo stato running?",
+      "answer": "La risposta corretta è: mai, è il Sistema Operativo che sposta i processi da uno stato all'altro.",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. quando un processo si trova in testa alla coda di ready",
+        "b. in tutti gli algoritmi di scheduling non premeptive, dove un processo può decidere autonomamente quanto tempo passare in coda di ready",
+        "c. mai, è il Sistema Operativo che sposta i processi da uno stato all'altro.",
+        "d. quando un processo esce da un qualsiasi stato di waiting"
+      ],
+      "correctAnswer": "c"
+    },
+    {
+      "number": 2,
+      "text": "Ricostruite il codice del generico lettore nel problema dei lettori-scrittori:\nsemaphore mutex = 1, scrivi = 1;\nint numlettori= 0;\nProcesso lettore {\n  wait(mutex);\n  ___(1)___\n  ___(2)___\n  signal(mutex);\n  ... leggi il file ...\n  wait(mutex);\n  ___(3)___\n  ___(4)___\n  signal(mutex)\n}",
+      "answer": "La risposta corretta è:\nRicostruite il codice del generico lettore nel problema dei lettori-scrittori:\nsemaphore mutex = 1, scrivi = 1;\nint numlettori= 0;\nProcesso lettore {\n  wait(mutex);\n  [numlettori++;]\n  [if numlettori == 1 wait(scrivi);]\n  signal(mutex);\n  ... leggi il file ...\n  wait(mutex);\n  [numlettori--;]\n  [if numlettori == 0 signal(scrivi);]\n  signal(mutex)\n}",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multianswer"
+    },
+    {
+      "number": 3,
+      "text": "In quale caso, e perché, l'allocazione concatenata (senza FAT) dello spazio in memoria secondaria è particolarmente svantaggiosa rispetto ad altre tecniche di allocazione viste?",
+      "answer": "La risposta corretta è: Nel caso di file molto grandi, perché per leggere i dati contenuti nell'ultima parte del file occorre seguire la catena di blocchi sull'hard disk, ossia effettuare molte operazioni di I/O su un dispositivo lento.",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. Nel caso di file molto grandi, perché se l'hard disk su cui deve essere memorizzato il file è quasi completamente occupato, il SO potrebbe impiegare molto tempo a trovare un insieme di blocchi liberi in cui allocare il file",
+        "b. Nel caso di file molto grandi, perché in ogni blocco di dati una parte del blocco viene sprecata per memorizzare in puntatore al blocco successivo, risultando così in un notevole spreco di memoria",
+        "c. Nel caso di file molto grandi, perché l'accesso sequenziale ai vari dati del file risulta molto più lento che nelle altre forme di allocazione dello spazio su disco",
+        "d. Nel caso di file molto grandi, perché per leggere i dati contenuti nell'ultima parte del file occorre seguire la catena di blocchi sull'hard disk, ossia effettuare molte operazioni di I/O su un dispositivo lento."
+      ],
+      "correctAnswer": "d"
+    },
+    {
+      "number": 4,
+      "text": "In quale caso l'accesso in lettura ad un file memorizzato su un sistema RAID non è più veloce che se il file fosse memorizzato su un normale hard disk?",
+      "answer": "La risposta corretta è: quando il file è memorizzato su uno più blocchi appartenenti a strip contenuti sullo stesso disco del RAID (e il RAID usato non è di tipo 01/10, poiché in questo caso, se il file è memorizzato su almeno due strip, si può sfruttare il disco di mirroring)",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. quando il file è memorizzato su uno più blocchi appartenenti a strip contenuti sullo stesso disco del RAID (e il RAID usato non è di tipo 01/10, poiché in questo caso, se il file è memorizzato su almeno due strip, si può sfruttare il disco di mirroring)",
+        "b. quando il file è memorizzato su dischi che contengono anche strip di parità, come nel livello 5, perché in questo caso la ricostruzione dei dati di cui è composto il file richiede una certa quantità di lavoro in più da parte del controller del RAID",
+        "c. quando il file occupa molti strip, perché allora neppure la presenza di dischi di mirroring può mitigare la necessità di accedere più volte al contenuto dei vari dischi per leggere tutti gli strip in cui è suddiviso il file",
+        "d. mai: infatti, i sistemi RAID sono stati progettati proprio per fornire più elevate velocità di accesso ai dati che contengono (oltre che per garantire una maggiore affidabilità)"
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 5,
+      "text": "In un sistema paginato è noto che lo spreco di memoria primaria dovuto alla frammentazione interna è in media di circa 1 Kbyte per processo, e un indirizzo logico è scritto su 28 bit. Se la tabella delle pagine più grande di questo sistema è grande 256 Kilobyte, quanto può essere grande al massimo lo spazio di indirizzamento fisico del sistema?",
+      "answer": "La risposta corretta è: 128 Megabyte",
+      "maxPoints": 3,
+      "negativePoints": -1.5,
+      "type": "multiple-choice",
+      "options": [
+        "a. 64 Megabyte",
+        "b. 128 Megabyte",
+        "c. 512 Megabyte",
+        "d. 256 Megabyte"
+      ],
+      "correctAnswer": "b"
+    },
+    {
+      "number": 6,
+      "text": "In un sistema che adotta la paginazione della memoria, un indirizzo logico è scritto su \"P\" bit, e il numero di pagina è scritto su \"k\" bit. Lo spazio fisico è invece suddiviso in 2^24 frame.\n\nPossiamo quindi dire che:\n- un frame del sistema è grande: ___\n- lo spazio fisico del sistema è grande: ___\n- la tabella delle pagine più grande del sistema ha una dimensione di: ___\n- il sistema dovrà implementare la memoria virtuale solo se: ___",
+      "answer": "La risposta corretta è:\nIn un sistema che adotta la paginazione della memoria, un indirizzo logico è scritto su \"P\" bit, e il numero di pagina è scritto su \"k\" bit. Lo spazio fisico è invece suddiviso in 2^24 frame.\n\nPossiamo quindi dire che:\n- un frame del sistema è grande: [2^(P-k)] byte\n- lo spazio fisico del sistema è grande: [2^(24+P-k)] byte\n- la tabella delle pagine più grande del sistema ha una dimensione di: [(2^k) * 3] byte\n- il sistema dovrà implementare la memoria virtuale solo se: [P > (24+P-k)]",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multianswer"
+    },
+    {
+      "number": 7,
+      "text": "Tra gli svantaggi della paginazione della memoria troviamo:",
+      "answer": "La risposta corretta è:\n1. le page table dei processi occupano spazio in RAM\n2. il SO lavora di più perché deve gestire le PT dei processi e l'elenco dei frame liberi in RAM\n3. il context switch tra processi richiede più tempo perché il SO deve attivare la PT del processo che entra in esecuzione",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. 1. le page table dei processi occupano spazio in RAM\n2. il SO lavora di più perché deve gestire le PT dei processi e l'elenco dei frame liberi in RAM\n3. il context switch tra processi richiede più tempo perché il SO deve ogni volta ricostruire la PT del processo che entra in esecuzione",
+        "b. 1. le page table dei processi occupano spazio nell'area di SWAP\n2. il SO lavora di più perché deve gestire le PT dei processi e l'elenco dei frame liberi in RAM\n3. il context switch tra processi richiede più tempo perché il SO deve attivare la PT del processo che entra in esecuzione",
+        "c. 1. le page table dei processi occupano spazio in RAM\n2. il SO lavora di più perché deve gestire le PT dei processi e l'elenco dei frame liberi in RAM\n3. il context switch tra processi richiede più tempo perché il SO deve attivare la PT del processo che entra in esecuzione",
+        "d. 1. le page table dei processi occupano spazio in RAM\n2. il SO lavora di più per cercare di allocare le pagine dei processi nei frame liberi in modo da produrre la frammentazione interna minima\n3. il context switch tra processi richiede più tempo perché il SO deve attivare la PT del processo che entra in esecuzione"
+      ],
+      "correctAnswer": "c"
+    },
+    {
+      "number": 8,
+      "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione):\n\n1: cd /tmp\n2: mkdir newfolder\n3: cd newfolder\n4: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao\n5: ln pippo paperino\n6: ln -s /tmp/newfolder folder2\n7: cp paperino topolino\n8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file\n9: rm pippo\n10: cat paperino // cat stampa il contenuto del file passato come argomento\n11: mkdir ../folder3\n\nQuale/quali delle seguenti affermazioni è/sono vera/e?",
+      "answer": "La risposta corretta è:\n1. il link-counter dell'i-node di paperino è: 1\n2. il link counter di newfolder è: 2\n3. l'output del comando 10 è: \"ciao\"\n4. il link counter di tmp è: aumentato di 2",
+      "maxPoints": 2,
+      "negativePoints": -1,
+      "type": "multianswer"
+    },
+    {
+      "number": 9,
+      "text": "In un sistema operativo che adotta uno scheduling con diritto di prelazione, quattro processi arrivano al tempo indicato e consumano la quantità di CPU indicata nella tabella sottostante.\n\nQual è il waiting time medio ottenuto per lo scheduling dei quattro processi della tabella se si usa l'algoritmo di scheduling preemptive che fornisce il miglior turnaround time possibile? Qual è il corrispondente diagramma di GANTT?",
+      "answer": "La risposta corretta è:\nDiagramma di GANTT: (0) ... Pa ... (4) ... Pc... (6) ... Pd... (7) ... Pa ... (11) ... Pb... (19)\nWaiting time medio = 3",
+      "maxPoints": 3,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        "a. Diagramma di GANTT: (0) ... Pa ... (4) ... Pc ... (6) ... Pa... (10) ... Pd ... (11) ... Pc... (19)\nWaiting time medio = 4",
+        "b. Diagramma di GANTT: (0) ... Pa ... (4) ... Pc... (6) ... Pd... (7) ... Pa ... (11) ... Pb... (19)\nWaiting time medio = 3",
+        "c. Diagramma di GANTT: (0) ... Pa... (4) ... Pb... (7) ... Pd... (9) ... Pa ... (11) ... Pc... (19)\nWaiting time medio = 3",
+        "d. Diagramma di GANTT: (0) ... Pa ... (4) ... Pb... (7) ... Pc ... (10) ... Pa ... (11) ... Pd... (19)\nWaiting time medio = 4"
+      ],
+      "correctAnswer": "b"
+    }
+  ]
+}

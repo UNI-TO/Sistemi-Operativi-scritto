@@ -1,0 +1,174 @@
+
+=== esame10_07-1.jpg ===
+Domanda 1 Risposta corretta Punteggio ottenuto 2,0 su 2,0 ip Contrassegna domanda
+Sia A un file di testo all'interno di un file system Unix. Viene eseguito con successo il comando:
+In -s AB
+dove B non esisteva prima dell'esecuzione del comando. Che cosa succede nelle strutture interne al sistema?
+Scegli un'alternativa:
+“a. Una nuova entry di nome B viene inserita nella cartella in cui è stato eseguito il comando, e un nuovo i-node viene Vi
+associato a B. il pathname usato come primo argomento del comando viene scritto dentro l'i-node associato a B.
+b. Una nuova entry di nome B viene inserita nella cartella in cui è stato eseguito il comando. Il numero dell'i-node associato ad
+A viene ora associato anche a B. Il link counter di quell'i-node viene incrementato di 1
+c. il contenuto di A viene copiato dentro a B. L'i-node di A viene duplicato e associato a B. Il link counter dell'i-node associato
+a B viene inizializzato a 1, mentre il link counter dell'i-node associato ad A viene incrementato di 1
+d. nella cartella in cui viene eseguito il comando viene creato un nuovo file di nome B, e Il link counter dell'i-node associato a B
+viene inizializzato a 1. Dentro all'i-node di A viene scritto il pathname usato come secondo argomento del comando
+Risposta corretta.
+La risposta corretta è: Una nuova entry di nome B viene inserita nella cartella in cui è stato eseguito il comando, e un nuovo i-
+node viene associato a B. il pathname usato come primo argomento del comando viene scritto dentro l'i-node O
+
+
+=== esame10_07-2.jpg ===
+| Domanda 2 Risposta corretta Punteggio ottenuto 3,0 su 3,0 Contrassegna domanda
+In un sistema operativo che adotta uno scheduling con diritto di prelazione, quattro processi arrivano al tempo indicato e
+consumano la quantità di CPU indicata nella tabella sottostante
+EM
+ILLE
+Qual è il waiting time medio ottenuto per lo scheduling dei quattro processi della tabella se si usa l'algoritmo di
+scheduling preemptive che fornisce il miglior turnaround time possibile? Qual è il corrispondente diagramma di GANTT?
+Scegli un'alternativa:
+© b. Diagratina di SANTT: {0)...Pa. (8). Pe- (3 Pbcs( FP (10) PB (Dc PE: (20)
+Waiting time medio = 4
+© cz. Diagramma di GANTE: (0) ...--Pa..(2)-- PB. (6). Pen (7)t o Pas. (40). Pb. a (42) o .Pd...(20)
+Waiting time medio = 4
+- d. Diagramma di GANTT: (0) ....Pars. (2). PD. .(4)ss PE. (5) o. Pau. (10) Pb. (12). Pd. (20)
+
+
+=== esame10_07-3.jpg ===
+‘Domanda 3 Risposta corretta Punteggio ottenuto 2,0 su 2,0  \r Contrassegna domanda
+Nello Unix, quale /quali dei seguenti comandi modifica il valore del link counter dell’index-node associato al file di testo
+X? (si assuma che tutti i comandi vengono eseguiti correttamente)
+
+1) ln XY
+
+2) In -s XY
+
+3) rm XY
+
+4) Is XY
+
+Scegli un'alternativa:
+
+I a. i comandi 2) e 3)
+— b. i comandi 2) e 4)
+- c. i comandi 1) e 4)
+
+
+=== esame10_07-4.jpg ===
+Domanda 4 Risposta corretta Punteggio ottenuto 2,0 su 2,0 i Contrassegna domanda
+Ricostruite il codice del generico consumatore nel problema dei produttori-consumatori:
+full = O ; empty = SIZE; mutex = 1;
+consumatore:
+
+while (true) {
+
+/
+
+/
+
+preleva un elemento dal buffer;
+
+-
+
+?
+
+consuma item;
+
+}
+
+
+=== esame10_07-5.jpg ===
+Domanda 5 Risposta corretta Punteggio ottenuto 2,0 su 2,0 Contrassegna domanda
+In un sistema che adotta la paginazione della memoria, un indirizzo logico è scritto su "M" bit, e il numero di pagina è
+scritto su "L" bit. Lo spazio fisico è invece suddiviso in 2132 frame.
+Possiamo quindi dire che:
+un frame del sistema è grande: 2MM-L) v/ byte
+lo spazio fisico del sistema è grande: | 2A(32+M-L) | v byte
+la tabella delle pagine più grande del sistema ha una dimensione di: | (2M) *4 | wv byte
+il sistema dovrà implementare la memoria virtuale solo se: M > (32+M-L) v
+AT TZ
+Risposta corretta.
+La risposta corretta è:
+In un sistema che adotta la paginazione della memoria, un indirizzo logico è scritto su "M" bit, e il numero di pagina è scritto su
+"L" bit. Lo spazio fisico è invece suddiviso in 2132 frame.
+Possiamo quindi dire che:
+un frame del sistema è grande: [2A(M-L)] byte
+lo spazio fisico del sistema è grande: [2((32+M-l)] byte
+la tabella delle pagine più grande del sistema ha una dimensione di: [(2%N) * 4] byte
+il sistema dovrà implementare la memoria virtuale solo se: [M > (32+M-1)]
+
+
+=== esame10_07-6.jpg ===
+Domanda 6 Risposta errata Punteggio ottenuto 0,0 su 2,0 Contrassegna domanda
+Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione):
+1: cd /tmp
+2: mkdir newfolder
+3: cd newfolder
+4: echo “ciao” > pippo // crea un nuovo file di nome pippo contenente la stringa ciao
+5: ln pippo paperino
+6: In ../newfolder folder2
+7: In -s paperino topolino
+8: echo "salve" >> topolino // aggiunge "salve" a fondo file
+9: rm pippo
+10: cat paperino // cat stampa il contenuto del file passato come argomento
+11: mkdir ../folder3
+Scegli un'alternativa:
+Vv © a. 1. il link-counter dell'i-node di paperino è: 1
+2. il link counter di imp è: aumentato di 2
+3. l'output del comando 10 è: "ciao" seguito da "salve"
+4. il comando 6 da come risultato: un errore perché non sono ammessi hard link tra cartelle
+Db. 1. il link-counter dell'i-node di paperino è: 2
+2. il link counter di tmp è: 2
+3. l'output del comando 10 è: no such file or directory
+4. il comando 6 da come risultato: un errore perché non sono ammessi hard link tra cartelle
+O d. 1. il link-counter dell'i-node di paperino è: 1
+2. il link counter di tmp è: aumentato di 2
+3. l'output del comando 10 è: "ciao"
+4. il comando 6 da come risultato: un nuovo collegamento alla cartella newfolder
+
+
+=== esame10_07-7.jpg ===
+Due modi efficaci per limitare o eliminare il fenomeno del thrashing sono:
+Scegli un'alternativa:
+a. 1. aumentare la quantità di memoria primaria
+2. aumentare il grado di multiprogrammazione
+‘bb. 1. diminuire la quantità di memoria primaria
+2. aumentare il grado di multiprogrammazione
+© ad. 1. diminuire la quantità di memoria primaria
+2. diminuire il grado di multiprogrammazione
+| ì L è
+
+
+=== esame10_07-8.jpg ===
+Domanda 8 Risposta non data Punteggio max.: 3,0 7 Contrassegna domanda
+In un sistema paginato è noto che lo spreco di memoria primaria dovuto alla frammentazione interna è in media di circa 2 Kbyte per
+processo. Un indirizzo fisico è scritto su 28 bit e lo spazio di indirizzamento logico è 4 volte quello fisico.
+Qual è la dimensione della tabella delle pagine più grande di questo sistema? (selezionate l'opzione di risposta che riporta il
+ragionamento aritmetico e il risultato corretti)
+Scegli un'alternativa:
+a. Ogni entry della PT più grande del sistema deve essere grande almeno 2 byte, e dunque la PT sarà grande 2 * 26 = 128 Kbyte (circa)
+b. Ogni entry della PT più grande del sistema deve essere grande almeno 3 byte, e dunque la PT sarà grande 3 * 2118 = 768 Kbyte (circa)
+c. Ogni entry della PT più grande del sistema deve essere grande almeno 3 byte, e dunque la PT sarà grande 3 * 2116 = 192 Kbyte (circa)
+d. Ogni entry della PT più grande del sistema deve essere grande almeno 2 byte, e dunque la PT sarà grande 2 * 2118 = 512 Kbyte (circa)
+Risposta errata.
+La risposta corretta è: Ogni entry della PT più grande del sistema deve essere grande almeno 2 byte, e dunque la PT sarà grande 2 * 2M8 =
+512 Kbyte (circa)
+
+
+=== esame10_07-9.jpg ===
+Domanda 9 Risposta corretta Punteggio ottenuto 2,0 su 2,0 \ Contrassegna domanda
+In quali modi un sistema operativo mantiene sempre un certo controllo della macchina anche mentre non sta girando codice del sistema
+operativo stesso?
+
+Scegli un'alternativa:
+‘a. 1. Uso di istruzioni privilegiate per eseguire operazioni delicate
+2. Uso di un timer hardware
+3. Uso della memoria virtuale
+Db. 1. Uso del vettore delle trap
+2. Uso di un timer hardware
+3. Uso di registri appositi per il controllo degli indirizzi usati nelle istruzioni dei programmi utente
+; #4 o : n ne ao il ili pa Pi i = Wi 3 3a Wie UE i
+OD d. 1. Uso di istruzioni privilegiate per eseguire operazioni delicate
+2. Uso di uno scheduling Round Robin
+3. Uso di registri appositi per il controllo degli indirizzi usati nelle istruzioni dei programmi utente
+

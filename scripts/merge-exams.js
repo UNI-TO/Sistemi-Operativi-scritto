@@ -17,6 +17,11 @@ const esame27TeoriaPath = path.join(__dirname, '../src/data/exam-esame27-teoria.
 const esame03Path = path.join(__dirname, '../src/data/exam-esame03.json');
 const esame04Path = path.join(__dirname, '../src/data/exam-esame04.json');
 const esame00Path = path.join(__dirname, '../src/data/exam-esame00.json');
+const esame01Path = path.join(__dirname, '../src/data/exam-esame01.json');
+const esame02Path = path.join(__dirname, '../src/data/exam-esame02.json');
+const esame1007Path = path.join(__dirname, '../src/data/exam-10-07-corso-a.json');
+const esame1007BisPath = path.join(__dirname, '../src/data/exam-10-07-bis.json');
+const scritto8Feb2022Path = path.join(__dirname, '../src/data/exam-scritto-8-febbraio-2022.json');
 const outputPath = path.join(__dirname, '../src/data/exams.json');
 
 try {
@@ -104,6 +109,41 @@ try {
     const esame00 = JSON.parse(fs.readFileSync(esame00Path, 'utf-8'));
     additionalExams.push(esame00);
     console.log(`✓ Loaded Esame00: ${esame00.title} (${esame00.questions.length} Q)`);
+  }
+
+  // Esame01 Teoria exam
+  if (fs.existsSync(esame01Path)) {
+    const esame01 = JSON.parse(fs.readFileSync(esame01Path, 'utf-8'));
+    additionalExams.push(esame01);
+    console.log(`✓ Loaded Esame01: ${esame01.title} (${esame01.questions.length} Q)`);
+  }
+
+  // Esame02 Teoria exam
+  if (fs.existsSync(esame02Path)) {
+    const esame02 = JSON.parse(fs.readFileSync(esame02Path, 'utf-8'));
+    additionalExams.push(esame02);
+    console.log(`✓ Loaded Esame02: ${esame02.title} (${esame02.questions.length} Q)`);
+  }
+
+  // Esame 10/07 Corso A
+  if (fs.existsSync(esame1007Path)) {
+    const esame1007 = JSON.parse(fs.readFileSync(esame1007Path, 'utf-8'));
+    additionalExams.push(esame1007);
+    console.log(`✓ Loaded Esame 10/07: ${esame1007.title} (${esame1007.questions.length} Q)`);
+  }
+
+  // Esame 10/07 Bis
+  if (fs.existsSync(esame1007BisPath)) {
+    const esame1007Bis = JSON.parse(fs.readFileSync(esame1007BisPath, 'utf-8'));
+    additionalExams.push(esame1007Bis);
+    console.log(`✓ Loaded Esame 10/07 Bis: ${esame1007Bis.title} (${esame1007Bis.questions.length} Q)`);
+  }
+
+  // Scritto 8 Febbraio 2022
+  if (fs.existsSync(scritto8Feb2022Path)) {
+    const scritto8Feb = JSON.parse(fs.readFileSync(scritto8Feb2022Path, 'utf-8'));
+    additionalExams.push(scritto8Feb);
+    console.log(`✓ Loaded Scritto 8 Feb 2022: ${scritto8Feb.title} (${scritto8Feb.questions.length} Q)`);
   }
 
   // Merge additional exams

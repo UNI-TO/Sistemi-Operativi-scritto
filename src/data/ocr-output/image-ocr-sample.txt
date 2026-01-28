@@ -1,52 +1,12 @@
-1/27/26, 12:08 PM Scritto parte di teoria del corso A di Sistemi Operativi del 27 gennaio 2026: Revisione tentativo | Esami
-Domanda 14
-Risposta corretta
-Punteggio ottenuto 2,00 su 2,00
-Una Inverted Page Table può essere così descritta:
+Domanda 1 Risposta errata Punteggio ottenuto 0,0 su 2,0
+In quale/i caso/i un processo in coda di ready può decidere di passare allo stato
+running?
 Scegli un'alternativa:
-
-a. ha un numero di entry pari al numero di pagine in cui è suddiviso lo spazio logico di un processo, e ogni entry
-contiene il numero di un frame. Ogni indirizzo logico è formato dalla tripla "PID-numero di pagina-offset". Per
-tradurre un indirizzo da logico a fisico si cerca il numero della pagina nelle entry della IPT. Se si trova la coppia
-alla entry F-esima, allora l'indirizzo fisico è costituito dalla coppia "F-offset"
-
-b. ha un numero di entry pari al numero di frame in cui è suddivisa la memoria fisica, e ogni entry contiene una v
-coppia "PID-numero di pagina". Ogni indirizzo logico è formato dalla tripla "PID-numero di pagina-offset". Per
-tradurre un indirizzo da logico a fisico si cerca la coppia "PID-numero di pagina" nelle entry della IPT. Se si
-trova la coppia alla entry F-esima, allora l'indirizzo fisico è costituito dalla coppia "F-offset"
-
-c. ha un numero di entry pari al numero di frame in cui è suddiviso lo spazio fisico del processo in esecuzione, e ogni
-entry contiene il numero di una pagina. Per tradurre un indirizzo logico P-offset in un indirizzo fisico si cerca P nelle
-entry della IPT. Se si trova la coppia alla entry F-esima, allora l'indirizzo fisico è costituito dalla coppia "F-offset"
-
-d. ha un numero di entry pari al numero di pagine in cui è suddiviso lo spazio logico di un processo, e ogni entry
-contiene una coppia "PID-frame". Ogni indirizzo logico è formato dalla tripla "PID-numero di frame-offset". Per
-tradurre un indirizzo da logico a fisico si cerca la coppia "PID-numero di frame" nelle entry della IPT. Se si trova la
-coppia alla entry F-esima, allora l'indirizzo fisico è costituito dalla coppia "F-offset"
-
-Risposta corretta.
-La risposta corretta è: ha un numero di entry pari al numero di frame in cui è suddivisa la memoria fisica, e ogni entry
-contiene una coppia "PID-numero di pagina". Ogni indirizzo logico è formato dalla tripla "PID-numero di pagina-offset". Per
-tradurre un indirizzo da logico a fisico si cerca la coppia "PID-numero di pagina" nelle entry della IPT. Se si trova la coppia
-alla entry F-esima, allora l'indirizzo fisico è costituito dalla coppia "F-offset"
-
-Domanda 15
-
-Risposta corretta
-
-Punteggio ottenuto 2,00 su 2,00
-Il diagramma di transizione degli stati di un processo visto a lezione descrive un sistema time-sharing. Come può essere
-modificato per descrivere invece un sistema multi-tasking ma non time-sharing?
-Scegli un'alternativa:
-
-a. basta rimuovere l'arco che porta dallo stato “ready to run” allo stato “running"
-
-b. basta rimuovere l’arco che porta dallo stato “running” allo stato “ready to run" v
-
-c. basta rimuovere l’arco che porta dallo stato “waiting” allo stato “ready to run"
-
-d. basta rimuovere l'arco che porta dallo stato “running” allo stato “waiting"
-
-Risposta corretta.
-La risposta corretta è: basta rimuovere l'arco che porta dallo stato “running” allo stato “ready to run"
-https://esami.i-learn.unito.it/mod/quiz/review.php?attempt=741566&cmid=44790 13/13
+a. quando un processo si trova in testa alla coda di ready *
+b. in tutti gli algoritmi di scheduling non premeptive, dove un processo può decidere
+autonomamente quanto tempo passare in coda di ready
+c. mai, è il Sistema Operativo che sposta i processi da uno stato all'altro.
+d. quando un processo esce da un qualsiasi stato di waiting
+Risposta errata.
+La risposta corretta è: mai, è il Sistema Operativo che sposta i processi da uno stato
+all'altro.
