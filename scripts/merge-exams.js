@@ -22,6 +22,8 @@ const esame02Path = path.join(__dirname, '../src/data/exam-esame02.json');
 const esame1007Path = path.join(__dirname, '../src/data/exam-10-07-corso-a.json');
 const esame1007BisPath = path.join(__dirname, '../src/data/exam-10-07-bis.json');
 const scritto8Feb2022Path = path.join(__dirname, '../src/data/exam-scritto-8-febbraio-2022.json');
+const scritto12Feb2026Path = path.join(__dirname, '../src/data/exam-scritto-12-febbraio-2026.json');
+const vecchioOrdinamentoCorsoAPath = path.join(__dirname, '../src/data/exam-vecchio-ordinamento-corso-a.json');
 const outputPath = path.join(__dirname, '../src/data/exams.json');
 
 try {
@@ -144,6 +146,20 @@ try {
     const scritto8Feb = JSON.parse(fs.readFileSync(scritto8Feb2022Path, 'utf-8'));
     additionalExams.push(scritto8Feb);
     console.log(`✓ Loaded Scritto 8 Feb 2022: ${scritto8Feb.title} (${scritto8Feb.questions.length} Q)`);
+  }
+
+  // Scritto 12 Febbraio 2026 Corso A
+  if (fs.existsSync(scritto12Feb2026Path)) {
+    const scritto12Feb2026 = JSON.parse(fs.readFileSync(scritto12Feb2026Path, 'utf-8'));
+    additionalExams.push(scritto12Feb2026);
+    console.log(`✓ Loaded Scritto 12 Feb 2026: ${scritto12Feb2026.title} (${scritto12Feb2026.questions.length} Q)`);
+  }
+
+  // Vecchio Ordinamento Corso A (12 Febbraio 2026)
+  if (fs.existsSync(vecchioOrdinamentoCorsoAPath)) {
+    const vecchioOrd = JSON.parse(fs.readFileSync(vecchioOrdinamentoCorsoAPath, 'utf-8'));
+    additionalExams.push(vecchioOrd);
+    console.log(`✓ Loaded Vecchio Ordinamento Corso A: ${vecchioOrd.title} (${vecchioOrd.questions.length} Q)`);
   }
 
   // Merge additional exams

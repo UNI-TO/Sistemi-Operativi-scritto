@@ -1,0 +1,334 @@
+{
+  "id": "esame-vecchio-ordinamento-corso-a-12-feb-2026",
+  "date": "2026.02.12",
+  "course": "A",
+  "title": "Sistemi Operativi Teoria Corso A - Esami Vecchio Ordinamento (12 febbraio 2026)",
+  "topics": [
+    "processi-scheduling",
+    "memoria-primaria",
+    "file-system",
+    "sincronizzazione"
+  ],
+  "questions": [
+    {
+      "number": 1,
+      "text": "Un algoritmo di scheduling a code multiple con retroazione:",
+      "answer": "La risposta corretta è: usa più code di ready, gestite ciascuna con una diversa politica di scheduling. Un processo può essere spostato da una coda all'altra in base a come si è comportato l'ultima volta che gli è stata assegnata la CPU",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "usa più code di ready, gestite ciascuna con una diversa politica di scheduling. Un processo può essere promosso a una coda con priorità superiore se ha consumato completamente il suo ultimo quanto di tempo",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "usa più code di ready, in cui i processi vengono inseriti a seconda che siano processi CPU o I/O bound, e processi in foreground o in background",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "usa più code di ready, gestite ciascuna con una diversa politica di scheduling. Un processo può essere retrocesso a una coda con priorità inferiore se non ha consumato completamente il suo ultimo quanto di tempo",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "usa più code di ready, gestite ciascuna con una diversa politica di scheduling. Un processo può essere spostato da una coda all'altra in base a come si è comportato l'ultima volta che gli è stata assegnata la CPU",
+          "isCorrect": true
+        }
+      ],
+      "correctAnswer": "d"
+    },
+    {
+      "number": 2,
+      "text": "Ricostruite il codice del generico lettore nel problema dei lettori-scrittori: semaphore mutex = 1, scrivi = 1; int numlettori= 0; Processo lettore { wait(mutex); [ ]; [ ]; signal(mutex); ... leggi il file ...; wait(mutex); [ ]; [ ]; signal(mutex) }",
+      "answer": "La risposta corretta è: [numlettori++;] [if numlettori == 1 wait(scrivi);] [numlettori--;] [if numlettori == 0 signal(scrivi);]",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "essay"
+    },
+    {
+      "number": 3,
+      "text": "Perché i sistemi operativi moderni non usano l'allocazione contigua dello spazio in RAM a partizioni variabili?",
+      "answer": "La risposta corretta è: perché durante la vita del sistema tendono a formarsi \"buchi\" liberi sempre più piccoli e sempre più difficilmente utilizzabili, e costringe periodicamente al ricompattamento dello spazio in RAM.",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "perché si adatta male alla paginazione della memoria dato che i buchi liberi non sono di dimensione fissa, e costringe alla ricompattazione periodica dei frame.",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "perché limita a priori il grado di multiprogrammazione, può produrre una frammentazione interna nascosta, e costringe periodicamente alla compressione dello spazio in RAM.",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "perché durante la vita del sistema tendono a formarsi \"buchi\" liberi sempre più piccoli e sempre più difficilmente utilizzabili, e costringe periodicamente al ricompattamento dello spazio in RAM.",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "perché soffre del problema della frammentazione esterna, vincola il grado di multiprogrammazione al numero di buchi liberi in un certo momento, e costringe alla ricompattazione periodica della RAM",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c"
+    },
+    {
+      "number": 4,
+      "text": "Nei sistemi operativi moderni il turnaround di un processo può variare moltissimo da una esecuzione alla successiva. A che cosa è dovuto questo comportamento?",
+      "answer": "La risposta corretta è: Alla presenza della memoria virtuale, che fa si che l'effettivo tempo di turnaround dipenda fortemente dal numero di page fault generati dal processo in una certa esecuzione",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "Alla presenza della memoria virtuale, che fa si che l'effettivo tempo di turnaround dipenda fortemente dal numero di page fault generati dal processo in una certa esecuzione",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "All'uso di librerie statiche, che vengono caricate in RAM solo se usate in una certa esecuzione, influenzando così il turnaround a seconda che vengano riferite o no",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "Al fatto che venga adottata una paginazione semplice o una a più livelli. Infatti nella paginazione a più livelli il costo della traduzione degli indirizzi aumenta enormemente i tempi di esecuzione",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "Alla presenza della memoria paginata, che fa si che l'effettivo tempo di turnaround dipenda fortemente dalla porzione di PT che può essere memorizzata nel TLB in una certa esecuzione",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 5,
+      "text": "In hard disk grande 512 Gigabyte, per scrivere il numero di un blocco vengono usati 28 bit, arrotondati al minimo numero di byte necessario. L'hard disk adotta una allocazione indicizzata semplice, e di un file A si sa che nel suo blocco indice 16 byte vengono usati per tenere traccia dei blocchi di dati di A. Quanto può essere grande al massimo A?",
+      "answer": "La risposta corretta è: 8 Kilobyte",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "8 Kilobyte",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "16 Kilobyte",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "12 Kilobyte",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "20 Kilobyte",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 6,
+      "text": "Di un sistema è noto che la tabella delle pagine più grande del sistema occupa esattamente 1 frame, il numero di un frame è scritto su 2 byte usando usando tutti i bit a disposizione, e nel sistema sono presenti in media 2 processi che insieme producono una frammentazione interna complessiva media di 8 Kilobyte. Determinare lo spazio logico e lo spazio fisico del sistema.",
+      "answer": "La risposta corretta è: lo spazio logico del sistema è grande: [32 Megabyte], lo spazio fisico del sistema è grande: [512 Megabyte]",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multianswer",
+      "statements": [
+        {
+          "text": "lo spazio logico del sistema è grande: 32 Megabyte",
+          "isCorrect": true
+        },
+        {
+          "text": "lo spazio fisico del sistema è grande: 512 Megabyte",
+          "isCorrect": true
+        },
+        {
+          "text": "lo spazio fisico del sistema è grande: 256 Megabyte",
+          "isCorrect": false
+        },
+        {
+          "text": "lo spazio fisico del sistema è grande: 128 Megabyte",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "text": "Dopo l'esecuzione dei seguenti comandi in un ambiente Unix (come visti a lezione): 1: cd /tmp, 2: mkdir newfolder, 3: cd newfolder, 4: echo \"ciao\" > pippo // crea un nuovo file di nome pippo contenente la stringa ciao, 5: ln pippo paperino, 6: ln ../newfolder folder2, 7: cp paperino topolino, 8: echo \"salve\" >> topolino // aggiunge \"salve\" a fondo file, 9: rm pippo, 10: cat paperino // cat stampa il contenuto del file passato come argomento, 11: mkdir ../folder3. Scegli un'alternativa:",
+      "answer": "La risposta corretta è: 1. il link-counter dell'i-node di paperino è: 1, 2. il link counter di tmp è: aumentato di 2, 3. l'output del comando 10 è: \"ciao\", 4. il comando 6 da come risultato: un errore perché non sono ammessi hard link tra cartelle",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "1. il link-counter dell'i-node di paperino è: 1\n2. il link counter di tmp è: aumentato di 2\n3. l'output del comando 10 è: \"ciao\"\n4. il comando 6 da come risultato: un errore perché non sono ammessi hard link tra cartelle",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "1. il link-counter dell'i-node di paperino è: 2\n2. il link counter di tmp è: aumentato di 2\n3. l'output del comando 10 è: \"ciao\"\n4. il comando 6 da come risultato: un nuovo collegamento alla cartella newfolder",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "1. il link-counter dell'i-node di paperino è: 1\n2. il link counter di tmp è: 2\n3. l'output del comando 10 è: no such file or directory\n4. il comando 6 da come risultato: un errore perché non sono ammessi hard link tra cartelle",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "1. il link-counter dell'i-node di paperino è: 2\n2. il link counter di tmp è: aumentato di 1\n3. l'output del comando 10 è: \"ciao\" seguito da \"salve\"\n4. il comando 6 da come risultato: un errore perché non sono ammessi hard link tra cartelle",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "a"
+    },
+    {
+      "number": 8,
+      "text": "Che cosa vuol dire che un algoritmo di scheduling soffre di starvation?",
+      "answer": "La risposta corretta è: che non garantisce che, in un tempo finito, un processo in coda di ready venga selezionato per entrare in esecuzione e terminare",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "che non garantisce che, in un tempo finito, un processo possa entrare nella sua sezione critica e portare avanti la sua computazione",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "che non garantisce che, in un tempo finito, un processo in coda di ready venga selezionato per entrare in esecuzione e terminare",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "che non garantisce che, in un tempo finito, un processo addormentato su un semaforo possa venire svegliato e portare avanti la sua computazione",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "che non garantisce che, in un tempo finito, un processo running non venga più interrotto e possa portare a termine la sua computazione",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b"
+    },
+    {
+      "number": 9,
+      "text": "Che cosa significa che un sistema operativo ha un kernel con diritto di prelazione?",
+      "answer": "La risposta corretta è: significa che un processo che sta eseguendo codice in kernel mode può essere tolto dalla CPU",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "significa che vengono disabilitati gli interrupt mentre sta eseguendo codice del sistema operativo",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "significa che il sistema operativo sta usando uno scheduler con diritto di prelazione",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "significa che un processo che sta eseguendo codice in kernel mode può essere tolto dalla CPU",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "text": "significa che il kernel può interrompere l'esecuzione di codice dei processi utenti",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "c"
+    },
+    {
+      "number": 10,
+      "text": "si consideri l'esecuzione della seguente porzione di codice che utilizza la system call fork: int a, b, c, d, n, pid1, pid2, pid3; a = 50, b = 60, c = 70, d = 80; n = fork(); if ( n == 0) {a = 55; b = 65; pid1 = getppid(); printf(\"%d\", pid1); exit(0);} else {c = 75; d = 85; pid2 = getpid(); printf(\"%d\",pid2); pid3 = wait(NULL); exit(0);}. Determinare i valori delle variabili.",
+      "answer": "La risposta corretta è: il valore della variabile a vista dal processo figlio subito prima della sua exit è [55], il valore della variabile c vista dal processo figlio subito prima della sua exit è [70], il valore della variabile b vista dal processo padre subito prima della sua exit è: [60], il valore della variabile d vista dal processo padre subito prima della sua exit è: [85], all'esecuzione delle due printf vale la seguente relazione: pid1 [=] pid2, del risultato della wait possiamo dire che: pid2 [<] pid3",
+      "maxPoints": 3,
+      "negativePoints": 0,
+      "type": "multianswer",
+      "statements": [
+        {
+          "text": "il valore della variabile a vista dal processo figlio subito prima della sua exit è 55",
+          "isCorrect": true
+        },
+        {
+          "text": "il valore della variabile c vista dal processo figlio subito prima della sua exit è 70",
+          "isCorrect": true
+        },
+        {
+          "text": "il valore della variabile b vista dal processo padre subito prima della sua exit è 60",
+          "isCorrect": true
+        },
+        {
+          "text": "il valore della variabile d vista dal processo padre subito prima della sua exit è 85",
+          "isCorrect": true
+        },
+        {
+          "text": "all'esecuzione delle due printf vale la seguente relazione: pid1 = pid2",
+          "isCorrect": true
+        },
+        {
+          "text": "del risultato della wait possiamo dire che: pid2 < pid3",
+          "isCorrect": true
+        },
+        {
+          "text": "all'esecuzione delle due printf vale la seguente relazione: pid1 < pid2",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "text": "Su un hard disk che adotta una allocazione concatenata (senza FAT) è memorizzato un file A della dimensione di 0x8000 byte, e si sa che nell'ultimo blocco di A sono presenti 32 byte del file. Si sa inoltre che per scrivere il numero di un blocco vengono usati 28 bit, arrotondati al minimo numero di byte necessario. Quanto è grosso l'hard disk?",
+      "answer": "La risposta corretta è: 1 Terabyte",
+      "maxPoints": 2,
+      "negativePoints": 0,
+      "type": "multiple-choice",
+      "options": [
+        {
+          "id": "a",
+          "text": "4 Terabyte",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "1 Terabyte",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "512 Gigabyte",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "text": "2 Terabyte",
+          "isCorrect": false
+        }
+      ],
+      "correctAnswer": "b"
+    }
+  ]
+}
